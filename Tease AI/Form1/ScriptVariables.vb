@@ -244,6 +244,8 @@ Partial Public Class Form1
 
 	Public Function GetDateDifference(ByVal DateVar As String, ByVal DateString As String) As Long
 
+		'Return DateDiff(DateInterval.Second, GetDate(DateVar), Now)'PORTNOTE: fury did this instead of below
+
 		Dim DDiff As Long = 0
 
 		If UCase(DateString).Contains("SECOND") Then DDiff = DateDiff(DateInterval.Second, GetDate(DateVar), Now)

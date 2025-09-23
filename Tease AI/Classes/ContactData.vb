@@ -257,7 +257,7 @@ checkFolder:
 
 	Function LoadRandom(ByVal baseDirectory As String, newFolder As Boolean) As List(Of String)
 		If Directory.Exists(baseDirectory) = False Then _
-			Throw New DirectoryNotFoundException("The given slideshow base diretory """ & baseDirectory & """ was not found.")
+			Throw New DirectoryNotFoundException("The given slideshow base directory """ & baseDirectory & """ was not found.")
 	Dim currPath As String
 
 		If Contact = ContactType.Random And Not newFolder Then
@@ -269,6 +269,25 @@ checkFolder:
 
 		' Read all subdirectories in base folder.
 		Dim subDirs As List(Of String) = myDirectory.GetDirectories(currPath).ToList
+
+		If subDirs.Contains(My.Settings.DomImageDirRand) Then
+			subDirs.Remove(My.Settings.DomImageDirRand)
+		End If
+
+		Dim dirListToExclude As New List(Of String)
+
+		For Each tempDir In subDirs
+			If tempDir.Substring(0, 1) = "#" Then
+				dirListToExclude.Add(tempDir)
+			End If
+		Next
+
+		For Each tempDir In dirListToExclude
+			If subDirs.Contains(tempDir) Then
+				subDirs.Remove(tempDir)
+			End If
+		Next
+
 		Dim exclude As New List(Of String)
 nextSubDir:
 		' Check if there are folders left.
@@ -278,7 +297,7 @@ nextSubDir:
 			exclude.Remove(first)
 			subDirs.Add(first)
 		ElseIf subDirs.Count <= 0 And exclude.Count = 0 Then
-			Throw New DirectoryNotFoundException("There are no subdirectories conataining images in """ & currPath & """.")
+			Throw New DirectoryNotFoundException("There are no subdirectories containing images in """ & currPath & """.")
 		End If
 
 		' Get a random folder in base directory.
@@ -394,7 +413,11 @@ nextSubDir:
 			Return String.Empty
 		ElseIf Index >= ImageList.Count - 1 AndAlso My.Settings.CBNewSlideshow Then
 			' End of Slideshow load new one
-			LoadNew(False)
+			If My.Settings.CBRandomDomme Then
+				LoadNew(True)
+			Else
+				LoadNew(False)
+			End If
 		ElseIf Index >= ImageList.Count - 1 Then
 			' End of Slideshow return last image
 			Index = ImageList.Count - 1
@@ -418,7 +441,11 @@ nextSubDir:
 			If Index < 0 Then Index = 0
 		ElseIf Index >= ImageList.Count - 1 AndAlso My.Settings.CBNewSlideshow Then
 			' End of Slideshow start new
-			LoadNew(False)
+			If My.Settings.CBRandomDomme Then
+				LoadNew(True)
+			Else
+				LoadNew(False)
+			End If
 		ElseIf Index >= ImageList.Count - 1 Then
 			' End of Slideshow return last
 			Index = ImageList.Count - 1

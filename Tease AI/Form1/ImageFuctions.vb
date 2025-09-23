@@ -1,5 +1,7 @@
 ﻿Imports System.ComponentModel
+Imports System.Drawing.Imaging
 Imports System.IO
+Imports System.Net
 Imports System.Threading
 Imports System.Windows.Forms
 
@@ -405,7 +407,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileBoobsEnabled, My.Settings.UrlFileBoobs, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-
+			
 			.Add(ImageGenre.Hardcore, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Hardcore,
@@ -414,7 +416,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileHardcoreEnabled, My.Settings.UrlFileHardcore, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-
+			
 			.Add(ImageGenre.Softcore, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Softcore,
@@ -423,7 +425,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileSoftcoreEnabled, My.Settings.UrlFileSoftcore, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-
+			
 			.Add(ImageGenre.Lesbian, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Lesbian,
@@ -432,7 +434,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileLesbianEnabled, My.Settings.UrlFileLesbian, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-
+			
 			.Add(ImageGenre.Blowjob, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Blowjob,
@@ -441,7 +443,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileBlowjobEnabled, My.Settings.UrlFileBlowjob, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-
+			
 			.Add(ImageGenre.Femdom, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Femdom,
@@ -603,8 +605,8 @@ NoNeFound:
 	''' <param name="ImageToShow">The Path to the image to disply.</param>
 	''' <param name="WaitToFinish">If True the calling thread is locked in a Application.DoEvents.Lopp until the
 	''' download has finished and the images is displayed.</param>
-	Public Sub ShowImage(ByVal ImageToShow As String, ByVal WaitToFinish As Boolean)
-		If FormLoading = True Then Return
+	Public Function ShowImage(ByVal ImageToShow As String, ByVal WaitToFinish As Boolean) As Boolean
+		If FormLoading = True Then Return False
 
 		Debug.Print(
 			"    _____                                  ______     _         _      " & vbCrLf &
@@ -626,14 +628,38 @@ NoNeFound:
 			FetchContainer.ImageLocation = pathImageErrorOnLoading
 			Dim lazyText As String = "The given imagepath was NULL."
 			Log.WriteError(lazyText, New ArgumentNullException(lazyText), "ShowImage with no valid imagepath.")
+			Return False
 		ElseIf ImageToShow = "" Then
 			' ====================== String.Empty ========================
 			FetchContainer.ImageLocation = pathImageErrorOnLoading
 			Dim lazyText As String = "The given imagepath was empty."
 			Log.WriteError(lazyText, New ArgumentException(lazyText), "ShowImage with no valid imagepath.")
-		Else
-			' ======================== All fine ==========================
-			FetchContainer.ImageLocation = ImageToShow
+			Return False
+		End If
+
+		' ======================== All fine ==========================
+
+		Dim myFilePath As String = Path.GetDirectoryName(ImageToShow)
+		Dim FlagName As String = ssh.Folders.TempFlags + "tai2dommesAtOnce"
+		Dim searchForTextFile As String = myFilePath + "\\tai2dommesAtOnce.txt"
+		If File.Exists(searchForTextFile) Then
+			If Not File.Exists(FlagName) Then
+				Using New FileStream(FlagName, FileMode.Create)
+				End Using
+			End If
+		ElseIf File.Exists(FlagName) Then
+			File.Delete(FlagName)
+		End If
+
+		FetchContainer.ImageLocation = ImageToShow
+
+		If Not File.Exists(ImageToShow) AndAlso Not WebFileExists(ImageToShow) Then
+			Dim lazyText As String = "The given imagepath is not a valid path"
+			Log.WriteError(lazyText, New ArgumentNullException(lazyText), "ShowImage with wrong image path : " + ImageToShow + " is not a valid path")
+			RemoveFromLocalTagList(ImageToShow)
+			RemoveFromLikeList(ImageToShow)
+			RemoveFromDislikeList(ImageToShow)
+			RemoveFromUrlFiles(ImageToShow)
 		End If
 
 		If FrmSettings.CBBlogImageWindow.Checked = True _
@@ -651,7 +677,19 @@ NoNeFound:
 				 ex, "ShowImage(String, Boolean)")
 		End Try
 
-	End Sub
+		Return True
+	End Function
+
+	Public Function WebFileExists(url As String) As Boolean
+		Try
+			Dim web As WebClient = New WebClient()
+			Dim s As Stream = web.OpenRead(url)
+			s.Close()
+			Return True
+		Catch
+		End Try
+		Return False
+	End Function
 
 #Region "---------------------------------------------------- BWimageSync -----------------------------------------------------"
 
@@ -755,6 +793,7 @@ retryLocal: ' If an exception occures the function is restarted and the Errorima
 				Debug.Print("ImageFetch - DoWork - 1st Exception perfomaing fallback")
 				Log.WriteError("Error loading Image: """ & .ImageLocation & """", ex,
 				  "Error loading image. Performing fallback to errorimage.")
+				.ImageLocation = errorimagepath
 				GoTo retryLocal
 			Catch ex As Exception
 				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
@@ -816,9 +855,28 @@ retryLocal: ' If an exception occures the function is restarted and the Errorima
 
 				Dim FetchResult As ImageFetchObject = e.Result
 
-				' Set the fetched image and release thte fetched one.
-				MainPictureboxSetImage(FetchResult.FetchedImage,
-									   FetchResult.ImageLocation)
+				If FetchResult.ImageLocation.ToLower().EndsWith(".gif") And My.Settings.CBWMPGifs Then
+					FetchResult.FetchedImage.Save("Images\\System\\temp.gif", ImageFormat.Gif)
+					DomWMP.URL = Application.StartupPath + "\Images\System\temp.gif"
+					DomWMP.stretchToFit = True
+					DomWMP.settings.setMode("loop", True)
+					ssh.LockVideo = True
+					DomWMP.Visible = True
+					mainPictureBox.Visible = False
+					marGIFIsDisplayed = True
+				Else
+					mainPictureBox.Visible = True
+					DomWMP.settings.setMode("loop", False)
+					ssh.LockVideo = False
+					If marGIFIsDisplayed Then
+						marGIFIsDisplayed = False
+						DomWMP.Visible = False
+					End If
+
+					' Set the fetched image and release thte fetched one.
+					MainPictureboxSetImage(FetchResult.FetchedImage,
+										   FetchResult.ImageLocation)
+				End If
 
 				If FetchResult.FetchedImage IsNot Nothing Then _
 					FetchResult.FetchedImage.Dispose()
@@ -869,7 +927,39 @@ retryLocal: ' If an exception occures the function is restarted and the Errorima
 
 			'Set the new image and redraw the control
 			If newImage IsNot Nothing Then
-				mainPictureBox.Image = newImage.Clone
+				If ImagePath.ToLower().Trim(" ").EndsWith(".gif") And My.Settings.CBWMPGifs = False Then
+					Dim newsize As Size = New Size(newImage.Width, newImage.Height)
+					If newImage.Height <= 480 Or newImage.Width <= 480 Then
+						mainPictureBox.Dock = DockStyle.None
+						mainPictureBox.SizeMode = PictureBoxSizeMode.Zoom
+						If newImage.Height <= 550 And newImage.Width <= 550 Then
+							If newImage.Height <= 150 And newImage.Width <= 200 Then
+								newsize = New Size(Math.Round(newImage.Width * 3.5), Math.Round(newImage.Height * 3.5))
+							ElseIf newImage.Height <= 300 Then
+								newsize = New Size(Math.Round(newImage.Width * 2.5), Math.Round(newImage.Height * 2.5))
+							Else
+								newsize = New Size(Math.Round(newImage.Width * 1.5), Math.Round(newImage.Height * 1.5))
+							End If
+						ElseIf newImage.Height <= 400 Or newImage.Width <= 400 Then
+							newsize = New Size(Math.Round(newImage.Width * 1.5), Math.Round(newImage.Height * 1.5))
+						Else
+							newsize = New Size(Math.Round(newImage.Width * 1.2), Math.Round(newImage.Height * 1.2))
+						End If
+						mainPictureBox.Size = newsize
+						mainPictureBox.Top = 0
+						mainPictureBox.Left = 0
+						If SplitContainer1.Panel1.Height >= newsize.Height Then
+							mainPictureBox.Top = Math.Round(SplitContainer1.Panel1.Height / 2) - newsize.Height / 2
+						End If
+						If SplitContainer1.Panel1.Width >= newsize.Width Then
+							mainPictureBox.Left = Math.Round(SplitContainer1.Panel1.Width / 2) - newsize.Width / 2
+						End If
+					Else
+						mainPictureBox.Dock = DockStyle.Fill
+						mainPictureBox.SizeMode = PictureBoxSizeMode.CenterImage
+					End If
+				Else
+					mainPictureBox.Dock = DockStyle.Fill
 
 				If My.Settings.CBStretchLandscape Then
 
@@ -880,10 +970,10 @@ retryLocal: ' If an exception occures the function is restarted and the Errorima
 					End If
 				Else
 					mainPictureBox.SizeMode = PictureBoxSizeMode.Zoom
+					End If
 				End If
 
-				mainPictureBox.Invalidate()
-				mainPictureBox.Refresh()
+				mainPictureBox.Image = newImage.Clone
 			Else
 				ImagePath = ""
 			End If

@@ -302,6 +302,7 @@ Partial Class FrmSettings
 		Me.TabPage7 = New System.Windows.Forms.TabPage()
 		Me.TabControl4 = New System.Windows.Forms.TabControl()
 		Me.TpImagesUrlFiles = New System.Windows.Forms.TabPage()
+		Me.Button2 = New Global.System.Windows.Forms.Button()
 		Me.CBURLPreview = New System.Windows.Forms.CheckBox()
 		Me.GroupBox66 = New System.Windows.Forms.GroupBox()
 		Me.PBURLPreview = New System.Windows.Forms.PictureBox()
@@ -951,6 +952,8 @@ Partial Class FrmSettings
 		Me.TxbImgUrlHardcore = New System.Windows.Forms.TextBox()
 		Me.TextBox2 = New System.Windows.Forms.TextBox()
 		Me.BWURLFiles = New Tease_AI.URL_Files.URL_File_BGW()
+		Me.GroupBox16 = New Global.System.Windows.Forms.GroupBox()
+		Me.CBWMPGifs = New Global.System.Windows.Forms.CheckBox()
 		Me.CbxWarningsToChat = New System.Windows.Forms.CheckBox()
 		Me.CBMuteMedia = New System.Windows.Forms.CheckBox()
 		Me.TbxDomImageDir = New System.Windows.Forms.TextBox()
@@ -1352,6 +1355,7 @@ Partial Class FrmSettings
 		Me.GroupBox34.SuspendLayout()
 		Me.TabPage25.SuspendLayout()
 		Me.Panel11.SuspendLayout()
+		Me.GroupBox16.SuspendLayout()
 		Me.GroupBox62.SuspendLayout()
 		Me.GroupBox33.SuspendLayout()
 		Me.GroupBox8.SuspendLayout()
@@ -4785,6 +4789,7 @@ Partial Class FrmSettings
 		'TpImagesUrlFiles
 		'
 		Me.TpImagesUrlFiles.BackColor = System.Drawing.Color.LightGray
+		Me.TpImagesUrlFiles.Controls.Add(Me.Button2)
 		Me.TpImagesUrlFiles.Controls.Add(Me.CBURLPreview)
 		Me.TpImagesUrlFiles.Controls.Add(Me.GroupBox66)
 		Me.TpImagesUrlFiles.Controls.Add(Me.BTNURLFilesAll)
@@ -4796,6 +4801,15 @@ Partial Class FrmSettings
 		Me.TpImagesUrlFiles.Size = New System.Drawing.Size(700, 411)
 		Me.TpImagesUrlFiles.TabIndex = 0
 		Me.TpImagesUrlFiles.Text = "URL Files"
+		'
+		'Button2
+		'
+		Me.Button2.Location = New System.Drawing.Point(425, 380)
+		Me.Button2.Name = "Button2"
+		Me.Button2.Size = New System.Drawing.Size(75, 23)
+		Me.Button2.TabIndex = 164
+		Me.Button2.Text = "Refresh"
+		Me.Button2.UseVisualStyleBackColor = true
 		'
 		'CBURLPreview
 		'
@@ -11296,6 +11310,7 @@ Partial Class FrmSettings
 		'
 		Me.Panel11.BackColor = System.Drawing.Color.LightGray
 		Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.Panel11.Controls.Add(Me.GroupBox16)
 		Me.Panel11.Controls.Add(Me.GroupBox62)
 		Me.Panel11.Controls.Add(Me.GroupBox33)
 		Me.Panel11.Controls.Add(Me.GroupBox8)
@@ -11308,6 +11323,29 @@ Partial Class FrmSettings
 		Me.Panel11.Name = "Panel11"
 		Me.Panel11.Size = New System.Drawing.Size(708, 437)
 		Me.Panel11.TabIndex = 92
+		'
+		'GroupBox16
+		'
+		Me.GroupBox16.Controls.Add(Me.CBWMPGifs)
+		Me.GroupBox16.Location = New System.Drawing.Point(420, 268)
+		Me.GroupBox16.Name = "GroupBox16"
+		Me.GroupBox16.Size = New System.Drawing.Size(279, 47)
+		Me.GroupBox16.TabIndex = 180
+		Me.GroupBox16.TabStop = false
+		Me.GroupBox16.Text = "Animated Gifs"
+		'
+		'CBWMPGifs
+		'
+		Me.CBWMPGifs.Checked = Global.Tease_AI.My.MySettings.Default.CBWMPGifs
+		Me.CBWMPGifs.CheckState = System.Windows.Forms.CheckState.Checked
+		Me.CBWMPGifs.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Tease_AI.My.MySettings.Default, "CBWMPGifs", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.CBWMPGifs.ForeColor = System.Drawing.Color.Black
+		Me.CBWMPGifs.Location = New System.Drawing.Point(17, 19)
+		Me.CBWMPGifs.Name = "CBWMPGifs"
+		Me.CBWMPGifs.Size = New System.Drawing.Size(192, 17)
+		Me.CBWMPGifs.TabIndex = 29
+		Me.CBWMPGifs.Text = "Use WMP to Display Animated Gifs"
+		Me.CBWMPGifs.UseVisualStyleBackColor = true
 		'
 		'GroupBox62
 		'
@@ -15567,6 +15605,7 @@ Partial Class FrmSettings
 		Me.GroupBox34.ResumeLayout(False)
 		Me.TabPage25.ResumeLayout(False)
 		Me.Panel11.ResumeLayout(False)
+		Me.GroupBox16.ResumeLayout(false)
 		Me.GroupBox62.ResumeLayout(False)
 		Me.GroupBox62.PerformLayout()
 		Me.GroupBox33.ResumeLayout(False)
@@ -16344,6 +16383,8 @@ Partial Class FrmSettings
 	Friend WithEvents Button16 As System.Windows.Forms.Button
 	Friend WithEvents Label121 As System.Windows.Forms.Label
 	Friend WithEvents Label122 As System.Windows.Forms.Label
+	Friend WithEvents GroupBox16 As System.Windows.Forms.GroupBox
+	Friend WithEvents CBWMPGifs As System.Windows.Forms.CheckBox
 	Friend WithEvents GroupBox62 As System.Windows.Forms.GroupBox
 	Friend WithEvents RBGerman As System.Windows.Forms.RadioButton
 	Friend WithEvents RBEnglish As System.Windows.Forms.RadioButton
@@ -16515,6 +16556,7 @@ Partial Class FrmSettings
 	Friend WithEvents ChbImageUrlMaledom As System.Windows.Forms.CheckBox
 	Friend WithEvents CBIButts As System.Windows.Forms.CheckBox
 	Friend WithEvents CBIBoobs As System.Windows.Forms.CheckBox
+	Friend WithEvents Button2 As System.Windows.Forms.Button
 	Friend WithEvents GroupBox66 As System.Windows.Forms.GroupBox
 	Friend WithEvents PBURLPreview As System.Windows.Forms.PictureBox
 	Friend WithEvents CBURLPreview As System.Windows.Forms.CheckBox

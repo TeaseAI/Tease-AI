@@ -48,7 +48,11 @@ Public Class SessionState
 
 	Public Property Chat As String
 
-	Public Property randomizer As New Random
+	Public Property ChatHistoryList As List(Of String) = New List(Of String)
+	Public Property ChatHistoryCount As Integer
+
+	Public Property randomizer As New MarNewRandom
+
 	Public Property ScriptOperator As String
 
 	Public Property DomTyping As Boolean
@@ -64,6 +68,9 @@ Public Class SessionState
 
 	Public Property TeaseTick As Integer
 	Public Property Responding As Boolean
+
+	Public Property ResponseList As List(Of String) = New List(Of String)
+	Public Property ResponseListCount As Integer
 
 	Public Property StrokeTauntVal As Integer = -1
 	Public Property newSlideshow As Boolean = False
@@ -157,6 +164,9 @@ Public Class SessionState
 
 
 	Public Property StrokeTimeTotal As Integer
+
+	Public Property ResumeStroking As Boolean
+
 	Public Property HoldEdgeTime As Integer
 	Public Property HoldEdgeTimeTotal As Integer
 
@@ -210,6 +220,9 @@ Public Class SessionState
 	<Category("Video")> Public Property LockVideo As Boolean
 	<Category("Video")> Public Property DommeVideo As Boolean
 	<Category("Video")> Public Property JumpVideo As Boolean
+	<Category("Video")> Public Property JumpVideoUp As Boolean
+	<Category("Video")> Public Property JumpVideoDown As Boolean
+	<Category("Video")> Public Property JumpPercent As Boolean
 	<Category("Video")> Public Property NoSpecialVideo As Boolean
 	<Category("Video")> Public Property RandomizerVideo As Boolean
 	<Category("Video")> Public Property RandomizerVideoTease As Boolean
@@ -222,7 +235,7 @@ Public Class SessionState
 	<Category("Video")> Public Property VideoType As String = "General"
 	<Category("Video")> Public Property VidFile As String
 	<Category("Video")> Public Property VTPath As String
-	<Category("Video")> <Obsolete("Used in #VTLenth but delivers a wrong value.")>
+	<Category("Video")> <Obsolete("Used in #VTLength but delivers a wrong value.")>
 	Public Property VTLength As Integer
 	<Category("Video - Avoid the Edge")> Public Property AtECountdown As Integer
 	<Category("Video - Avoid the Edge")> Public Property AvoidTheEdgeGame As Boolean
@@ -365,10 +378,12 @@ Public Class SessionState
 	<Category("Images")> Public Property JustShowedBlogImage As Boolean = False
 	<Category("Images")> Public Property JustShowedSlideshowImage As Boolean = False
 	<Category("Images")> Public Property LockImage As Boolean
+	<Category("Images")> Public Property HardLockImage As Boolean
 	<Category("Images")> Public Property RandomSlideshowCategory As String
 	<Category("Images")> <Description("True if main slideshow is loaded.")>
 	Public Property SlideshowLoaded As Boolean
 	<Category("Images")> Public Property SlideshowMain As ContactData
+	<Category("Images")> Public Property SlideshowMasterDomme As ContactData
 	<Category("Images")> Public Property SlideshowContact1 As ContactData
 	<Category("Images")> Public Property SlideshowContact2 As ContactData
 	<Category("Images")> Public Property SlideshowContact3 As ContactData
@@ -475,6 +490,8 @@ Public Class SessionState
 
 	Public Property OrgasmRestricted As Boolean
 
+	Public Property BegToCumFlag As Boolean
+
 	Public Property FollowUp As String = ""
 
 	Public Property WorshipMode As Boolean = False
@@ -524,6 +541,11 @@ Public Class SessionState
 	Public Property EndSession As Boolean
 
 	Public Property VideoGenre As String
+
+	Public Property LinearDateCheck As Boolean
+	Public Property SilentReturn As Boolean
+	Public Property StrokingReturn As Boolean
+	Public Property ScenarioMode As Boolean
 
 
 #Region "----------------------------------- Only for Serialization -------------------------------------"
@@ -647,7 +669,7 @@ Public Class SessionState
 	End Sub
 
 	Private Sub InitializeComponent()
-		randomizer = New Random()
+		randomizer = New MarNewRandom()
 
 		DomPersonality = My.Settings.DomPersonality
 

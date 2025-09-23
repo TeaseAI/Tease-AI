@@ -1464,6 +1464,18 @@
     <Setting Name="AlwaysNewSlideshow" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="CBRandomGlitter" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CBAutoDomPP" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DomImageDirRand" Type="System.String" Scope="User">
+      <Value Profile="(Default)">No path selected</Value>
+    </Setting>
+    <Setting Name="CBWMPGifs" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
     <Setting Name="CbChatDisplayWarnings" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>

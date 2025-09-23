@@ -86,6 +86,13 @@ Public Class TauntProcessingObject
 			Dim linesFiltered As List(Of String) = Form1Reference.FilterList(Lines)
 			Form1Reference.ssh.StrokeFilter = False
 
+			If Lines.Count = 0 Then
+				Lines.Clear()
+				For i As Integer = 0 To linesFiltered.Count - 1
+					Lines.Add(linesFiltered(i))
+				Next
+			End If
+
 		Catch ex As Exception
 			Throw
 		End Try

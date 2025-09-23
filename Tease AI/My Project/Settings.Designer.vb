@@ -5894,6 +5894,54 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property CBRandomGlitter() As Boolean
+            Get
+                Return CType(Me("CBRandomGlitter"),Boolean)
+            End Get
+            Set
+                Me("CBRandomGlitter") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property CBAutoDomPP() As Boolean
+            Get
+                Return CType(Me("CBAutoDomPP"),Boolean)
+            End Get
+            Set
+                Me("CBAutoDomPP") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("No path selected")>  _
+        Public Property DomImageDirRand() As String
+            Get
+                Return CType(Me("DomImageDirRand"),String)
+            End Get
+            Set
+                Me("DomImageDirRand") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property CBWMPGifs() As Boolean
+            Get
+                Return CType(Me("CBWMPGifs"),Boolean)
+            End Get
+            Set
+                Me("CBWMPGifs") = value
+            End Set
+        End Property
+        
+         <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property CbChatDisplayWarnings() As Boolean
             Get

@@ -4149,7 +4149,7 @@ Card9:
 			original = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData(ProtoImage)))
 		End If
 
-		Dim resized As Image = Form1.ResizeImage(original, New Size(M1A.Width, M1A.Height))
+		Dim resized As Image = Form1.ResizeImage(original, New Windows.Size(M1A.Width, M1A.Height))
 		original.Dispose()
 
 		Return resized

@@ -165,6 +165,9 @@ Partial Class Form1
 		Me.RangesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ModdingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.MiscToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+		Me.RandomDommeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.RandomContactToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AppsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.CloseAppPanelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
@@ -190,6 +193,7 @@ Partial Class Form1
 		Me.SidepanelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.SideChatToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.LazySubAVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.GenerateDommeAVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
 		Me.ThemesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
@@ -217,6 +221,8 @@ Partial Class Form1
 		Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator()
 		Me.RefreshRandomizerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.PatreonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.TeaseAIPatreonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.PNLDate = New System.Windows.Forms.Panel()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
 		Me.LBLGeneralSettings = New System.Windows.Forms.Label()
@@ -373,7 +379,10 @@ Partial Class Form1
 		Me.Button4 = New System.Windows.Forms.Button()
 		Me.PnlSidepanelLayout = New System.Windows.Forms.Panel()
 		Me.PnlTabsLayout = New System.Windows.Forms.Panel()
+		Me.contextWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.PnlLayoutForm = New System.Windows.Forms.Panel()
+		Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+		Me.voiceDomWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.ScriptTimer = New Tease_AI.teaseAI_Timer()
 		Me.Timer1 = New Tease_AI.teaseAI_Timer()
 		Me.IsTypingTimer = New Tease_AI.teaseAI_Timer()
@@ -456,6 +465,8 @@ Partial Class Form1
 		Me.PnlSidepanelLayout.SuspendLayout()
 		Me.PnlTabsLayout.SuspendLayout()
 		Me.PnlLayoutForm.SuspendLayout()
+		CType(Me.contextWMP, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'domName
@@ -1577,24 +1588,24 @@ Partial Class Form1
 		'PicStripTSMIdommeSlideshow_GoToFirst
 		'
 		Me.PicStripTSMIdommeSlideshow_GoToFirst.Name = "PicStripTSMIdommeSlideshow_GoToFirst"
-		Me.PicStripTSMIdommeSlideshow_GoToFirst.Size = New System.Drawing.Size(167, 22)
+		Me.PicStripTSMIdommeSlideshow_GoToFirst.Size = New System.Drawing.Size(165, 22)
 		Me.PicStripTSMIdommeSlideshow_GoToFirst.Text = "Go To First Image"
 		'
 		'PicStripTSMIdommeSlideshowGoToLast
 		'
 		Me.PicStripTSMIdommeSlideshowGoToLast.Name = "PicStripTSMIdommeSlideshowGoToLast"
-		Me.PicStripTSMIdommeSlideshowGoToLast.Size = New System.Drawing.Size(167, 22)
+		Me.PicStripTSMIdommeSlideshowGoToLast.Size = New System.Drawing.Size(165, 22)
 		Me.PicStripTSMIdommeSlideshowGoToLast.Text = "Go To Last Image"
 		'
 		'PicStripTSMIdommeSlideshowTSS1
 		'
 		Me.PicStripTSMIdommeSlideshowTSS1.Name = "PicStripTSMIdommeSlideshowTSS1"
-		Me.PicStripTSMIdommeSlideshowTSS1.Size = New System.Drawing.Size(164, 6)
+		Me.PicStripTSMIdommeSlideshowTSS1.Size = New System.Drawing.Size(162, 6)
 		'
 		'PicStripTSMIdommeSlideshowLoadNewSlideshow
 		'
 		Me.PicStripTSMIdommeSlideshowLoadNewSlideshow.Name = "PicStripTSMIdommeSlideshowLoadNewSlideshow"
-		Me.PicStripTSMIdommeSlideshowLoadNewSlideshow.Size = New System.Drawing.Size(167, 22)
+		Me.PicStripTSMIdommeSlideshowLoadNewSlideshow.Size = New System.Drawing.Size(165, 22)
 		Me.PicStripTSMIdommeSlideshowLoadNewSlideshow.Text = "New Slideshow"
 		'
 		'StatusUpdates
@@ -1668,25 +1679,25 @@ Partial Class Form1
 		'OpenBetaThreadToolStripMenuItem
 		'
 		Me.OpenBetaThreadToolStripMenuItem.Name = "OpenBetaThreadToolStripMenuItem"
-		Me.OpenBetaThreadToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+		Me.OpenBetaThreadToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
 		Me.OpenBetaThreadToolStripMenuItem.Text = "Open Beta Thread"
 		'
 		'BugReportThreadToolStripMenuItem
 		'
 		Me.BugReportThreadToolStripMenuItem.Name = "BugReportThreadToolStripMenuItem"
-		Me.BugReportThreadToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+		Me.BugReportThreadToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
 		Me.BugReportThreadToolStripMenuItem.Text = "Bug Report Thread"
 		'
 		'WebteasesToolStripMenuItem
 		'
 		Me.WebteasesToolStripMenuItem.Name = "WebteasesToolStripMenuItem"
-		Me.WebteasesToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+		Me.WebteasesToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
 		Me.WebteasesToolStripMenuItem.Text = "Webteases"
 		'
 		'AllAndEverythingToolStripMenuItem
 		'
 		Me.AllAndEverythingToolStripMenuItem.Name = "AllAndEverythingToolStripMenuItem"
-		Me.AllAndEverythingToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+		Me.AllAndEverythingToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
 		Me.AllAndEverythingToolStripMenuItem.Text = "Forum"
 		'
 		'ToolStripMenuItem7
@@ -1741,7 +1752,7 @@ Partial Class Form1
 		'
 		'MenuStrip2
 		'
-		Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.AppsToolStripMenuItem, Me.GamesToolStripMenuItem1, Me.InterfaceToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.MilovanaToolStripMenuItem1, Me.DebugToolStripMenuItem, Me.AboutToolStripMenuItem})
+		Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.AppsToolStripMenuItem, Me.GamesToolStripMenuItem1, Me.InterfaceToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.MilovanaToolStripMenuItem1, Me.DebugToolStripMenuItem, Me.AboutToolStripMenuItem, Me.PatreonToolStripMenuItem})
 		Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
 		Me.MenuStrip2.Name = "MenuStrip2"
 		Me.MenuStrip2.Size = New System.Drawing.Size(1676, 24)
@@ -1807,7 +1818,7 @@ Partial Class Form1
 		'
 		'SettingsToolStripMenuItem
 		'
-		Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GeneralSettingsToolStripMenuItem, Me.DommeToolStripMenuItem, Me.SubToolStripMenuItem, Me.ScriptsToolStripMenuItem, Me.ImagesToolStripMenuItem, Me.TaggingToolStripMenuItem, Me.URLFilesToolStripMenuItem, Me.VideoToolStripMenuItem, Me.AppsToolStripMenuItem1, Me.RangesToolStripMenuItem, Me.ModdingToolStripMenuItem, Me.MiscToolStripMenuItem})
+		Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GeneralSettingsToolStripMenuItem, Me.DommeToolStripMenuItem, Me.SubToolStripMenuItem, Me.ScriptsToolStripMenuItem, Me.ImagesToolStripMenuItem, Me.TaggingToolStripMenuItem, Me.URLFilesToolStripMenuItem, Me.VideoToolStripMenuItem, Me.AppsToolStripMenuItem1, Me.RangesToolStripMenuItem, Me.ModdingToolStripMenuItem, Me.MiscToolStripMenuItem, Me.ToolStripSeparator7, Me.RandomDommeToolStripMenuItem, Me.RandomContactToolStripMenuItem})
 		Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
 		Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
 		Me.SettingsToolStripMenuItem.Text = "Settings"
@@ -1815,74 +1826,91 @@ Partial Class Form1
 		'GeneralSettingsToolStripMenuItem
 		'
 		Me.GeneralSettingsToolStripMenuItem.Name = "GeneralSettingsToolStripMenuItem"
-		Me.GeneralSettingsToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.GeneralSettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.GeneralSettingsToolStripMenuItem.Text = "General"
 		'
 		'DommeToolStripMenuItem
 		'
 		Me.DommeToolStripMenuItem.Name = "DommeToolStripMenuItem"
-		Me.DommeToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.DommeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.DommeToolStripMenuItem.Text = "Domme"
 		'
 		'SubToolStripMenuItem
 		'
 		Me.SubToolStripMenuItem.Name = "SubToolStripMenuItem"
-		Me.SubToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.SubToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.SubToolStripMenuItem.Text = "Sub"
 		'
 		'ScriptsToolStripMenuItem
 		'
 		Me.ScriptsToolStripMenuItem.Name = "ScriptsToolStripMenuItem"
-		Me.ScriptsToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.ScriptsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.ScriptsToolStripMenuItem.Text = "Scripts"
 		'
 		'ImagesToolStripMenuItem
 		'
 		Me.ImagesToolStripMenuItem.Name = "ImagesToolStripMenuItem"
-		Me.ImagesToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.ImagesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.ImagesToolStripMenuItem.Text = "Images"
 		'
 		'TaggingToolStripMenuItem
 		'
 		Me.TaggingToolStripMenuItem.Name = "TaggingToolStripMenuItem"
-		Me.TaggingToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.TaggingToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.TaggingToolStripMenuItem.Text = "Tagging"
 		'
 		'URLFilesToolStripMenuItem
 		'
 		Me.URLFilesToolStripMenuItem.Name = "URLFilesToolStripMenuItem"
-		Me.URLFilesToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.URLFilesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.URLFilesToolStripMenuItem.Text = "URL Files"
 		'
 		'VideoToolStripMenuItem
 		'
 		Me.VideoToolStripMenuItem.Name = "VideoToolStripMenuItem"
-		Me.VideoToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.VideoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.VideoToolStripMenuItem.Text = "Video"
 		'
 		'AppsToolStripMenuItem1
 		'
 		Me.AppsToolStripMenuItem1.Name = "AppsToolStripMenuItem1"
-		Me.AppsToolStripMenuItem1.Size = New System.Drawing.Size(123, 22)
+		Me.AppsToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
 		Me.AppsToolStripMenuItem1.Text = "Apps"
 		'
 		'RangesToolStripMenuItem
 		'
 		Me.RangesToolStripMenuItem.Name = "RangesToolStripMenuItem"
-		Me.RangesToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.RangesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.RangesToolStripMenuItem.Text = "Ranges"
 		'
 		'ModdingToolStripMenuItem
 		'
 		Me.ModdingToolStripMenuItem.Name = "ModdingToolStripMenuItem"
-		Me.ModdingToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.ModdingToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.ModdingToolStripMenuItem.Text = "Modding"
 		'
 		'MiscToolStripMenuItem
 		'
 		Me.MiscToolStripMenuItem.Name = "MiscToolStripMenuItem"
-		Me.MiscToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+		Me.MiscToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.MiscToolStripMenuItem.Text = "Misc"
+		'
+		'ToolStripSeparator7
+		'
+		Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+		Me.ToolStripSeparator7.Size = New System.Drawing.Size(177, 6)
+		'
+		'RandomDommeToolStripMenuItem
+		'
+		Me.RandomDommeToolStripMenuItem.Name = "RandomDommeToolStripMenuItem"
+		Me.RandomDommeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.RandomDommeToolStripMenuItem.Text = "Random Domme"
+		'
+		'RandomContactToolStripMenuItem
+		'
+		Me.RandomContactToolStripMenuItem.Name = "RandomContactToolStripMenuItem"
+		Me.RandomContactToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.RandomContactToolStripMenuItem.Text = "Random Contact"
 		'
 		'AppsToolStripMenuItem
 		'
@@ -2001,7 +2029,7 @@ Partial Class Form1
 		'
 		'InterfaceToolStripMenuItem
 		'
-		Me.InterfaceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SwitchSidesToolStripMenuItem, Me.ToolStripSeparator5, Me.SidepanelToolStripMenuItem, Me.SideChatToolStripMenuItem1, Me.LazySubAVToolStripMenuItem, Me.ToolStripSeparator10, Me.ThemesToolStripMenuItem1, Me.ToolStripSeparator11, Me.MaximizeImageToolStripMenuItem, Me.DefaultImageSizeToolStripMenuItem, Me.ToolStripSeparator12, Me.WebteaseModeToolStripMenuItem, Me.FullscreenToolStripMenuItem})
+		Me.InterfaceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SwitchSidesToolStripMenuItem, Me.ToolStripSeparator5, Me.SidepanelToolStripMenuItem, Me.SideChatToolStripMenuItem1, Me.LazySubAVToolStripMenuItem, Me.GenerateDommeAVToolStripMenuItem, Me.ToolStripSeparator10, Me.ThemesToolStripMenuItem1, Me.ToolStripSeparator11, Me.MaximizeImageToolStripMenuItem, Me.DefaultImageSizeToolStripMenuItem, Me.ToolStripSeparator12, Me.WebteaseModeToolStripMenuItem, Me.FullscreenToolStripMenuItem})
 		Me.InterfaceToolStripMenuItem.Name = "InterfaceToolStripMenuItem"
 		Me.InterfaceToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
 		Me.InterfaceToolStripMenuItem.Text = "Interface"
@@ -2010,13 +2038,13 @@ Partial Class Form1
 		'
 		Me.SwitchSidesToolStripMenuItem.CheckOnClick = True
 		Me.SwitchSidesToolStripMenuItem.Name = "SwitchSidesToolStripMenuItem"
-		Me.SwitchSidesToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+		Me.SwitchSidesToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
 		Me.SwitchSidesToolStripMenuItem.Text = "Switch Sides"
 		'
 		'ToolStripSeparator5
 		'
 		Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-		Me.ToolStripSeparator5.Size = New System.Drawing.Size(204, 6)
+		Me.ToolStripSeparator5.Size = New System.Drawing.Size(205, 6)
 		'
 		'SidepanelToolStripMenuItem
 		'
@@ -2024,93 +2052,99 @@ Partial Class Form1
 		Me.SidepanelToolStripMenuItem.CheckOnClick = True
 		Me.SidepanelToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
 		Me.SidepanelToolStripMenuItem.Name = "SidepanelToolStripMenuItem"
-		Me.SidepanelToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+		Me.SidepanelToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
 		Me.SidepanelToolStripMenuItem.Text = "Sidepanel"
 		'
 		'SideChatToolStripMenuItem1
 		'
 		Me.SideChatToolStripMenuItem1.CheckOnClick = True
 		Me.SideChatToolStripMenuItem1.Name = "SideChatToolStripMenuItem1"
-		Me.SideChatToolStripMenuItem1.Size = New System.Drawing.Size(207, 22)
+		Me.SideChatToolStripMenuItem1.Size = New System.Drawing.Size(208, 22)
 		Me.SideChatToolStripMenuItem1.Text = "Side Chat"
 		'
 		'LazySubAVToolStripMenuItem
 		'
 		Me.LazySubAVToolStripMenuItem.CheckOnClick = True
 		Me.LazySubAVToolStripMenuItem.Name = "LazySubAVToolStripMenuItem"
-		Me.LazySubAVToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+		Me.LazySubAVToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
 		Me.LazySubAVToolStripMenuItem.Text = "Lazy Sub AV"
+		'
+		'GenerateDommeAVToolStripMenuItem
+		'
+		Me.GenerateDommeAVToolStripMenuItem.Name = "GenerateDommeAVToolStripMenuItem"
+		Me.GenerateDommeAVToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+		Me.GenerateDommeAVToolStripMenuItem.Text = "Generate Domme AV"
 		'
 		'ToolStripSeparator10
 		'
 		Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
-		Me.ToolStripSeparator10.Size = New System.Drawing.Size(204, 6)
+		Me.ToolStripSeparator10.Size = New System.Drawing.Size(205, 6)
 		'
 		'ThemesToolStripMenuItem1
 		'
 		Me.ThemesToolStripMenuItem1.Name = "ThemesToolStripMenuItem1"
-		Me.ThemesToolStripMenuItem1.Size = New System.Drawing.Size(207, 22)
+		Me.ThemesToolStripMenuItem1.Size = New System.Drawing.Size(208, 22)
 		Me.ThemesToolStripMenuItem1.Text = "Themes"
 		'
 		'ToolStripSeparator11
 		'
 		Me.ToolStripSeparator11.Name = "ToolStripSeparator11"
-		Me.ToolStripSeparator11.Size = New System.Drawing.Size(204, 6)
+		Me.ToolStripSeparator11.Size = New System.Drawing.Size(205, 6)
 		'
 		'MaximizeImageToolStripMenuItem
 		'
 		Me.MaximizeImageToolStripMenuItem.CheckOnClick = True
 		Me.MaximizeImageToolStripMenuItem.Name = "MaximizeImageToolStripMenuItem"
-		Me.MaximizeImageToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+		Me.MaximizeImageToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
 		Me.MaximizeImageToolStripMenuItem.Text = "Maximize Media Window"
 		'
 		'DefaultImageSizeToolStripMenuItem
 		'
 		Me.DefaultImageSizeToolStripMenuItem.Name = "DefaultImageSizeToolStripMenuItem"
-		Me.DefaultImageSizeToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+		Me.DefaultImageSizeToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
 		Me.DefaultImageSizeToolStripMenuItem.Text = "Default Media Window"
 		'
 		'ToolStripSeparator12
 		'
 		Me.ToolStripSeparator12.Name = "ToolStripSeparator12"
-		Me.ToolStripSeparator12.Size = New System.Drawing.Size(204, 6)
+		Me.ToolStripSeparator12.Size = New System.Drawing.Size(205, 6)
 		'
 		'WebteaseModeToolStripMenuItem
 		'
 		Me.WebteaseModeToolStripMenuItem.Name = "WebteaseModeToolStripMenuItem"
-		Me.WebteaseModeToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+		Me.WebteaseModeToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
 		Me.WebteaseModeToolStripMenuItem.Text = "Webtease Mode"
 		'
 		'FullscreenToolStripMenuItem
 		'
 		Me.FullscreenToolStripMenuItem.Name = "FullscreenToolStripMenuItem"
 		Me.FullscreenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-		Me.FullscreenToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+		Me.FullscreenToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
 		Me.FullscreenToolStripMenuItem.Text = "Fullscreen"
 		'
 		'ToolsToolStripMenuItem
 		'
 		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AIBoxesToolStripMenuItem, Me.CommandGuideToolStripMenuItem, Me.OldDommeTagsToolStripMenuItem})
 		Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-		Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+		Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
 		Me.ToolsToolStripMenuItem.Text = "Tools"
 		'
 		'AIBoxesToolStripMenuItem
 		'
 		Me.AIBoxesToolStripMenuItem.Name = "AIBoxesToolStripMenuItem"
-		Me.AIBoxesToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+		Me.AIBoxesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.AIBoxesToolStripMenuItem.Text = "AI Boxes"
 		'
 		'CommandGuideToolStripMenuItem
 		'
 		Me.CommandGuideToolStripMenuItem.Name = "CommandGuideToolStripMenuItem"
-		Me.CommandGuideToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+		Me.CommandGuideToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.CommandGuideToolStripMenuItem.Text = "Command Guide"
 		'
 		'OldDommeTagsToolStripMenuItem
 		'
 		Me.OldDommeTagsToolStripMenuItem.Name = "OldDommeTagsToolStripMenuItem"
-		Me.OldDommeTagsToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+		Me.OldDommeTagsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.OldDommeTagsToolStripMenuItem.Text = "Domme Tag Creator"
 		'
 		'MilovanaToolStripMenuItem1
@@ -2123,25 +2157,25 @@ Partial Class Form1
 		'OpenBetaThreadToolStripMenuItem1
 		'
 		Me.OpenBetaThreadToolStripMenuItem1.Name = "OpenBetaThreadToolStripMenuItem1"
-		Me.OpenBetaThreadToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
+		Me.OpenBetaThreadToolStripMenuItem1.Size = New System.Drawing.Size(172, 22)
 		Me.OpenBetaThreadToolStripMenuItem1.Text = "Open Beta Thread"
 		'
 		'BugReportThreadToolStripMenuItem1
 		'
 		Me.BugReportThreadToolStripMenuItem1.Name = "BugReportThreadToolStripMenuItem1"
-		Me.BugReportThreadToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
+		Me.BugReportThreadToolStripMenuItem1.Size = New System.Drawing.Size(172, 22)
 		Me.BugReportThreadToolStripMenuItem1.Text = "Bug Report Thread"
 		'
 		'WebteasesToolStripMenuItem1
 		'
 		Me.WebteasesToolStripMenuItem1.Name = "WebteasesToolStripMenuItem1"
-		Me.WebteasesToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
+		Me.WebteasesToolStripMenuItem1.Size = New System.Drawing.Size(172, 22)
 		Me.WebteasesToolStripMenuItem1.Text = "Webteases"
 		'
 		'ForumToolStripMenuItem
 		'
 		Me.ForumToolStripMenuItem.Name = "ForumToolStripMenuItem"
-		Me.ForumToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+		Me.ForumToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
 		Me.ForumToolStripMenuItem.Text = "Forum"
 		'
 		'DebugToolStripMenuItem
@@ -2184,7 +2218,7 @@ Partial Class Form1
 		'StartTimer1ToolStripMenuItem
 		'
 		Me.StartTimer1ToolStripMenuItem.Name = "StartTimer1ToolStripMenuItem"
-		Me.StartTimer1ToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+		Me.StartTimer1ToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
 		Me.StartTimer1ToolStripMenuItem.Text = "Start Timer 1"
 		'
 		'ToolStripSeparator13
@@ -2203,6 +2237,19 @@ Partial Class Form1
 		Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
 		Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
 		Me.AboutToolStripMenuItem.Text = "About"
+		'
+		'PatreonToolStripMenuItem
+		'
+		Me.PatreonToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TeaseAIPatreonToolStripMenuItem})
+		Me.PatreonToolStripMenuItem.Name = "PatreonToolStripMenuItem"
+		Me.PatreonToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+		Me.PatreonToolStripMenuItem.Text = "Patreon"
+		'
+		'TeaseAIPatreonToolStripMenuItem
+		'
+		Me.TeaseAIPatreonToolStripMenuItem.Name = "TeaseAIPatreonToolStripMenuItem"
+		Me.TeaseAIPatreonToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
+		Me.TeaseAIPatreonToolStripMenuItem.Text = "Tease AI Patreon (Defunct)"
 		'
 		'PNLDate
 		'
@@ -2267,6 +2314,7 @@ Partial Class Form1
 		'PNLWishList
 		'
 		Me.PNLWishList.BackColor = System.Drawing.Color.White
+		Me.PNLWishList.Controls.Add(Me.voiceDomWMP)
 		Me.PNLWishList.Controls.Add(Me.WishlistCostSilver)
 		Me.PNLWishList.Controls.Add(Me.LBLWishlistDate)
 		Me.PNLWishList.Controls.Add(Me.BTNWishlist)
@@ -4222,6 +4270,7 @@ Partial Class Form1
 		'PnlLayoutForm
 		'
 		Me.PnlLayoutForm.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
+		Me.PnlLayoutForm.Controls.Add(Me.contextWMP)
 		Me.PnlLayoutForm.Controls.Add(Me.SplitContainer1)
 		Me.PnlLayoutForm.Controls.Add(Me.PnlChatBoxLayout)
 		Me.PnlLayoutForm.Controls.Add(Me.PnlSidepanelLayout)
@@ -4232,6 +4281,26 @@ Partial Class Form1
 		Me.PnlLayoutForm.Padding = New System.Windows.Forms.Padding(0, 12, 9, 8)
 		Me.PnlLayoutForm.Size = New System.Drawing.Size(1676, 999)
 		Me.PnlLayoutForm.TabIndex = 16
+		'
+		'contextWMP
+		'
+		Me.contextWMP.Enabled = True
+		Me.contextWMP.Location = New System.Drawing.Point(128, 205)
+		Me.contextWMP.Name = "contextWMP"
+		Me.contextWMP.OcxState = CType(resources.GetObject("contextWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.contextWMP.Size = New System.Drawing.Size(104, 63)
+		Me.contextWMP.TabIndex = 112
+		Me.contextWMP.Visible = False
+		'
+		'voiceDomWMP
+		'
+		Me.voiceDomWMP.Enabled = True
+		Me.voiceDomWMP.Location = New System.Drawing.Point(117, 155)
+		Me.voiceDomWMP.Name = "voiceDomWMP"
+		Me.voiceDomWMP.OcxState = CType(resources.GetObject("voiceDomWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.voiceDomWMP.Size = New System.Drawing.Size(104, 63)
+		Me.voiceDomWMP.TabIndex = 113
+		Me.voiceDomWMP.Visible = False
 		'
 		'ScriptTimer
 		'
@@ -4374,7 +4443,7 @@ Partial Class Form1
 		Me.Name = "Form1"
 		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-		Me.Text = "Tease A.I. - PATCH ##.#"
+		Me.Text = "Tease A.I. Community - PATCH ##.#"
 		CType(Me.mainPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.domAvatar, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.SplitContainer1.Panel1.ResumeLayout(False)
@@ -4439,6 +4508,8 @@ Partial Class Form1
 		Me.PnlSidepanelLayout.ResumeLayout(False)
 		Me.PnlTabsLayout.ResumeLayout(False)
 		Me.PnlLayoutForm.ResumeLayout(False)
+		CType(Me.contextWMP, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -4492,7 +4563,9 @@ Partial Class Form1
 	Friend WithEvents TnASlides As Tease_AI.teaseAI_Timer
 	Friend WithEvents ImageFolderComboBox As System.Windows.Forms.ComboBox
 	Friend WithEvents LBLImageInfo As System.Windows.Forms.Label
+	Friend WithEvents contextWMP As AxWMPLib.AxWindowsMediaPlayer
 	Friend WithEvents DomWMP As AxWMPLib.AxWindowsMediaPlayer
+	Friend WithEvents voiceDomWMP As AxWMPLib.AxWindowsMediaPlayer
 	Friend WithEvents WaitTimer As Tease_AI.teaseAI_Timer
 	Friend WithEvents StupidTimer As Tease_AI.teaseAI_Timer
 	Friend WithEvents VideoTauntTimer As Tease_AI.teaseAI_Timer
@@ -4824,4 +4897,11 @@ Partial Class Form1
 	Friend WithEvents FullscreenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Friend WithEvents PnlGlitter As System.Windows.Forms.Panel
 	Friend WithEvents SidepanelToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents PatreonToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Friend WithEvents TeaseAIPatreonToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
+	Friend WithEvents RandomDommeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Friend WithEvents RandomContactToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Friend WithEvents GenerateDommeAVToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

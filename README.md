@@ -1,6 +1,125 @@
 ﻿# Tease-AI
 Tease AI is adult-oriented software that aims to create an interactive tease and denial experience by emulating an online chat session with a domme. 
 
+# Changelog - Patch 60.0.0
+
+	Not all Changes have been tracked.
+	
+* Added Features:
+
+    * Changes from the newest "Fury" update (3-5-2020) have been copied via decompiling. Credits interpreted from the Fury release thread.
+	
+* Commands: 
+	* @DommeTagFirst(): Will show the first domme image in the current slideshow tagged with one or more tags. examples: (swift69)
+		* @DommeTagFirst(Ass) - Will display the first domme image tagged with "Ass".
+		* @DommeTagFirst(Ass,Naked) - Will display the first domme image tagged with "Ass" and "Naked".
+	* @ShowDomRandomImage: Will show a random domme image. (swift69)
+	* @ImageTagFirst(): Will show the first image tagged with one or more tags. examples: (swift69)
+		* @ImageTagFirst(SoloF) - Will display the first image tagged with "SoloF".
+		* @ImageTagFirst(SoloF,Naked) - Will display the first domme image tagged with "SoloF" and "Naked".
+	* @HardLockImages: Locks ALL images not just domme images like @LockImages does. (1885)
+	* @RestrictOrgasmOff: Cancels out a previous @RestrictOrgasm command.
+	* @MetronomeXXX: Plays a separate metronome for use outside of taunt sections. (swift69)
+		* @MetronomeOn(): Starts the metronome with a specific bpm. @MetronomeOn(60) for 60bpm.
+		* @MetronomeOff: Stops the metronome.
+		* @MetronomeLimit(): Will cause the metronome to stop after a number of beats starting from when this command was processed. @MetronomeLimit(50) to stop after 50.
+		* @MetronomeUp(): Increases the current bpm by a number. @MetronomeUp(30) to add 30bpm.
+		* @MetronomeDown(): Decreases the current bpm by a number. @MetronomeDown(30) to subtract 30bpm.
+		* @MetronomeRandom(): Starts the metronome with a random bpm within a range. @MetronomeOn(60,120) for a bpm between 60bpm and 120 bpm.
+	* @DebugSkipModule: Skips the current module and loads a link, or skips the current link and starts taunts. (1885)
+	* @ResumeStroking: A copy of @StartStroking. (1885)
+	* @PauseStroking: A copy of @StopStroking, but allows for resuming the previous state instead of resetting. (1885)
+	* @OrgasmDecide: A copy of @DecideOrgasm. (1885)
+	* @GiveUpAllow: Calls a GiveUpALLOWED response. (1885)
+	* @GiveUpDeny: Calls a GiveUpDENIED response. (1885)
+	* @StopVideo: Stops the current video. (swift69)
+	* @PlayVideoNoWait: Plays a video using a secondary player. (swift69)
+	* @JumpVideoXXX: Jumps the current video position. (swift69)
+		* @JumpVideo(): Jumps to a specific percentage, 0 if no parenthesis. @JumpVideo(50) for 50%.
+		* @JumpVideoUp(): Jumps up by specific percentage, a random amount if no parenthesis. @JumpVideoUp(10) for 10%.
+		* @JumpVideoDown(): Jumps down by specific percentage, a random amount if no parenthesis. @JumpVideoDown(10) for 10%.
+	* @CheckPlayVideo: If a video is paused or otherwise not playing, will Goto the label "Video Ended". (swift69)
+	* @CheckVideo(): Will check for a specific video genre and Goto the pabel "No GENRE Videos Found" or "GENRE Videos Found" depending on the result.
+		* Example: @CheckVideo(softcore) with softcore videos will Goto "SOFTCORE Videos Found". (swift69)
+		* All options:
+		* "HARDCORE" / "HARDCORE DOMME"
+		* "SOFTCORE" / "SOFTCORE DOMME"
+		* "LESBIAN" / "LESBIAN DOMME"
+		* "BLOWJOB" / "BLOWJOB DOMME"
+		* "FEMDOM" / "FEMDOM DOMME"
+		* "FEMSUB" / "FEMSUB DOMME"
+		* "JOI" / "JOI DOMME"
+		* "CH" / "CH DOMME"
+		* "GENERAL" / "GENERAL DOMME"
+	* @Force: Does nothing lol. Here for documentation. (1885)
+	* @PlayAudioNoWait[]: @PlayAudio[] but using a separate player to not cancel out videos or audio on the main player. (swift69)
+	* @PlayAudioNoWaitVoiceDom[]: @PlayAudio[] using a third separate player to not cancel out media on the main/nowait player. (swift69)
+	* @StopAudio: Stops any audio playing on the two nowait players. (swift69)
+	* @StopAudioVoiceDom: Stops any audio playing on the third separate player only. (swift69)
+	* @DommeAvatarTemp[]: Temporarily changes the domme's avatar image. (markus)
+	* @DommeAvatarReset: Resets the domme's avatar image. (markus)
+	* @DommeNameTemp[]: Temporarily changes the domme's name. (markus)
+	* @DommeNameReset: Resets the domme's name. (markus)
+	* Silent contact add/remove: Adds or removes a contact without showing the "has joined" message.
+		*@AddContact1Silent / @RemoveContact2Silent
+		*@AddContact2Silent / @RemoveContact2Silent
+		*@AddContact3Silent / @RemoveContact3Silent
+	* @SilentReturn: Does nothing, but meant to be placed on the same line as @CallReturn() (1885)
+	* @LockChat / @UnlockChat: Locks or unlocks the chat from user input. (1885)
+	* @BeggingTimerOn / @BeggingTimerOff: Enables or disables systems regarding begging for an orgasm. (1885)
+	* @OpenDirectory[]: Opens an file explorer window to a specific folder relative to Tease AI. (1885)
+	* @SubMessage(): Sends a message as the user. @SubMessage(Hello) will send "Hello" as you. (1885)
+	* @ScenarioOn / ScenarioOff: Does nothing. (1885) 
+	
+* Command Filters:
+	* @ShowImage: True if an image could be showed. So not locked, not playing a slideshow, and not showing a video. (1885)
+	* @CheckDommeTag(): True if the current domme image is tagged with one or more certain tags. (1885)
+		* @CheckDommeTag(Ass) - True if the domme image is tagged with "Ass".
+		* @CheckDommeTag(Ass,Naked) - True if the domme image is tagged with "Ass" and "Naked".
+
+* Bugfixes:	
+	* Holidays now get filtered correctly. (1885)
+		* @ValentinesDay
+		* @ChristmasEve
+		* @ChristmasDay
+		* @NewYearsEve
+		* @NewYearsDay
+	* Fixes some #TagXXX keywords (pepsifreak)
+		* #TagTatoo > #TagTattoo and the underlying code looking for the tag.
+		* #TagSexToy and #TagFurniture now default to "toy" and "furniture" instead of "tatoo".
+	* @MetronomeLimit() will now stop the metronome properly without requiring an extra @MetronomeOff. (pepsifreak)
+
+* System Keywords/Vocabulary
+	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.
+	* #SYS_Safeword which displays your current safeword value .
+	* #CurrentDateOnly which displays the current day number. (ie: 15)
+	* #CurrentDateFormal which displays the current day but more formal. (ie: 15th)
+	* #CurrentHour which displays the current hour.
+	* #TagXXX which if available displays the XXX tag value for the current Domme image, with generic defaults;
+		* #TagGarment defaults to "clothes"
+		* #TagUnderwear defaults to "underwear"
+		* #TagTattoo defaults to "tattoo"
+		* #TagSexToy defaults to "toy"
+		* #TagFurniture defaults to "furniture"
+	
+* Miscellaneous:
+	* Adds a Refresh button in the Settings window under Images>URL Files to reload the list of URL Files for any changes. (1885)
+	* Adds setting under Misc tab to load Gif images using Windows Media Player. (markus)
+	* Various timeouts and speeds have been set to a middle ground between previous source and Fury's larger values (pepsifreak)
+	* Metronome used by @MetronomeXXX commands now built in rather than a separate metro.dll file by markus, also uses the same wav file as taunt sections. (pepsifreak)
+	* Pressing up or down will scroll through chat history outside of writing tasks. (1885)
+	* "Two dommes in one picture" was not finished for Fury. But looks for a tai2dommesAtOnce.txt in the image folder and sets a temp flag of the same name. (markus)
+	* Improved random number generator. (markus)
+	* .mkv video support. (markus)
+	* Script and video logs. (markus)
+	* Ability to start with a random cantact or domme from the "Settings" menu option at the top of the window. (swift69)
+	* Ability to generate a domme avatar from the "Interface" menu option at the top of the window. (swift69)
+	* Fix for images loading and freezing. (swift69)
+	* Improved gif rendering. (swift69)
+	* Improved video commands. (swift69)
+	* @Contact() can now contain multiple Contacts that will be randomly chosen to speak the line. (swift69)
+
+
 # Changelog - Patch 56.0.0
 	
 * Commands: 

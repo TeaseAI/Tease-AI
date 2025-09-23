@@ -19,11 +19,13 @@ Public Class FrmSettings
 
 
 
+	Public URLFileIncludeList As New List(Of String)
 	Public FrmSettingsLoading As Boolean
 	Public AvailFail As Boolean
 	Public AvailList As New List(Of String)
 	Dim ScriptList As New List(Of String)
 	Dim ScriptFile As String
+	Dim LocalImageDir As New List(Of String)
 
 	Dim ImageTagDir As New List(Of String)
 	Dim LocalImageTagDir As New List(Of String)
@@ -49,6 +51,17 @@ Public Class FrmSettings
 
 		Me.Visible = False
 		Form1.BtnToggleSettings.Text = "Open Settings Menu"
+		Form1.myMetro.TogglePauseMetro()
+		Form1.marPauseActivated = False
+		Form1.DomWMP.Ctlcontrols.play()
+		If Form1.contextWMP.playState = WMPPlayState.wmppsPaused Then
+			Form1.contextWMP.Ctlcontrols.play()
+		End If
+		If Form1.ChatBox2.Visible Then
+			Form1.ChatBox2.[Select]()
+		Else
+			Form1.chatBox.[Select]()
+		End If
 		e.Cancel = True
 
 	End Sub
@@ -383,6 +396,7 @@ Public Class FrmSettings
 		CFNMCheckBox.Checked = My.Settings.DomCFNM
 		CBRandomDomme.Checked = My.Settings.CBRandomDomme
 		CBOutputErrors.Checked = My.Settings.CBOutputErrors
+		CBWMPGifs.Checked = My.Settings.CBWMPGifs
 		alwaysNewSlideshow.Checked = My.Settings.AlwaysNewSlideshow
 		giveupCheckBox.Checked = My.Settings.GiveUpReturn
 		If CBAuditStartup.Checked = True Then AuditScripts()
@@ -428,7 +442,7 @@ Public Class FrmSettings
 		Next
 
 		TbxRandomImageDir.Text = My.Settings.RandomImageDir
-
+		Form1.CheckRandomOpportunities()
 		If My.Settings.TeaseAILanguage = "English" Then EnglishMenu()
 		If My.Settings.TeaseAILanguage = "German" Then GermanMenu()
 
@@ -2807,6 +2821,7 @@ SkipDeserializing:
 			My.Settings.RandomImageDir = FolderBrowserDialog1.SelectedPath
 			My.Application.Session.SlideshowContactRandom = New ContactData(ContactType.Random)
 			TbxRandomImageDir.Text = My.Settings.RandomImageDir
+			Form1.CheckRandomOpportunities()
 		End If
 	End Sub
 
@@ -5029,7 +5044,6 @@ checkFolder:
 		FontComboBox.ItemHeight = 20
 		Dim objFontFamily As FontFamily
 		Dim objFontCollection As System.Drawing.Text.FontCollection
-		Dim tempFont As Font
 		objFontCollection = New System.Drawing.Text.InstalledFontCollection()
 		For Each objFontFamily In objFontCollection.Families
 			FontComboBox.Items.Add(objFontFamily.Name)
@@ -5043,7 +5057,6 @@ checkFolder:
 		FontComboBoxD.ItemHeight = 20
 		Dim objFontFamily As FontFamily
 		Dim objFontCollection As System.Drawing.Text.FontCollection
-		Dim tempFont As Font
 		objFontCollection = New System.Drawing.Text.InstalledFontCollection()
 		For Each objFontFamily In objFontCollection.Families
 			FontComboBoxD.Items.Add(objFontFamily.Name)
@@ -5257,7 +5270,7 @@ checkFolder:
 			VidReader.Close()
 			VidReader.Dispose()
 
-			Dim VidString As String
+			Dim VidString As String = ""
 
 			For i As Integer = 0 To VidList.Count - 1
 				If i <> VidList.Count - 1 Then
@@ -9011,6 +9024,8 @@ checkFolder:
 			TextReader.Dispose()
 			Return TextList
 		End If
+
+		Return New List(Of String)
 	End Function
 
 
@@ -9762,6 +9777,7 @@ checkFolder:
 
 	Private Sub CBRandomDomme_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles CBRandomDomme.LostFocus
 		My.Settings.CBRandomDomme = CBRandomDomme.Checked
+		Form1.RandomDommeToolStripMenuItem.Checked = CBRandomDomme.Checked
 	End Sub
 
 	Private Sub CBWebtease_CheckedChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBWebtease.CheckedChanged
@@ -10311,4 +10327,15 @@ checkFolder:
 
 	End Sub
 
+	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+		For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath + "\Images\System\URL Files")
+			Dim cleanFoundFile As String = foundFile.Replace(Application.StartupPath + "\Images\System\URL Files\", "")
+			cleanFoundFile = cleanFoundFile.Replace(".txt", "")
+			URL_File_Set(cleanFoundFile)
+		Next
+	End Sub
+
+	Private Sub CBWMPGifs_LostFocus(sender As Object, e As EventArgs) Handles CBWMPGifs.LostFocus
+		My.Settings.CBWMPGifs = CBWMPGifs.Checked
+	End Sub
 End Class

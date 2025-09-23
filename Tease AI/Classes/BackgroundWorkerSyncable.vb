@@ -149,7 +149,7 @@ Public Class BackgroundWorkerSyncable
 	''' <remarks>If a Timeout occurs, CancelAsnyc() is called.</remarks>
 	''' <exception cref="TimeoutException">Occurs if the given time has elapsed.</exception>
 	''' <exception cref="Exception">Rethrows all exceptions occured in me.DoWork!</exception>
-	Public Function WaitToFinish(Optional ByVal Timeout As Integer = 20) As Boolean
+	Public Function WaitToFinish(Optional ByVal Timeout As Integer = 40) As Boolean
 		' Declare new Stopwatch Instance for measering time 
 		Dim sw As New Stopwatch
 		' Start it, when a timeout is set.

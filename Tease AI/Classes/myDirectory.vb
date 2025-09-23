@@ -212,7 +212,7 @@ Public NotInheritable Class myDirectory
 	Public Shared Function GetFilesVideo(ByVal path As String,
 										 ByVal Optional searchOption As System.IO.SearchOption = System.IO.SearchOption.AllDirectories) As List(Of String)
 
-		Dim supportedExtension As New List(Of String) From {".wmv", ".avi", ".mp4", ".m4v", ".mpg", ".mov", ".flv"}
+		Dim supportedExtension As New List(Of String) From {".wmv", ".avi", ".mp4", ".m4v", ".mpg", ".mov", ".flv", ".mkv"}
 
 		Return GetFilesExtension(path, supportedExtension, searchOption)
 

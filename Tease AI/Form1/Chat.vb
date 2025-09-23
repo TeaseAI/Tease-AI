@@ -22,10 +22,10 @@ Partial Class Form1
 			End If
 
 			If IsAutosave = True And FrmSettings.CBAutosaveChatlog.Checked = True Then
-				My.Computer.FileSystem.WriteAllText(Application.StartupPath & "\Chatlogs\Autosave.html", ChatText.DocumentText, False)
+				My.Computer.FileSystem.WriteAllText(SaveDir & "Autosave.html", ChatText.DocumentText, False)
 
 			ElseIf IsAutosave = False And FrmSettings.CBSaveChatlogExit.Checked = True Then
-				My.Computer.FileSystem.WriteAllText(Application.StartupPath & "\Chatlogs\" & DateTime.Now.ToString("MM.dd.yyyy hhmm") & " chatlog.html", ChatText.DocumentText, False)
+				My.Computer.FileSystem.WriteAllText(SaveDir & DateTime.Now.ToString("MM.dd.yyyy hhmm") & " chatlog.html", ChatText.DocumentText, False)
 			End If
 
 		End If
@@ -267,6 +267,27 @@ Partial Class Form1
 		Catch
 		End Try
 
+		If Not ChatText2.Visible Then
+			Try
+				ChatText.Document.Window.ScrollTo(Int16.MaxValue, Int16.MaxValue)
+			Catch
+			End Try
+			Try
+				ChatText2.Document.Window.ScrollTo(Int16.MaxValue, Int16.MaxValue)
+				Return
+			Catch
+				Return
+			End Try
+		End If
+		Try
+			ChatText2.Document.Window.ScrollTo(Int16.MaxValue, Int16.MaxValue)
+		Catch
+		End Try
+		Try
+			ChatText.Document.Window.ScrollTo(Int16.MaxValue, Int16.MaxValue)
+		Catch
+		End Try
+
 	End Sub
 
 
@@ -334,9 +355,15 @@ Partial Class Form1
 	End Sub
 
 	Public Sub ChatReadyState()
-		While ChatText.ReadyState <> WebBrowserReadyState.Complete Or ChatText2.ReadyState <> WebBrowserReadyState.Complete
-			Application.DoEvents()
-		End While
+		If ChatText.Visible Then
+			While ChatText.ReadyState <> WebBrowserReadyState.Complete
+				Application.DoEvents()
+			End While
+		Else
+			While ChatText2.ReadyState <> WebBrowserReadyState.Complete
+				Application.DoEvents()
+			End While
+		End If
 		ScrollChatDown()
 	End Sub
 

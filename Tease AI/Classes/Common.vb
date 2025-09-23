@@ -326,7 +326,7 @@ Public Class Common
 			' Report start of download
 			If BGW_reports Then backgroundWorker.ReportProgress(1)
 
-			request.Timeout = 30000
+			request.Timeout = 40000
 			request.KeepAlive = False
 			response = DirectCast(request.GetResponse(), HttpWebResponse)
 
@@ -343,8 +343,8 @@ Public Class Common
 			response.ContentType.StartsWith("image", StringComparison.OrdinalIgnoreCase) Then
 				' if the remote file was found, download oit
 				Using inputStream As Stream = response.GetResponseStream
-					inputStream.ReadTimeout = 25 * 1000
-					inputStream.WriteTimeout = 25 * 1000
+					inputStream.ReadTimeout = 30 * 1000
+					inputStream.WriteTimeout = 30 * 1000
 
 					' Use a Memorystream to get a free rewindable stream
 					' Otherwise gifs are not animated after saving anymore
@@ -384,6 +384,7 @@ Public Class Common
 			'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
 			Debug.Print("Exception while saving image: """ & uri & "")
 			Log.WriteError("Exception while saving image:  """ & uri & "", ex, "Exception while saving image")
+			Return rtnImage
 		Catch ex As Exception
 			'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
 			'                                            All Errors
