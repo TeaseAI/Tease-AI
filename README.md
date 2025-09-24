@@ -7,8 +7,9 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	
 * Added Features:
 
-    * Changes from the newest "Fury" update (3-5-2020) have been copied via decompiling.
-    * Changes from the newest "Unofficial" update (55.7.2b) have been copied via decompiling.
+    * Changes from the newest available "Fury" update (3-5-2020) have been copied via decompiling.
+    * Changes from the newest available "Unofficial" update (55.7.2b) have been copied via decompiling.
+    * Changes from the newest available "Sweet" update (56.22) have been copied via decompiling.
 	
 * Commands: 
 	* @DommeTagFirst(): Will show the first domme image in the current slideshow tagged with one or more tags. examples: (swift69)
@@ -112,6 +113,13 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @CheckDommeTag(): True if the current domme image is tagged with one or more certain tags. (1885)
 		* @CheckDommeTag(Ass) - True if the domme image is tagged with "Ass".
 		* @CheckDommeTag(Ass,Naked) - True if the domme image is tagged with "Ass" and "Naked".
+	* @DommeTagFirst(): True if the first domme image with a certain tag can be displayed. (swift69)
+	* @ImageTagFirst(): True if the first domme image with a certain tag can be displayed. (swift69)
+	* @ShowDomRandomImage(): True if a random image can be displayed. (swift69)
+	* @ShowImage(): True if an image can be displayed. (swift69)
+	* @Force: True if @LockImages is active. (swift69)
+	* @PlayVideo/@PlayVideoNoWait: True if images are locked, in a slideshow, or the picture box is hidden. (swift69)
+	* @PlayRedLightGreenLight/@PlayAvoidTheEdge: True if images are locked, in a slideshow, or the picture box is hidden. (swift69)
 
 * Bugfixes:	
 	* Holidays now get filtered correctly. (1885)
@@ -135,6 +143,9 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Closing the settings window will focus the chat box. (markus)
 	* Log running scripts to "scriptlog.txt" on program close for debugging. (markus)
 	* Log played videos and audio to "videolog.txt" on program close for debugging. (markus)
+	* @RapidText no longer uses a delay. (swift69)
+	* Responses to edging (stop, hold, etc.) no longer use the normal delay. (swift69)
+	* The main picture box being hidden will now cause image-related filters to "fail", instead of just @LockImages being active. (swift69)
 
 * System Keywords/Vocabulary
 	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.
@@ -171,6 +182,10 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Improved video commands. (swift69)
 	* @Contact() can now contain multiple Contacts that will be randomly chosen to speak the line. (swift69)
 	* Adds optional "videosource.xml" file to configure webcam for related commands. (markus)
+	* Simplify delay calculation when @RT()/@RenadomText() is used. (swift69)
+	* Typo logic is now skipped when if the option is disabled. (swift69)
+	* Images will try to display up to 5 times in case of error. (swift69)
+	* Added "very slow" @Slideshow() speed option. (swift69)
 
 
 # Changelog - Patch 56.0.0

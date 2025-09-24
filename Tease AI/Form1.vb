@@ -264,8 +264,6 @@ Public Class Form1
 
 
 	Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-		contextWMP.Visible = False
-		voiceDomWMP.Visible = False
 		Label1.Visible = False
 		Label1.Top = Me.DomWMP.Top
 		Label1.Left = Me.DomWMP.Left
@@ -273,8 +271,6 @@ Public Class Form1
 		Label1.ForeColor = Color.White
 		DomWMP.settings.volume = 40
 		Label1.Text = DomWMP.settings.volume.ToString()
-		BeatMeterWMP.uiMode = "None"
-		BeatMeterWMP.Visible = False
 		BeatMeterWMP.settings.volume = 50
 		LBLWritingTask.Width = 245
 		LBLWritingTask.Height = 26
@@ -1546,7 +1542,7 @@ WritingTaskLine:
 
 			If ssh.TauntEdging = True And ssh.SubEdging = False And ssh.ShowModule = False Then
 				ssh.DomChat = "#SYS_TauntEdgingAsked"
-				TypingDelay()
+				TypingNoDelay()
 
 				' Recalculate TantEdging-Chance
 				If ssh.randomizer.Next(1, 101) <= FrmSettings.NBTauntEdging.Value Then
@@ -1650,7 +1646,7 @@ WritingTaskLine:
 						If ssh.Contact1Edge = True Then ssh.DomChat = "@Contact1 #SYS_MultipleEdgesStop"
 						If ssh.Contact2Edge = True Then ssh.DomChat = "@Contact2 #SYS_MultipleEdgesStop"
 						If ssh.Contact3Edge = True Then ssh.DomChat = "@Contact3 #SYS_MultipleEdgesStop"
-						TypingDelay()
+						TypingNoDelay()
 						ssh.MultipleEdgesTick = ssh.MultipleEdgesInterval
 						MultipleEdgesTimer.Start()
 						ssh.MultipleEdgesMetronome = "STOP"
@@ -1739,7 +1735,7 @@ WritingTaskLine:
 						ssh.DomChat = "@Contact3 #HoldTheEdge"
 						' github patch Contact3Edge = False
 					End If
-					TypingDelay()
+					TypingNoDelay()
 
 
 					If ssh.EdgeHoldFlag = False Then
@@ -1879,7 +1875,7 @@ NoRepeatFiles:
 						ssh.DomChat = "@Contact3 #StopStrokingEdge"
 						ssh.Contact3Edge = False
 					End If
-					TypingDelay()
+					TypingNoDelay()
 					Return
 
 				End If
@@ -1967,7 +1963,7 @@ NoRepeatRFiles:
 					ssh.DomChat = "@Contact3 #RuinYourOrgasm"
 					ssh.Contact3Edge = False
 				End If
-				TypingDelay()
+				TypingNoDelay()
 				If ssh.LastScript = True Then ssh.EndTease = True
 				Return
 
@@ -2093,7 +2089,7 @@ NoRepeatOFiles:
 					ssh.DomChat = "@Contact3 #CumForMe"
 					ssh.Contact3Edge = False
 				End If
-				TypingDelay()
+				TypingNoDelay()
 				If ssh.LastScript = True Then ssh.EndTease = True
 				Return
 
@@ -2131,7 +2127,7 @@ NoRepeatOFiles:
 							ssh.DomChat = "@Contact3 #StopStrokingEdge"
 							ssh.Contact3Edge = False
 						End If
-						TypingDelay()
+						TypingNoDelay()
 
 						Do
 							Application.DoEvents()
@@ -3841,6 +3837,14 @@ CancelGoto:
 		End If
 
 	End Sub
+	
+	Public Sub TypingNoDelay()
+		If My.Settings.OfflineMode = True Then
+			ssh.DomChat = OfflineConversion(ssh.DomChat)
+		End If
+		ssh.TypeDelay = 0
+		SendTimer.Start()
+	End Sub
 
 	Public Sub TypingDelay()
 
@@ -3849,18 +3853,15 @@ CancelGoto:
 			ssh.DomChat = OfflineConversion(ssh.DomChat)
 		End If
 		ssh.TypeDelay = ssh.StringLength
-		If FrmSettings.typeinstantlyCheckBox.Checked = True Or ssh.RapidCode = True = True Then ssh.TypeDelay = 0
+		If FrmSettings.typeinstantlyCheckBox.Checked = True Or ssh.RapidFire = True Or ssh.RapidCode = True Then ssh.TypeDelay = 0
 		If ssh.TypeDelay <> 0 Then
-			If GetCharCount(ssh.DomChat, "@RT(") <> 0 Then
-				ssh.TypeDelay /= GetCharCount(ssh.DomChat, ",") + 1
-				ssh.TypeDelay *= GetSubstringCount(ssh.DomChat, "@RT(")
-			End If
-			If GetCharCount(ssh.DomChat, "@RandomText(") <> 0 Then
-				ssh.TypeDelay /= GetCharCount(ssh.DomChat, ",") + 1
-				ssh.TypeDelay *= GetSubstringCount(ssh.DomChat, "@RandomText(")
+			ssh.TypeDelay = ssh.TypeDelay / 2.5
+			If ssh.TypeDelay < 5 Then
+				ssh.TypeDelay = 5
+			ElseIf ssh.TypeDelay > 20 Then
+				ssh.TypeDelay = 20
 			End If
 		End If
-		If ssh.TypeDelay > 60 Then ssh.TypeDelay = 60
 		SendTimer.Start()
 
 
@@ -3872,19 +3873,16 @@ CancelGoto:
 			ssh.DomTask = OfflineConversion(ssh.DomTask)
 		End If
 		ssh.TypeDelay = ssh.StringLength
-		If FrmSettings.typeinstantlyCheckBox.Checked = True Or ssh.RapidCode = True = True Then ssh.TypeDelay = 0
+		If FrmSettings.typeinstantlyCheckBox.Checked = True Or ssh.RapidFire = True Or ssh.RapidCode = True Then ssh.TypeDelay = 0
 		If ssh.HypnoGen = True And CBHypnoGenNoText.Checked = True Then ssh.TypeDelay = 0
 		If ssh.TypeDelay <> 0 Then
-			If GetCharCount(ssh.DomTask, "@RT(") <> 0 Then
-				ssh.TypeDelay /= GetCharCount(ssh.DomTask, ",") + 1
-				ssh.TypeDelay *= GetSubstringCount(ssh.DomTask, "@RT(")
-			End If
-			If GetCharCount(ssh.DomTask, "@RandomText(") <> 0 Then
-				ssh.TypeDelay /= GetCharCount(ssh.DomTask, ",") + 1
-				ssh.TypeDelay *= GetSubstringCount(ssh.DomTask, "@RandomText(")
+			ssh.TypeDelay = ssh.TypeDelay / 2.5
+			If ssh.TypeDelay < 5 Then
+				ssh.TypeDelay = 5
+			ElseIf ssh.TypeDelay > 20 Then
+				ssh.TypeDelay = 20
 			End If
 		End If
-		If ssh.TypeDelay > 60 Then ssh.TypeDelay = 60
 		Timer1.Start()
 
 	End Sub
@@ -3964,7 +3962,7 @@ SkipIsTyping:
 					ssh.DivideText = False
 				End If
 				If ssh.RLGLGame = True Then ssh.StringLength = 0
-				If FrmSettings.typeinstantlyCheckBox.Checked = True Or ssh.RapidCode = True Then ssh.StringLength = 0
+				If FrmSettings.typeinstantlyCheckBox.Checked = True Or ssh.RapidFire = True Or ssh.RapidCode = True Then ssh.StringLength = 0
 				If ssh.HypnoGen = True And CBHypnoGenNoText.Checked = True Then ssh.StringLength = 0
 				TypingDelayGeneric()
 			End If
@@ -4229,105 +4227,109 @@ NullResponse:
 
 					'Typo Test
 
-					Try
-
-						Dim RestoreDomTask As String = ssh.DomTask
-
-						If Not ssh.DomTask.Substring(0, 1) = FrmSettings.TBEmote.Text.Substring(0, 1) And Not ssh.DomTask.Contains("<") And ssh.YesOrNo = False And ssh.TypoSwitch <> 0 And ssh.TyposDisabled = False _
-						  And FrmSettings.TTSCheckBox.Checked = False Then
-
-							Dim TypoChance As Integer = ssh.randomizer.Next(0, 101)
-
-							If TypoChance < FrmSettings.NBTypoChance.Value Or ssh.TypoSwitch = 2 Then
-
-								Try
-
-									Dim TypoString As String
-
-									Dim TypoSplit As String() = ssh.DomTask.Split(" ")
-
-									ssh.TempVal = ssh.randomizer.Next(0, TypoSplit.Count)
-
-									ssh.CorrectedWord = TypoSplit(ssh.TempVal)
-
-									ssh.CorrectedWord = ssh.CorrectedWord.Replace(",", "")
-									ssh.CorrectedWord = ssh.CorrectedWord.Replace(".", "")
-									ssh.CorrectedWord = ssh.CorrectedWord.Replace("!", "")
-									ssh.CorrectedWord = ssh.CorrectedWord.Replace("?", "")
-
-									TypoString = "w d s f x"
-
-
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "a" Then TypoString = "q w s z x"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "b" Then TypoString = "f v g h n"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "c" Then TypoString = "x d f v b"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "d" Then TypoString = "s c f x e"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "e" Then TypoString = "s r w 3 d"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "f" Then TypoString = "d r g v c"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "g" Then TypoString = "f t b h y"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "h" Then TypoString = "g b n u j"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "i" Then TypoString = "o u j k l"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "j" Then TypoString = "k u i n h"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "k" Then TypoString = "j m , l i"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "l" Then TypoString = "; p . , i"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "m" Then TypoString = "n j k , l"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "n" Then TypoString = "b h j k m"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "o" Then TypoString = "p 0 i k ;"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "p" Then TypoString = "[ - o ; l"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "q" Then TypoString = "1 w s a 2"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "r" Then TypoString = "4 5 t f d"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "s" Then TypoString = "w d a z x"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "t" Then TypoString = "5 6 g y r"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "u" Then TypoString = "y 7 j i k"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "v" Then TypoString = "c f g h b"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "w" Then TypoString = "2 a e q s"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "x" Then TypoString = "z s d f c"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "y" Then TypoString = "t 7 h u g"
-									If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "z" Then TypoString = "a s x d c"
-
-
-									Dim UpperChance As Integer = ssh.randomizer.Next(0, 101)
-									If UpperChance < 26 Then TypoString = UCase(TypoString)
-
-
-
-									Dim GetTypo As String() = TypoString.Split(" ")
-
-									Dim MadeTypo As String = GetTypo(ssh.randomizer.Next(0, GetTypo.Count))
-
-
-									Dim DoubleChance As Integer = ssh.randomizer.Next(0, 101)
-									If DoubleChance < 11 Then MadeTypo = MadeTypo & LCase(GetTypo(ssh.randomizer.Next(0, GetTypo.Count)))
-
-
-									TypoSplit(ssh.TempVal) = TypoSplit(ssh.TempVal).Remove(0, 1)
-
-									Dim SpaceChance As Integer = ssh.randomizer.Next(0, 101)
-									If SpaceChance < 7 Then
-										TypoSplit(ssh.TempVal) = MadeTypo & " " & TypoSplit(ssh.TempVal)
-									Else
-										TypoSplit(ssh.TempVal) = MadeTypo & TypoSplit(ssh.TempVal)
-
-									End If
-
-									ssh.DomTask = Join(TypoSplit)
-
-									ssh.CorrectedTypo = True
-
-								Catch
-
-									ssh.DomTask = RestoreDomTask
-									ssh.CorrectedTypo = False
-								End Try
-
+					If FrmSettings.NBTypoChance.Value > 0 Then
+						Try
+	
+							Dim RestoreDomTask As String = ssh.DomTask
+	
+							If Not ssh.DomTask.Substring(0, 1) = FrmSettings.TBEmote.Text.Substring(0, 1) And Not ssh.DomTask.Contains("<") And ssh.YesOrNo = False And ssh.TypoSwitch <> 0 And ssh.TyposDisabled = False _
+							And FrmSettings.TTSCheckBox.Checked = False Then
+	
+								Dim TypoChance As Integer = ssh.randomizer.Next(0, 101)
+	
+								If TypoChance < FrmSettings.NBTypoChance.Value Or ssh.TypoSwitch = 2 Then
+	
+									Try
+	
+										Dim TypoString As String
+	
+										Dim TypoSplit As String() = ssh.DomTask.Split(" ")
+	
+										ssh.TempVal = ssh.randomizer.Next(0, TypoSplit.Count)
+	
+										ssh.CorrectedWord = TypoSplit(ssh.TempVal)
+	
+										ssh.CorrectedWord = ssh.CorrectedWord.Replace(",", "")
+										ssh.CorrectedWord = ssh.CorrectedWord.Replace(".", "")
+										ssh.CorrectedWord = ssh.CorrectedWord.Replace("!", "")
+										ssh.CorrectedWord = ssh.CorrectedWord.Replace("?", "")
+	
+										TypoString = "w d s f x"
+	
+	
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "a" Then TypoString = "q w s z x"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "b" Then TypoString = "f v g h n"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "c" Then TypoString = "x d f v b"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "d" Then TypoString = "s c f x e"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "e" Then TypoString = "s r w 3 d"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "f" Then TypoString = "d r g v c"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "g" Then TypoString = "f t b h y"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "h" Then TypoString = "g b n u j"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "i" Then TypoString = "o u j k l"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "j" Then TypoString = "k u i n h"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "k" Then TypoString = "j m , l i"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "l" Then TypoString = "; p . , i"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "m" Then TypoString = "n j k , l"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "n" Then TypoString = "b h j k m"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "o" Then TypoString = "p 0 i k ;"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "p" Then TypoString = "[ - o ; l"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "q" Then TypoString = "1 w s a 2"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "r" Then TypoString = "4 5 t f d"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "s" Then TypoString = "w d a z x"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "t" Then TypoString = "5 6 g y r"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "u" Then TypoString = "y 7 j i k"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "v" Then TypoString = "c f g h b"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "w" Then TypoString = "2 a e q s"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "x" Then TypoString = "z s d f c"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "y" Then TypoString = "t 7 h u g"
+										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "z" Then TypoString = "a s x d c"
+	
+	
+										Dim UpperChance As Integer = ssh.randomizer.Next(0, 101)
+										If UpperChance < 26 Then TypoString = UCase(TypoString)
+	
+	
+	
+										Dim GetTypo As String() = TypoString.Split(" ")
+	
+										Dim MadeTypo As String = GetTypo(ssh.randomizer.Next(0, GetTypo.Count))
+	
+	
+										Dim DoubleChance As Integer = ssh.randomizer.Next(0, 101)
+										If DoubleChance < 11 Then MadeTypo = MadeTypo & LCase(GetTypo(ssh.randomizer.Next(0, GetTypo.Count)))
+	
+	
+										TypoSplit(ssh.TempVal) = TypoSplit(ssh.TempVal).Remove(0, 1)
+	
+										Dim SpaceChance As Integer = ssh.randomizer.Next(0, 101)
+										If SpaceChance < 7 Then
+											TypoSplit(ssh.TempVal) = MadeTypo & " " & TypoSplit(ssh.TempVal)
+										Else
+											TypoSplit(ssh.TempVal) = MadeTypo & TypoSplit(ssh.TempVal)
+	
+										End If
+	
+										ssh.DomTask = Join(TypoSplit)
+	
+										ssh.CorrectedTypo = True
+	
+									Catch
+	
+										ssh.DomTask = RestoreDomTask
+										ssh.CorrectedTypo = False
+									End Try
+	
+								End If
+	
 							End If
+	
+							ssh.TypoSwitch = 1
+	
+						Catch
+						End Try
+					End If
 
-						End If
-
-						ssh.TypoSwitch = 1
-
-					Catch
-					End Try
+					
 
 
 				End If
@@ -4486,7 +4488,7 @@ DommeSlideshowFallback:
 						ssh.SubStroking = True
 						ssh.SubEdging = False
 						ssh.SubHoldingEdge = False
-						StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value + 1)
+						StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
 						StrokePace = 50 * Math.Round(StrokePace / 50)
 						ssh.RLGLTauntTick = ssh.randomizer.Next(20, 31)
 						' VideoTauntTick = randomizer.Next(20, 31)
@@ -4730,7 +4732,7 @@ SkipIsTyping:
 					ssh.StringLength /= 3
 					ssh.DivideText = False
 				End If
-				If FrmSettings.typeinstantlyCheckBox.Checked = True Or ssh.RapidCode = True Then ssh.StringLength = 0
+				If FrmSettings.typeinstantlyCheckBox.Checked = True Or ssh.RapidFire Or ssh.RapidCode = True Then ssh.StringLength = 0
 				TypingDelay()
 			End If
 
@@ -4773,7 +4775,7 @@ NullResponseLine:
 				If ssh.DomChat.Contains("@SlideshowPrevious") Then ssh.JustShowedSlideshowImage = True
 				If ssh.DomChat.Contains("@SlideshowLast") Then ssh.JustShowedSlideshowImage = True
 
-				If ssh.GlitterTease = True And ssh.JustShowedBlogImage = False Then GoTo TryNextWithTease
+				If ssh.GlitterTease = True And ssh.JustShowedBlogImage = False And ssh.LockImage = False Then GoTo TryNextWithTease
 
 				If FrmSettings.teaseRadio.Checked = True And ssh.JustShowedBlogImage = False And ssh.TeaseVideo = False And Not ssh.DomChat.Contains("@NewBlogImage") And ssh.NullResponse = False _
 				 And ssh.SlideshowLoaded = True And Not ssh.DomChat.Contains("@ShowButtImage") And Not ssh.DomChat.Contains("@ShowBoobsImage") And Not ssh.DomChat.Contains("@ShowButtsImage") _
@@ -5762,8 +5764,8 @@ Retry:
 			If FrmSettings.SliderSTF.Value = 1 Then ssh.StrokeTauntTick = ssh.randomizer.Next(120, 241)
 			If FrmSettings.SliderSTF.Value = 2 Then ssh.StrokeTauntTick = ssh.randomizer.Next(75, 121)
 			If FrmSettings.SliderSTF.Value = 3 Then ssh.StrokeTauntTick = ssh.randomizer.Next(45, 76)
-			If FrmSettings.SliderSTF.Value = 4 Then ssh.StrokeTauntTick = ssh.randomizer.Next(25, 46)
-			If FrmSettings.SliderSTF.Value = 5 Then ssh.StrokeTauntTick = ssh.randomizer.Next(15, 26)
+			If FrmSettings.SliderSTF.Value = 4 Then ssh.StrokeTauntTick = ssh.randomizer.Next(19, 46)
+			If FrmSettings.SliderSTF.Value = 5 Then ssh.StrokeTauntTick = ssh.randomizer.Next(12, 20)
 		Else
 			ssh.StrokeTauntTick = ssh.randomizer.Next(5, 9)
 		End If
@@ -7774,7 +7776,9 @@ RinseLatherRepeat:
 				Trace.WriteLine("failed to execute Command: @ShowLocalImage(" & LocalFlag & ") No images found.")
 			End If
 
-			ShowImage(tmpImgToShow, False)
+			For i As Integer = 0 To 5
+				If ShowImage(tmpImgToShow, False) Then Exit For
+			Next
 
 			StringClean = StringClean.Replace("@ShowLocalImage(" & GetParentheses(StringClean, "@ShowLocalImage(") & ")", "")
 		End If
@@ -7953,7 +7957,8 @@ RinseLatherRepeat:
 
 
 			CustomSlideshowTimer.Interval = 2000
-			If LCase(SlideFlag).Contains("slow") Then CustomSlideshowTimer.Interval = 8000
+			If LCase(SlideFlag).Contains("slow") Then CustomSlideshowTimer.Interval = 5000
+			If LCase(SlideFlag).Contains("very slow") Then CustomSlideshowTimer.Interval = 9000
 			If LCase(SlideFlag).Contains("fast") Then CustomSlideshowTimer.Interval = 1000
 
 
@@ -8432,8 +8437,6 @@ TaskCleanSet:
 					If IsNumeric(SCGotVar) = False Then
 						If VariableExists(SCGotVar) Then
 							SCGotVar = GetVariable(SCGotVar)
-						Else
-							SCGotVar = 0
 						End If
 					Else
 						SCGotVar = Val(SCGotVar)
@@ -9210,7 +9213,7 @@ TaskCleanSet:
 				End If
 			End If
 
-			StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value + 1)
+			StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
 			StrokePace = 50 * Math.Round(StrokePace / 50)
 
 			ssh.StrokeTauntTick = ssh.randomizer.Next(11, 21)
@@ -10293,6 +10296,7 @@ OrgasmDecided:
 			'Application.DoEvents()
 			'Loop Until ssh.DomTypeCheck = False
 
+			ssh.EdgeTauntInt = ssh.randomizer.[Next](5, 12)
 
 			StringClean = StringClean.Replace("@EdgingHold", "")
 		End If
@@ -10474,7 +10478,7 @@ OrgasmDecided:
 				ssh.AvoidTheEdgeTick = 100 / FrmSettings.TauntSlider.Value
 				AvoidTheEdgeTaunts.Start()
 				ssh.StartStrokingCount += 1
-				StrokePace = ssh.randomizer.Next(NBMaxPace.Value + 221, NBMinPace.Value - 421)
+				StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
 				StrokePace = 50 * Math.Round(StrokePace / 50)
 			End If
 		End If
@@ -10487,7 +10491,7 @@ OrgasmDecided:
 			ssh.AvoidTheEdgeTick = 100 / FrmSettings.TauntSlider.Value
 			AvoidTheEdgeTaunts.Start()
 			ssh.StartStrokingCount += 1
-			StrokePace = ssh.randomizer.Next(NBMaxPace.Value + 221, NBMinPace.Value - 421)
+			StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
 			StrokePace = 50 * Math.Round(StrokePace / 50)
 			StringClean = StringClean.Replace("@ResumeAvoidTheEdge", "")
 		End If
@@ -10532,7 +10536,7 @@ OrgasmDecided:
 				ssh.RLGLTick = ssh.randomizer.Next(FrmSettings.NBGreenLightMin.Value, FrmSettings.NBGreenLightMax.Value)
 				RLGLTimer.Start()
 				ssh.StartStrokingCount += 1
-				StrokePace = ssh.randomizer.Next(NBMaxPace.Value + 221, NBMinPace.Value - 421)
+				StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
 				StrokePace = 50 * Math.Round(StrokePace / 50)
 			End If
 		End If
@@ -13065,7 +13069,7 @@ VTSkip:
 		Try
 			If Linear = False Then
 				If FilterString.Includes("@DommeTag(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@DommeTag("), True) = String.Empty Then Return False
@@ -13073,7 +13077,7 @@ VTSkip:
 				End If
 
 				If FilterString.Includes("@DommeTagOr(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@DommeTagOr("), True, "Or") = String.Empty Then Return False
@@ -13081,15 +13085,23 @@ VTSkip:
 				End If
 
 				If FilterString.Includes("@DommeTagAny(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@DommeTagAny("), True, "Any") = String.Empty Then Return False
 					End If
 				End If
+				
+				If FilterString.Includes("@DommeTagFirst(") Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
+						Return False
+					Else
+						If GetLocalImage(GetParentheses(FilterString, "@DommeTagFirst("), True, "First") = String.Empty Then Return False
+					End If
+				End If
 
 				If FilterString.Includes("@DomTag(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@DomTag("), True) = String.Empty Then Return False
@@ -13097,7 +13109,7 @@ VTSkip:
 				End If
 
 				If FilterString.Includes("@DomTagOr(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@DomTagOr("), True, "Or") = String.Empty Then Return False
@@ -13105,15 +13117,23 @@ VTSkip:
 				End If
 
 				If FilterString.Includes("@DomTagAny(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@DomTagAny("), True, "Any") = String.Empty Then Return False
 					End If
 				End If
+				
+				If FilterString.Includes("@DomTagFirst(") Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
+						Return False
+					Else
+						If GetLocalImage(GetParentheses(FilterString, "@DomTagFirst("), True, "First") = String.Empty Then Return False
+					End If
+				End If
 
 				If FilterString.Contains("@ImageTag(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@ImageTag(")) = String.Empty Then Return False
@@ -13121,7 +13141,7 @@ VTSkip:
 				End If
 
 				If FilterString.Contains("@ImageTagOr(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@ImageTagOr("),, "Or") = String.Empty Then Return False
@@ -13129,11 +13149,27 @@ VTSkip:
 				End If
 
 				If FilterString.Contains("@ImageTagAny(") Then
-					If ssh.LockImage = True Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
 					Else
 						If GetLocalImage(GetParentheses(FilterString, "@ImageTagAny("),, "Any") = String.Empty Then Return False
 					End If
+				End If
+				
+				If FilterString.Contains("@ImageTagFirst(") Then
+					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
+						Return False
+					Else
+						If GetLocalImage(GetParentheses(FilterString, "@ImageTagFirst("),, "First") = String.Empty Then Return False
+					End If
+				End If
+				
+				If FilterString.Contains("@ShowDomRandomImage") Then
+					If ssh.LockImage = True Or ssh.CustomSlideEnabled = True Or mainPictureBox.Visible = False Then Return False
+				End If
+				
+				If FilterString.Contains("@ShowImage") Then
+					If ssh.LockImage = True Or ssh.CustomSlideEnabled = True Or mainPictureBox.Visible = False Then Return False
 				End If
 
 				' ################## @Show-Category-Image #####################
@@ -13211,6 +13247,25 @@ VTSkip:
 				'▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 				' Disqualifying @Commands - End
 				'▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+			End If
+			
+			If FilterString.Contains("@Force") Then
+				If Not ssh.LockImage Then Return False
+			End If
+			
+			If Me.ssh.LockImage = True Or Me.ssh.CustomSlideEnabled = True Or mainPictureBox.Visible = False Then
+				If Not FilterString.Contains("@PlayVideoNoWait") AndAlso FilterString.Contains("@PlayVideo") Then
+					Return False
+				End If
+				If FilterString.Contains("@PlayRedLightGreenLight") Or FilterString.Contains("@PlayAvoidTheEdge") Then
+					Return False
+				End If
+			End If
+			
+			If Not FilterString.Contains("@PlayVideoNoWait") Then
+				If FilterString.Contains("@PlayVideo") Or FilterString.Contains("@PlayRedLightGreenLight") Or FilterString.Contains("@PlayAvoidTheEdge") Then
+					If Not FilterString.Contains("@StopVideo") AndAlso (Me.DomWMP.playState = WMPPlayState.wmppsPlaying Or Me.DomWMP.playState = WMPPlayState.wmppsPaused) Then Return False
+				End If
 			End If
 
 			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
@@ -14558,7 +14613,7 @@ NoPlaylistEndFile:
 
 			TypingDelayGeneric()
 
-			ssh.EdgeTauntInt = ssh.randomizer.Next(30, 46)
+			ssh.EdgeTauntInt = ssh.randomizer.Next(6, 21)
 
 		End If
 
@@ -14936,7 +14991,7 @@ NoRepeatOFiles:
 
 			TypingDelayGeneric()
 
-			ssh.EdgeTauntInt = ssh.randomizer.Next(15, 31)
+			ssh.EdgeTauntInt = ssh.randomizer.Next(13, 18)
 
 
 		End If
@@ -15642,6 +15697,12 @@ RestartFunction:
 
 #End Region  'Domme-WMP
 
+	Private Sub audioPlayers_PlayStateChange(sender As Object, e As _WMPOCXEvents_PlayStateChangeEvent) Handles contextWMP.PlayStateChange, voiceDomWMP.PlayStateChange
+		If CType(sender, AxWMPLib.AxWindowsMediaPlayer).playState = WMPPlayState.wmppsStopped Then
+			CType(sender, AxWMPLib.AxWindowsMediaPlayer).currentPlaylist.clear()
+		End If
+	End Sub
+
 	Private Sub domAvatar_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles domAvatar.MouseEnter
 		If FrmSettings.Visible = False And FrmCardList.Visible = False Then domAvatar.Focus()
 	End Sub
@@ -15836,7 +15897,7 @@ RestartFunction:
 		If ssh.VideoTauntTick < 1 Then
 
 			Dim FrequencyTemp As Integer = ssh.randomizer.Next(1, 101)
-			If FrequencyTemp > FrmSettings.TauntSlider.Value * 5 Then
+			If FrequencyTemp > FrmSettings.TauntSlider.Value * 8 Then
 				ssh.VideoTauntTick = ssh.randomizer.Next(20, 31)
 				Return
 			End If
@@ -15910,7 +15971,7 @@ RestartFunction:
 		If ssh.RLGLTauntTick < 1 Then
 
 			Dim FrequencyTemp As Integer = ssh.randomizer.Next(1, 101)
-			If FrequencyTemp > FrmSettings.TauntSlider.Value * 5 Then
+			If FrequencyTemp > FrmSettings.TauntSlider.Value * 8 Then
 				ssh.RLGLTauntTick = ssh.randomizer.Next(20, 31)
 				Return
 			End If
@@ -15963,7 +16024,7 @@ RestartFunction:
 		If ssh.AvoidTheEdgeTick < 1 Then
 
 			Dim FrequencyTemp As Integer = ssh.randomizer.Next(1, 101)
-			If FrequencyTemp > FrmSettings.TauntSlider.Value * 5 Then
+			If FrequencyTemp > FrmSettings.TauntSlider.Value * 8 Then
 				ssh.AvoidTheEdgeTick = ssh.randomizer.Next(20, 31)
 				Return
 			End If
@@ -16750,7 +16811,9 @@ restartInstantly:
 			Dim PreferOffline As Boolean = If(CustomSlideshowTimer.Interval < 1000, True, False)
 
 			' Display a random image.
-			ShowImage(ssh.CustomSlideshow.GetRandom(PreferOffline), True)
+			For i As Integer = 0 To 5
+				If ShowImage(ssh.CustomSlideshow.GetRandom(PreferOffline), True) Then Exit For
+			Next
 
 			' If displaying the image took longer as the interval, restart instantly.
 			If sw.ElapsedMilliseconds > CustomSlideshowTimer.Interval Then GoTo restartInstantly
@@ -17783,7 +17846,7 @@ restartInstantly:
 		If ssh.StrokeFaster = True Then
 			If ssh.SubStroking = True And ssh.SubEdging = False And ssh.SubHoldingEdge = False Then
 				Debug.Print("Stroke Faster")
-				Dim Stroke123 As Integer = ssh.randomizer.Next(5, 12)
+				Dim Stroke123 As Integer = ssh.randomizer.Next(4, 10)
 				Stroke123 = Stroke123 * 50
 				StrokePace = StrokePace - Stroke123
 				If StrokePace < NBMaxPace.Value Then StrokePace = NBMaxPace.Value
@@ -19253,7 +19316,7 @@ ReRoll:
 		ssh.ScriptVideoTeaseFlag = False
 		ssh.VideoTease = True
 		ssh.StartStrokingCount += 1
-		StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value + 1)
+		StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
 		StrokePace = 50 * Math.Round(StrokePace / 50)
 		ssh.AvoidTheEdgeTick = 120 / FrmSettings.TauntSlider.Value
 		AvoidTheEdgeTaunts.Start()
@@ -19278,7 +19341,7 @@ ReRoll:
 		ssh.RLGLTick = ssh.randomizer.Next(FrmSettings.NBGreenLightMin.Value, FrmSettings.NBGreenLightMax.Value + 1)
 		RLGLTimer.Start()
 		ssh.StartStrokingCount += 1
-		StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value + 1)
+		StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
 		StrokePace = 50 * Math.Round(StrokePace / 50)
 		'VideoTauntTick = randomizer.Next(20, 31)
 		'VideoTauntTimer.Start()
@@ -19922,7 +19985,7 @@ playLoop:
 
 		If ssh.MultipleEdgesTick < 1 Then
 
-			ssh.EdgeTauntInt = ssh.randomizer.Next(20, 31)
+			ssh.EdgeTauntInt = ssh.randomizer.Next(6, 21)
 
 			MultipleEdgesTimer.Stop()
 
@@ -20099,7 +20162,7 @@ playLoop:
 		ssh.EdgeCountTick = 0
 		EdgeCountTimer.Start()
 		ssh.SubEdging = True
-		ssh.EdgeTauntInt = ssh.randomizer.Next(15, 31)
+		ssh.EdgeTauntInt = ssh.randomizer.Next(3, 10)
 		EdgeTauntTimer.Start()
 		If ssh.OrgasmAllowed = True Or ssh.OrgasmDenied = True Or ssh.OrgasmRuined = True Then ssh.OrgasmYesNo = True
 		EdgePace()

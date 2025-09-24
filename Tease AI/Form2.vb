@@ -3242,6 +3242,9 @@ SkipDeserializing:
 
 			' Set the resized image as picturebox image and write it to disk
 			target.Image = ResizeImage(filepath, New Size(138, 179))
+
+			Directory.CreateDirectory(savePath)
+
 			target.Image.Save(savePath)
 
 			' Set the image Location-Property. Property has to be databound with My.Settings!

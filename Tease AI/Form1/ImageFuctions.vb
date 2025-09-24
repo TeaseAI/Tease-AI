@@ -660,6 +660,7 @@ NoNeFound:
 			RemoveFromLikeList(ImageToShow)
 			RemoveFromDislikeList(ImageToShow)
 			RemoveFromUrlFiles(ImageToShow)
+			Return False
 		End If
 
 		If FrmSettings.CBBlogImageWindow.Checked = True _
