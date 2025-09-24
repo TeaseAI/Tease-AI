@@ -1,7 +1,7 @@
 ﻿<Serializable>
 Public Class subAnswers
 
-	Private checkList As New List(Of String)
+	Public checkList As New List(Of String)
 	Private answerList As New List(Of String)
 	Private ssh As SessionState
 
@@ -11,8 +11,6 @@ Public Class subAnswers
 		checkList.Add(My.Settings.SubYes)
 		checkList.Add(My.Settings.SubNo)
 		checkList.Add(My.Settings.SubSorry)
-		checkList.Add("thank,thanks")
-		checkList.Add("please")
 	End Sub
 
 	Public Function returnWords(s As String) As String
@@ -25,10 +23,6 @@ Public Class subAnswers
 				Return checkList.Item(2)
 			Case "sorry"
 				Return checkList.Item(3)
-			Case "thanks"
-				Return checkList.Item(4)
-			Case "please"
-				Return checkList.Item(5)
 			Case Else
 				Return checkList.Item(0)
 		End Select
@@ -56,10 +50,6 @@ Public Class subAnswers
 							Return "no"
 						Case 3
 							Return "sorry"
-						Case 4
-							Return "thanks"
-						Case 5
-							Return "please"
 						Case Else
 							Return "hi"
 					End Select
@@ -82,7 +72,7 @@ Public Class subAnswers
 
 	Public Function triggerWord(chatstring As String) As String
 
-		'we first order the list based on lenght of the answer option (and if equal lenght, by the order in which they are in the answer list)
+		'we first order the list based on lenght of the answer option (and if equal length, by the order in which they are in the answer list)
 
 		Dim sorted = answerList.OrderByDescending(Function(x) x.Length).ThenBy(Function(x) answerList.IndexOf(x)).ToArray
 

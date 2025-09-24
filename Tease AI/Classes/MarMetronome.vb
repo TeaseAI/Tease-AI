@@ -13,8 +13,6 @@ Public Class MarMetronome
 
 	Private metroInterval As Integer = 1000
 
-	Private currentBPM As Integer = 60
-
 	Private thereShouldBeAlimit As Boolean
 
 	Private metroBeatCounter As Integer
@@ -22,6 +20,25 @@ Public Class MarMetronome
 	Private metroBeatLimit As Integer
 
 	Private pausePossible As Boolean
+
+	Private _currentBPM As Integer
+
+	Private Property currentBPM As Integer
+		Get
+			Return _currentBPM
+		End Get
+		Set(value As Integer)
+			If value > 360 Then
+				_currentBPM = 360
+			Else
+				If value < 1 Then
+					_currentBPM = 1
+				Else
+					_currentBPM = value
+				End If
+			End If
+		End Set
+	End Property
 
 	Public Sub New()
 		Dim wavFilepath As String = Application.StartupPath & "\Audio\System\metronome.wav"
@@ -34,6 +51,7 @@ Public Class MarMetronome
 			ExamplePlayer.Stream = wavStream
 			ExamplePlayer.Load()
 		End If
+		_currentBPM = 60
 	End Sub
 
 	Private Sub backgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs)
@@ -106,14 +124,7 @@ Public Class MarMetronome
 	End Sub
 
 	Private Sub UpdateBPM(bpm As Integer)
-		Dim clampedBpm = bpm
-		If clampedBpm > 360 Then
-			clampedBpm = 360
-		ElseIf clampedBpm < 1 Then
-			clampedBpm = 1
-		End If
-
-		currentBPM = clampedBpm
+		currentBPM = bpm
 		metroInterval = BPMtoMilliseconds(currentBPM)
 		If Not runMetro Then
 			runMetro = True

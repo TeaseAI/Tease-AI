@@ -29,6 +29,9 @@ Partial Class Form1
 		Me.mainPictureBox = New System.Windows.Forms.PictureBox()
 		Me.domAvatar = New System.Windows.Forms.PictureBox()
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+		Me.Label2 = New Global.System.Windows.Forms.Label()
+		Me.BeatMeterWMP = New Global.AxWMPLib.AxWindowsMediaPlayer()
+		Me.Label1 = New Global.System.Windows.Forms.Label()
 		Me.DomWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.ProgressBar_BGW_Images = New System.Windows.Forms.ProgressBar()
 		Me.CensorshipBar = New System.Windows.Forms.Panel()
@@ -383,6 +386,10 @@ Partial Class Form1
 		Me.PnlLayoutForm = New System.Windows.Forms.Panel()
 		Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
 		Me.voiceDomWMP = New AxWMPLib.AxWindowsMediaPlayer()
+		Me.TimerMarVidVolume = New Tease_AI.teaseAI_Timer()
+		Me.TimerMarBeatmeterStart = New Tease_AI.teaseAI_Timer()
+		Me.TimerMarCHC = New Tease_AI.teaseAI_Timer()
+		Me.TimerMarVidTaunts = New Tease_AI.teaseAI_Timer()
 		Me.ScriptTimer = New Tease_AI.teaseAI_Timer()
 		Me.Timer1 = New Tease_AI.teaseAI_Timer()
 		Me.IsTypingTimer = New Tease_AI.teaseAI_Timer()
@@ -420,6 +427,7 @@ Partial Class Form1
 		Me.SplitContainer1.Panel1.SuspendLayout()
 		Me.SplitContainer1.Panel2.SuspendLayout()
 		Me.SplitContainer1.SuspendLayout()
+		CType(Me.BeatMeterWMP, Global.System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.DomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PnlChatTextLayout.SuspendLayout()
 		Me.PNLMediaBar.SuspendLayout()
@@ -535,6 +543,9 @@ Partial Class Form1
 		'SplitContainer1.Panel1
 		'
 		Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Transparent
+		Me.SplitContainer1.Panel1.Controls.Add(Me.Label2)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.BeatMeterWMP)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.DomWMP)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.ProgressBar_BGW_Images)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.CensorshipBar)
@@ -553,6 +564,39 @@ Partial Class Form1
 		Me.SplitContainer1.SplitterWidth = 10
 		Me.SplitContainer1.TabIndex = 136
 		'
+		'Label2
+		'
+		Me.Label2.AutoSize = True
+		Me.Label2.BackColor = Global.System.Drawing.Color.Black
+		Me.Label2.BorderStyle = Global.System.Windows.Forms.BorderStyle.Fixed3D
+		Me.Label2.Font = New Global.System.Drawing.Font("Segoe Print", 15.75F, Global.System.Drawing.FontStyle.Bold, Global.System.Drawing.GraphicsUnit.Point, 0)
+		Me.Label2.ForeColor = Global.System.Drawing.Color.GhostWhite
+		Me.Label2.Location = New Global.System.Drawing.Point(680, 223)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New Global.System.Drawing.Size(88, 39)
+		Me.Label2.TabIndex = 100
+		Me.Label2.Text = "Label2"
+		'
+		'BeatMeterWMP
+		'
+		Me.BeatMeterWMP.Anchor = Global.System.Windows.Forms.AnchorStyles.None
+		Me.BeatMeterWMP.Enabled = True
+		Me.BeatMeterWMP.Location = New Global.System.Drawing.Point(608, 245)
+		Me.BeatMeterWMP.Name = "BeatMeterWMP"
+		Me.BeatMeterWMP.OcxState = CType(resources.GetObject("BeatMeterWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.BeatMeterWMP.Size = New Global.System.Drawing.Size(790, 183)
+		Me.BeatMeterWMP.TabIndex = 98
+		Me.BeatMeterWMP.Visible = False
+		'
+		'Label1
+		'
+		Me.Label1.AutoSize = True
+		Me.Label1.Location = New Global.System.Drawing.Point(939, 73)
+		Me.Label1.Name = "Label1"
+		Me.Label1.Size = New Global.System.Drawing.Size(39, 13)
+		Me.Label1.TabIndex = 98
+		Me.Label1.Text = "Label1"
+		'
 		'DomWMP
 		'
 		Me.DomWMP.Dock = System.Windows.Forms.DockStyle.Fill
@@ -560,14 +604,14 @@ Partial Class Form1
 		Me.DomWMP.Location = New System.Drawing.Point(0, 0)
 		Me.DomWMP.Name = "DomWMP"
 		Me.DomWMP.OcxState = CType(resources.GetObject("DomWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.DomWMP.Size = New System.Drawing.Size(1398, 482)
+		Me.DomWMP.Size = New System.Drawing.Size(1398, 458)
 		Me.DomWMP.TabIndex = 96
 		Me.DomWMP.Visible = False
 		'
 		'ProgressBar_BGW_Images
 		'
 		Me.ProgressBar_BGW_Images.Dock = System.Windows.Forms.DockStyle.Bottom
-		Me.ProgressBar_BGW_Images.Location = New System.Drawing.Point(0, 482)
+		Me.ProgressBar_BGW_Images.Location = New System.Drawing.Point(0, 458)
 		Me.ProgressBar_BGW_Images.MarqueeAnimationSpeed = 10000
 		Me.ProgressBar_BGW_Images.Name = "ProgressBar_BGW_Images"
 		Me.ProgressBar_BGW_Images.Size = New System.Drawing.Size(1398, 6)
@@ -606,7 +650,7 @@ Partial Class Form1
 		Me.PnlChatTextLayout.Location = New System.Drawing.Point(0, 32)
 		Me.PnlChatTextLayout.Name = "PnlChatTextLayout"
 		Me.PnlChatTextLayout.Padding = New System.Windows.Forms.Padding(1)
-		Me.PnlChatTextLayout.Size = New System.Drawing.Size(1398, 409)
+		Me.PnlChatTextLayout.Size = New System.Drawing.Size(1398, 433)
 		Me.PnlChatTextLayout.TabIndex = 783
 		'
 		'ChatText
@@ -615,7 +659,7 @@ Partial Class Form1
 		Me.ChatText.Location = New System.Drawing.Point(1, 1)
 		Me.ChatText.MinimumSize = New System.Drawing.Size(2, 20)
 		Me.ChatText.Name = "ChatText"
-		Me.ChatText.Size = New System.Drawing.Size(1396, 407)
+		Me.ChatText.Size = New System.Drawing.Size(1396, 431)
 		Me.ChatText.TabIndex = 1
 		'
 		'PNLMediaBar
@@ -4432,6 +4476,7 @@ Partial Class Form1
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
 		Me.ClientSize = New System.Drawing.Size(1676, 1023)
+		Me.Controls.Add(Me.voiceDomWMP)
 		Me.Controls.Add(Me.PnlLayoutForm)
 		Me.Controls.Add(Me.MenuStrip2)
 		Me.Controls.Add(Me.sendButton)
@@ -4451,6 +4496,7 @@ Partial Class Form1
 		Me.SplitContainer1.Panel2.ResumeLayout(False)
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.SplitContainer1.ResumeLayout(False)
+		CType(Me.BeatMeterWMP, Global.System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.DomWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PnlChatTextLayout.ResumeLayout(False)
 		Me.PNLMediaBar.ResumeLayout(False)
@@ -4519,6 +4565,8 @@ Partial Class Form1
 	Friend WithEvents mainPictureBox As System.Windows.Forms.PictureBox
 	Friend WithEvents domAvatar As System.Windows.Forms.PictureBox
 	Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
+	Friend WithEvents Label2 As System.Windows.Forms.Label
+	Friend WithEvents Label1 As System.Windows.Forms.Label
 	Friend WithEvents nextButton As System.Windows.Forms.Button
 	Friend WithEvents browsefolderButton As System.Windows.Forms.Button
 	Friend WithEvents previousButton As System.Windows.Forms.Button
@@ -4564,8 +4612,13 @@ Partial Class Form1
 	Friend WithEvents ImageFolderComboBox As System.Windows.Forms.ComboBox
 	Friend WithEvents LBLImageInfo As System.Windows.Forms.Label
 	Friend WithEvents contextWMP As AxWMPLib.AxWindowsMediaPlayer
+	Friend WithEvents BeatMeterWMP As AxWMPLib.AxWindowsMediaPlayer
 	Friend WithEvents DomWMP As AxWMPLib.AxWindowsMediaPlayer
 	Friend WithEvents voiceDomWMP As AxWMPLib.AxWindowsMediaPlayer
+	Friend WithEvents TimerMarVidVolume As Tease_AI.teaseAI_Timer
+	Friend WithEvents TimerMarBeatmeterStart As Tease_AI.teaseAI_Timer
+	Friend WithEvents TimerMarCHC As Tease_AI.teaseAI_Timer
+	Friend WithEvents TimerMarVidTaunts As Tease_AI.teaseAI_Timer
 	Friend WithEvents WaitTimer As Tease_AI.teaseAI_Timer
 	Friend WithEvents StupidTimer As Tease_AI.teaseAI_Timer
 	Friend WithEvents VideoTauntTimer As Tease_AI.teaseAI_Timer

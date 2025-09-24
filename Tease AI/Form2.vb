@@ -57,6 +57,19 @@ Public Class FrmSettings
 		If Form1.contextWMP.playState = WMPPlayState.wmppsPaused Then
 			Form1.contextWMP.Ctlcontrols.play()
 		End If
+
+		If Form1.marBMPlayerRuns Then
+			Form1.BeatMeterWMP.Ctlcontrols.play()
+		End If
+		If Form1.TimerMarCHC.Enabled And Form1.marPlayCHCactive Then
+			Form1.TimerMarCHC.[Stop]()
+		Else
+			If Form1.TimerMarCHC.Enabled And Form1.marPlayCHCactive Then
+				Form1.TimerMarCHC.Interval = Ssh.randomizer.[Next](4000, 20000)
+				Form1.TimerMarCHC.Start()
+			End If
+		End If
+		
 		If Form1.ChatBox2.Visible Then
 			Form1.ChatBox2.[Select]()
 		Else
@@ -9503,6 +9516,9 @@ checkFolder:
 			CType(sender, Label).BackColor = GetColor.Color
 			Form1.ResumeLayout()
 		End If
+		
+		ssh.Chat = String.Concat(New String() { "<body bgcolor=""", Common.Color2Html(My.Settings.ChatWindowColor), """>", ssh.Chat, "</body>" })
+		Form1.ChatUpdate()
 	End Sub
 
 	Private Sub Button17_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button17.Click
@@ -9572,6 +9588,8 @@ checkFolder:
 
 				CBFlipBack.Checked = SettingsList(10).Replace("FlipImage: ", "")
 
+				ssh.Chat = String.Concat(New String() { "<body bgcolor=""", Common.Color2Html(My.Settings.ChatWindowColor), """>", ssh.Chat, "</body>" })
+				Form1.ChatUpdate()
 
 
 			Catch

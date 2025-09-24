@@ -1,13 +1,14 @@
 ﻿# Tease-AI
 Tease AI is adult-oriented software that aims to create an interactive tease and denial experience by emulating an online chat session with a domme. 
 
-# Changelog - Patch 60.0.0
+# Changelog - Community Patch 60.0.0
 
-	Not all Changes have been tracked.
+	Not all Changes have been tracked. Credits for changes are assumed based on available information.
 	
 * Added Features:
 
-    * Changes from the newest "Fury" update (3-5-2020) have been copied via decompiling. Credits interpreted from the Fury release thread.
+    * Changes from the newest "Fury" update (3-5-2020) have been copied via decompiling.
+    * Changes from the newest "Unofficial" update (55.7.2b) have been copied via decompiling.
 	
 * Commands: 
 	* @DommeTagFirst(): Will show the first domme image in the current slideshow tagged with one or more tags. examples: (swift69)
@@ -26,14 +27,14 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 		* @MetronomeUp(): Increases the current bpm by a number. @MetronomeUp(30) to add 30bpm.
 		* @MetronomeDown(): Decreases the current bpm by a number. @MetronomeDown(30) to subtract 30bpm.
 		* @MetronomeRandom(): Starts the metronome with a random bpm within a range. @MetronomeOn(60,120) for a bpm between 60bpm and 120 bpm.
-	* @DebugSkipModule: Skips the current module and loads a link, or skips the current link and starts taunts. (1885)
+	* @DebugSkipModule: Skips the current module and loads a link, or skips the current link and starts taunts. (markus)
 	* @ResumeStroking: A copy of @StartStroking. (1885)
 	* @PauseStroking: A copy of @StopStroking, but allows for resuming the previous state instead of resetting. (1885)
 	* @OrgasmDecide: A copy of @DecideOrgasm. (1885)
 	* @GiveUpAllow: Calls a GiveUpALLOWED response. (1885)
 	* @GiveUpDeny: Calls a GiveUpDENIED response. (1885)
 	* @StopVideo: Stops the current video. (swift69)
-	* @PlayVideoNoWait: Plays a video using a secondary player. (swift69)
+	* @PlayVideoNoWait: Plays a video but continues the current script instead of waiting for the video to end. (swift69)
 	* @JumpVideoXXX: Jumps the current video position. (swift69)
 		* @JumpVideo(): Jumps to a specific percentage, 0 if no parenthesis. @JumpVideo(50) for 50%.
 		* @JumpVideoUp(): Jumps up by specific percentage, a random amount if no parenthesis. @JumpVideoUp(10) for 10%.
@@ -61,7 +62,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @DommeNameTemp[]: Temporarily changes the domme's name. (markus)
 	* @DommeNameReset: Resets the domme's name. (markus)
 	* Silent contact add/remove: Adds or removes a contact without showing the "has joined" message.
-		*@AddContact1Silent / @RemoveContact2Silent
+		*@AddContact1Silent / @RemoveContact1Silent
 		*@AddContact2Silent / @RemoveContact2Silent
 		*@AddContact3Silent / @RemoveContact3Silent
 	* @SilentReturn: Does nothing, but meant to be placed on the same line as @CallReturn() (1885)
@@ -69,8 +70,43 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @BeggingTimerOn / @BeggingTimerOff: Enables or disables systems regarding begging for an orgasm. (1885)
 	* @OpenDirectory[]: Opens an file explorer window to a specific folder relative to Tease AI. (1885)
 	* @SubMessage(): Sends a message as the user. @SubMessage(Hello) will send "Hello" as you. (1885)
-	* @ScenarioOn / ScenarioOff: Does nothing. (1885) 
-	
+	* @ScenarioOn / ScenarioOff: Does nothing. (1885)
+	* @WebcamVideo: Opens a window displaying the current webcam. Will appear on a second monitor if available. Intended to "set up" for other webcam commands. (markus)
+		*Webcam is not connected to the internet in any way. It is only local.
+		*Do not use with @CamSnap commands
+	* @WebcamClose: Close the webcam window. (markus)
+	* @CamSnapFolder[]: After 10 seconds saves the current webcam frame to a certain relative folder with a timestamped filename. ie: @CamSnapFolder[myPersonalityName\camshots\kneeling] will create "myPersonalityName\camshots\kneeling\Webcamshot_2018_01_17___9_10_56.jpg" (markus)
+	* @CamSnapFile[]: Same as CamSnapFolder but uses a specific filename. ie: @CamSnapFile[myPersonalityName\camshots\toys\mytoy01.jpg] (markus)
+		*If an image with the name already exists, it will be overwritten. Perhaps use flags to work around this.
+	* @SetSpecificDate(): Creates a variable with a name and a specific date inside. (markus)
+		*I.e.: @SetSpecificDate(myTestDate1, 12.09.2020 01:00:00)
+	* @PlayCHC(): Plays a random (but not CH or JOI) video, and after 30 seconds starts a random beatmeter from the relative directory "\Video\BeatMeter\" on top of the video. (markus)
+		*A "beatmeter" refers to a cropped Cock Hero round so it is just the meter and audio. Create your own with the ffmpeg command 'ffmpeg -i input.mp4 -vf "crop=width:height:coordX:coordY" output.mp4'
+		*Other beatmeters provided by markus: (links staying up is not a guarantee)
+		*Single meter for testing: https://mega.nz/file/uJZgxIpL#V654LgbUS_mlubaesqqr6oKQDWS2U3yiHw1Jl-YsYp4
+		*Large collection of 191 meters: (you can download/unzip each file on its own) (note: the sum of all files is almost 6.5gb!)
+			*https://mega.nz/file/nEgHVAYS#lbgePAj1biTwZlFKLGTAZHFM9wTyJbrnhDDFSkklM0U
+			*https://mega.nz/file/adwBiKpT#9EULAKU4tl5RdtKFaYCJnp9Ckk-n-lDgUlVEbg83Bqw
+			*https://mega.nz/file/nZxnzA7K#S2rM1KPhle3ulINgVi5bw37cn0XtW8nBiXMP0InjPHQ
+			*https://mega.nz/file/6VgRwCyA#_dn7xxN32vGT5YUCl-HVcpC0anKj9xM5XwSy_Go1UNk
+			*https://mega.nz/file/PJoRmIIT#z1Z5shsYW10Y-AIKWmysiEvWswPyPsRrQ4qAVMxFSJE
+			*https://mega.nz/file/DZoFnQwK#eALFSh1FmN0TAHNH4H7QsjdRX9oqi47iyLntIWTubtY
+			*https://mega.nz/file/HIoXRSJC#YpMV8ZOqRfGUhy70OpB1xe6RnSYqHN2PwWknwBZcasU
+			*https://mega.nz/file/rNwjkaRA#T_vxeiKYEeLBHAGjQOOL-qJ5yCEzYhqfQK6aPV6cAeE
+	* @BeatMeter(): Like @PlayCHC except only starts the beat meter video after a certain time. Do not use alongside @PlayCHC. ie @BeatMeter(30) to start after 30 seconds. (markus)
+	* @BeatMeterStop: Stops the current beat meter video immediately. Normally a beatmeter will end when a video ends. (markus)
+	* @DisplayVideoTaunts(): Will write genre-based taunts to the chat between a range of two numbers. ie @DisplayVideoTaunts(50,120) for taunts every 50 to 120 seconds. (markus)
+		*HTML is not supported but @FollowUp and flags are.
+		*Requires the following vocabulary files for taunts to pull from:
+			*#SYS_TauntVideoBlowjob.txt
+			*#SYS_TauntVideoFemdom.txt
+			*#SYS_TauntVideoFemsub.txt
+			*#SYS_TauntVideoGeneral.txt
+			*#SYS_TauntVideoHardcore.txt
+			*#SYS_TauntVideoLesbian.txt
+			*#SYS_TauntVideoPlayCHC.txt
+			*#SYS_TauntVideoSoftcore.txt
+
 * Command Filters:
 	* @ShowImage: True if an image could be showed. So not locked, not playing a slideshow, and not showing a video. (1885)
 	* @CheckDommeTag(): True if the current domme image is tagged with one or more certain tags. (1885)
@@ -88,14 +124,28 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 		* #TagTatoo > #TagTattoo and the underlying code looking for the tag.
 		* #TagSexToy and #TagFurniture now default to "toy" and "furniture" instead of "tatoo".
 	* @MetronomeLimit() will now stop the metronome properly without requiring an extra @MetronomeOff. (pepsifreak)
+	* Fixed issue with questions and key phrases. (markus)
+	* Video player should no longer get stuck sometimes after a video ends. (markus)
+	* Maximiize Media Window setting now supports the side chat option. (markus)
+	* Changing the chat background color now updates immediately. (markus)
+	* Writing Task label is now larger. (markus)
+	* Adjusted default video player volume. (markus)
+	* CBT, CBTBalls, CBTCock, and CustomTask() now disable responses. (markus)
+	* All metronomes and media will pause if the settings window is open. (markus)
+	* Closing the settings window will focus the chat box. (markus)
+	* Log running scripts to "scriptlog.txt" on program close for debugging. (markus)
+	* Log played videos and audio to "videolog.txt" on program close for debugging. (markus)
 
 * System Keywords/Vocabulary
 	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.
-	* #SYS_Safeword which displays your current safeword value .
-	* #CurrentDateOnly which displays the current day number. (ie: 15)
-	* #CurrentDateFormal which displays the current day but more formal. (ie: 15th)
-	* #CurrentHour which displays the current hour.
-	* #TagXXX which if available displays the XXX tag value for the current Domme image, with generic defaults;
+	* #SYS_Safeword which displays your current safeword value.
+	* #CurrentDateOnly which displays the current day number. (ie: 15) (markus)
+	* #CurrentDateFormal which displays the current day but more formal. (ie: 15th)(markus)
+	* #CurrentHour which displays the current hour.(markus)
+	* #CurrentMinute which displays the current minute.(markus)
+	* #DayOfMonth which displays the current day.(markus)
+	* #DayOfMonth which displays the current month.(markus)
+	* #TagXXX which if available displays the XXX tag value for the current Domme image, with generic defaults; (swift69)
 		* #TagGarment defaults to "clothes"
 		* #TagUnderwear defaults to "underwear"
 		* #TagTattoo defaults to "tattoo"
@@ -108,8 +158,10 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Various timeouts and speeds have been set to a middle ground between previous source and Fury's larger values (pepsifreak)
 	* Metronome used by @MetronomeXXX commands now built in rather than a separate metro.dll file by markus, also uses the same wav file as taunt sections. (pepsifreak)
 	* Pressing up or down will scroll through chat history outside of writing tasks. (1885)
-	* "Two dommes in one picture" was not finished for Fury. But looks for a tai2dommesAtOnce.txt in the image folder and sets a temp flag of the same name. (markus)
-	* Improved random number generator. (markus)
+	* "Two dommes in one picture" (markus)
+		*If you are using a picture set with 2 people at once, you can include a file named "tai2dommesAtOnce.txt".
+		*If found in the current picture set, a temp flag named "tai2dommesAtOnce" will be created for use in scripts.
+	* Improved random number generator via new class. (markus)
 	* .mkv video support. (markus)
 	* Script and video logs. (markus)
 	* Ability to start with a random cantact or domme from the "Settings" menu option at the top of the window. (swift69)
@@ -118,6 +170,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Improved gif rendering. (swift69)
 	* Improved video commands. (swift69)
 	* @Contact() can now contain multiple Contacts that will be randomly chosen to speak the line. (swift69)
+	* Adds optional "videosource.xml" file to configure webcam for related commands. (markus)
 
 
 # Changelog - Patch 56.0.0

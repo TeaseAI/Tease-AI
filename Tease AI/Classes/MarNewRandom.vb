@@ -14,8 +14,7 @@ Public Class MarNewRandom
 		If lowerLimitInclusive <= upperLimitExclusive Then
 			myValue = myRandom.[Next](lowerLimitInclusive, upperLimitExclusive)
 		Else
-			myValue = 5
-			MsgBox("Error occurred while calling the random function:" & vbCrLf & "Min value was bigger than max value, to prevent a crash, the return value is 5.", MsgBoxStyle.OkOnly, Nothing)
+			myValue = myRandom.[Next](lowerLimitInclusive, upperLimitExclusive + 1)
 		End If
 		Return myValue
 	End Function
