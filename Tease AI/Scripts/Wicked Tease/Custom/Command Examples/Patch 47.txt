@@ -1,0 +1,145 @@
+@EmoteMessage #DomName smiles @TyposOff
+Hello #SubName, nice to see you
+Before we get started I highly recommend that you uncheck any of my Typing Style options you have enabled
+Some of this might be hard to follow if I'm stuck typing in lowercase #EmoteHappy
+So you're probably curious about the new Commands available in Patch 47
+There's not too many this time
+Most of the work has gone into the AI Box system and the new Domme Tags app
+But I do have a couple new tricks up my sleeve #Grin
+For starters, there's the new ATSYMBOLInputVar[] Command @
+When this Command is used, the current linear script will stop while I wait for you to input an answer
+So if the script had this line:
+"What's your favorite band? ATSYMBOLInputVar[Ex_FavoriteBand]" 
+Then I would wait for you to type, and whatever you entered I would then store that as Variable called "Ex_FavoriteBand" 
+Let's give that a try now @RapidTextOn
+What's your favorite band? @InputVar[Ex_FavoriteBand] @RapidTextOff
+Great, I've now stored what you just typed as the Variable "Ex_FavoriteBand"
+Of course, before I couldn't say Variables that weren't numbers
+But now I can use ATSYMBOLShowVar[] to show words and phrases as well 
+How else would I be able to tell you that @ShowVar[Ex_FavoriteBand] is your favorite band? #EmoteHappy
+You can even use the ATSYMBOLInputVar[] in front of a Multiple Choice branch if you want, like this:
+What's your favorite movie #SubName? @InputVar[Ex_FavoriteMovie]
+[American Beauty] That's my favorite movie too! I love Kevin Spacey #EmoteHappy
+[Lord of the Rings, LOTR] My one ring would be a cock ring #Lol
+[Star Wars, Empire Strikes, Jedi] Just call me Darth #DomName #Lol
+[Godfather] Good choice, I like making offers you can't refuse too #Grin
+[Furious] I love the Fast and Furious movies #EmoteHappy
+[Lion King] I'm still not over Mufasa T.T
+[Clerks] I'm not even supposed to be here today! #Lol
+@AcceptAnswer That's a good one #EmoteHappy
+Check out this script in an editor if you want to see how it looks
+Now the ATSYMBOLShowVar[] hasn't just been improved to show strings as well as integers
+You can now use as many of them in the same line that you want
+So I could tell you that your favorite band is @ShowVar[Ex_FavoriteBand] and your favorite movie is @ShowVar[Ex_FavoriteMovie]
+Usually you want variables like that to stick around
+But since this is just an example script I don't really need them anymore so I'll use ATSYMBOLDeleteVar[] to get rid of them
+I can't use more than one ATSYMBOLDeleteVar[] in a line, so I'll just use a couple of ATSYMBOLNullResponse Commands behind the scenes
+@NullResponse @DeleteVar[Ex_FavoriteBand]
+@NullResponse @DeleteVar[Ex_FavoriteMovie]
+Ugh, speaking of ATSYMBOLNullResponse Commands...
+They're great for running other Commands discretely and pulling off some complex stuff
+But when you start getting complicated and using a lot of them it can really slow things down, even if you use the ATSYMBOLRapidTextOn Command
+Let me show you what I mean, here's 30 ATSYMBOLNullResponse Commands in a row with ATSYMBOLRapidTextOn
+(Rapid Code)
+This should take about 30 seconds, but bear with me and I promise it will be worth it #EmoteHappy
+@NullResponse @RapidTextOn
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+So that wasn't <i>too</i> bad, but it still wasted like 30 seconds just to basically run code @RapidTextOff
+That's why there's the new Command ATSYMBOLRapidCodeOn
+ATSYMBOLRapidCodeOn will skip through all lines containing ATSYMBOLNullResponse while <i>still</i> running any Commands on those lines
+You can turn it off manually with ATSYMBOLRapidCodeOff, but it will also disable itself automatically when it reaches a line that does not contain ATSYMBOLNullResponse
+To show you what I mean...
+Let's go through those 30 ATSYMBOLNullResponse lines again, this time with ATSYMBOLRapidCodeOn
+@NullResponse @RapidCodeOn
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+@NullResponse 
+Guess what? It's already gone through all 30 lines #EmoteHappy
+So now if you do have to write complicated code in the future, you don't have to worry about bogging everything down
+But if you want a little inside dirt, I can tell you...
+The more that 1885 works on Total Brat, the more powerful the Tease AI scripting language becomes
+And hopefully less and less of that kind of complicated stuff will be necessary to get the results we want #EmoteHappy
+Speaking of the results we want, let's talk about Interrupts for a second
+They're really useful when you think about it, but they can also really screw up certain scripts
+That's why there's a new Command I think you're gonna like if you're a scripter: ATSYMBOLInterruptsOff
+Right now if you asked me to let you start stroking, we'd end up breaking out of this script
+But I just turned Interrupts off, so take the next couple of moments to ask me to let you start stroking while I count to ten @InterruptsOff
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Okay turning them back on now with ATSYMBOLInterruptsOn @InterruptsOn
+This doesn't just work for stroking Interrupts, this will intercept almost any kind of Interrupt that could have occurred, with the exception of Safewords
+So that about wraps it up for the new Commands in Patch 47
+If you have any questions about anything, please ask in the Open Beta thread
+Also, don't tell 1885 but I caught a glimpse of some stuff he's working on for Patch 48, check this out:
+We're in a Linear type script, right?
+But without using any new Commands at all, I can tell you...
+@CockSmall That I think you have a pretty small cock #Lol
+@CockAverage That I think you have an average-sized cock
+@CockLarge That I think you have a pretty big cock #EmoteHappy
+Yeah
+I don't know how he did it, but it looks like Command Filters are gonna be usable in Linear type scripts soon!
+@SystemMessage End of Patch 47.txt @TyposOn
+@NullResponse @EndTease
+@End 

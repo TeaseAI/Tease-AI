@@ -436,8 +436,10 @@ Public Class FrmSettings
 
 		'dompersonalityComboBox.Text = PersonType
 		Debug.Print("Dom personality = " & Form1.dompersonalitycombobox.Text)
-		Debug.Print("WEB THING HELLO???" & Application.StartupPath & "\Scripts\" & Form1.dompersonalitycombobox.Text & "\Playlist\Start\")
-		WBPlaylist.Navigate(Application.StartupPath & "\Scripts\" & Form1.dompersonalitycombobox.Text & "\Playlist\Start\")
+		If Directory.Exists(Application.StartupPath & "\Scripts\" & Form1.dompersonalitycombobox.Text & "\Playlist\Start\") Then
+			Debug.Print("WEB THING HELLO???" & Application.StartupPath & "\Scripts\" & Form1.dompersonalitycombobox.Text & "\Playlist\Start\")
+			WBPlaylist.Navigate(Application.StartupPath & "\Scripts\" & Form1.dompersonalitycombobox.Text & "\Playlist\Start\")
+		End If
 
 
 		For Each tmptbx As TextBox In New List(Of TextBox) From {TbxContact1ImageDir, TbxContact2ImageDir, TbxContact3ImageDir, TbxDomImageDir}
@@ -8924,6 +8926,8 @@ checkFolder:
 
 		Dim SesImgCount As Integer = 0
 		Dim SesImgSpace As Long = 0
+
+		Directory.CreateDirectory(Application.StartupPath & "\Images\Session Images\")
 
 		For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath & "\Images\Session Images\", FileIO.SearchOption.SearchAllSubDirectories, "*.*")
 			SesImgCount += 1

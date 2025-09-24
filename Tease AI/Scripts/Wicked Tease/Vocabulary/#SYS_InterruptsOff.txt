@@ -1,0 +1,14 @@
+Don't interrupt me right now #SubName
+Just listen for a minute #PetName
+I just need you to listen for the moment #PetName
+Wait a minute and let me talk #SubName
+Just hold off for a minute
+I'm trying to talk right now #PetName
+Let me say what I have to say first
+I have something to say first
+Hold on I need to get this out there
+Hold your horses #PetName #EmoteHappy
+I'll get with you when I'm done talking #PetName
+I'll get with you in a minute #PetName
+I'm in the middle of talking about something #PetName #EmoteFlustered
+Please don't interrupt me #SubName

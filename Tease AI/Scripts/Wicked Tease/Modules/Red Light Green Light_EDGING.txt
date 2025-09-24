@@ -1,0 +1,30 @@
+#StopStroking @StopStroking @CheckFlag(NoRedLightGreenLightInstructions)
+I want to play a game called Red Light Green Light with you
+It's really simple #SubName
+I'm going to pick out one of your porn videos and show it to you
+Any time the video is playing, you have to stroke
+But I'll be over here with my finger on the controls
+And if I pause it, then you have to stop stroking completely
+Red light - I pause the video and you stop stroking
+Green light - I play the video and you stroke
+Easy right? @SetFlag(NoRedLightGreenLightInstructions)
+So let's do it @PlayRedLightGreenLight
+You made it!
+I have a lot of fun with that game, I hope you do too
+We'll try playing it again sometime, but for now
+I'm very much in a green light kind of mood #Lol
+@End
+(NoRedLightGreenLightInstructions)
+Feel like playing Red Light Green Light with me again? #EmoteHappy
+[yes] In that case
+[no] That's okay #PetName @Goto(That's Okay)
+@DifferentAnswer Yes or no #PetName?
+Drivers start your engines #Grin @PlayRedLightGreenLight
+You made it!
+That was fun #EmoteHappy
+I'll have to rev up your engine like that again real soon #Grin
+@End
+(That's Okay)
+I have other ways of making you ache #Grin
+@End
+@Info Domme plays the video tease Red Light Green Light with you. Written by 1885.

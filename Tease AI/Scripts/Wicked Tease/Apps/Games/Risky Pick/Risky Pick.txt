@@ -1,0 +1,418 @@
+@PlayRiskReady to play some Risky Pick huh? #EmoteHappy @RapidTextOn
+(Called From Module)
+@NullResponse @CheckFlag(RiskyPickInstructions)
+Since we haven't played before, let me give you a quick idea of how the game works @RapidTextOff
+The object of the game for you is to win as many tokens as you can
+The object for me is to pay you the least amount of tokens I can for the most amount of edges #Grin
+When the game starts, you'll pick 1 of the available 24 cases
+That's your case for the rest of the game
+After that you'll spend 6 rounds eliminating the remaining cases
+You'll get rid of 6 cases during Rounds 1 and 2
+3 cases during Rounds 3 and 4
+And only 2 cases during Rounds 5 and 6
+After those 6 Rounds are over, there will be only two cases left
+One on the board
+And the one you chose in the beginning #EmoteHappy
+At that point you will have to select which case to keep
+And however many edges it says is however many edges you owe me
+You'll also be paid Bronze tokens equal to 1000 divided by the number of edges you do
+So if you end up with 10 edges, you win 100 tokens
+So you'll see that the only way to actually win a profit is to end up with a case from the bottom row of edges
+Now then...
+At the end of each round, I will look at the board and make you an offer
+A certain amount of tokens for a certain amount of edges
+If you decline my offer, we move to the next round
+But if you accept, the game ends and we both collect what we're owed #Grin
+You may not like my offers at first
+But you don't know what case you have or what you're gonna end up with
+So you have to decide if you're gonna risk going further
+Or pick my deal as the best one you're gonna get all game #Grin @SetFlag(RiskyPickInstructions)
+So now that you know how to play...
+(RiskyPickInstructions)
+Go ahead and pick your case @RapidTextOn
+@NullResponse @PlayRiskyPick @ChooseRiskyPick @RapidTextOff
+So you chose case #RP_ChosenCase huh #Grin
+Okay, I'll put it aside and at the end of the game we'll see how well you did @CheckRiskyPick @RapidTextOn
+Or how bad you just fucked yourself #Lol @RapidTextOff
+Choose 6 cases please @RapidTextOn
+@NullResponse @ChooseRiskyPick @RapidTextOff
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+I'll pay you #RP_TokenOffer tokens to walk out of here right now and give me #RP_EdgeOffer edges
+[Risk] Want to push your luck? So be it #Grin
+[Pick] Throwing in the towel already? So be it #Grin @Goto(Accepted Offer)
+@DifferentAnswer NULL
+Choose 6 more cases @RapidTextOn
+@NullResponse @ChooseRiskyPick @RapidTextOff
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+I'll pay you #RP_TokenOffer tokens to walk out of here right now and give me #RP_EdgeOffer edges
+[Risk] Hope you don't regret declining my offer #Grin
+[Pick] Looks like we have a deal #Grin @Goto(Accepted Offer)
+@DifferentAnswer NULL
+This time choose only 3 cases @RapidTextOn
+@NullResponse @ChooseRiskyPick @RapidTextOff
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+I'll pay you #RP_TokenOffer tokens to walk out of here right now and give me #RP_EdgeOffer edges
+[Risk] Keep pushing your luck #SubName #Grin
+[Pick] Looks like we have a deal #Grin @Goto(Accepted Offer)
+@DifferentAnswer NULL
+3 more cases @RapidTextOn
+@NullResponse @ChooseRiskyPick @RapidTextOff
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+I'll pay you #RP_TokenOffer tokens to walk out of here right now and give me #RP_EdgeOffer edges
+[Risk] Keep pushing your luck #SubName #Grin
+[Pick] Looks like we have a deal #Grin @Goto(Accepted Offer)
+@DifferentAnswer NULL
+This time you only need to open two @RapidTextOn
+@NullResponse @ChooseRiskyPick @RapidTextOff
+Let's see what's in case number #RP_CaseNumber  @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+I'll pay you #RP_TokenOffer tokens to walk out of here right now and give me #RP_EdgeOffer edges
+[Risk] Keep pushing your luck #SubName #Grin
+[Pick] Looks like we have a deal #Grin @Goto(Accepted Offer)
+@DifferentAnswer NULL
+2 more cases please @RapidTextOn
+@NullResponse @ChooseRiskyPick @RapidTextOff
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+Let's see what's in case number #RP_CaseNumber @Wait(4) @ClearRiskyLabels
+@NullResponse  @CheckRiskyPick
+#RP_RespondCase
+I'll pay you #RP_TokenOffer tokens to walk out of here right now and give me #RP_EdgeOffer edges
+[Risk] Not going for it huh? You know what that means
+[Pick] Looks like we have a deal #Grin @Goto(Accepted Offer)
+@DifferentAnswer NULL
+We're down to two more cases
+The one you picked
+And the one you didn't #Grin
+You only get to open one of them, and that's how many edges you owe me no matter what
+So which one will it be? @FinalRiskyPick
+[Risk] Want to go with the case you <i>didn't</i> pick huh? 
+[Pick] Standing by your original decision, I like that #EmoteHappy @Goto(Chose My Case)
+@DifferentAnswer NULL
+All right, hope you don't regret going back on your first choice #Grin
+Let's see what's inside @Wait(5)
+@NullResponse @RevealLastCase @If[#RP_EdgesOwed]=[1]Then(Last Case One Edge)
+#RP_EdgesOwed edges! @If[#RP_EdgesOwed]>[70]Then(High Edges)
+@NullResponse @If[#RP_EdgesOwed]>[30]Then(Medium High Edges)
+@NullResponse @If[#RP_EdgesOwed]>[7]Then(Medium Low Edges)
+You got lucky as hell this time #SubName #Lol @Goto(Figured Edges)
+(Last Case One Edge)
+1 Edge, lucky you! #Grin
+We need to settle up, but that shouldn't be too difficult @Goto(Accepted Offer)
+(Chose My Case)
+I just hope you don't regret it #Grin
+Let's see what's inside @Wait(5)
+@NullResponse @RevealUserCase @If[#RP_EdgesOwed]=[1]Then(Last Case One Edge)
+#RP_EdgesOwed edges! @If[#RP_EdgesOwed]>[70]Then(High Edges)
+@NullResponse @If[#RP_EdgesOwed]>[30]Then(Medium High Edges)
+@NullResponse @If[#RP_EdgesOwed]>[7]Then(Medium Low Edges)
+You got lucky as hell this time #SubName #Lol @Goto(Figured Edges)
+(High Edges)
+Looks like you're gonna be busy for a while #Grin @Goto(Figured Edges)
+(Medium High Edges)
+Not as many as I was hoping for, but still quite a bit #Grin @Goto(Figured Edges)
+(Medium Low Edges)
+I think you got off kinda lucky #Lol 
+(Figured Edges)
+Now there's just one more thing to do before this game is finished
+We have to settle up #EmoteHappy
+(Accepted Offer)
+First let's take care of the #RP_TokensPaid tokens I owe you @Wait(4)
+@NullResponse @RiskyPayout
+And now we'll take care of the edges you own me #Grin
+Let's meet back up in chat @Wait(3)
+@NullResponse @CloseRiskyPick
+So here's the deal #SubName @If[RP_Edges]=[1]Then(Owe One Edge)
+You owe me @ShowVar[RP_Edges] edges
+You can either do them on your own
+Or I can guide you through them
+Which would you prefer?
+[you, guide, guide me] I was hoping you would say that #Grin @Goto(Edged By Domme)
+[I, me] Fine by me #SubName 
+@DifferentAnswer Who should handle these edges #SubName, me or you?
+Just do your best to have them done by tomorrow
+That way when you say hi to me
+I know I'll have an extra desperate cock to play with #Grin
+In the meantime... @RiskyState
+(Owe One Edge)
+You only owe me a single edge
+So I think we should make it count #Grin
+Get to the edge right now @EdgeHold
+#LetTheEdgeFade
+Well, that was a pretty expensive edge
+But I feel like I got my money's worth #EmoteHappy @RiskyState
+(Edged By Domme)
+#Edge @RapidTextOff @EdgeNoHold @ChangeVar[RP_Edges]=[RP_Edges]-[1]
+@NullResponse @If[RP_Edges]=[0]Then(Edges Finished)
+@NullResponse @Goto(Butt Cooldown, Boob Cooldown, Could Let You Rest, It's Kinda Funny, We Should Play More, BnB Slideshow, Stare At This Picture, Wait For It, Wait For It JK, Know What'd Be Funny, Who Has A Nicer Ass, RP Edge Count, I Love Playing Games, Pause For Edge Count, This Many Edges Left, Even When These Edges Are Done, Probably In A Hurry, I Could Let You Rest, Days Instead Of Edges)
+(Days Instead Of Edges)
+#LetTheEdgeFade 
+There should be a version of Risky Pick where we play for days denied instead of edges
+Maybe I should look into that
+The only question is
+How many days should be the max #Grin @Goto(Edged By Domme)
+(I Could Let You Rest)
+I could let you rest for a bit @Chance50(You Gotta Be Aching)
+But I just don't fucking want to #Grin @Goto(Edged By Domme)
+(You Gotta Be Aching)
+I mean, you <i>gotta</i> be aching right now 
+But oh yeah @RapidTextOn
+That's kinda the point #Lol @Goto(Edged By Domme)
+(Probably In A Hurry)
+You're probably in a hurry to finish these edges, so... @RapidTextOn @Goto(Edged By Domme)
+(Even When These Edges Are Done)
+#LetTheEdgeFade
+Even when these edges are done
+Your #Cock still won't be free of me @Chance50(Stay In Debt)
+I might let you have a little break
+Or I might just make you keep on edging for me @RapidTextOn
+Just because I can #Grin @RapidTextOff @Goto(Edged By Domme)
+(Stay In Debt)
+You can pay off all the edges you want
+But at the end of the day when the stroking is done
+And you're throbbing, aching with desperation
+That #Cock still belongs to me #Grin @Goto(Edged By Domme)
+(This Many Edges Left)
+@ShowVar[RP_Edges] edges left #SubName @Wait(#Random(5,20)) @Goto(Edged By Domme)
+(Pause For Edge Count)
+#LetTheEdgeFade
+This is how many edges you have left -> @ShowVar[RP_Edges] @Goto(This is Ass, This is Boobs, This is Random Pic)
+(This is Ass) This is a sexy ass @ShowButtImage @Goto(This Is Me Telling You To Edge)
+(This is Boobs) This is a pair of #Boobs @ShowBoobsImage @Goto(This Is Me Telling You To Edge)
+(This is Random Pic) This is a hot fucking picture I just found @ShowBlogImage
+(This Is Me Telling You To Edge)
+And <i>this</i> is me telling you to edge again @RapidTextOn @Goto(Edged By Domme)
+(I Love Playing Games)
+#LetTheEdgeFade
+I love playing games like this @Chance50(Board Game Talk)
+The choices...
+The consequences
+It's nothing I can't make you do already
+But I love knowing each of these edges, well
+You brought them on yourself #Grin @Goto(Edged By Domme)
+(Board Game Talk)
+If we ever played board games together
+I'd make sure very game would have some element of risk to it
+A certain amount of denial if you lose
+Edging every time I rolled a six
+You don't even wanna know what I would do to you for rolling doubles #Grin @Goto(Edged By Domme)
+(RP Edge Count)
+#LetTheEdgeFade @If[RP_Edges]=[1]Then(Edge Count One Edge Left)
+@ShowVar[RP_Edges] edges left to go
+I wonder what's harder on you
+Doing these edges for me
+Or the things I do to you between each one #Grin @Goto(Edged By Domme)
+(Edge Count One Edge Left)
+You only owe me one more edge
+Might as well go ahead and get it out of the way #Grin @Goto(Edged By Domme)
+(Who Has A Nicer Ass)
+#LetTheEdgeFade
+Who has a nicer ass @RapidTextOn
+Me
+Or this girl? @ShowButtImage @RapidTextOff @LockImages
+[you] So you think my ass is better... @Goto(Good Thing Asskisser) @UnlockImages
+[she, her, that] Oh really #Lol
+@DifferentAnswer Me or her #SubName?
+I appreciate your honesty #SubName #EmoteHappy @SetVar[RP_EdgesAdd]=[#Random(5, 10)]
+But I still added @ShowVar[RP_EdgesAdd] edges to what you owe me for not picking mine :P @ChangeVar[RP_Edges]=[RP_Edges]+[RPEdgesAdd] @UnlockImages @Goto(Edged By Domme)
+(Good Thing Asskisser)
+I guess that's a good thing
+Since you apparently like to kiss it so much #Lol @Goto(Edged By Domme)
+(Know What'd Be Funny)
+#LetTheEdgeFade
+You know what would be funny? @Chance50(This Would Be Funny)
+If after you were done giving me these edges
+I made you edge some more for me @RapidTextOn
+Just because I can #Grin @Goto(Edged By Domme)
+(This Would Be Funny)
+This... @RapidTextOn @Goto(Edged By Domme)
+(Wait For It JK)
+Wait for it... @Chance50(Fuck That)
+Just kidding #Lol @RapidTextOn @Goto(Edged By Domme)
+(Fuck That)
+Fuck that #Lol @RapidTextOn @Goto(Edged By Domme)
+(Wait For It)
+Wait for it... @Wait(#Random(5,20)) @Chance20(Edged By Domme)
+<i>Wait</i> for it... @Wait(#Random(5,20)) @Chance40(Edged By Domme)
+Keep waiting for it... @Wait(#Random(5,20)) @Chance60(Edged By Domme)
+<i>Almost</i> there... @Wait(#Random(5,20)) @Chance80(Edged By Domme)
+#SubName... @Wait(#Random(5,20)) @Goto(Edged By Domme)
+(Stare At This Picture)
+Now just stare at this picture until I tell you to edge again @ShowBlogImage @Wait(#Random(15,60)) @Goto(Edged By Domme)
+(BnB Slideshow)
+#LetTheEdgeFade 
+As long as you're cooling down 
+I've got a slideshow to keep you occupied... @Chance50(Boob Show)
+The sexiest asses I found online today #Grin @Slideshow(butt) @SlideshowOn @Goto(Slides Loaded)
+(Boob Show)
+The best breasts on the internets #Lol @Slideshow(boob) @SlideshowOn
+(Slides Loaded)
+Go ahead and stare while you cool down
+It's okay if gets a little uncomfortable
+And you start to squirm
+After all
+This is to keep you from getting bored
+Not keep you from aching #Grin
+In fact
+You should enjoy it while it lasts
+Because once it's over
+You're going right back to the edge #EmoteHappy @Wait(#Random(10,30))
+Okay, that's enough @SlideshowOff @Goto(Edged By Domme)
+(We Should Play More)
+We should play games like this more often @Chance50(Direct Control)
+I like the competition
+Not knowing the outcome
+Maybe I'll win big and score a lot of edges
+Maybe you'll get lucky and score a lot of tokens
+Either way, you have to come back to chat with me eventually
+And that's when I show you that house <i>always</i> wins #Grin @Goto(Edged By Domme)
+(Direct Control)
+I know I have to give up a little direct control
+But I think it's kinda hot leaving the fate of your #Cock up to chance once in a while
+How much pleasure you feel @RapidTextOn
+How much agony you endure
+All down to the roll of the die
+The flip of a card
+Holding your breath as your entire destiny unravels in a second @RapidTextOff
+All it takes to feel a rush like that...
+Is for the stakes to be high enough #Grin @Goto(Edged By Domme)
+(It's Kinda Funny)
+It's kinda funny @Chance50(Thought of Debt)
+I don't need games like this to make you edge
+But it's just so much fun playing games when there's something at stake #EmoteHappy @Chance50(Denial On The Line)
+@NullResponse @Goto(Edged By Domme)
+(Denial On The Line)
+Maybe next time we'll play for even higher stakes
+Like when... @RapidTextOn
+Or if...
+You get to cum again #Grin @RapidTextOff @Goto(Edged By Domme)
+(Thought of Debt)
+The thought of you being in debt
+And the only way you can pay it off is to edge
+I think I would be a pretty good edge collector
+Practice makes perfect after all #Grin @Goto(Edged By Domme)
+(Butt Cooldown)
+#LetTheEdgeFade @CheckFlag(RP_ButtCooldown)
+I think I'll let you relax for a minute @Chance50(RP Butt 2) @TempFlag(RP_ButtCooldown)
+While you stare at this sexy ass and try not to squirm #Grin @ShowButtImage @LockImages
+I bet you're looking at it and thinking
+"Fuck, do I or don't I want to stroke to that?"
+Don't worry #PetName
+You won't have to debate that for very much longer #Lol @UnlockImages @Goto(Edged By Domme)
+(RP Butt 2)
+Assuming you even <i>can</i> relax while staring at an ass this hot #Lol @ShowButtImage @LockImages
+Try not to squirm too much though
+You don't have much of a break until the next edge
+And that #Cock needs to recover if it's going to finish the remaining @ShowVar[RP_Edges] #Grin
+Then again
+Maybe I don't <i>want</i> you to recover
+Maybe I just want you to suffer, so... @UnlockImages @Goto(Edged By Domme)
+(RP_ButtCooldown)
+Here's another sexy ass to cool down to #Grin @ShowButtImage @LockImages @Chance50(Then Again Butt)
+Just follow the shape of her curves
+Imagine how how her ass would feel in your palms
+Or the moans she would make if you spanked it
+Me, on the other hand...
+I would rather hear the moans <i>you</i> make having to edge again #Grin @UnlockImages @Goto(Edged By Domme)
+(Then Again Butt)
+Then again, you'll never finish your edges ataring at butts all day, so... @UnlockImages @Goto(Edged By Domme)
+(Boob Cooldown)
+#LetTheEdgeFade @CheckFlag(RP_BoobCooldown)
+I think you could use some recovery time @Chance50(RP Boob 2) @TempFlag(RP_BoobCooldown)
+But I wouldn't want you to get bored, so...
+Here's some #Boobs for you to look at while you wait #Grin @ShowBoobsImage @LockImages
+I know guys like a nice, full pair of #Boobs
+Just like I like a nice, full pair of #Balls #Lol
+And yours aren't gonna get any fuller staring at that picture, so... @UnlockImages @Goto(Edged By Domme)
+(RP Boob 2)
+But I don't want you to get <i>too</i> comfortable, so here's some #Boobs #Lol @ShowBoobsImage @LockImages
+Yeah, making #Boobs appear is kinda like my super power
+Just like it's <i>your</i> kryptonite #Grin
+Making you suffer and writhe
+Making you weaker for me
+And making it all the more vicious 
+When I tell you to edge again @UnlockImages @Goto(Edged By Domme)
+(RP_BoobCooldown)
+Here's some more #Boobs for you to relax to #Grin @ShowBoobsImage @LockImages @Chance50(Then Again Boob)
+Maybe relax isn't the best word
+Suffer to?
+Squirm to?
+Ache to?
+Fuck it @RapidTextOn
+Let's just go with all of the above #Lol @UnlockImages @Goto(Edged By Domme)
+(Then Again Boob)
+Just kidding #Lol @RapidTextOn @UnlockImages @Goto(Edged By Domme)
+(Could Let You Rest)
+I could let you rest for a minute @Chance50(You Could Probably Use It)
+But I won't #Grin @RapidTextOn @Goto(Edged By Domme)
+(You Could Probably Use It)
+You could probably use it
+But the more you rest, the more that desperation's gonna fade, so... @RapidTextOn @Goto(Edged By Domme)
+(Edges Finished)
+#LetTheEdgeFade 
+That was the last edge you owed me #SubName
+I hope you had as much fun as I did #EmoteHappy @RiskyState
+(Risky Game)
+If you want to play again
+Or just want to endure a little teasing
+You know where to find me #Grin @EndTease
+@End
+(Risky Tease)
+As much as I love playing that game
+I think I'm ready to get back to having more direct control #Grin
+@End

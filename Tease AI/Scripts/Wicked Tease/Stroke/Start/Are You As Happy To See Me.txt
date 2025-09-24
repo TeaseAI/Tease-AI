@@ -1,0 +1,37 @@
+#GreetSub @Chance50(Really Happy)
+Are you as happy to see me as I am to see you?
+[no] No? @Goto(You Must Know What I'm About To Do)
+[yes] I'm glad to hear that #SubName
+[not happy, not] No? @Goto(You Must Know What I'm About To Do)
+[I am happy, I'm happy] I'm glad to hear that #SubName
+@DifferentAnswer Are you happy to see me or not? #Grin
+I've been thinking about all these fun ways to torment a cock #GeneralTime 
+And there's not a lot of guys who can handle that
+That's why I'm always glad to see you here willing to please me
+And willing to suffer #Grin
+Speaking of suffering... @Goto(Start Stroking)
+(You Must Know What I'm About To Do)
+You must know what I'm about to do to that #Cock then #Grin
+But since you knew and logged on anyway
+I don't have to feel guilty about it #Lol @Goto(Start Stroking)
+(Really Happy)
+I'm really happy to see you #GeneralTime
+[why, how come, really, yeah] Because I've been thinking about your #Cock @Goto(And How Much I Want It To Suffer)
+[too, as, also] Aww that's so sweet @Goto(But I Get The Feeling)
+[thank, gracias, merci, nice, sweet, kind, means] You're welcome #PetName @Goto(But I Don't Know If You Should Thank Me)
+@AcceptAnswer The thing is...
+I've just been sitting here thinking of all these fun ways to make a #Cock suffer
+And we both know how much fun yours is to play with @Goto(Start Stroking)
+(And How Much I Want It To Suffer)
+And how much I want it to suffer #Grin @Goto(Start Stroking)
+(But I Get The Feeling)
+But I get the feeling your #Cock isn't as glad to see me as you are
+Especially considering what I'm about to do to it #Grin @Goto(Start Stroking)
+(But I Don't Know If You Should Thank Me)
+But I don't know if you should really be thanking me
+Considering that the reason I'm so happy to see you
+Is that I finally get to torment that #Cock of yours some more #Grin
+(Start Stroking)
+#StartStroking @StartStroking
+@End
+@Info Domme greets you by asking if you're happy to see her. Written by 1885

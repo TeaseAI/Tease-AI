@@ -1,0 +1,43 @@
+Stop stroking @StopStroking @CheckFlag(NoAvoidTheEdgeInstructions)
+I want to play a little game with you #PetName
+I call it Avoid The Edge #EmoteHappy
+The rules are pretty simple really
+I'm going to pick one of your porn videos for you to watch
+And you have to stroke the entire time it's playing
+The thing is though...
+I don't want you to edge, I only want you to stroke
+But if you can't help yourself, and you <i>do</i> get close, just tell me
+And I'll pause the video while I cool you down a little
+And just for the record
+That may not be as pleasant as it sounds #Grin
+All you have to do to win is make it through the whole video
+And don't worry about losing
+I'll make sure you won't #Lol
+So now that you know the rules @SetFlag(NoAvoidTheEdgeInstructions)
+Let's play #Grin @PlayAvoidTheEdge
+You made it!
+Pretty fun game, right?
+[yes] I'm glad you think so #PetName
+[was fun] I'm glad you think so #PetName
+[no] That's kind of a shame #PetName
+[wasn't fun, wasn't, not fun, was not fun] That's kind of a shame #PetName
+@DifferentAnswer C'mon #PetName, yes or no?
+Cause we'll be playing a lot more of that, I'm sure #Grin
+But for now
+I have something else in mind
+@End
+(NoAvoidTheEdgeInstructions)
+I want to play Avoid The Edge with you again
+Up for it? #EmoteHappy
+[yes] I was hoping you'd say that #Grin
+[no] That's okay #PetName @Goto(That's Okay)
+@DifferentAnswer Yes or no #PetName?
+Let's get started @PlayAvoidTheEdge
+You made it!
+That was fun #EmoteHappy
+Next time I'll find an even better video for you to stroke to #Grin
+@End
+(That's Okay)
+I have plenty of other ways to make you squirm #Grin
+@End
+@Info Domme plays the video tease Avoid The Edge with you. Written by 1885.

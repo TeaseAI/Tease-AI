@@ -1,0 +1,14 @@
+@NullResponse @CheckStrokingState
+(Sub Stroking)
+Stop stroking #SubName @StopStroking
+(Sub Not Stroking)
+How dare you fucking talk to me like that
+[sorry, apologize, forgive, forgiveness, don't be mad. don't be angry, apologies] I'll accept your apology #SubName @Goto(But You're Not Getting Off That Easy)
+@AcceptAnswer You know what
+I think we just need to get this over with #GeneralTime @FinishTease
+@End
+(But You're Not Getting Off That Easy)
+But your balls are #Gonna have the pay the price for insulting me like that @CBTBalls
+I want you to think about the ache in your balls right now
+And remember that the next time you want to mouth off to me #PetName
+@End

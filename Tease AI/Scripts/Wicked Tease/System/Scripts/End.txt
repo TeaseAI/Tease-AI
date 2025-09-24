@@ -1,0 +1,32 @@
+I think I'm ready to decide if you get to cum or not
+Are you nervous?
+[yes] Good #Grin
+[no] You <i>should</i> be #Grin
+@AcceptAnswer Mmmm
+Get to the edge
+[close, on the edge, I'm there] #SubName... @DecideOrgasm
+@DifferentAnswer Tell me when you're close #PetName
+(Orgasm Allow)
+Cum for me! Cum as hard as you can!
+[came, finished, did] Good #Grin
+[thank, gracias, merci, grateful, good, amazing, incredible] You're welcome #PetName #Grin
+@AcceptAnswer Hehe just calm down now
+I hope you enjoyed that orgasm #SubName
+Who knows how many you're actually going to get? @Goto(EndScript)
+(Orgasm Deny)
+Put it back in your pants, you don't get to cum #GeneralTime
+Too bad
+Better luck next time #Grin @Goto(EndScript)
+(Orgasm Ruin)
+RUIN IT! You don't get to enjoy that orgasm #PetName!
+[ruined, did] Good #Grin
+[fuck] #Grin
+@AcceptAnswer hehe just calm down now
+I love building up all that pleasure just to snatch it away from you
+Better luck next time
+(EndScript)
+I had fun #GeneralTime #PetName
+Come back and see me soon #EmoteHappy
+@EndTease
+@End
+@Info Simple end script where the domme decides if you cum or not based on or orgasm and ruin chances. Written by 1885.

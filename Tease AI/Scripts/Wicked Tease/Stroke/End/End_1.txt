@@ -1,0 +1,30 @@
+Time to find out if you get to cum #PetName @DecideOrgasm
+(Orgasm Allow)
+Bring yourself to the edge one more time @Edge
+[came, finished, did] Good #Grin
+[thank, gracias, merci, grateful, good, amazing, incredible] You're welcome #PetName #Grin
+@AcceptAnswer Hehe just calm down now
+I hope you enjoyed that orgasm #SubName
+Who knows how many you're actually going to get? @Goto(EndScript)
+(Orgasm Deny)
+Bring yourself to the edge one more time @Edge
+Put it back in your pants, you don't get to cum #GeneralTime
+Too bad
+Better luck next time #Grin @Goto(EndScript)
+(Orgasm Ruin)
+Bring yourself to the edge one more time @Edge
+[ruined, did] Good #Grin
+[fuck] #Grin
+@AcceptAnswer hehe just calm down now
+I love building up all that pleasure just to snatch it away from you
+Better luck next time
+(EndScript)
+I know I teased you pretty good #GeneralTime
+But I'm not <i>quite</i> done yet #Grin
+I'm sending you some instructions I'd like you to do for me today
+I think you're #Gonna find them pretty intense #Grin @SendDailyTasks
+Thanks for giving me such a good time #GeneralTime #PetName
+I can't wait to see you again #EmoteHappy
+@EndTease
+@End
+@Info Simple end script where the domme decides if you cum or not based on orgasm and ruin chances. Written by 1885.

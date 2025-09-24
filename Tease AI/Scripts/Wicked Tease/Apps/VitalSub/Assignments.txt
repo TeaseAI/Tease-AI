@@ -1,0 +1,5 @@
+@DommeLevel1 Edge 3 Times
+@DommeLevel2 Edge 3 Times
+@DommeLevel3 Edge 5 Times
+@DommeLevel4 Edge 10 TImes
+@DommeLevel5 Edge 25 Times

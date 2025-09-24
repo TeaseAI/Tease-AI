@@ -1,0 +1,65 @@
+@NullResponse @CheckFlag(Too Much Coffee)
+Fuck I had too much coffee #GeneralTime
+I think I'm squirming in my chair as bad as you are #Lol
+I gotta go pee real quick, but first let's give you something to do while I'm gone #Grin
+I'm #Gonna play you a slideshow
+If it's one of your hentai pictures, then you can stroke however you want
+As long as you don't cum #Grin
+But if it's one of your softcore pictures
+Then you just have to sit there with your hands off and ache for her @SetFlag(Too Much Coffee)
+I'm sure I can trust you to suffer while I'm gone #Grin  @Goto(BRB)
+(Too Much Coffee)
+I am never #Gonna learn my lesson about drinking too much coffee
+I gotta pee, but I'll set you up with a slideshow again
+Remember, you only get to stroke for hentai
+(BRB)
+Brb @AFKOn @SetVar[TooMuchCoffee]=[0] @Chance50(Softcore1)
+(Hentai1)
+@NullResponse @ShowHentaiImage @ChangeVar[TooMuchCoffee]=[TooMuchCoffee]+[1]
+@NullResponse @If[TooMuchCoffee]>[7]Then(CoffeeFinished1)
+@NullResponse @Chance50(Softcore1)
+@NullResponse @Goto(Hentai1)
+(Softcore1)
+@NullResponse @ShowSoftcoreImage @ChangeVar[TooMuchCoffee]=[TooMuchCoffee]+[1]
+@NullResponse @If[TooMuchCoffee]>[7]Then(CoffeeFinished1)
+@NullResponse @Chance50(Hentai1)
+@NullResponse @Goto(Softcore1)
+(CoffeeFinished1)
+Okay I'm back #EmoteHappy @AFKOff
+Did you get to stroke a lot while I was gone?
+[yes] Good
+[no] No? Well that's okay #PetName @Goto(Plenty of Stroking)
+@DifferentAnswer Yes or no #PetName?
+I'm sure it felt nice to stroke for all your hentai again
+But now you get to go back to stroking for <i>me</i> #Grin @Goto(Start Stroking)
+(Plenty of Stroking)
+You're about to do plenty of it now #Grin
+(Start Stroking)
+Start stroking @StartStroking @BookmarkLink
+@End
+Fuck I really gotta go pee again
+I think that slideshow worked out pretty well for you a minute ago
+So I'll leave it running for you again
+Remember
+Stroke for hentai, hands off for sexy girls
+And no cumming either way #Grin
+Okay brb @AFKOn @SetVar[TooMuchCoffee]=[0] @Chance50(Softcore2)
+(Hentai2)
+@NullResponse @ShowHentaiImage @ChangeVar[TooMuchCoffee]=[TooMuchCoffee]+[1]
+@NullResponse @If[TooMuchCoffee]>[7]Then(CoffeeFinished2)
+@NullResponse @Chance50(Softcore2)
+@NullResponse @Goto(Hentai2)
+(Softcore2)
+@NullResponse @ShowSoftcoreImage @ChangeVar[TooMuchCoffee]=[TooMuchCoffee]+[1]
+@NullResponse @If[TooMuchCoffee]>[7]Then(CoffeeFinished2)
+@NullResponse @Chance50(Hentai2)
+@NullResponse @Goto(Softcore2)
+(CoffeeFinished2)
+Back @AFKOff
+I think I'm finally good now
+I wonder if that #Cock of yours can say the same
+Either way
+It's about to start feeling a whole lot less good #Grin
+Start stroking #PetName @StartStroking
+@End
+@Info The domme says she has to go pee because she drank too much coffee, but leaves you with a slideshow of hentai and softcore pictures. She leaves you with instructions to stroke for hentai pictures, but keep your hands off for softcore pictures. After several pictures she'll return to continue the tease. She'll leave to go pee during the next Link, leaving you another slideshow running until she returns. Written by 1885.

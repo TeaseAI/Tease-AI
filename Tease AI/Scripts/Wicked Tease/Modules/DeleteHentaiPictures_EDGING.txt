@@ -1,0 +1,54 @@
+#StopStroking @StopStroking @CheckFlag(DeletePictures)
+I don't know if we've ever really talked about it
+But there's just something so damn <i>fascinating</i> about teasing and denial when you really think about it
+The way you let me take your pleasure from you
+Essentially to use it for myself, because my orgasms feel twice as good when I think about your suffering #Grin
+The thing is, it makes me feel <i>so</i> good
+That I start wondering what else I can take from you
+That's when I start thinking about that hentai collection of yours
+I think about how interesting those pictures are
+How long you must have spent collecting them
+And it makes me wonder what it would do to you
+If I made you have to <i>really</i> suffer in order to keep them
+So here's what I think we should do
+I'm going to look through your hentai pictures, and when I find a really good one I'll show it to you and offer you a choice
+You can say "keep", but then you'll have to hurt yourself in some way in order to keep it
+Or you can say "delete" and save yourself the pain while I trash that picture. Permanently #Grin
+And when I say permanent, I mean it. Don't think you can fish these out of the recycle bin when we're done
+They won't be there #EmoteHappy @SetFlag(DeletePictures)
+So now that you know how this works @Goto(Let's Get Started)
+(DeletePictures)
+You know, I had so much fun playing keep it or delete it with your hentai pictures last time
+That I think we should play it again right now
+(Let's Get Started)
+Let's get started #Grin @Chance20(Selected) @LockImages
+(Cycle Pictures)
+@NullResponse @ShowHentaiImage @Chance70(Cycle Pictures)
+(Selected)
+@NullResponse @ShowHentaiImage
+#DeleteHentai_KeepOrDelete
+[keep] #DeleteHentai_Keep1
+[delete] #DeleteHentai_Delete1 @Goto(Chose Delete)
+@DifferentAnswer Keep it or delete it #PetName?
+Since you like it so much, I'll leave it up for you @Chance50(Keep CBT)
+While you edge for me #Grin @Edge
+#LetTheEdgeFade
+I hope that one was worth it #Lol @Chance25(Finished)
+Let's do it again @Chance20(Selected) @LockImages
+@NullResponse @Goto(Cycle Pictures)
+(Keep CBT)
+While you punish those #Balls for me @CBTBalls
+I hope that one was worth it #Lol @Chance25(Finished)
+Let's do it again @Chance20(Selected) @LockImages
+@NullResponse @Goto(Cycle Pictures)
+(Chose Delete)
+#DeleteHentai_Delete2 @DeleteLocalImage
+I hope that was worth saving yourself a little pain @Chance25(Finished)
+Especially since we're going again #Grin @Chance20(Selected) @LockImages
+@NullResponse @Goto(Cycle Pictures)
+(Finished)
+I think that's enough for now @UnlockImages
+Don't get too comfortable though
+You have a pretty good collection of porn on that computer
+And by now you should know that none of it is truly safe from me #Grin
+@End

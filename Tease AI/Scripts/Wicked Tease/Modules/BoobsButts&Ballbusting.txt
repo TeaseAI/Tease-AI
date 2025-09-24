@@ -1,0 +1,69 @@
+#StopStroking @StopStroking @CheckFlag(BBnBGame)
+I have a little game I want to play with you @CheckBnB 
+I call it Boobs, Butts & Ballbusting 
+But you're probably #Gonna call it excruciating #EmoteRandom
+I'm #Gonna show you a bunch of pictures very fast
+And all you have to do is say "stop" when you want me to stop
+If you stop on a picture of a girl's #Ass, I'll let you edge that #Cock for me
+But if it's a picture of her #Boobs...
+Then I get to punish your balls instead #EmoteRandom 
+All you have to do to win is rack up three edges in total...
+Before I rack your balls into oblivion #EmoteRandom @SetFlag(BBnBGame)
+Sounds like fun, doesn't it? 
+By the way, if you see all those pictures going by and it gets to be too much
+You can just give up and I'll let you stop
+But not before I punish your balls <i>and</i> your cock for being a quitter #EmoteRandom
+So now that you know the rules @Goto(Get Started) @SetVar[BBnBCount]=[0]
+(BBnBGame)
+I want to play Boobs, Butts & Ballbusting again #Grin @CheckBnB 
+Get ready @SetVar[BBnBCount]=[0]
+(Get Started)
+Here we go @TnAFastSlides
+[stop] #TnAFastSlidesResult @LockImages @CheckTnA
+[give up, quit, done] You know the price for quitting #PetName @StopTnA @Goto(Are You Sure)
+@DifferentAnswer I'm going to keep going until you say stop or you give up
+(Boobs)
+#BBnB_BoobsBranch @CBTBalls
+Still at @ShowVar[BBnBCount] #PetName @UnlockImages
+#BBnB_NextRoundLost @Goto(Get Started)
+(Butt)
+#Edge @Edge @ChangeVar[BBnBCount]=[BBnBCount]+[1]
+#LetTheEdgeFade @If[BBnBCount]>=[3]Then(You Win)
+That's @ShowVar[BBnBCount] so far! @UnlockImages
+#BBnB_NextRoundWon @Goto(Get Started)
+(You Win)
+You made it to three edges!
+I bet those #Balls are pretty happy about that
+Don't worry
+There's so many other ways I can make them suffer #EmoteRandom
+@End
+(No BnB)
+But you don't have Boob and Butt pictures set up :(
+You really should think about getting some pictures together
+There's <i>so</i> many ways I can have fun with them #Grin
+But in the meantime
+There's always the old-fashioned way #Lol
+@End
+(Are You Sure)
+Are you sure you want to pay it? 
+[yes] Suit yourself #Grin @Chance50(Let Your Balls Rest)
+[no] In that case... @Goto(Get Started)
+@DifferentAnswer Yes or no #PetName?
+Let's #Hurt those #Balls some more while they're still throbbing #EmoteRandom @CBTBalls
+Now then
+Let's give that #Cock a taste of what those #Balls are feeling @CBTCock
+I hope giving up was worth the pain #PetName
+Because here in a minute
+You're going to start stroking for me again #Grin
+@End
+(Let Your Balls Rest)
+Let's give your balls a little rest
+Just to make them think the pain is over
+Before I #Hurt them all over again after I work over your #Cock #EmoteRandom @CBTCock
+I hope your #Balls are ready #PetName
+Because they're up for some more abuse #EmoteRandom @CBTBalls
+I bet you're squirming in absolute agony right now
+Don't worry #PetName, I'll help you get your mind off it
+When I make you start squirming in absolute desperation #EmoteRandom
+@End
+@Info A game where the domme shows you a fast-moving slideshow of boobs and butts until you say stop. The domme will bust your balls if it's a boob picture, let you edge if it's a butt picture. The game continues until you have edged three times.

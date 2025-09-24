@@ -1,0 +1,33 @@
+#StopStroking @StopStroking @CheckFlag(RiskyPickSession)
+I feel like playing a game of Risky Pick @If[#BronzeTokens]<[100]Then(Not Enough Tokens)
+You up for it?
+[yes] Awesome #EmoteHappy
+[no] Oh well @Goto(No Thanks)
+@DifferentAnswer Yes or no #PetName?
+First things first, gotta pay to play #Grin @RapidTextOn
+@NullResponse @Remove100Tokens @RapidTextOff @TempFlag(RiskyPickSession)
+And now we can begin @Call(Apps\Games\Risky Pick\Risky Pick.txt, Called From Module)
+(No Thanks)
+Maybe you'll feel a little more adventurous next time #Grin
+@End
+(Not Enough Tokens)
+But you don't have enough tokens to play #EmoteFlustered
+Better hit up that slot machine #PetName
+But not right now
+I have other plans in store for you #Grin
+@End
+(RiskyPickSession)
+I bet those edges from our Risky Pick game aren't doing you any favors @Chance50(Screw It)
+But honestly
+If it didn't make your #Cock ache like crazy
+It wouldn't be of any interest to me in t he first place #Grin
+@End
+(Screw It)
+Screw it @RapidTextOn
+Let's add another one right now #Grin
+Edge @Edge @RapidTextOff
+#LetTheEdgeFade
+That's what I love about Risky Pick
+Win or lose, that #Cock is gonna feel the edge either way #Grin
+@End
+@Info The domme asks if you want to play Risky Pick, provided you have the tokens. If you've already played this session, she'll just comment on it or make you edge. Written by 1885.

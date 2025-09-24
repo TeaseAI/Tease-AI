@@ -1,0 +1,6 @@
+#StopStroking @StopStroking
+On second thought
+#Edge @Edge
+#LetTheEdgeFade
+@End
+@Info Simple module where the domme tells you to stop stroking, then changes her mind and tells you to edge instead. Written by 1885.

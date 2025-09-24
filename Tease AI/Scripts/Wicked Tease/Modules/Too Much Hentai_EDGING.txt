@@ -1,0 +1,55 @@
+Stop stroking @StopStroking @CheckFlag(TooMuchHentai_85)
+You know #SubName
+Sometimes I worry that you like hentai just a little <i>too</i> much
+So I think you need a little conditioning to make sure you still appreciate real women #Lol
+I'll even let you decide what you get to edge to #GeneralTime
+Would you prefer tits or ass?
+[tit, boob, breast] Breasts are the best #Grin @Slideshow(Boobs, Hentai, fast) @Goto(Chose Tits)
+[ass, butt, rear, bum, behind] Asses it is #EmoteHappy @Slideshow(Butts, Hentai, fast) @Goto(Chose Ass)
+[choose, decide, pick] You have to choose @LoopAnswer
+@DifferentAnswer Tits or ass #PetName?
+(Chose Tits)
+I'm #Gonna show you a little slideshow until you tell me to stop
+And if you see a nice pair of breasts then you get to edge @Goto(Another Hentai)
+(Chose Ass)
+I'm #Gonna show you a little slideshow until you tell me to stop
+And if you see a sexy ass then you get to edge
+(Another Hentai)
+But if it's another one of your hentai pictures...
+You're #Gonna bust those balls for me
+Maybe that will give you a better appreciation of the physical female form #Grin @SetFlag(TooMuchHentai_85) @LockImages
+(Let's Get Started) 
+Here we go @SlideshowOn
+[stop] @NullResponse @SlideshowOff @GotoSlideshow
+@DifferentAnswer Say stop when you're ready
+(Boobs)(Butts)
+Lucky you #EmoteHappy
+Go ahead and get to the edge for me @Edge
+#LetTheEdgeFade @Chance40(Finish)
+And I'll set you up for the next round #Grin @Goto(Let's Get Started)
+(Hentai)
+If you didn't have so much hentai
+Maybe you wouldn't land on it so often #Grin @CBTBalls
+I hope those #Balls aren't too sore
+Cause the game's not over yet #Lol @Goto(Let's Get Started)
+(TooMuchHentai_85)
+I think you need another lesson in appreciating real women #PetName
+So what will it be this time, tits or ass?
+[tit, boob, breast] Breasts it is #EmoteHappy @Slideshow(Boobs, Hentai, fast) @Goto(Chose Tits Again)
+[ass, butt, rear, bum, behind] Such an ass man #Lol @Slideshow(Butts, Hentai, fast) @Goto(Chose Ass Again)
+[choose, decide, pick] You have to choose @LoopAnswer
+@DifferentAnswer Tits or ass #PetName?
+(Chose Tits Again)
+I bet you hope you see a lot of #Boobs #GeneralTime @Goto(As It Should Be)
+(Chose Ass Again)
+I'm sure you're hoping to see one sexy ass after another #GeneralTime
+(As It Should Be)
+As it should be #PetName #Grin 
+Remember to say stop when you're ready @Goto(Let's Get Started) @LockImages
+(Finish)
+I think that's enough for now #Grin @UnlockImages
+But don't worry
+If I think you're not appreciating real women enough in the future
+I'll be happy to play with you again #EmoteHappy
+@End
+@Info The domme lets you choose tits or ass, then shows you a slideshow of a mix between your choice and hentai. You can say stop, and if it lands on your choice you get to edge. If it lands on hentai, you have to bust your balls for her. Written by 1885.

@@ -1,0 +1,20 @@
+Do you like suffering for me #SubName?
+[no]  No? @Goto(But I Like It)
+[yes] I'm glad to hear that 
+@DifferentAnswer Yes or no?
+Because I was actually about to start feeling sorry for you
+But now I know I don't have to #Grin @Goto(Start Stroking)
+(But I Like It)
+But I like making you suffer #Grin
+You can take it right?
+Since you know it pleases me so much?
+[no] This might be a little fucked up...
+[can't, don't think, don't know] This might be a little fucked up...
+[yes] Good boy @Goto(Start Stroking)
+[can, try, best] Good boy @Goto(Start Stroking)
+@DifferentAnswer Tell me if you can take it #PetName
+But that turns me on even more for some reason #Grin
+(Start Stroking)
+#StartStroking @StartStroking
+@End
+@Info Domme asks if you like suffering for her, and finds a way to twist either answer you give her as an invitation to make you suffer even more. Written by 1885.

@@ -1,0 +1,4 @@
+#Edge @Edge
+#LetTheEdgeFade
+@End
+@Info Simple module where the domme tells you to edge. Written by 1885.

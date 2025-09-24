@@ -36,7 +36,7 @@ Public Class SessionState
 	Const EditorGenericStringList As String = "System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
 
 	''' <summary> The oldest compatible version of a SessinState. </summary>
-	<NonSerialized> Const MINVERSION As String = "0.56.0.0"
+	<NonSerialized> Const MINVERSION As String = "0.60.0.0"
 
 	''' <summary>Contains the Tease-AI Version of this session.</summary>
 	<Category("Program-Info")> <[ReadOnly](True)>
@@ -952,9 +952,7 @@ Public Class SessionState
 				DomPersonality = My.Settings.DomPersonality
 			End If
 
-			If .dompersonalitycombobox.Items.Contains(DomPersonality) = False Then
-				Throw New Exception("The personality """ & DomPersonality & """ was not found.")
-			Else
+			If .dompersonalitycombobox.Items.Contains(DomPersonality) Then
 				.dompersonalitycombobox.SelectedItem = DomPersonality
 			End If
 

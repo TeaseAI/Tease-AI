@@ -1,0 +1,16 @@
+Are you aching a lot right now #SubName?
+[yes] Mmmm
+[no] No? @Goto(Not Aching)
+@AcceptAnswer Even so
+I want you to ache <i>more</i>
+#Edge @Edge
+#LetTheEdgeFade @Goto(End Module)
+(Not Aching)
+Well I can't have that #Grin
+#Edge @Edge
+#LetTheEdgeFade
+(End Module)
+Don't worry #PetName
+There's plenty more ache where that came from #Grin
+@End
+@Info Simple module where the domme asks if you're aching a lot and then tells you to edge. Written by 1885.

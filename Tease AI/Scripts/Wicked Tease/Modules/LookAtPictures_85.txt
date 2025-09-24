@@ -1,0 +1,31 @@
+#StopStroking @StopStroking
+#LAPLookAtPictures_85 #Grin
+[yes] #Yay
+[maybe,umm,dont know] I'll take that as a yes #Lol
+[no] #SuitYourself @Goto(Decline Offer)
+@DifferentAnswer Yes or no #PetName
+Let's see what I can find
+Do you like this one? @NewBlogImage
+[yes,yea,yep,yup,I do,sexy,hot,amazing,incredible,crazy,ache,horny,cum,I like,beautiful] #LAPIllSaveThisOne_85 @LikeBlogImage 
+[yes] #LAPIllSaveThisOne_85 @LikeBlogImage 
+[maybe,unsure,dont know,alright,all right,okay,ok] #LAPLookForSomethingElse_85
+[no,nah,not,dont,gross,disgusting,sick] #LAPScratchThatOne_85 @DislikeBlogImage
+[no] #LAPScratchThatOne_85 @DislikeBlogImage
+@DifferentAnswer A simple yes or no will suffice #PetName
+Hmmm
+(What About This One)
+#LAPWhatAboutThisOne_85 @NewBlogImage
+[yes,yea,yep,yup,I do,sexy,hot,amazing,incredible,crazy,ache,horny,cum,I like,beautiful] #LAPIllSaveThisOne_85 @LikeBlogImage 
+[yes] #LAPIllSaveThisOne_85 @LikeBlogImage 
+[maybe,unsure,dont know,alright,all right,okay,ok] #LAPLookForSomethingElse_85
+[no,nah,not,dont,gross,disgusting,sick] #LAPScratchThatOne_85 @DislikeBlogImage
+[no] #LAPScratchThatOne_85 @DislikeBlogImage
+@DifferentAnswer A simple yes or no will suffice #PetName
+@NullResponse @Chance20(I'm Finished)
+@NullResponse @Goto(What About This One)
+(I'm Finished)
+#ThatsEnough
+(Decline Offer)
+#LAPYouNeedToSufferMore_85
+@End
+@Info This module has the domme look through various blog images from URL Files with you, asking your opinion of each one and remembering your answers for later. She has a 20% chance of moving on with the tease after each image. Written by 1885.

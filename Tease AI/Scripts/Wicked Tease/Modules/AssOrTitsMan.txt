@@ -1,0 +1,39 @@
+Tell me something #PetName @CheckFlag(AssMan) @CheckFlag(TitMan)
+Are you more of an ass man
+Or do you prefer a nice pair of tits?
+[ass, butt, first, former, behind, rear, hienie, bum] In that case @Goto(AssManConfirm)
+[tit, boob, breast, last, latter] In that case
+[both, decide, either, choose, and] You have to pick one #PetName @LoopAnswer
+@DifferentAnswer Tits or ass #PetName?
+Here's some #Boobs you can edge to right now #Grin @ShowBoobsImage @LockImages @SetFlag(TitMan) @Edge
+#LetTheEdgeFade @UnlockImages
+So you're a tit man...
+I'm #Gonna remember that #SubName #Grin
+@End
+(AssManConfirm)
+Here's an ass you can edge to right now #Grin @ShowButtImage @LockImages @SetFlag(AssMan) @Edge
+#LetTheEdgeFade @UnlockImages
+So you're an ass man...
+I'm #Gonna remember that #SubName #Grin
+@End
+(AssMan)
+Do you think this is a nice ass? @ShowButtImage @LockImages
+[yes] I'm glad to hear you think so
+[no] That's too bad
+@DifferentAnswer Yes or no #PetName?
+Cause you're #Gonna edge to it right now #Grin @Edge
+#LetTheEdgeFade @UnlockImages
+I told you I'd remember you're an ass man
+And this won't be the last time I remind you of that #Grin
+@End
+(TitMan)
+Do you think these are some nice tits? @ShowBoobsImage @LockImages
+[yes] I'm glad to hear you think so
+[no] That's too bad
+@DifferentAnswer Yes or no #PetName?
+Cause you're #Gonna edge to them right now #Grin @Edge
+#LetTheEdgeFade @UnlockImages
+I told you I'd remember you're a tit man
+And this won't be the last time I remind you of that #Grin
+@End
+@Info Domme asks if you're a tit or ass man, then shows you a random boobs or butt picture to edge to. She'll remember your answer if the module runs again, going straight to picking out an image for you to edge to. Written by 1885.

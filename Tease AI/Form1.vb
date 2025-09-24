@@ -936,8 +936,6 @@ retryStart:
 			TBShortGreet.Text = My.Settings.ShortGreet
 			TBShortSafeword.Text = My.Settings.ShortSafeword
 
-			For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath + "\Scripts\" + Me.dompersonalitycombobox.Text + "\Vocabulary\Responses\", Microsoft.VisualBasic.FileIO.SearchOption.SearchTopLevelOnly, New String() {"*.txt"})
-				Dim SplitText As String = TxtReadLine(foundFile)
 				Dim SplitResponse As String() = SplitText.Split("]")
 				SplitResponse(0) = SplitResponse(0).Replace("[", "")
 				Do
@@ -945,10 +943,21 @@ retryStart:
 					SplitResponse(0) = SplitResponse(0).Replace(" ,", ",")
 					SplitResponse(0) = SplitResponse(0).Replace(", ", ",")
 					SplitResponse(0) = SplitResponse(0).Replace("'", "")
-				Loop While Not (Not SplitResponse(0).Contains("  ") And Not SplitResponse(0).Contains(", ") And Not SplitResponse(0).Contains(" ,") And Not SplitResponse(0).Contains("'"))
-				Dim SplitParts As String() = SplitResponse(0).Split(",")
-				ssh.ResponseList.Add(SplitParts(0))
-			Next
+			If Directory.Exists(Application.StartupPath + "\Scripts\" + Me.dompersonalitycombobox.Text + "\Vocabulary\Responses\") Then
+				For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath + "\Scripts\" + dompersonalitycombobox.Text + "\Vocabulary\Responses\", Microsoft.VisualBasic.FileIO.SearchOption.SearchTopLevelOnly, New String() {"*.txt"})
+					Dim SplitText As String = TxtReadLine(foundFile)
+					Dim SplitResponse As String() = SplitText.Split("]")
+					SplitResponse(0) = SplitResponse(0).Replace("[", "")
+					Do
+						SplitResponse(0) = SplitResponse(0).Replace("  ", " ")
+						SplitResponse(0) = SplitResponse(0).Replace(" ,", ",")
+						SplitResponse(0) = SplitResponse(0).Replace(", ", ",")
+						SplitResponse(0) = SplitResponse(0).Replace("'", "")
+					Loop While Not (Not SplitResponse(0).Contains("  ") And Not SplitResponse(0).Contains(", ") And Not SplitResponse(0).Contains(" ,") And Not SplitResponse(0).Contains("'"))
+					Dim SplitParts As String() = SplitResponse(0).Split(",")
+					ssh.ResponseList.Add(SplitParts(0))
+				Next
+			End If
 
 			FrmSplash.UpdateText("Checking saved dimensions...")
 			'===============================================================================
@@ -16384,8 +16393,6 @@ saveImage:
 
 	Public Sub CheckRandomOpportunities()
 		Dim randomDir As DirectoryInfo = Nothing
-		Try
-			If My.Settings.RandomImageDir <> "" AndAlso Directory.Exists(My.Settings.RandomImageDir) Then
 				randomDir = New DirectoryInfo(My.Settings.RandomImageDir)
 			End If
 			If randomDir.GetDirectories().Count <= 0 Then
@@ -16404,15 +16411,17 @@ saveImage:
 			If randomDir.GetDirectories().Count >= 4 Then
 				RandomContactToolStripMenuItem.Enabled = True
 				RandomContactToolStripMenuItem.Checked = My.Settings.CBRandomGlitter
-			End If
-		Catch
 			RandomContactToolStripMenuItem.Enabled = False
 			RandomContactToolStripMenuItem.Checked = False
 			My.Settings.CBRandomGlitter = False
 			FrmSettings.CBRandomDomme.Enabled = False
 			FrmSettings.CBRandomDomme.Checked = False
 			My.Settings.CBRandomDomme = False
-		End Try
+		ElseIf randomDir.GetDirectories().Count < 4 Then
+			RandomContactToolStripMenuItem.Enabled = False
+			RandomContactToolStripMenuItem.Checked = False
+			My.Settings.CBRandomGlitter = False
+		End If
 	End Sub
 
 	Public Sub InitDommeImageFolder()

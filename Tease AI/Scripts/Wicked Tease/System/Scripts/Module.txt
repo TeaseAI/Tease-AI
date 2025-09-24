@@ -1,0 +1,9 @@
+#SubName... @Chance50(Stop Stroking)
+#Edge @Edge
+#LetTheEdgeFade @Goto(Module End)
+(Stop Stroking)
+Stop stroking @StopStroking
+(Module End)
+@NullResponse
+@End
+@Info Simple module that has a 50% chance for the domme to tell you to stop stroking, and a 50% chance for the domme to tell you to edge. Written by 1885.

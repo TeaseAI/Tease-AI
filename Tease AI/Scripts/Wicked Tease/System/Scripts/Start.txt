@@ -1,0 +1,32 @@
+#GreetSub
+#HaveYouBeenBehavingYourself
+[no] Oh?
+[yes] Good boy :) @Goto(Good Boy)
+@DifferentAnswer Don't be coy #SubName. Have you or haven't you?
+Something I should know about?
+[no] Okay, I'll take your word for it #Lol @Goto(You're Here Now)
+[yes] Tell me what you did #SubName @LoopAnswer
+[came,cum,accident,orgasm,over the edge] Awww, and I wasn't there to see it @Goto(That's Okay)
+[jerked,touched my,touched myself,masturbated,played,stroking,stroke] Stroking yourself without my permission tsk tsk @Goto(Stroke For Me)
+@AcceptAnswer I only care about that #Cock and whether or not it cums, anything else isn't really my business #Lol
+But since you're here now...
+I feel like having a little fun with something that <i>is</i> my business @Goto(Start Stroking)
+(You're Here Now)
+All that matters is you're here now
+And <i>I'm</i> the one that feels like misbehaving #Grin @Goto(Start Stroking)
+(That's Okay)
+That's okay #PetName
+All I have to do is build you back up as quickly as possible
+And I know a pretty good way to do that #Grin @Goto(Start Stroking)
+(Stroke For Me)
+You're going to have to make that up to me you know
+And the best way I can think of to punish you for touching yourself without my permission
+Is to make you touch yourself <i>with</i> my permission #Grin @Goto(Start Stroking)
+(Good Boy)
+Since you were so good and didn't touch your #Cock while you were gone
+I'm going to reward you
+By letting you touch it a <i>lot</i> #Grin
+(Start Stroking)
+#StartStroking @StartStroking
+@End
+@Info Domme greets you by asking if you've been behaving yourself. Written by 1885
