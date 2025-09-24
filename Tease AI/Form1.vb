@@ -936,13 +936,6 @@ retryStart:
 			TBShortGreet.Text = My.Settings.ShortGreet
 			TBShortSafeword.Text = My.Settings.ShortSafeword
 
-				Dim SplitResponse As String() = SplitText.Split("]")
-				SplitResponse(0) = SplitResponse(0).Replace("[", "")
-				Do
-					SplitResponse(0) = SplitResponse(0).Replace("  ", " ")
-					SplitResponse(0) = SplitResponse(0).Replace(" ,", ",")
-					SplitResponse(0) = SplitResponse(0).Replace(", ", ",")
-					SplitResponse(0) = SplitResponse(0).Replace("'", "")
 			If Directory.Exists(Application.StartupPath + "\Scripts\" + Me.dompersonalitycombobox.Text + "\Vocabulary\Responses\") Then
 				For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath + "\Scripts\" + dompersonalitycombobox.Text + "\Vocabulary\Responses\", Microsoft.VisualBasic.FileIO.SearchOption.SearchTopLevelOnly, New String() {"*.txt"})
 					Dim SplitText As String = TxtReadLine(foundFile)
@@ -16393,24 +16386,10 @@ saveImage:
 
 	Public Sub CheckRandomOpportunities()
 		Dim randomDir As DirectoryInfo = Nothing
-				randomDir = New DirectoryInfo(My.Settings.RandomImageDir)
-			End If
-			If randomDir.GetDirectories().Count <= 0 Then
-				FrmSettings.CBRandomDomme.Enabled = False
-				FrmSettings.CBRandomDomme.Checked = False
-				My.Settings.CBRandomDomme = False
-			Else
-				FrmSettings.CBRandomDomme.Enabled = True
-				FrmSettings.CBRandomDomme.Checked = My.Settings.CBRandomDomme
-			End If
-			If randomDir.GetDirectories().Count < 4 Then
-				RandomContactToolStripMenuItem.Enabled = False
-				RandomContactToolStripMenuItem.Checked = False
-				My.Settings.CBRandomGlitter = False
-			End If
-			If randomDir.GetDirectories().Count >= 4 Then
-				RandomContactToolStripMenuItem.Enabled = True
-				RandomContactToolStripMenuItem.Checked = My.Settings.CBRandomGlitter
+		If My.Settings.RandomImageDir <> "" AndAlso Directory.Exists(My.Settings.RandomImageDir) Then
+			randomDir = New DirectoryInfo(My.Settings.RandomImageDir)
+		End If
+		If randomDir Is Nothing OrElse randomDir.GetDirectories().Count <= 0 Then
 			RandomContactToolStripMenuItem.Enabled = False
 			RandomContactToolStripMenuItem.Checked = False
 			My.Settings.CBRandomGlitter = False
@@ -16421,6 +16400,12 @@ saveImage:
 			RandomContactToolStripMenuItem.Enabled = False
 			RandomContactToolStripMenuItem.Checked = False
 			My.Settings.CBRandomGlitter = False
+		ElseIf randomDir.GetDirectories().Count >= 4 Then
+			RandomContactToolStripMenuItem.Enabled = True
+			RandomContactToolStripMenuItem.Checked = My.Settings.CBRandomGlitter
+		Else
+			FrmSettings.CBRandomDomme.Enabled = True
+			FrmSettings.CBRandomDomme.Checked = My.Settings.CBRandomDomme
 		End If
 	End Sub
 
