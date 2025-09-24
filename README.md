@@ -114,7 +114,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 		* @CheckDommeTag(Ass) - True if the domme image is tagged with "Ass".
 		* @CheckDommeTag(Ass,Naked) - True if the domme image is tagged with "Ass" and "Naked".
 	* @DommeTagFirst(): True if the first domme image with a certain tag can be displayed. (swift69)
-	* @ImageTagFirst(): True if the first domme image with a certain tag can be displayed. (swift69)
+	* @ImageTagFirst(): True if the first image with a certain tag can be displayed. (swift69)
 	* @ShowDomRandomImage(): True if a random image can be displayed. (swift69)
 	* @ShowImage(): True if an image can be displayed. (swift69)
 	* @Force: True if @LockImages is active. (swift69)

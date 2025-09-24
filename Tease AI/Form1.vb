@@ -264,6 +264,9 @@ Public Class Form1
 
 
 	Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+		BeatMeterWMP.uiMode = "None"
+		contextWMP.uiMode = "None"
+		voiceDomWMP.uiMode = "None"
 		Label1.Visible = False
 		Label1.Top = Me.DomWMP.Top
 		Label1.Left = Me.DomWMP.Left

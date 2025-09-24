@@ -580,7 +580,6 @@ Partial Class Form1
 		'BeatMeterWMP
 		'
 		Me.BeatMeterWMP.Anchor = Global.System.Windows.Forms.AnchorStyles.None
-		Me.BeatMeterWMP.uimode = "None"
 		Me.BeatMeterWMP.Enabled = True
 		Me.BeatMeterWMP.Location = New Global.System.Drawing.Point(608, 245)
 		Me.BeatMeterWMP.Name = "BeatMeterWMP"
@@ -4330,7 +4329,6 @@ Partial Class Form1
 		'contextWMP
 		'
 		Me.contextWMP.Enabled = True
-		Me.contextWMP.uimode = "None"
 		Me.contextWMP.Location = New System.Drawing.Point(128, 205)
 		Me.contextWMP.Name = "contextWMP"
 		Me.contextWMP.OcxState = CType(resources.GetObject("contextWMP.OcxState"), System.Windows.Forms.AxHost.State)
@@ -4341,7 +4339,6 @@ Partial Class Form1
 		'voiceDomWMP
 		'
 		Me.voiceDomWMP.Enabled = True
-		Me.voiceDomWMP.uimode = "None"
 		Me.voiceDomWMP.Location = New System.Drawing.Point(117, 155)
 		Me.voiceDomWMP.Name = "voiceDomWMP"
 		Me.voiceDomWMP.OcxState = CType(resources.GetObject("voiceDomWMP.OcxState"), System.Windows.Forms.AxHost.State)
