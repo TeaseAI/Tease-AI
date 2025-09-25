@@ -4493,7 +4493,7 @@ DommeSlideshowFallback:
 						ssh.SubStroking = True
 						ssh.SubEdging = False
 						ssh.SubHoldingEdge = False
-						StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
+						StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
 						StrokePace = 50 * Math.Round(StrokePace / 50)
 						ssh.RLGLTauntTick = ssh.randomizer.Next(20, 31)
 						' VideoTauntTick = randomizer.Next(20, 31)
@@ -9218,7 +9218,7 @@ TaskCleanSet:
 				End If
 			End If
 
-			StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
+			StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
 			StrokePace = 50 * Math.Round(StrokePace / 50)
 
 			ssh.StrokeTauntTick = ssh.randomizer.Next(11, 21)
@@ -10483,7 +10483,7 @@ OrgasmDecided:
 				ssh.AvoidTheEdgeTick = 100 / FrmSettings.TauntSlider.Value
 				AvoidTheEdgeTaunts.Start()
 				ssh.StartStrokingCount += 1
-				StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
+				StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
 				StrokePace = 50 * Math.Round(StrokePace / 50)
 			End If
 		End If
@@ -10496,7 +10496,7 @@ OrgasmDecided:
 			ssh.AvoidTheEdgeTick = 100 / FrmSettings.TauntSlider.Value
 			AvoidTheEdgeTaunts.Start()
 			ssh.StartStrokingCount += 1
-			StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
+			StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
 			StrokePace = 50 * Math.Round(StrokePace / 50)
 			StringClean = StringClean.Replace("@ResumeAvoidTheEdge", "")
 		End If
@@ -10541,7 +10541,7 @@ OrgasmDecided:
 				ssh.RLGLTick = ssh.randomizer.Next(FrmSettings.NBGreenLightMin.Value, FrmSettings.NBGreenLightMax.Value)
 				RLGLTimer.Start()
 				ssh.StartStrokingCount += 1
-				StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
+				StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
 				StrokePace = 50 * Math.Round(StrokePace / 50)
 			End If
 		End If
@@ -19313,7 +19313,7 @@ ReRoll:
 		ssh.ScriptVideoTeaseFlag = False
 		ssh.VideoTease = True
 		ssh.StartStrokingCount += 1
-		StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
+		StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
 		StrokePace = 50 * Math.Round(StrokePace / 50)
 		ssh.AvoidTheEdgeTick = 120 / FrmSettings.TauntSlider.Value
 		AvoidTheEdgeTaunts.Start()
@@ -19338,7 +19338,7 @@ ReRoll:
 		ssh.RLGLTick = ssh.randomizer.Next(FrmSettings.NBGreenLightMin.Value, FrmSettings.NBGreenLightMax.Value + 1)
 		RLGLTimer.Start()
 		ssh.StartStrokingCount += 1
-		StrokePace = ssh.randomizer.Next(NBMinPace.Value, NBMaxPace.Value)
+		StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
 		StrokePace = 50 * Math.Round(StrokePace / 50)
 		'VideoTauntTick = randomizer.Next(20, 31)
 		'VideoTauntTimer.Start()
