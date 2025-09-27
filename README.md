@@ -72,7 +72,8 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @OpenDirectory[]: Opens an file explorer window to a specific folder relative to Tease AI. (1885)
 	* @SubMessage(): Sends a message as the user. @SubMessage(Hello) will send "Hello" as you. (1885)
 	* @ScenarioOn / ScenarioOff: Does nothing. (1885)
-	* @WebcamVideo: Opens a window displaying the current webcam. Will appear on a second monitor if available. Intended to "set up" for other webcam commands. (markus)
+	* @CheckWebcam: If the user has webcam features disabled in settings, will goto the label "Webcam Disabled". (pepsifreak)
+	* @WebcamVideo: Opens a window displaying the current webcam. Intended to "set up" for other webcam commands. (markus)
 		*Webcam is not connected to the internet in any way. It is only local.
 		*Do not use with @CamSnap commands
 	* @WebcamClose: Close the webcam window. (markus)
@@ -181,7 +182,6 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Improved gif rendering. (swift69)
 	* Improved video commands. (swift69)
 	* @Contact() can now contain multiple Contacts that will be randomly chosen to speak the line. (swift69)
-	* Adds optional "videosource.xml" file to configure webcam for related commands. (markus)
 	* Simplify delay calculation when @RT()/@RenadomText() is used. (swift69)
 	* Typo logic is now skipped when if the option is disabled. (swift69)
 	* Images will try to display up to 5 times in case of error. (swift69)

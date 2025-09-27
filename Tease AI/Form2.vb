@@ -474,6 +474,14 @@ Public Class FrmSettings
 		LBLVVolume.Text = SliderVVolume.Value
 		LBLVRate.Text = SliderVRate.Value
 
+		If My.Settings.CBWebcamEnabled = False Then
+			LBLWebcamState.Text = "OFF"
+			LBLWebcamState.ForeColor = Color.Red
+		Else
+			LBLWebcamState.Text = "ON"
+			LBLWebcamState.ForeColor = Color.Green
+		End If
+
 		If My.Settings.OfflineMode = False Then
 			LBLOfflineMode.Text = "OFF"
 			LBLOfflineMode.ForeColor = Color.Red
@@ -10362,5 +10370,17 @@ checkFolder:
 
 	Private Sub CBWMPGifs_LostFocus(sender As Object, e As EventArgs) Handles CBWMPGifs.LostFocus
 		My.Settings.CBWMPGifs = CBWMPGifs.Checked
+	End Sub
+
+	Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+		If My.Settings.CBWebcamEnabled = True Then
+			My.Settings.CBWebcamEnabled = False
+			LBLWebcamState.Text = "OFF"
+			LBLWebcamState.ForeColor = Color.Red
+		Else
+			My.Settings.CBWebcamEnabled = True
+			LBLWebcamState.Text = "ON"
+			LBLWebcamState.ForeColor = Color.Green
+		End If
 	End Sub
 End Class

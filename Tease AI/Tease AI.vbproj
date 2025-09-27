@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Classes\MarMetronome.vb" />
     <Compile Include="Classes\MarNewRandom.vb" />
+    <Compile Include="Classes\MarWebcam.vb" />
     <Compile Include="Classes\SessionState.ScriptPosition.vb" />
     <Compile Include="Classes\SessionState.StackedCallReturn.vb" />
     <Compile Include="Classes\Common.vb" />
@@ -174,10 +175,10 @@
     <Compile Include="Form3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMarkusWebcam.Designer.vb">
-      <DependentUpon>FormMarkusWebcam.vb</DependentUpon>
+    <Compile Include="FrmWebcam.Designer.vb">
+      <DependentUpon>FrmWebcam.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormMarkusWebcam.vb">
+    <Compile Include="FrmWebcam.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmSplash.Designer.vb">
@@ -246,6 +247,9 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWebcam.resx">
+      <DependentUpon>FrmWebcam.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSplash.resx">
       <DependentUpon>FrmSplash.vb</DependentUpon>

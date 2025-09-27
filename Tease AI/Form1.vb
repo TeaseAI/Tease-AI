@@ -9032,38 +9032,52 @@ TaskCleanSet:
 			ssh.StrokeSlowest = True
 			StringClean = StringClean.Replace("@StrokeSlowest", "")
 		End If
-		
-        If StringClean.Contains("@CamSnapFolder[") Then
-            Dim snapFolderOnly As String = GetParentheses(StringClean, "CamSnapFolder[")
-            Dim mw As MyWebcam = New MyWebcam
-            mw.snapshotShouldBeTaken = True
-            mw.pathFileMode = False
-            mw.pathToUse = snapFolderOnly
-            mw.webCamStart()
-            StringClean = StringClean.Replace("@CamSnapFolder[" & snapFolderOnly & "]", "")
+
+		If StringClean.Contains("@CheckWebcam") AndAlso Not My.Settings.CBWebcamEnabled Then
+			ssh.SkipGotoLine = True
+			ssh.FileGoto = "Webcam Disabled"
+			GetGoto()
+		End If
+
+		If StringClean.Contains("@CamSnapFolder[") Then
+			Dim snapFolderOnly As String = GetParentheses(StringClean, "CamSnapFolder[")
+			If My.Settings.CBWebcamEnabled Then
+				Dim mw As MarWebcam = New MarWebcam(False)
+				mw.snapshotShouldBeTaken = True
+				mw.pathFileMode = False
+				mw.pathToUse = snapFolderOnly
+				mw.WebcamStart()
+			End If
+			StringClean = StringClean.Replace("@CamSnapFolder[" & snapFolderOnly & "]", "")
+		End If
+
+		If StringClean.Contains("@CamSnapFile[") Then
+			Dim snapFolderFileWithPath As String = GetParentheses(StringClean, "CamSnapFile[")
+			If My.Settings.CBWebcamEnabled Then
+				Dim mw As MarWebcam = New MarWebcam(False)
+				mw.snapshotShouldBeTaken = True
+				mw.pathFileMode = True
+				mw.pathToUse = snapFolderFileWithPath
+				mw.WebcamStart()
+			End If
+			StringClean = StringClean.Replace("@CamSnapFile[" & snapFolderFileWithPath & "]", "")
         End If
 
-        If StringClean.Contains("@CamSnapFile[") Then
-            Dim snapFolderFileWithPath As String = GetParentheses(StringClean, "CamSnapFile[")
-            Dim mw As MyWebcam = New MyWebcam
-            mw.snapshotShouldBeTaken = True
-            mw.pathFileMode = True
-            mw.pathToUse = snapFolderFileWithPath
-            mw.webCamStart()
-            StringClean = StringClean.Replace("@CamSnapFile[" & snapFolderFileWithPath & "]", "")
-        End If
+		If StringClean.Contains("@WebcamVideo") Then
+			If My.Settings.CBWebcamEnabled Then
+				Dim webcam As New FrmWebcam
+				webcamContainer = webcam
+				webcam.Show()
+			End If
+			StringClean = StringClean.Replace("@WebcamVideo", "")
+		End If
 
-        If StringClean.Contains("@WebcamVideo") Then
-            Dim webcam As New FormMarkusWebcam
-            webcamContainer = webcam
-            webcam.Show()
-            StringClean = StringClean.Replace("@WebcamVideo", "")
-        End If
-
-        If StringClean.Contains("@WebcamClose") Then
-            webcamContainer.Close()
-            StringClean = StringClean.Replace("@WebcamClose", "")
-        End If
+		If StringClean.Contains("@WebcamClose") Then
+			If My.Settings.CBWebcamEnabled Then
+				webcamContainer.Close()
+				StringClean = StringClean.Replace("@WebcamClose", "")
+			End If
+		End If
 
 		If StringClean.Contains("@MetronomeOn(") Then
 			Dim myBPMstr As String = GetParentheses(StringClean, "@MetronomeOn(")

@@ -1025,7 +1025,10 @@ Partial Class FrmSettings
 		Me.RBGerman = New System.Windows.Forms.RadioButton()
 		Me.RBEnglish = New System.Windows.Forms.RadioButton()
 		Me.GroupBox33 = New System.Windows.Forms.GroupBox()
+		Me.Button8 = New System.Windows.Forms.Button()
+		Me.LBLWebcamState = New System.Windows.Forms.Label()
 		Me.BTNOfflineMode = New System.Windows.Forms.Button()
+		Me.Label171 = New System.Windows.Forms.Label()
 		Me.LBLOfflineMode = New System.Windows.Forms.Label()
 		Me.Label140 = New System.Windows.Forms.Label()
 		Me.Button11 = New System.Windows.Forms.Button()
@@ -13992,7 +13995,7 @@ Partial Class FrmSettings
 		'GroupBox16
 		'
 		Me.GroupBox16.Controls.Add(Me.CBWMPGifs)
-		Me.GroupBox16.Location = New System.Drawing.Point(420, 268)
+		Me.GroupBox16.Location = New System.Drawing.Point(420, 252)
 		Me.GroupBox16.Name = "GroupBox16"
 		Me.GroupBox16.Size = New System.Drawing.Size(279, 47)
 		Me.GroupBox16.TabIndex = 180
@@ -14016,9 +14019,9 @@ Partial Class FrmSettings
 		'
 		Me.GroupBox62.Controls.Add(Me.RBGerman)
 		Me.GroupBox62.Controls.Add(Me.RBEnglish)
-		Me.GroupBox62.Location = New System.Drawing.Point(420, 155)
+		Me.GroupBox62.Location = New System.Drawing.Point(420, 132)
 		Me.GroupBox62.Name = "GroupBox62"
-		Me.GroupBox62.Size = New System.Drawing.Size(277, 56)
+		Me.GroupBox62.Size = New System.Drawing.Size(277, 45)
 		Me.GroupBox62.TabIndex = 178
 		Me.GroupBox62.TabStop = False
 		Me.GroupBox62.Text = "Language"
@@ -14047,27 +14050,64 @@ Partial Class FrmSettings
 		'
 		'GroupBox33
 		'
+		Me.GroupBox33.Controls.Add(Me.Button8)
+		Me.GroupBox33.Controls.Add(Me.LBLWebcamState)
 		Me.GroupBox33.Controls.Add(Me.BTNOfflineMode)
+		Me.GroupBox33.Controls.Add(Me.Label171)
 		Me.GroupBox33.Controls.Add(Me.LBLOfflineMode)
 		Me.GroupBox33.Controls.Add(Me.Label140)
 		Me.GroupBox33.Controls.Add(Me.Button11)
 		Me.GroupBox33.Controls.Add(Me.LBLChastityState)
 		Me.GroupBox33.Controls.Add(Me.Label120)
-		Me.GroupBox33.Location = New System.Drawing.Point(420, 321)
+		Me.GroupBox33.Location = New System.Drawing.Point(420, 305)
 		Me.GroupBox33.Name = "GroupBox33"
-		Me.GroupBox33.Size = New System.Drawing.Size(277, 106)
+		Me.GroupBox33.Size = New System.Drawing.Size(277, 122)
 		Me.GroupBox33.TabIndex = 177
 		Me.GroupBox33.TabStop = False
 		Me.GroupBox33.Text = "System States"
 		'
+		'Button8
+		'
+		Me.Button8.Location = New System.Drawing.Point(161, 59)
+		Me.Button8.Name = "Button8"
+		Me.Button8.Size = New System.Drawing.Size(99, 23)
+		Me.Button8.TabIndex = 180
+		Me.Button8.Text = "Toggle"
+		Me.Button8.UseVisualStyleBackColor = True
+		'
+		'LBLWebcamState
+		'
+		Me.LBLWebcamState.BackColor = System.Drawing.Color.LightGray
+		Me.LBLWebcamState.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.LBLWebcamState.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLWebcamState.ForeColor = System.Drawing.Color.Red
+		Me.LBLWebcamState.Location = New System.Drawing.Point(120, 59)
+		Me.LBLWebcamState.Name = "LBLWebcamState"
+		Me.LBLWebcamState.Size = New System.Drawing.Size(37, 23)
+		Me.LBLWebcamState.TabIndex = 179
+		Me.LBLWebcamState.Text = "OFF"
+		Me.LBLWebcamState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
 		'BTNOfflineMode
 		'
-		Me.BTNOfflineMode.Location = New System.Drawing.Point(161, 70)
+		Me.BTNOfflineMode.Location = New System.Drawing.Point(161, 88)
 		Me.BTNOfflineMode.Name = "BTNOfflineMode"
 		Me.BTNOfflineMode.Size = New System.Drawing.Size(99, 23)
 		Me.BTNOfflineMode.TabIndex = 180
 		Me.BTNOfflineMode.Text = "Toggle"
 		Me.BTNOfflineMode.UseVisualStyleBackColor = True
+		'
+		'Label171
+		'
+		Me.Label171.BackColor = System.Drawing.Color.LightGray
+		Me.Label171.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.Label171.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label171.Location = New System.Drawing.Point(17, 59)
+		Me.Label171.Name = "Label171"
+		Me.Label171.Size = New System.Drawing.Size(98, 23)
+		Me.Label171.TabIndex = 178
+		Me.Label171.Text = "WEBCAM"
+		Me.Label171.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'LBLOfflineMode
 		'
@@ -14075,7 +14115,7 @@ Partial Class FrmSettings
 		Me.LBLOfflineMode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.LBLOfflineMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.LBLOfflineMode.ForeColor = System.Drawing.Color.Red
-		Me.LBLOfflineMode.Location = New System.Drawing.Point(120, 70)
+		Me.LBLOfflineMode.Location = New System.Drawing.Point(120, 88)
 		Me.LBLOfflineMode.Name = "LBLOfflineMode"
 		Me.LBLOfflineMode.Size = New System.Drawing.Size(37, 23)
 		Me.LBLOfflineMode.TabIndex = 179
@@ -14087,7 +14127,7 @@ Partial Class FrmSettings
 		Me.Label140.BackColor = System.Drawing.Color.LightGray
 		Me.Label140.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.Label140.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label140.Location = New System.Drawing.Point(17, 70)
+		Me.Label140.Location = New System.Drawing.Point(17, 88)
 		Me.Label140.Name = "Label140"
 		Me.Label140.Size = New System.Drawing.Size(98, 23)
 		Me.Label140.TabIndex = 178
@@ -14096,7 +14136,7 @@ Partial Class FrmSettings
 		'
 		'Button11
 		'
-		Me.Button11.Location = New System.Drawing.Point(161, 33)
+		Me.Button11.Location = New System.Drawing.Point(161, 30)
 		Me.Button11.Name = "Button11"
 		Me.Button11.Size = New System.Drawing.Size(99, 23)
 		Me.Button11.TabIndex = 177
@@ -14109,7 +14149,7 @@ Partial Class FrmSettings
 		Me.LBLChastityState.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.LBLChastityState.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.LBLChastityState.ForeColor = System.Drawing.Color.Red
-		Me.LBLChastityState.Location = New System.Drawing.Point(120, 33)
+		Me.LBLChastityState.Location = New System.Drawing.Point(120, 30)
 		Me.LBLChastityState.Name = "LBLChastityState"
 		Me.LBLChastityState.Size = New System.Drawing.Size(37, 23)
 		Me.LBLChastityState.TabIndex = 3
@@ -14121,7 +14161,7 @@ Partial Class FrmSettings
 		Me.Label120.BackColor = System.Drawing.Color.LightGray
 		Me.Label120.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.Label120.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label120.Location = New System.Drawing.Point(17, 33)
+		Me.Label120.Location = New System.Drawing.Point(17, 30)
 		Me.Label120.Name = "Label120"
 		Me.Label120.Size = New System.Drawing.Size(98, 23)
 		Me.Label120.TabIndex = 2
@@ -14132,7 +14172,7 @@ Partial Class FrmSettings
 		'
 		Me.GroupBox8.Controls.Add(Me.CbxWarningsToChat)
 		Me.GroupBox8.Controls.Add(Me.CBOutputErrors)
-		Me.GroupBox8.Location = New System.Drawing.Point(420, 214)
+		Me.GroupBox8.Location = New System.Drawing.Point(420, 183)
 		Me.GroupBox8.Name = "GroupBox8"
 		Me.GroupBox8.Size = New System.Drawing.Size(279, 63)
 		Me.GroupBox8.TabIndex = 179
@@ -14147,9 +14187,9 @@ Partial Class FrmSettings
 		Me.CbxWarningsToChat.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Tease_AI.My.MySettings.Default, "CbChatDisplayWarnings", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.CbxWarningsToChat.Location = New System.Drawing.Point(17, 40)
 		Me.CbxWarningsToChat.Name = "CbxWarningsToChat"
-		Me.CbxWarningsToChat.Size = New System.Drawing.Size(184, 17)
+		Me.CbxWarningsToChat.Size = New System.Drawing.Size(185, 17)
 		Me.CbxWarningsToChat.TabIndex = 30
-		Me.CbxWarningsToChat.Text = "Output Warnings to chat Window"
+		Me.CbxWarningsToChat.Text = "Output Warnings to Chat Window"
 		Me.CbxWarningsToChat.UseVisualStyleBackColor = True
 		'
 		'CBOutputErrors
@@ -14176,14 +14216,14 @@ Partial Class FrmSettings
 		Me.GroupBox27.Controls.Add(Me.Label124)
 		Me.GroupBox27.Location = New System.Drawing.Point(420, 32)
 		Me.GroupBox27.Name = "GroupBox27"
-		Me.GroupBox27.Size = New System.Drawing.Size(279, 117)
+		Me.GroupBox27.Size = New System.Drawing.Size(279, 94)
 		Me.GroupBox27.TabIndex = 176
 		Me.GroupBox27.TabStop = False
 		Me.GroupBox27.Text = "Session Images"
 		'
 		'Button6
 		'
-		Me.Button6.Location = New System.Drawing.Point(143, 76)
+		Me.Button6.Location = New System.Drawing.Point(143, 60)
 		Me.Button6.Name = "Button6"
 		Me.Button6.Size = New System.Drawing.Size(117, 23)
 		Me.Button6.TabIndex = 176
@@ -14192,14 +14232,14 @@ Partial Class FrmSettings
 		'
 		'LBLSesSpace
 		'
-		Me.LBLSesSpace.Location = New System.Drawing.Point(149, 53)
+		Me.LBLSesSpace.Location = New System.Drawing.Point(149, 38)
 		Me.LBLSesSpace.Name = "LBLSesSpace"
 		Me.LBLSesSpace.Size = New System.Drawing.Size(124, 13)
 		Me.LBLSesSpace.TabIndex = 3
 		'
 		'Button3
 		'
-		Me.Button3.Location = New System.Drawing.Point(20, 76)
+		Me.Button3.Location = New System.Drawing.Point(20, 60)
 		Me.Button3.Name = "Button3"
 		Me.Button3.Size = New System.Drawing.Size(117, 23)
 		Me.Button3.TabIndex = 175
@@ -14208,7 +14248,7 @@ Partial Class FrmSettings
 		'
 		'LBLSesFiles
 		'
-		Me.LBLSesFiles.Location = New System.Drawing.Point(149, 24)
+		Me.LBLSesFiles.Location = New System.Drawing.Point(149, 19)
 		Me.LBLSesFiles.Name = "LBLSesFiles"
 		Me.LBLSesFiles.Size = New System.Drawing.Size(124, 13)
 		Me.LBLSesFiles.TabIndex = 2
@@ -14216,7 +14256,7 @@ Partial Class FrmSettings
 		'Label125
 		'
 		Me.Label125.AutoSize = True
-		Me.Label125.Location = New System.Drawing.Point(17, 53)
+		Me.Label125.Location = New System.Drawing.Point(17, 38)
 		Me.Label125.Name = "Label125"
 		Me.Label125.Size = New System.Drawing.Size(120, 13)
 		Me.Label125.TabIndex = 1
@@ -14225,7 +14265,7 @@ Partial Class FrmSettings
 		'Label124
 		'
 		Me.Label124.AutoSize = True
-		Me.Label124.Location = New System.Drawing.Point(17, 24)
+		Me.Label124.Location = New System.Drawing.Point(17, 20)
 		Me.Label124.Name = "Label124"
 		Me.Label124.Size = New System.Drawing.Size(126, 13)
 		Me.Label124.TabIndex = 0
@@ -16804,4 +16844,7 @@ Partial Class FrmSettings
 	Friend WithEvents alwaysNewSlideshow As System.Windows.Forms.CheckBox
 	Friend WithEvents Label169 As System.Windows.Forms.Label
 	Friend WithEvents CbxWarningsToChat As CheckBox
+	Friend WithEvents Button8 As Button
+	Friend WithEvents LBLWebcamState As Label
+	Friend WithEvents Label171 As Label
 End Class
