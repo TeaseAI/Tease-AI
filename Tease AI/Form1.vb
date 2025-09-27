@@ -10624,19 +10624,19 @@ OrgasmDecided:
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
 				StringClean = StringClean.Replace("@PlayVideo[" & videoFlag & "]", "")
-			ElseIf StringClean.Contains("@PlayVideo(") Then
-				Dim videoFlag As String = GetParentheses(StringClean, "@PlayVideo(")
-				If videoFlag.Contains(",") Then
-					videoFlag = FixCommas(videoFlag)
-				End If
-				VideoFlagArray = videoFlag.Split(",")
-				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayVideo(" & videoFlag & ")", "")
 			Else
-				ssh.VideoGenre = "ALL"
-				ssh.RandomizerVideo = True
+				If StringClean.Contains("@PlayVideo(") Then
+					ssh.VideoGenre = "ALL"
+					Dim videoFlag As String = GetParentheses(StringClean, "@PlayVideo(")
+					If videoFlag.Contains(",") Then
+						videoFlag = FixCommas(videoFlag)
+					End If
+					VideoFlagArray = videoFlag.Split(",")
+					StringClean = StringClean.Replace("@PlayVideo(" & videoFlag & ")", "")
+				Else
+					StringClean = StringClean.Replace("@PlayVideo", "")
+				End If
 				VideoRandomInput = True
-				StringClean = StringClean.Replace("@PlayVideo", "")
 			End If
 		End If
 
@@ -13419,6 +13419,7 @@ VTSkip:
 			End If
 
 			If FilterString.Contains("@CheckDate(") And Linear = False Then
+				ssh.LinearDateCheck = True
 				If CheckDateList(FilterString) = False Then Return False
 			End If
 
