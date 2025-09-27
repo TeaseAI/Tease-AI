@@ -231,6 +231,7 @@ Partial Class Form1
 		Me.LBLGeneralSettings = New System.Windows.Forms.Label()
 		Me.PNLTabs = New System.Windows.Forms.Panel()
 		Me.PNLWishList = New System.Windows.Forms.Panel()
+		Me.voiceDomWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.WishlistCostSilver = New System.Windows.Forms.PictureBox()
 		Me.LBLWishlistDate = New System.Windows.Forms.Label()
 		Me.BTNWishlist = New System.Windows.Forms.Button()
@@ -385,7 +386,6 @@ Partial Class Form1
 		Me.contextWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.PnlLayoutForm = New System.Windows.Forms.Panel()
 		Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-		Me.voiceDomWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.TimerMarVidVolume = New Tease_AI.teaseAI_Timer()
 		Me.TimerMarBeatmeterStart = New Tease_AI.teaseAI_Timer()
 		Me.TimerMarCHC = New Tease_AI.teaseAI_Timer()
@@ -441,6 +441,7 @@ Partial Class Form1
 		Me.PNLDate.SuspendLayout()
 		Me.PNLTabs.SuspendLayout()
 		Me.PNLWishList.SuspendLayout()
+		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.WishlistCostSilver, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.WishlistCostGold, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PNLWishlistTokenBack.SuspendLayout()
@@ -472,9 +473,8 @@ Partial Class Form1
 		Me.PNLLazySubAV.SuspendLayout()
 		Me.PnlSidepanelLayout.SuspendLayout()
 		Me.PnlTabsLayout.SuspendLayout()
-		Me.PnlLayoutForm.SuspendLayout()
 		CType(Me.contextWMP, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.PnlLayoutForm.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'domName
@@ -569,7 +569,7 @@ Partial Class Form1
 		Me.Label2.AutoSize = True
 		Me.Label2.BackColor = System.Drawing.Color.Black
 		Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.Label2.Font = New System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0)
+		Me.Label2.Font = New System.Drawing.Font("Segoe Print", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label2.ForeColor = System.Drawing.Color.GhostWhite
 		Me.Label2.Location = New System.Drawing.Point(680, 223)
 		Me.Label2.Name = "Label2"
@@ -581,7 +581,7 @@ Partial Class Form1
 		'
 		Me.BeatMeterWMP.Anchor = System.Windows.Forms.AnchorStyles.None
 		Me.BeatMeterWMP.Enabled = True
-		Me.BeatMeterWMP.Location = New System.Drawing.Point(608, 245)
+		Me.BeatMeterWMP.Location = New System.Drawing.Point(608, 242)
 		Me.BeatMeterWMP.Name = "BeatMeterWMP"
 		Me.BeatMeterWMP.OcxState = CType(resources.GetObject("BeatMeterWMP.OcxState"), System.Windows.Forms.AxHost.State)
 		Me.BeatMeterWMP.Size = New System.Drawing.Size(790, 183)
@@ -604,14 +604,14 @@ Partial Class Form1
 		Me.DomWMP.Location = New System.Drawing.Point(0, 0)
 		Me.DomWMP.Name = "DomWMP"
 		Me.DomWMP.OcxState = CType(resources.GetObject("DomWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.DomWMP.Size = New System.Drawing.Size(1398, 458)
+		Me.DomWMP.Size = New System.Drawing.Size(1398, 482)
 		Me.DomWMP.TabIndex = 96
 		Me.DomWMP.Visible = False
 		'
 		'ProgressBar_BGW_Images
 		'
 		Me.ProgressBar_BGW_Images.Dock = System.Windows.Forms.DockStyle.Bottom
-		Me.ProgressBar_BGW_Images.Location = New System.Drawing.Point(0, 458)
+		Me.ProgressBar_BGW_Images.Location = New System.Drawing.Point(0, 482)
 		Me.ProgressBar_BGW_Images.MarqueeAnimationSpeed = 10000
 		Me.ProgressBar_BGW_Images.Name = "ProgressBar_BGW_Images"
 		Me.ProgressBar_BGW_Images.Size = New System.Drawing.Size(1398, 6)
@@ -650,7 +650,7 @@ Partial Class Form1
 		Me.PnlChatTextLayout.Location = New System.Drawing.Point(0, 32)
 		Me.PnlChatTextLayout.Name = "PnlChatTextLayout"
 		Me.PnlChatTextLayout.Padding = New System.Windows.Forms.Padding(1)
-		Me.PnlChatTextLayout.Size = New System.Drawing.Size(1398, 433)
+		Me.PnlChatTextLayout.Size = New System.Drawing.Size(1398, 409)
 		Me.PnlChatTextLayout.TabIndex = 783
 		'
 		'ChatText
@@ -659,7 +659,7 @@ Partial Class Form1
 		Me.ChatText.Location = New System.Drawing.Point(1, 1)
 		Me.ChatText.MinimumSize = New System.Drawing.Size(2, 20)
 		Me.ChatText.Name = "ChatText"
-		Me.ChatText.Size = New System.Drawing.Size(1396, 431)
+		Me.ChatText.Size = New System.Drawing.Size(1396, 407)
 		Me.ChatText.TabIndex = 1
 		'
 		'PNLMediaBar
@@ -1870,90 +1870,90 @@ Partial Class Form1
 		'GeneralSettingsToolStripMenuItem
 		'
 		Me.GeneralSettingsToolStripMenuItem.Name = "GeneralSettingsToolStripMenuItem"
-		Me.GeneralSettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.GeneralSettingsToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.GeneralSettingsToolStripMenuItem.Text = "General"
 		'
 		'DommeToolStripMenuItem
 		'
 		Me.DommeToolStripMenuItem.Name = "DommeToolStripMenuItem"
-		Me.DommeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.DommeToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.DommeToolStripMenuItem.Text = "Domme"
 		'
 		'SubToolStripMenuItem
 		'
 		Me.SubToolStripMenuItem.Name = "SubToolStripMenuItem"
-		Me.SubToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.SubToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.SubToolStripMenuItem.Text = "Sub"
 		'
 		'ScriptsToolStripMenuItem
 		'
 		Me.ScriptsToolStripMenuItem.Name = "ScriptsToolStripMenuItem"
-		Me.ScriptsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.ScriptsToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.ScriptsToolStripMenuItem.Text = "Scripts"
 		'
 		'ImagesToolStripMenuItem
 		'
 		Me.ImagesToolStripMenuItem.Name = "ImagesToolStripMenuItem"
-		Me.ImagesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.ImagesToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.ImagesToolStripMenuItem.Text = "Images"
 		'
 		'TaggingToolStripMenuItem
 		'
 		Me.TaggingToolStripMenuItem.Name = "TaggingToolStripMenuItem"
-		Me.TaggingToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.TaggingToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.TaggingToolStripMenuItem.Text = "Tagging"
 		'
 		'URLFilesToolStripMenuItem
 		'
 		Me.URLFilesToolStripMenuItem.Name = "URLFilesToolStripMenuItem"
-		Me.URLFilesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.URLFilesToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.URLFilesToolStripMenuItem.Text = "URL Files"
 		'
 		'VideoToolStripMenuItem
 		'
 		Me.VideoToolStripMenuItem.Name = "VideoToolStripMenuItem"
-		Me.VideoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.VideoToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.VideoToolStripMenuItem.Text = "Video"
 		'
 		'AppsToolStripMenuItem1
 		'
 		Me.AppsToolStripMenuItem1.Name = "AppsToolStripMenuItem1"
-		Me.AppsToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+		Me.AppsToolStripMenuItem1.Size = New System.Drawing.Size(165, 22)
 		Me.AppsToolStripMenuItem1.Text = "Apps"
 		'
 		'RangesToolStripMenuItem
 		'
 		Me.RangesToolStripMenuItem.Name = "RangesToolStripMenuItem"
-		Me.RangesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.RangesToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.RangesToolStripMenuItem.Text = "Ranges"
 		'
 		'ModdingToolStripMenuItem
 		'
 		Me.ModdingToolStripMenuItem.Name = "ModdingToolStripMenuItem"
-		Me.ModdingToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.ModdingToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.ModdingToolStripMenuItem.Text = "Modding"
 		'
 		'MiscToolStripMenuItem
 		'
 		Me.MiscToolStripMenuItem.Name = "MiscToolStripMenuItem"
-		Me.MiscToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.MiscToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.MiscToolStripMenuItem.Text = "Misc"
 		'
 		'ToolStripSeparator7
 		'
 		Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-		Me.ToolStripSeparator7.Size = New System.Drawing.Size(177, 6)
+		Me.ToolStripSeparator7.Size = New System.Drawing.Size(162, 6)
 		'
 		'RandomDommeToolStripMenuItem
 		'
 		Me.RandomDommeToolStripMenuItem.Name = "RandomDommeToolStripMenuItem"
-		Me.RandomDommeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.RandomDommeToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.RandomDommeToolStripMenuItem.Text = "Random Domme"
 		'
 		'RandomContactToolStripMenuItem
 		'
 		Me.RandomContactToolStripMenuItem.Name = "RandomContactToolStripMenuItem"
-		Me.RandomContactToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.RandomContactToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
 		Me.RandomContactToolStripMenuItem.Text = "Random Contact"
 		'
 		'AppsToolStripMenuItem
@@ -2358,7 +2358,6 @@ Partial Class Form1
 		'PNLWishList
 		'
 		Me.PNLWishList.BackColor = System.Drawing.Color.White
-		Me.PNLWishList.Controls.Add(Me.voiceDomWMP)
 		Me.PNLWishList.Controls.Add(Me.WishlistCostSilver)
 		Me.PNLWishList.Controls.Add(Me.LBLWishlistDate)
 		Me.PNLWishList.Controls.Add(Me.BTNWishlist)
@@ -2375,6 +2374,16 @@ Partial Class Form1
 		Me.PNLWishList.Size = New System.Drawing.Size(240, 619)
 		Me.PNLWishList.TabIndex = 775
 		Me.PNLWishList.Visible = False
+		'
+		'voiceDomWMP
+		'
+		Me.voiceDomWMP.Enabled = True
+		Me.voiceDomWMP.Location = New System.Drawing.Point(117, 155)
+		Me.voiceDomWMP.Name = "voiceDomWMP"
+		Me.voiceDomWMP.OcxState = CType(resources.GetObject("voiceDomWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.voiceDomWMP.Size = New System.Drawing.Size(104, 63)
+		Me.voiceDomWMP.TabIndex = 113
+		Me.voiceDomWMP.Visible = False
 		'
 		'WishlistCostSilver
 		'
@@ -4311,6 +4320,16 @@ Partial Class Form1
 		Me.PnlTabsLayout.Size = New System.Drawing.Size(244, 643)
 		Me.PnlTabsLayout.TabIndex = 779
 		'
+		'contextWMP
+		'
+		Me.contextWMP.Enabled = True
+		Me.contextWMP.Location = New System.Drawing.Point(128, 205)
+		Me.contextWMP.Name = "contextWMP"
+		Me.contextWMP.OcxState = CType(resources.GetObject("contextWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.contextWMP.Size = New System.Drawing.Size(104, 63)
+		Me.contextWMP.TabIndex = 112
+		Me.contextWMP.Visible = False
+		'
 		'PnlLayoutForm
 		'
 		Me.PnlLayoutForm.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
@@ -4326,25 +4345,17 @@ Partial Class Form1
 		Me.PnlLayoutForm.Size = New System.Drawing.Size(1676, 999)
 		Me.PnlLayoutForm.TabIndex = 16
 		'
-		'contextWMP
+		'TimerMarVidVolume
 		'
-		Me.contextWMP.Enabled = True
-		Me.contextWMP.Location = New System.Drawing.Point(128, 205)
-		Me.contextWMP.Name = "contextWMP"
-		Me.contextWMP.OcxState = CType(resources.GetObject("contextWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.contextWMP.Size = New System.Drawing.Size(104, 63)
-		Me.contextWMP.TabIndex = 112
-		Me.contextWMP.Visible = False
 		'
-		'voiceDomWMP
+		'TimerMarBeatmeterStart
 		'
-		Me.voiceDomWMP.Enabled = True
-		Me.voiceDomWMP.Location = New System.Drawing.Point(117, 155)
-		Me.voiceDomWMP.Name = "voiceDomWMP"
-		Me.voiceDomWMP.OcxState = CType(resources.GetObject("voiceDomWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.voiceDomWMP.Size = New System.Drawing.Size(104, 63)
-		Me.voiceDomWMP.TabIndex = 113
-		Me.voiceDomWMP.Visible = False
+		'
+		'TimerMarCHC
+		'
+		'
+		'TimerMarVidTaunts
+		'
 		'
 		'ScriptTimer
 		'
@@ -4513,6 +4524,7 @@ Partial Class Form1
 		Me.PNLDate.ResumeLayout(False)
 		Me.PNLTabs.ResumeLayout(False)
 		Me.PNLWishList.ResumeLayout(False)
+		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.WishlistCostSilver, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.WishlistCostGold, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PNLWishlistTokenBack.ResumeLayout(False)
@@ -4553,9 +4565,8 @@ Partial Class Form1
 		Me.PNLLazySubAV.ResumeLayout(False)
 		Me.PnlSidepanelLayout.ResumeLayout(False)
 		Me.PnlTabsLayout.ResumeLayout(False)
-		Me.PnlLayoutForm.ResumeLayout(False)
 		CType(Me.contextWMP, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.PnlLayoutForm.ResumeLayout(False)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
