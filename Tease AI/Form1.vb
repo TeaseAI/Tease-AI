@@ -268,8 +268,8 @@ Public Class Form1
 		contextWMP.uiMode = "None"
 		voiceDomWMP.uiMode = "None"
 		Label1.Visible = False
-		Label1.Top = Me.DomWMP.Top
-		Label1.Left = Me.DomWMP.Left
+		Label1.Top = DomWMP.Top
+		Label1.Left = DomWMP.Left
 		Label1.BackColor = Color.Black
 		Label1.ForeColor = Color.White
 		DomWMP.settings.volume = 40
@@ -277,11 +277,8 @@ Public Class Form1
 		BeatMeterWMP.settings.volume = 50
 		LBLWritingTask.Width = 245
 		LBLWritingTask.Height = 26
-		LBLWritingTask.Location = New Drawing.Point(0, 3)
 		LBLWritingTaskText.Width = 226
 		LBLWritingTaskText.Height = 104
-		LBLWritingTaskText.Location = New Drawing.Point(8, 33)
-		LBLWritingTaskText.Font = New Font("Palatino Linotype", 10F, FontStyle.Bold)
 		Label2.Visible = False
 
 		Try

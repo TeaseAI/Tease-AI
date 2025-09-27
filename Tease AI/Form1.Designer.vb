@@ -29,9 +29,9 @@ Partial Class Form1
 		Me.mainPictureBox = New System.Windows.Forms.PictureBox()
 		Me.domAvatar = New System.Windows.Forms.PictureBox()
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-		Me.Label2 = New Global.System.Windows.Forms.Label()
-		Me.BeatMeterWMP = New Global.AxWMPLib.AxWindowsMediaPlayer()
-		Me.Label1 = New Global.System.Windows.Forms.Label()
+		Me.Label2 = New System.Windows.Forms.Label()
+		Me.BeatMeterWMP = New AxWMPLib.AxWindowsMediaPlayer()
+		Me.Label1 = New System.Windows.Forms.Label()
 		Me.DomWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.ProgressBar_BGW_Images = New System.Windows.Forms.ProgressBar()
 		Me.CensorshipBar = New System.Windows.Forms.Panel()
@@ -427,7 +427,7 @@ Partial Class Form1
 		Me.SplitContainer1.Panel1.SuspendLayout()
 		Me.SplitContainer1.Panel2.SuspendLayout()
 		Me.SplitContainer1.SuspendLayout()
-		CType(Me.BeatMeterWMP, Global.System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.BeatMeterWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.DomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PnlChatTextLayout.SuspendLayout()
 		Me.PNLMediaBar.SuspendLayout()
@@ -567,33 +567,33 @@ Partial Class Form1
 		'Label2
 		'
 		Me.Label2.AutoSize = True
-		Me.Label2.BackColor = Global.System.Drawing.Color.Black
-		Me.Label2.BorderStyle = Global.System.Windows.Forms.BorderStyle.Fixed3D
-		Me.Label2.Font = New Global.System.Drawing.Font("Segoe Print", 15.75F, Global.System.Drawing.FontStyle.Bold, Global.System.Drawing.GraphicsUnit.Point, 0)
-		Me.Label2.ForeColor = Global.System.Drawing.Color.GhostWhite
-		Me.Label2.Location = New Global.System.Drawing.Point(680, 223)
+		Me.Label2.BackColor = System.Drawing.Color.Black
+		Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.Label2.Font = New System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0)
+		Me.Label2.ForeColor = System.Drawing.Color.GhostWhite
+		Me.Label2.Location = New System.Drawing.Point(680, 223)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New Global.System.Drawing.Size(88, 39)
+		Me.Label2.Size = New System.Drawing.Size(88, 39)
 		Me.Label2.TabIndex = 100
 		Me.Label2.Text = "Label2"
 		'
 		'BeatMeterWMP
 		'
-		Me.BeatMeterWMP.Anchor = Global.System.Windows.Forms.AnchorStyles.None
+		Me.BeatMeterWMP.Anchor = System.Windows.Forms.AnchorStyles.None
 		Me.BeatMeterWMP.Enabled = True
-		Me.BeatMeterWMP.Location = New Global.System.Drawing.Point(608, 245)
+		Me.BeatMeterWMP.Location = New System.Drawing.Point(608, 245)
 		Me.BeatMeterWMP.Name = "BeatMeterWMP"
 		Me.BeatMeterWMP.OcxState = CType(resources.GetObject("BeatMeterWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.BeatMeterWMP.Size = New Global.System.Drawing.Size(790, 183)
+		Me.BeatMeterWMP.Size = New System.Drawing.Size(790, 183)
 		Me.BeatMeterWMP.TabIndex = 98
 		Me.BeatMeterWMP.Visible = False
 		'
 		'Label1
 		'
 		Me.Label1.AutoSize = True
-		Me.Label1.Location = New Global.System.Drawing.Point(939, 73)
+		Me.Label1.Location = New System.Drawing.Point(939, 73)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New Global.System.Drawing.Size(39, 13)
+		Me.Label1.Size = New System.Drawing.Size(39, 13)
 		Me.Label1.TabIndex = 98
 		Me.Label1.Text = "Label1"
 		'
@@ -3793,9 +3793,9 @@ Partial Class Form1
 		'
 		Me.LBLWritingTaskText.BackColor = System.Drawing.Color.White
 		Me.LBLWritingTaskText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.LBLWritingTaskText.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLWritingTaskText.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.LBLWritingTaskText.ForeColor = System.Drawing.Color.Black
-		Me.LBLWritingTaskText.Location = New System.Drawing.Point(8, 64)
+		Me.LBLWritingTaskText.Location = New System.Drawing.Point(8, 33)
 		Me.LBLWritingTaskText.Name = "LBLWritingTaskText"
 		Me.LBLWritingTaskText.Size = New System.Drawing.Size(226, 61)
 		Me.LBLWritingTaskText.TabIndex = 128
@@ -4496,7 +4496,7 @@ Partial Class Form1
 		Me.SplitContainer1.Panel2.ResumeLayout(False)
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.SplitContainer1.ResumeLayout(False)
-		CType(Me.BeatMeterWMP, Global.System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.BeatMeterWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.DomWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PnlChatTextLayout.ResumeLayout(False)
 		Me.PNLMediaBar.ResumeLayout(False)
