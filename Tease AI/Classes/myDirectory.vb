@@ -53,7 +53,7 @@ Public NotInheritable Class myDirectory
 			Array.Sort(DirectCast(SortObject, Array))
 			Return SortObject
 
-		ElseIf TypeOf SortObject Is List(Of String)
+		ElseIf TypeOf SortObject Is List(Of String) Then
 			'############## List(of String) ##############
 			Try
 				DirectCast(SortObject, List(Of String)).Sort(New LogicalStringComparer)

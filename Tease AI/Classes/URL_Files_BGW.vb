@@ -570,7 +570,7 @@ System.ComponentModel.Description("Gets or Sets the Filepath to the Likelist.")>
 
 					Dim Reader As New XmlTextReader(Response.GetResponseStream)
 					doc.Load(Reader)
-					Request.Abort()	' Otherwise you cant't run it a seccond time on the same URL that session!
+					Request.Abort() ' Otherwise you cant't run it a seccond time on the same URL that session!
 					Response.Close()
 
 					' Get total post count on first run.
@@ -623,8 +623,8 @@ System.ComponentModel.Description("Gets or Sets the Filepath to the Likelist.")>
 							ElseIf Me.Work = Tasks.RebuildURLFiles AndAlso UrlListOld.Contains(ImageUrl) Then
 								'########################### URL-Rebuild - Known URL #############################
 								' If rebuilding URL-File add only previous known links.
-								UrlListNew.Add(ImageUrl)							' Add to new list
-								GoTo NextImage										' No Saving or Reviewing    
+								UrlListNew.Add(ImageUrl)                            ' Add to new list
+								GoTo NextImage                                      ' No Saving or Reviewing    
 							ElseIf Me.Work = Tasks.RebuildURLFiles Then
 								'########################## URL-Rebuild - Unknown URL ############################
 								' If rebuilding URL-File skip previous unkwown URLs.
@@ -635,8 +635,8 @@ System.ComponentModel.Description("Gets or Sets the Filepath to the Likelist.")>
 								GoTo ExitScrape
 							ElseIf UrlListOld.Contains(ImageUrl) Then
 								'############################## Create - Known URL ###############################
-								UrlListNew.Add(ImageUrl)							' Add to new list
-								GoTo NextImage										' No Saving or Reviewing    
+								UrlListNew.Add(ImageUrl)                            ' Add to new list
+								GoTo NextImage                                      ' No Saving or Reviewing    
 							End If
 							'===============================================================================
 							'                                 Review Image

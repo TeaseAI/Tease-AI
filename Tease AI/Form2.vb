@@ -69,7 +69,7 @@ Public Class FrmSettings
 				Form1.TimerMarCHC.Start()
 			End If
 		End If
-		
+
 		If Form1.ChatBox2.Visible Then
 			Form1.ChatBox2.[Select]()
 		Else
@@ -1800,7 +1800,7 @@ Public Class FrmSettings
 		End If
 	End Sub
 
-#End Region	' Domme
+#End Region  ' Domme
 
 #Region "-------------------------------------- Scripts -------------------------------------------------"
 
@@ -2755,7 +2755,7 @@ SkipDeserializing:
 		End Try
 	End Sub
 
-#End Region	' Scripts
+#End Region  ' Scripts
 
 #Region "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Apps ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
@@ -3153,7 +3153,7 @@ SkipDeserializing:
 		End If
 	End Sub
 
-#End Region	' Glitter
+#End Region  ' Glitter
 
 #Region "----------------------------------------- Games ------------------------------------------------"
 
@@ -3317,9 +3317,9 @@ SkipDeserializing:
 		End If
 	End Sub
 
-#End Region	' Games
+#End Region  ' Games
 
-#End Region	' Apps
+#End Region  ' Apps
 
 #Region "-------------------------------------- URL Files -----------------------------------------------"
 
@@ -3796,7 +3796,7 @@ TryNextImage:
 
 #End Region
 
-#End Region	' Url Files
+#End Region  ' Url Files
 
 #Region "--------------------------------------- Images -------------------------------------------------"
 
@@ -3913,7 +3913,7 @@ checkFolder:
 		Return My.Settings.CBIHardcore
 	End Function
 
-#End Region	' Hardcore
+#End Region ' Hardcore
 
 #Region "------------------------------------- Softcore Images -------------------------------------------"
 
@@ -3944,7 +3944,7 @@ checkFolder:
 		Return My.Settings.CBISoftcore
 	End Function
 
-#End Region	' Softcore
+#End Region ' Softcore
 
 #Region "------------------------------------- Lesbian Images --------------------------------------------"
 
@@ -3975,7 +3975,7 @@ checkFolder:
 		Return My.Settings.CBILesbian
 	End Function
 
-#End Region	' Lesbian
+#End Region ' Lesbian
 
 #Region "------------------------------------- Blowjob Images --------------------------------------------"
 
@@ -4006,7 +4006,7 @@ checkFolder:
 		Return My.Settings.CBIBlowjob
 	End Function
 
-#End Region	' Blowjob
+#End Region ' Blowjob
 
 #Region "------------------------------------- Femdom Images ---------------------------------------------"
 
@@ -4037,7 +4037,7 @@ checkFolder:
 		Return My.Settings.CBIFemdom
 	End Function
 
-#End Region	' Femdom
+#End Region ' Femdom
 
 #Region "------------------------------------- Lezdom Images ---------------------------------------------"
 
@@ -4068,7 +4068,7 @@ checkFolder:
 		Return My.Settings.CBILezdom
 	End Function
 
-#End Region	' Lezdon
+#End Region ' Lezdon
 
 #Region "------------------------------------- Hentai Images ---------------------------------------------"
 
@@ -4099,7 +4099,7 @@ checkFolder:
 		Return My.Settings.CBIHentai
 	End Function
 
-#End Region	' Hentai
+#End Region ' Hentai
 
 #Region "------------------------------------- Gay Images ------------------------------------------------"
 
@@ -4130,7 +4130,7 @@ checkFolder:
 		Return My.Settings.CBIGay
 	End Function
 
-#End Region	' Gay
+#End Region ' Gay
 
 #Region "------------------------------------- Maledom Images ---------------------------------------------"
 
@@ -4161,7 +4161,7 @@ checkFolder:
 		Return My.Settings.CBIMaledom
 	End Function
 
-#End Region	' Maledom
+#End Region ' Maledom
 
 #Region "------------------------------------- General Images ---------------------------------------------"
 
@@ -4192,7 +4192,7 @@ checkFolder:
 		Return My.Settings.CBIGeneral
 	End Function
 
-#End Region	' General
+#End Region ' General
 
 #Region "------------------------------------- Captions Images ---------------------------------------------"
 
@@ -4223,7 +4223,7 @@ checkFolder:
 		Return My.Settings.CBICaptions
 	End Function
 
-#End Region	' Captions
+#End Region ' Captions
 
 #Region "------------------------------------- Boobs Images ----------------------------------------------"
 
@@ -4254,7 +4254,7 @@ checkFolder:
 		Return My.Settings.CBIBoobs
 	End Function
 
-#End Region	' Boobs
+#End Region ' Boobs
 
 #Region "------------------------------------- Butts Images ----------------------------------------------"
 
@@ -4285,7 +4285,7 @@ checkFolder:
 		Return My.Settings.CBIButts
 	End Function
 
-#End Region	' Butt
+#End Region ' Butt
 
 
 	Private Sub LBLIHardcore_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TbxIHardcore.DoubleClick
@@ -4450,9 +4450,9 @@ checkFolder:
 		End Try
 	End Sub
 
-#End Region	'GenreImages-Url-Files
+#End Region  'GenreImages-Url-Files
 
-#End Region	' Images
+#End Region  ' Images
 
 #Region "--------------------------------------- Videos -------------------------------------------------"
 
@@ -4555,7 +4555,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoHardcore).Count
 	End Function
 
-#End Region	' Hardcore
+#End Region ' Hardcore
 
 #Region "------------------------------------- Softcore Videos -------------------------------------------"
 
@@ -4584,7 +4584,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoSoftcore).Count
 	End Function
 
-#End Region	' Softcore
+#End Region ' Softcore
 
 #Region "------------------------------------- Lesbian Videos --------------------------------------------"
 
@@ -4613,7 +4613,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoLesbian).Count
 	End Function
 
-#End Region	' Lesbian
+#End Region ' Lesbian
 
 #Region "------------------------------------- Blowjob Videos --------------------------------------------"
 
@@ -4642,7 +4642,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoBlowjob).Count
 	End Function
 
-#End Region	' Blowjob
+#End Region ' Blowjob
 
 #Region "---------------------------------------- Femdom -------------------------------------------------"
 
@@ -4671,7 +4671,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoFemdom).Count
 	End Function
 
-#End Region	' Femdom
+#End Region ' Femdom
 
 #Region "------------------------------------- Femsub Videos ---------------------------------------------"
 
@@ -4700,7 +4700,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoFemsub).Count
 	End Function
 
-#End Region	' Femsub
+#End Region ' Femsub
 
 #Region "------------------------------------- JOI Videos ------------------------------------------------"
 
@@ -4729,7 +4729,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoJOI).Count
 	End Function
 
-#End Region	' JOI
+#End Region ' JOI
 
 #Region "------------------------------------- CH Videos -------------------------------------------------"
 
@@ -4758,7 +4758,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoCH).Count
 	End Function
 
-#End Region	' CH
+#End Region ' CH
 
 #Region "------------------------------------- General Videos --------------------------------------------"
 
@@ -4787,9 +4787,9 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoGeneral).Count
 	End Function
 
-#End Region	' General
+#End Region ' General
 
-#End Region	' Regular
+#End Region ' Regular
 
 #Region "------------------------------------------ Domme ------------------------------------------------"
 
@@ -4820,7 +4820,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoHardcoreD).Count
 	End Function
 
-#End Region	' HardcoreD
+#End Region ' HardcoreD
 
 #Region "---------------------------------------- SoftcoreD ----------------------------------------------"
 
@@ -4849,7 +4849,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoSoftcoreD).Count
 	End Function
 
-#End Region	' SoftcoreD
+#End Region ' SoftcoreD
 
 #Region "---------------------------------------- LesbianD -----------------------------------------------"
 
@@ -4878,7 +4878,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoLesbianD).Count
 	End Function
 
-#End Region	' LesbianD
+#End Region ' LesbianD
 
 #Region "---------------------------------------- BlowjobD -----------------------------------------------"
 
@@ -4907,7 +4907,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoBlowjobD).Count
 	End Function
 
-#End Region	' BlowjobD
+#End Region ' BlowjobD
 
 #Region "---------------------------------------- FemdomD ------------------------------------------------"
 
@@ -4936,7 +4936,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoFemdomD).Count
 	End Function
 
-#End Region	' FemdomD
+#End Region ' FemdomD
 
 #Region "---------------------------------------- FemsubD ------------------------------------------------"
 
@@ -4965,7 +4965,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoFemsubD).Count
 	End Function
 
-#End Region	' FemsubD
+#End Region ' FemsubD
 
 #Region "---------------------------------------- JOI-D --------------------------------------------------"
 
@@ -4994,7 +4994,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoJOID).Count
 	End Function
 
-#End Region	' JOI-D
+#End Region ' JOI-D
 
 #Region "---------------------------------------- CH-D ---------------------------------------------------"
 
@@ -5023,7 +5023,7 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoCHD).Count
 	End Function
 
-#End Region	' CH-D
+#End Region ' CH-D
 
 #Region "---------------------------------------- GeneralD -----------------------------------------------"
 
@@ -5052,16 +5052,16 @@ checkFolder:
 		Return myDirectory.GetFilesVideo(My.Settings.VideoGeneralD).Count
 	End Function
 
-#End Region	' GeneralD
+#End Region ' GeneralD
 
-#End Region	' Domme
+#End Region ' Domme
 
 	Private Sub BTNRefreshVideos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNRefreshVideos.Click
 		VideoDescriptionLabel.Text = "Refresh complete: " & Video_CheckAllFolders() & " videos found!"
 		VideoDescriptionLabel.Text = VideoDescriptionLabel.Text.Replace(": 1 videos", ": 1 video")
 	End Sub
 
-#End Region	' Videos
+#End Region  ' Videos
 
 
 	Private Sub BindCombo()
@@ -9531,8 +9531,8 @@ checkFolder:
 			CType(sender, Label).BackColor = GetColor.Color
 			Form1.ResumeLayout()
 		End If
-		
-		ssh.Chat = String.Concat(New String() { "<body bgcolor=""", Common.Color2Html(My.Settings.ChatWindowColor), """>", ssh.Chat, "</body>" })
+
+		ssh.Chat = String.Concat(New String() {"<body bgcolor=""", Common.Color2Html(My.Settings.ChatWindowColor), """>", ssh.Chat, "</body>"})
 		Form1.ChatUpdate()
 	End Sub
 
@@ -9603,7 +9603,7 @@ checkFolder:
 
 				CBFlipBack.Checked = SettingsList(10).Replace("FlipImage: ", "")
 
-				ssh.Chat = String.Concat(New String() { "<body bgcolor=""", Common.Color2Html(My.Settings.ChatWindowColor), """>", ssh.Chat, "</body>" })
+				ssh.Chat = String.Concat(New String() {"<body bgcolor=""", Common.Color2Html(My.Settings.ChatWindowColor), """>", ssh.Chat, "</body>"})
 				Form1.ChatUpdate()
 
 

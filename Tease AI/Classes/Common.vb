@@ -269,8 +269,8 @@ Public Class Common
 			'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
 			'						       All Errors
 			'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-            Log.WriteError(ex.Message, ex, "Error removing TextLine: """ & Searchpattern &
-                  """ from file """ & Filepath & """")
+			Log.WriteError(ex.Message, ex, "Error removing TextLine: """ & Searchpattern &
+				  """ from file """ & Filepath & """")
 			Return 0
 		End Try
 	End Function

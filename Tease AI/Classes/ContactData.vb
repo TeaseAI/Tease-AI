@@ -258,7 +258,7 @@ checkFolder:
 	Function LoadRandom(ByVal baseDirectory As String, newFolder As Boolean) As List(Of String)
 		If Directory.Exists(baseDirectory) = False Then _
 			Throw New DirectoryNotFoundException("The given slideshow base directory """ & baseDirectory & """ was not found.")
-	Dim currPath As String
+		Dim currPath As String
 
 		If Contact = ContactType.Random And Not newFolder Then
 			currPath = myDirectory.GetDirectories(baseDirectory).ElementAt(Form1.ssh.randomizer.Next(0, myDirectory.GetDirectories(baseDirectory).Count))
@@ -639,7 +639,7 @@ redo:
 					' ´############## List was empty ################
 
 					Exit Function
-				ElseIf Not rtnItem.TagImageList(0).StartsWith(TargetFolder)
+				ElseIf Not rtnItem.TagImageList(0).StartsWith(TargetFolder) Then
 					' ################ Wrong folder #################
 					ImageTagCache.Remove(imageTags)
 					GoTo redo
@@ -735,7 +735,7 @@ redo:
 			Dim FileName As String = Path.GetFileName(DisplayedImage)
 
 			If Not File.Exists(TagFilePath) Then Exit Function
-		
+
 			' Read tagfile and find line for displayed image.
 			Dim Line As String = Txt2List(TagFilePath).Find(Function(x) x.StartsWith(FileName, StringComparison.OrdinalIgnoreCase))
 			If Line Is Nothing Then Exit Function

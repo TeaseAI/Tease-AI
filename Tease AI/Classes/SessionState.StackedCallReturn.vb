@@ -34,9 +34,9 @@
 			rapidCode = session.RapidCode
 			rapidText = session.RapidFire
 		End Sub
-        Sub resumeState()
-            Session.StrokeTauntVal = Line
-            Session.FileText = FilePath
+		Sub resumeState()
+			Session.StrokeTauntVal = Line
+			Session.FileText = FilePath
 			Session.ReturnSubState = ReturnState
 			Session.GotoFlag = GotoStatus
 			Session.FileGoto = LineGoTo
@@ -52,5 +52,5 @@
 			Session.RapidCode = rapidCode
 			Session.RapidFire = rapidText
 		End Sub
-    End Class
+	End Class
 End Class

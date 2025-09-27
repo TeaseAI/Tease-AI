@@ -70,7 +70,7 @@ Partial Class FrmTaC
 		Me.Button2.Text = "Decline"
 		Me.Button2.UseVisualStyleBackColor = True
 		'
-		'TermsAndConditions
+		'FrmTaC
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -83,7 +83,7 @@ Partial Class FrmTaC
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
 		Me.MaximizeBox = False
 		Me.MinimizeBox = False
-		Me.Name = "TermsAndConditions"
+		Me.Name = "FrmTaC"
 		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Tease AI Terms & Conditions"

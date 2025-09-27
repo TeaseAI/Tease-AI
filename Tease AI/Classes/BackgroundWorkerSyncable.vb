@@ -75,7 +75,7 @@ Public Class BackgroundWorkerSyncable
 		'											 Calling-Thread
 		If _ResultCache IsNot Nothing AndAlso _ResultCache.Error IsNot Nothing Then
 			Throw New InvalidOperationException("Starting Is Not allowed while a previous result Is cached.")
-		ElseIf _ResultCache IsNot Nothing
+		ElseIf _ResultCache IsNot Nothing Then
 			StopAsync()
 		End If
 

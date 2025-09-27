@@ -231,7 +231,6 @@ Partial Class Form1
 		Me.LBLGeneralSettings = New System.Windows.Forms.Label()
 		Me.PNLTabs = New System.Windows.Forms.Panel()
 		Me.PNLWishList = New System.Windows.Forms.Panel()
-		Me.voiceDomWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.WishlistCostSilver = New System.Windows.Forms.PictureBox()
 		Me.LBLWishlistDate = New System.Windows.Forms.Label()
 		Me.BTNWishlist = New System.Windows.Forms.Button()
@@ -364,6 +363,7 @@ Partial Class Form1
 		Me.PNLPlaylist = New System.Windows.Forms.Panel()
 		Me.LBPlaylist = New System.Windows.Forms.ListBox()
 		Me.BTNPlaylist = New System.Windows.Forms.Button()
+		Me.voiceDomWMP = New AxWMPLib.AxWindowsMediaPlayer()
 		Me.PNLAvatar = New System.Windows.Forms.Panel()
 		Me.PnlAvatarBackground = New System.Windows.Forms.Panel()
 		Me.PnlAvatarInner = New System.Windows.Forms.Panel()
@@ -441,7 +441,6 @@ Partial Class Form1
 		Me.PNLDate.SuspendLayout()
 		Me.PNLTabs.SuspendLayout()
 		Me.PNLWishList.SuspendLayout()
-		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.WishlistCostSilver, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.WishlistCostGold, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PNLWishlistTokenBack.SuspendLayout()
@@ -464,6 +463,7 @@ Partial Class Form1
 		Me.PNLWritingTask.SuspendLayout()
 		Me.PNLAppRandomizer.SuspendLayout()
 		Me.PNLPlaylist.SuspendLayout()
+		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PNLAvatar.SuspendLayout()
 		Me.PnlAvatarBackground.SuspendLayout()
 		Me.PnlAvatarInner.SuspendLayout()
@@ -581,7 +581,7 @@ Partial Class Form1
 		'
 		Me.BeatMeterWMP.Anchor = System.Windows.Forms.AnchorStyles.None
 		Me.BeatMeterWMP.Enabled = True
-		Me.BeatMeterWMP.Location = New System.Drawing.Point(608, 242)
+		Me.BeatMeterWMP.Location = New System.Drawing.Point(608, 239)
 		Me.BeatMeterWMP.Name = "BeatMeterWMP"
 		Me.BeatMeterWMP.OcxState = CType(resources.GetObject("BeatMeterWMP.OcxState"), System.Windows.Forms.AxHost.State)
 		Me.BeatMeterWMP.Size = New System.Drawing.Size(790, 183)
@@ -2375,16 +2375,6 @@ Partial Class Form1
 		Me.PNLWishList.TabIndex = 775
 		Me.PNLWishList.Visible = False
 		'
-		'voiceDomWMP
-		'
-		Me.voiceDomWMP.Enabled = True
-		Me.voiceDomWMP.Location = New System.Drawing.Point(117, 155)
-		Me.voiceDomWMP.Name = "voiceDomWMP"
-		Me.voiceDomWMP.OcxState = CType(resources.GetObject("voiceDomWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.voiceDomWMP.Size = New System.Drawing.Size(104, 63)
-		Me.voiceDomWMP.TabIndex = 113
-		Me.voiceDomWMP.Visible = False
-		'
 		'WishlistCostSilver
 		'
 		Me.WishlistCostSilver.BackColor = System.Drawing.Color.Transparent
@@ -4050,6 +4040,16 @@ Partial Class Form1
 		Me.BTNPlaylist.Text = "Begin Selected Playlist"
 		Me.BTNPlaylist.UseVisualStyleBackColor = False
 		'
+		'voiceDomWMP
+		'
+		Me.voiceDomWMP.Enabled = True
+		Me.voiceDomWMP.Location = New System.Drawing.Point(117, 155)
+		Me.voiceDomWMP.Name = "voiceDomWMP"
+		Me.voiceDomWMP.OcxState = CType(resources.GetObject("voiceDomWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.voiceDomWMP.Size = New System.Drawing.Size(104, 63)
+		Me.voiceDomWMP.TabIndex = 113
+		Me.voiceDomWMP.Visible = False
+		'
 		'PNLAvatar
 		'
 		Me.PNLAvatar.BackColor = System.Drawing.Color.Transparent
@@ -4524,7 +4524,6 @@ Partial Class Form1
 		Me.PNLDate.ResumeLayout(False)
 		Me.PNLTabs.ResumeLayout(False)
 		Me.PNLWishList.ResumeLayout(False)
-		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.WishlistCostSilver, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.WishlistCostGold, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PNLWishlistTokenBack.ResumeLayout(False)
@@ -4554,6 +4553,7 @@ Partial Class Form1
 		Me.PNLWritingTask.PerformLayout()
 		Me.PNLAppRandomizer.ResumeLayout(False)
 		Me.PNLPlaylist.ResumeLayout(False)
+		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PNLAvatar.ResumeLayout(False)
 		Me.PnlAvatarBackground.ResumeLayout(False)
 		Me.PnlAvatarInner.ResumeLayout(False)

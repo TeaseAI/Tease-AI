@@ -104,11 +104,11 @@ Error_All:
 			End If
 		End Sub
 
-        ''' =========================================================================================================
-        ''' <summary>
-        ''' Replace the user.config-file located in %LocalAppData% with the duplicated filöe.
-        ''' </summary>
-        Private Shared Sub loadCustomUserConfig()
+		''' =========================================================================================================
+		''' <summary>
+		''' Replace the user.config-file located in %LocalAppData% with the duplicated filöe.
+		''' </summary>
+		Private Shared Sub loadCustomUserConfig()
 			Try
 				Dim configAppData As String = LocalAppFilePath()
 				Dim configAppDataDir As String = Path.GetDirectoryName(configAppData)
@@ -126,17 +126,17 @@ Error_All:
 					If Directory.Exists(configAppDataDir) = False Then _
 								Directory.CreateDirectory(configAppDataDir)
 
-                    ' Copy the duplicated file to %LoaclAppData%-Dir.
-                    File.Copy(dupeFilePath, configAppData, True)
+					' Copy the duplicated file to %LoaclAppData%-Dir.
+					File.Copy(dupeFilePath, configAppData, True)
 				ElseIf Directory.Exists(configAppDataDir) = False Then
 					' No settings Found, try an Upgrade if there a Version in %LocaAppDir%
 					My.Settings.Upgrade()
 				End If
 			Catch ex As Exception
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                '                                            All Errors
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                MsgBox("Exception on loading custom-user.config." & vbCrLf & ex.Message,
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				'                                            All Errors
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				MsgBox("Exception on loading custom-user.config." & vbCrLf & ex.Message,
 					   MsgBoxStyle.Exclamation, "Load user.config")
 				Log.WriteError(ex.Message, ex, "Exception on loading custom-user.config.")
 			End Try
@@ -220,8 +220,8 @@ Error_All:
 
 		Friend Shared Function GetDuplicatePath() As String
 
-            ' get the Filepath 
-            Dim SettingsFilePath As String = LocalAppFilePath
+			' get the Filepath 
+			Dim SettingsFilePath As String = LocalAppFilePath
 			Dim TargetPath As String = BackupDir & Application.Info.Version.ToString & "." & Path.GetFileName(SettingsFilePath)
 
 			Return TargetPath
@@ -234,22 +234,22 @@ Error_All:
 				Dim configAppDataPath As String = LocalAppFilePath()
 				Dim dupeFilePath As String = GetDuplicatePath()
 
-                ' Check if Directory and file to copy exist.
-                If Directory.Exists(Path.GetDirectoryName(configAppDataPath)) _
+				' Check if Directory and file to copy exist.
+				If Directory.Exists(Path.GetDirectoryName(configAppDataPath)) _
 				AndAlso File.Exists(configAppDataPath) Then
 
-                    ' Create Traget directoy if needed.
-                    If Directory.Exists(BackupDir) = False Then _
+					' Create Traget directoy if needed.
+					If Directory.Exists(BackupDir) = False Then _
 					Directory.CreateDirectory(BackupDir)
 
-                    ' Copy File
-                    My.Computer.FileSystem.CopyFile(configAppDataPath, dupeFilePath, True)
+					' Copy File
+					My.Computer.FileSystem.CopyFile(configAppDataPath, dupeFilePath, True)
 				End If
 			Catch ex As Exception
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                '                                            All Errors
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                Log.WriteError(ex.Message, ex, "Exception while duplicating user.config.")
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				'                                            All Errors
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				Log.WriteError(ex.Message, ex, "Exception while duplicating user.config.")
 			End Try
 		End Sub
 
@@ -271,8 +271,8 @@ Error_All:
 				.InitialDirectory = BackupDir}
 
 				If fs.ShowDialog = DialogResult.OK And fs.FileName <> "" And File.Exists(fs.FileName) Then
-                    ' Restart the application with new Start-parameters
-                    Dim startInfo As New ProcessStartInfo()
+					' Restart the application with new Start-parameters
+					Dim startInfo As New ProcessStartInfo()
 					startInfo.FileName = Reflection.Assembly.GetExecutingAssembly().CodeBase
 					startInfo.Arguments = "ImportSettings-""" & fs.FileName & """"
 
@@ -291,40 +291,40 @@ Error_All:
 					End If
 				End If
 			Catch ex As Win32Exception When ex.ErrorCode = -2147467259
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                '                                      Process.Start() cancelled
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                MsgBox("Import has benn cancelled.", MsgBoxStyle.Information)
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				'                                      Process.Start() cancelled
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				MsgBox("Import has benn cancelled.", MsgBoxStyle.Information)
 			Catch ex As Exception
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                '                                            All Errors
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                Log.WriteError(ex.Message, ex, "Exception while determining the import file.")
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				'                                            All Errors
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				Log.WriteError(ex.Message, ex, "Exception while determining the import file.")
 				MsgBox("An exception occured while determining the import file: " &
 					   ex.Message, MsgBoxStyle.Exclamation, "Exception occured")
 			End Try
 		End Sub
 
-        ''' =========================================================================================================
-        ''' <summary>
-        ''' Performs an Upgrade from a given UserConfig.file.
-        ''' </summary>
-        ''' <param name="filepath">The File to import.</param>
-        ''' <remarks>In order to perform and upgrade, a pseudo-Version-number is calculated. This
-        ''' Version-number is 1 step smaller as the current version. This calculated Version-number is
-        ''' used to create a new version-folder in the %LocalAppData%-Folder. If there is already
-        ''' another folder with this Version Number the user has to confirm overwriting. </remarks>
-        Private Shared Sub importConfig(ByVal filepath As String)
+		''' =========================================================================================================
+		''' <summary>
+		''' Performs an Upgrade from a given UserConfig.file.
+		''' </summary>
+		''' <param name="filepath">The File to import.</param>
+		''' <remarks>In order to perform and upgrade, a pseudo-Version-number is calculated. This
+		''' Version-number is 1 step smaller as the current version. This calculated Version-number is
+		''' used to create a new version-folder in the %LocalAppData%-Folder. If there is already
+		''' another folder with this Version Number the user has to confirm overwriting. </remarks>
+		Private Shared Sub importConfig(ByVal filepath As String)
 			Try
 				If filepath = Nothing Then Exit Sub
 
 				Dim fileToLoad As String = filepath.Replace("ImportSettings-", "")
 
 				If File.Exists(fileToLoad) Then
-                    '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-                    '                     Calculate-Previous-Version-Start 
-                    '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-                    Dim splitVersion() As String = Application.Info.Version.ToString.Split(".")
+					'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+					'                     Calculate-Previous-Version-Start 
+					'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+					Dim splitVersion() As String = Application.Info.Version.ToString.Split(".")
 					Dim calcVersion As New List(Of Integer)
 					Dim copyRest As Boolean = False
 
@@ -338,9 +338,9 @@ Error_All:
 						ElseIf prevNumber = -1 And i <> 0 Then
 							' Number was 0 => convert to 9999 if not Major Number
 							calcVersion.Insert(0, 9999)
-						ElseIf prevNumber < currNumber
-                            ' Number is smaller than the current Number => Copy rest of Numbers
-                            copyRest = True
+						ElseIf prevNumber < currNumber Then
+							' Number is smaller than the current Number => Copy rest of Numbers
+							copyRest = True
 							calcVersion.Insert(0, prevNumber)
 						Else
 							Throw New ArgumentException("Unknown case while calculation previous Version.")
@@ -352,21 +352,21 @@ Error_All:
 					If prevVersion >= Application.Info.Version Then
 						Throw New ArithmeticException("The calculated version number is not smaller than the current.")
 					End If
-                    '▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
-                    '    Calculate-Previous-Version-END 
-                    '▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+					'▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+					'    Calculate-Previous-Version-END 
+					'▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
-                    ' Get directory path for the current user.config-file.
-                    Dim ImportDir As String = Path.GetDirectoryName(LocalAppFilePath)
+					' Get directory path for the current user.config-file.
+					Dim ImportDir As String = Path.GetDirectoryName(LocalAppFilePath)
 
-                    ' Determine the destination directory 
-                    ImportDir = Path.GetDirectoryName(ImportDir) & "\" & prevVersion.ToString & "\"
+					' Determine the destination directory 
+					ImportDir = Path.GetDirectoryName(ImportDir) & "\" & prevVersion.ToString & "\"
 
-                    ' Extract the filename, if something changes over time
-                    Dim targetFile As String = Path.GetFileName(LocalAppFilePath)
+					' Extract the filename, if something changes over time
+					Dim targetFile As String = Path.GetFileName(LocalAppFilePath)
 
-                    ' Ask for confirmation if there is already a directory.
-                    If Directory.Exists(ImportDir) Then
+					' Ask for confirmation if there is already a directory.
+					If Directory.Exists(ImportDir) Then
 						If MsgBox("There is already a directory '""" & ImportDir &
 								""" if you continue, the content in this directory " &
 								" will be overriden. " & vbCrLf &
@@ -377,26 +377,26 @@ Error_All:
 						End If
 					End If
 
-                    ' Create target directory 
-                    Directory.CreateDirectory(ImportDir)
+					' Create target directory 
+					Directory.CreateDirectory(ImportDir)
 
-                    ' Copy the file to import
-                    File.Copy(fileToLoad, ImportDir & targetFile, True)
+					' Copy the file to import
+					File.Copy(fileToLoad, ImportDir & targetFile, True)
 
-                    ' Perform a Settings-Upgrade.
-                    My.Settings.Upgrade()
+					' Perform a Settings-Upgrade.
+					My.Settings.Upgrade()
 
-                    ' Delete directory and all content
-                    Directory.Delete(ImportDir, True)
+					' Delete directory and all content
+					Directory.Delete(ImportDir, True)
 
 					MsgBox("The settings have been successfully imported", MsgBoxStyle.Information, "Import Settings")
 				End If
 
 			Catch ex As Exception
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                '                                            All Errors
-                '▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-                Log.WriteError(ex.Message, ex, "Import settings")
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				'                                            All Errors
+				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+				Log.WriteError(ex.Message, ex, "Import settings")
 				MsgBox("An exception occured while importing settings: " & vbCrLf & ex.Message,
 					   MsgBoxStyle.Exclamation, "Import settings")
 			End Try

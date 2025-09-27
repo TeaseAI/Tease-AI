@@ -32,8 +32,8 @@ Namespace My
 			Trace.Listeners.Add(New Log.TextTraceListener("log.txt"))
 			Trace.WriteLine("Application V" & Application.Info.Version.ToString & " started")
 
-            ' Load or import a specific user.config-file.
-            MySettings.StartupCheck()
+			' Load or import a specific user.config-file.
+			MySettings.StartupCheck()
 
 			Session = New SessionState
 		End Sub

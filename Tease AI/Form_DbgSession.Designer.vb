@@ -39,13 +39,13 @@ Partial Class dbgSessionForm
 		'
 		Me.TmrUpdate.Interval = 1000
 		'
-		'dbgForm
+		'dbgSessionForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(511, 537)
 		Me.Controls.Add(Me.PropertyGrid1)
-		Me.Name = "dbgForm"
+		Me.Name = "dbgSessionForm"
 		Me.Text = "dbgForm"
 		Me.ResumeLayout(False)
 

@@ -33,12 +33,12 @@ Partial Class Form1
 		Disliked
 	End Enum
 
-    ''' <summary>
-    ''' Represents a Object which can store all necessary Data related to genere-Images. 
-    ''' This obejct is intended for managing Images. All Data and conditions can be stored in here
-    ''' and retrieved from it.
-    ''' </summary>
-    Friend Class ImageDataContainer
+	''' <summary>
+	''' Represents a Object which can store all necessary Data related to genere-Images. 
+	''' This obejct is intended for managing Images. All Data and conditions can be stored in here
+	''' and retrieved from it.
+	''' </summary>
+	Friend Class ImageDataContainer
 		'TODO: ImageDataContainer Improve the usage of System Ressources.
 		Public Name As ImageGenre
 
@@ -112,13 +112,13 @@ Partial Class Form1
 			End If
 		End Function
 
-        ''' =========================================================================================================
-        ''' <summary>
-        ''' Returns a List of FilePaths or URLs.
-        ''' </summary>
-        ''' <returns>Returns a List Containing all Found Links. If none are 
-        ''' Found an empty List is returned</returns>
-        Public Function ToList() As List(Of String)
+		''' =========================================================================================================
+		''' <summary>
+		''' Returns a List of FilePaths or URLs.
+		''' </summary>
+		''' <returns>Returns a List Containing all Found Links. If none are 
+		''' Found an empty List is returned</returns>
+		Public Function ToList() As List(Of String)
 			Dim rtnList As New List(Of String)
 			Try
 				' If no Porn is allowed, then return Empty
@@ -365,12 +365,12 @@ NoneFound:
 		Return tmpObj(genre)
 	End Function
 
-    ''' =========================================================================================================
-    ''' <summary>
-    ''' Gets a dictionary which contains all nessecary data of genere-images.
-    ''' </summary>
-    ''' <returns>Returns a dictionary which contains all nessecary data of genere-images.</returns>
-    Friend Function GetImageData() As Dictionary(Of ImageGenre, ImageDataContainer)
+	''' =========================================================================================================
+	''' <summary>
+	''' Gets a dictionary which contains all nessecary data of genere-images.
+	''' </summary>
+	''' <returns>Returns a dictionary which contains all nessecary data of genere-images.</returns>
+	Friend Function GetImageData() As Dictionary(Of ImageGenre, ImageDataContainer)
 		Dim rtnDic As New Dictionary(Of ImageGenre, ImageDataContainer) '(StringComparer.OrdinalIgnoreCase)
 		Dim SysNoPornAllowed As Boolean = FlagExists("SYS_NoPornAllowed")
 		With rtnDic
@@ -407,7 +407,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileBoobsEnabled, My.Settings.UrlFileBoobs, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-			
+
 			.Add(ImageGenre.Hardcore, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Hardcore,
@@ -416,7 +416,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileHardcoreEnabled, My.Settings.UrlFileHardcore, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-			
+
 			.Add(ImageGenre.Softcore, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Softcore,
@@ -425,7 +425,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileSoftcoreEnabled, My.Settings.UrlFileSoftcore, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-			
+
 			.Add(ImageGenre.Lesbian, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Lesbian,
@@ -434,7 +434,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileLesbianEnabled, My.Settings.UrlFileLesbian, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-			
+
 			.Add(ImageGenre.Blowjob, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Blowjob,
@@ -443,7 +443,7 @@ NoneFound:
 			  .UrlFile = If(My.Settings.UrlFileBlowjobEnabled, My.Settings.UrlFileBlowjob, ""),
 			  .SYS_NoPornAllowed = SysNoPornAllowed
 			 })
-			
+
 			.Add(ImageGenre.Femdom, New ImageDataContainer With
 			  {
 			  .Name = ImageGenre.Femdom,
@@ -518,56 +518,56 @@ NoneFound:
 	''' </summary>
 	''' <returns>The URI of a random Image.</returns>
 	Friend Function GetRandomImage() As String
-        ' Get all definitions for Images.
-        Dim dicFilePaths As Dictionary(Of ImageGenre, ImageDataContainer) = GetImageData()
+		' Get all definitions for Images.
+		Dim dicFilePaths As Dictionary(Of ImageGenre, ImageDataContainer) = GetImageData()
 		Dim AllImages As New List(Of String)
 
-        ' Fetch all available ImageLocations
-        For Each genre As ImageGenre In dicFilePaths.Keys
+		' Fetch all available ImageLocations
+		For Each genre As ImageGenre In dicFilePaths.Keys
 			AllImages.AddRange(dicFilePaths(genre).ToList())
 		Next
 
-        ' Check if there are images
-        If AllImages.Count = 0 Then Return Application.StartupPath & "\Images\System\NoLocalImagesFound.jpg"
+		' Check if there are images
+		If AllImages.Count = 0 Then Return Application.StartupPath & "\Images\System\NoLocalImagesFound.jpg"
 
-        ' get an Random Image from the all available Locations
-        Return AllImages(New Random().Next(0, AllImages.Count)).ToString
+		' get an Random Image from the all available Locations
+		Return AllImages(New Random().Next(0, AllImages.Count)).ToString
 	End Function
 
-    ''' <summary>
-    ''' Gets a random image URI for given Genre from Local and URL-Files.
-    ''' </summary>
-    ''' <param name="genre">Determines the Genre to get a random image for.</param>
-    ''' <returns>The URI of a random Image.</returns>
-    Friend Function GetRandomImage(ByVal genre As ImageGenre) As String
-        ' Get all definitions for Images.
-        Dim dicFilePaths As Dictionary(Of ImageGenre, ImageDataContainer) = GetImageData()
+	''' <summary>
+	''' Gets a random image URI for given Genre from Local and URL-Files.
+	''' </summary>
+	''' <param name="genre">Determines the Genre to get a random image for.</param>
+	''' <returns>The URI of a random Image.</returns>
+	Friend Function GetRandomImage(ByVal genre As ImageGenre) As String
+		' Get all definitions for Images.
+		Dim dicFilePaths As Dictionary(Of ImageGenre, ImageDataContainer) = GetImageData()
 
-        ' get an Random Image from the Random Genre.
-        Return dicFilePaths(genre).Random()
+		' get an Random Image from the Random Genre.
+		Return dicFilePaths(genre).Random()
 	End Function
 
-    ''' <summary>
-    ''' Gets a random image URI for the given sourcetype (URL or Local).
-    ''' </summary>
-    ''' <param name="source">Determines the source to get a random image for.</param>
-    ''' <returns>The URI of a random Image.</returns>
-    Friend Function GetRandomImage(ByVal source As ImageSourceType) As String
-        ' Get all definitions for Images.
-        Dim dicFilePaths As Dictionary(Of ImageGenre, ImageDataContainer) = GetImageData()
+	''' <summary>
+	''' Gets a random image URI for the given sourcetype (URL or Local).
+	''' </summary>
+	''' <param name="source">Determines the source to get a random image for.</param>
+	''' <returns>The URI of a random Image.</returns>
+	Friend Function GetRandomImage(ByVal source As ImageSourceType) As String
+		' Get all definitions for Images.
+		Dim dicFilePaths As Dictionary(Of ImageGenre, ImageDataContainer) = GetImageData()
 
 		Dim allImages As New List(Of String)
 
-        ' Fetch all available ImageLocations for sourceType
-        For Each genre As String In dicFilePaths.Keys
+		' Fetch all available ImageLocations for sourceType
+		For Each genre As String In dicFilePaths.Keys
 			allImages.AddRange(dicFilePaths(genre).ToList(source))
 		Next
 
-        ' Check if Genres are present.
-        If allImages.Count = 0 Then GoTo NoNeFound
+		' Check if Genres are present.
+		If allImages.Count = 0 Then GoTo NoNeFound
 
-        ' get an Random Image for the given SourceType
-        Return allImages(New Random().Next(0, allImages.Count)).ToString
+		' get an Random Image for the given SourceType
+		Return allImages(New Random().Next(0, allImages.Count)).ToString
 NoNeFound:
 		' Return an Error-Image FilePath
 		If source = ImageSourceType.Local _
@@ -575,23 +575,23 @@ NoNeFound:
 		Else Return Application.StartupPath & "\Images\System\NoURLFilesSelected.jpg"
 	End Function
 
-    ''' <summary>
-    ''' Gets a random image URI for the given genre and sourcetype (URL or Local)..
-    ''' </summary>
-    ''' <param name="genre">Determines the genre to get a random image for.</param>
-    ''' <param name="source">Determines the source to get a random image for.</param>
-    ''' <returns>The URI of a random Image.</returns>
-    Friend Function GetRandomImage(ByVal genre As ImageGenre, ByVal source As ImageSourceType) As String
-        ' Get all definitions for Images.
-        Dim dicFilePaths As Dictionary(Of ImageGenre, ImageDataContainer) = GetImageData()
+	''' <summary>
+	''' Gets a random image URI for the given genre and sourcetype (URL or Local)..
+	''' </summary>
+	''' <param name="genre">Determines the genre to get a random image for.</param>
+	''' <param name="source">Determines the source to get a random image for.</param>
+	''' <returns>The URI of a random Image.</returns>
+	Friend Function GetRandomImage(ByVal genre As ImageGenre, ByVal source As ImageSourceType) As String
+		' Get all definitions for Images.
+		Dim dicFilePaths As Dictionary(Of ImageGenre, ImageDataContainer) = GetImageData()
 
-        ' Check if the given Genre is found.
-        If dicFilePaths.Keys.Contains(genre) Then
-            ' get an Random Image
-            Return dicFilePaths(genre).Random(source)
+		' Check if the given Genre is found.
+		If dicFilePaths.Keys.Contains(genre) Then
+			' get an Random Image
+			Return dicFilePaths(genre).Random(source)
 		Else
-            ' Return the Error-Image FilePath
-            If source = ImageSourceType.Local _
+			' Return the Error-Image FilePath
+			If source = ImageSourceType.Local _
 			Then Return Application.StartupPath & "\Images\System\NoLocalImagesFound.jpg" _
 			Else Return Application.StartupPath & "\Images\System\NoURLFilesSelected.jpg"
 		End If
@@ -962,15 +962,15 @@ retryLocal: ' If an exception occures the function is restarted and the Errorima
 				Else
 					mainPictureBox.Dock = DockStyle.Fill
 
-				If My.Settings.CBStretchLandscape Then
+					If My.Settings.CBStretchLandscape Then
 
-					If mainPictureBox.Image.Width > mainPictureBox.Image.Height Then
-						mainPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+						If mainPictureBox.Image.Width > mainPictureBox.Image.Height Then
+							mainPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+						Else
+							mainPictureBox.SizeMode = PictureBoxSizeMode.Zoom
+						End If
 					Else
 						mainPictureBox.SizeMode = PictureBoxSizeMode.Zoom
-					End If
-				Else
-					mainPictureBox.SizeMode = PictureBoxSizeMode.Zoom
 					End If
 				End If
 

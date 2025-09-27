@@ -1099,7 +1099,7 @@ retryStart:
 			End If
 
 		End Try
-		
+
 		chatBox.[ReadOnly] = False
 		ChatBox2.[ReadOnly] = False
 		If MaximizeImageToolStripMenuItem.Checked And SideChatToolStripMenuItem1.Checked Then
@@ -2703,7 +2703,7 @@ FoundResponse:
 				AddResponse = True
 			ElseIf Trim(line).ToUpper = String.Format("[{0} End]", Section).ToUpper Then
 				AddResponse = False
-			ElseIf AddResponse = True
+			ElseIf AddResponse = True Then
 				FilteredLines.Add(line)
 			End If
 		Next
@@ -2716,7 +2716,7 @@ FoundResponse:
 					AddResponse = True
 				ElseIf Trim(line).ToUpper = "[All End]".ToUpper Then
 					AddResponse = False
-				ElseIf AddResponse = True
+				ElseIf AddResponse = True Then
 					FilteredLines.Add(line)
 				End If
 			Next
@@ -2796,7 +2796,7 @@ FoundResponse:
 
 		'we get the trigger word that is present in the chat (if there is a word that matches one of the answers)
 		Dim triggerWord As String = ssh.checkAnswers.triggerWord(ssh.ChatString)
-		
+
 		Dim splittedChatString As String() = ssh.ChatString.Split(" ")
 		Dim num As Integer = splittedChatString.Count - 1
 		For i As Integer = 0 To num
@@ -2827,7 +2827,7 @@ FoundResponse:
 						If countChatWords < splittedChatString.Count - 1 Then
 							wordPair = splittedChatString(countChatWords).ToLower() + " " + splittedChatString(countChatWords + 1).ToLower()
 						End If
-						If wordpair = splittedKeyphrase Then
+						If wordPair = splittedKeyphrase Then
 							triggerWord = marSubAnswers.returnSystemWord(splittedKeyphrase)
 							Dim splitChatString As String() = Strings.Split(ssh.ChatString, splittedKeyphrase, -1, CompareMethod.Text)
 							Dim myTriggerWordWithSpaces As String = " " + triggerWord + " "
@@ -3022,7 +3022,7 @@ AcceptAnswer:
 		'If ChatText.IsBusy Then Return
 
 		If WaitTimer.Enabled = True Or ssh.DomTypeCheck = True Then Return
-		
+
 		If FrmSettings.CBSettingsPause.Checked And FrmSettings.SettingsPanel.Visible Then Return
 
 		'Debug.Print("ScriptTimer Substroking = " & SubStroking)
@@ -3811,9 +3811,9 @@ CancelGoto:
 				StopEverything()
 				ssh.CallReturns.Clear()
 				ChatAddWarning("Error: @Goto() could not find a valid Goto Label. Sending you to a link, to avoid blocking the session")
-				
+
 				marScriptLogText += "Error: @Goto(): " + ssh.FileText + vbCrLf
-				
+
 				If ssh.LastScript = False Then
 					If ssh.BeforeTease = True Then
 						ssh.BeforeTease = False
@@ -3839,7 +3839,7 @@ CancelGoto:
 		End If
 
 	End Sub
-	
+
 	Public Sub TypingNoDelay()
 		If My.Settings.OfflineMode = True Then
 			ssh.DomChat = OfflineConversion(ssh.DomChat)
@@ -4162,13 +4162,13 @@ NullResponse:
 				If ssh.DomTask.Contains("(") And ssh.DomTask.Contains(")") Then
 					Dim ParenReg As RegularExpressions.Regex
 					ParenReg = New RegularExpressions.Regex("\(([^\)]*)\)")
-					
+
 					Try
 						ssh.DomTask = ssh.DomTask.Replace(ParenReg.Match(ssh.DomTask).Value(), "")
 					Catch ex As Exception
 						Interaction.MsgBox("Error 1109" & vbCrLf + ex.Message, MsgBoxStyle.OkOnly, Nothing)
 					End Try
-					
+
 				End If
 
 				' Github Patch If SysMes = False And EmoMes = False Then
@@ -4231,34 +4231,34 @@ NullResponse:
 
 					If FrmSettings.NBTypoChance.Value > 0 Then
 						Try
-	
+
 							Dim RestoreDomTask As String = ssh.DomTask
-	
+
 							If Not ssh.DomTask.Substring(0, 1) = FrmSettings.TBEmote.Text.Substring(0, 1) And Not ssh.DomTask.Contains("<") And ssh.YesOrNo = False And ssh.TypoSwitch <> 0 And ssh.TyposDisabled = False _
 							And FrmSettings.TTSCheckBox.Checked = False Then
-	
+
 								Dim TypoChance As Integer = ssh.randomizer.Next(0, 101)
-	
+
 								If TypoChance < FrmSettings.NBTypoChance.Value Or ssh.TypoSwitch = 2 Then
-	
+
 									Try
-	
+
 										Dim TypoString As String
-	
+
 										Dim TypoSplit As String() = ssh.DomTask.Split(" ")
-	
+
 										ssh.TempVal = ssh.randomizer.Next(0, TypoSplit.Count)
-	
+
 										ssh.CorrectedWord = TypoSplit(ssh.TempVal)
-	
+
 										ssh.CorrectedWord = ssh.CorrectedWord.Replace(",", "")
 										ssh.CorrectedWord = ssh.CorrectedWord.Replace(".", "")
 										ssh.CorrectedWord = ssh.CorrectedWord.Replace("!", "")
 										ssh.CorrectedWord = ssh.CorrectedWord.Replace("?", "")
-	
+
 										TypoString = "w d s f x"
-	
-	
+
+
 										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "a" Then TypoString = "q w s z x"
 										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "b" Then TypoString = "f v g h n"
 										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "c" Then TypoString = "x d f v b"
@@ -4285,53 +4285,53 @@ NullResponse:
 										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "x" Then TypoString = "z s d f c"
 										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "y" Then TypoString = "t 7 h u g"
 										If LCase(TypoSplit(ssh.TempVal).Substring(0, 1)) = "z" Then TypoString = "a s x d c"
-	
-	
+
+
 										Dim UpperChance As Integer = ssh.randomizer.Next(0, 101)
 										If UpperChance < 26 Then TypoString = UCase(TypoString)
-	
-	
-	
+
+
+
 										Dim GetTypo As String() = TypoString.Split(" ")
-	
+
 										Dim MadeTypo As String = GetTypo(ssh.randomizer.Next(0, GetTypo.Count))
-	
-	
+
+
 										Dim DoubleChance As Integer = ssh.randomizer.Next(0, 101)
 										If DoubleChance < 11 Then MadeTypo = MadeTypo & LCase(GetTypo(ssh.randomizer.Next(0, GetTypo.Count)))
-	
-	
+
+
 										TypoSplit(ssh.TempVal) = TypoSplit(ssh.TempVal).Remove(0, 1)
-	
+
 										Dim SpaceChance As Integer = ssh.randomizer.Next(0, 101)
 										If SpaceChance < 7 Then
 											TypoSplit(ssh.TempVal) = MadeTypo & " " & TypoSplit(ssh.TempVal)
 										Else
 											TypoSplit(ssh.TempVal) = MadeTypo & TypoSplit(ssh.TempVal)
-	
+
 										End If
-	
+
 										ssh.DomTask = Join(TypoSplit)
-	
+
 										ssh.CorrectedTypo = True
-	
+
 									Catch
-	
+
 										ssh.DomTask = RestoreDomTask
 										ssh.CorrectedTypo = False
 									End Try
-	
+
 								End If
-	
+
 							End If
-	
+
 							ssh.TypoSwitch = 1
-	
+
 						Catch
 						End Try
 					End If
 
-					
+
 
 
 				End If
@@ -4460,45 +4460,45 @@ DommeSlideshowFallback:
 
 					synth.Speak(ttsPhrase)
 
-				If ssh.CorrectedTypo = True Then
-					ssh.CorrectedTypo = False
-					'DomTask = "*" & CorrectedWord
-					ssh.DomTask = LineSpeaker & "*" & ssh.CorrectedWord
-					TypingDelayGeneric()
-					Return
-				End If
+					If ssh.CorrectedTypo = True Then
+						ssh.CorrectedTypo = False
+						'DomTask = "*" & CorrectedWord
+						ssh.DomTask = LineSpeaker & "*" & ssh.CorrectedWord
+						TypingDelayGeneric()
+						Return
+					End If
 
-				StrokeSpeedCheck()
+					StrokeSpeedCheck()
 
-				If ssh.SubStroking = False Then
-					StrokePace = 0
-					If FrmSettings.TBWebStop.Text <> "" Then
-						Try
-							FrmSettings.WebToy.Navigate(FrmSettings.TBWebStop.Text)
-						Catch
-						End Try
+					If ssh.SubStroking = False Then
+						StrokePace = 0
+						If FrmSettings.TBWebStop.Text <> "" Then
+							Try
+								FrmSettings.WebToy.Navigate(FrmSettings.TBWebStop.Text)
+							Catch
+							End Try
+						End If
+					End If
+
+					If ssh.RLGLGame = True And ssh.RedLight = False Then
+						If (DomWMP.playState = WMPLib.WMPPlayState.wmppsPaused) Then
+							DomWMP.Ctlcontrols.play()
+
+
+							ssh.AskedToSpeedUp = False
+							ssh.AskedToSlowDown = False
+							ssh.SubStroking = True
+							ssh.SubEdging = False
+							ssh.SubHoldingEdge = False
+							StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
+							StrokePace = 50 * Math.Round(StrokePace / 50)
+							ssh.RLGLTauntTick = ssh.randomizer.Next(20, 31)
+							' VideoTauntTick = randomizer.Next(20, 31)
+							RLGLTauntTimer.Start()
+
+						End If
 					End If
 				End If
-
-				If ssh.RLGLGame = True And ssh.RedLight = False Then
-					If (DomWMP.playState = WMPLib.WMPPlayState.wmppsPaused) Then
-						DomWMP.Ctlcontrols.play()
-
-
-						ssh.AskedToSpeedUp = False
-						ssh.AskedToSlowDown = False
-						ssh.SubStroking = True
-						ssh.SubEdging = False
-						ssh.SubHoldingEdge = False
-						StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
-						StrokePace = 50 * Math.Round(StrokePace / 50)
-						ssh.RLGLTauntTick = ssh.randomizer.Next(20, 31)
-						' VideoTauntTick = randomizer.Next(20, 31)
-						RLGLTauntTimer.Start()
-
-					End If
-				End If
-			End If
 
 				If ssh.RLGLGame = True And ssh.RedLight = True Then
 					If (DomWMP.playState = WMPLib.WMPPlayState.wmppsPlaying) Then
@@ -6141,7 +6141,7 @@ JumpEnd:
 			myMetro.TogglePauseMetro()
 			DomWMP.Ctlcontrols.pause()
 			contextWMP.Ctlcontrols.pause()
-			If TimerMarCHC.Enabled And marPlayCHCactive Then'PORTNOTE: should these be inverted? if not can be moved outside the if and avoid redundancy
+			If TimerMarCHC.Enabled And marPlayCHCactive Then 'PORTNOTE: should these be inverted? if not can be moved outside the if and avoid redundancy
 				TimerMarCHC.[Stop]()
 			Else
 				If Not TimerMarCHC.Enabled And marPlayCHCactive Then
@@ -9061,7 +9061,7 @@ TaskCleanSet:
 				mw.WebcamStart()
 			End If
 			StringClean = StringClean.Replace("@CamSnapFile[" & snapFolderFileWithPath & "]", "")
-        End If
+		End If
 
 		If StringClean.Contains("@WebcamVideo") Then
 			If My.Settings.CBWebcamEnabled Then
@@ -10556,7 +10556,7 @@ OrgasmDecided:
 				StrokePace = 50 * Math.Round(StrokePace / 50)
 			End If
 		End If
-		
+
 		If StringClean.Contains("@PlayCHC") Then
 			VideoToPlay = True
 			marPlayCHCactive = True
@@ -10803,7 +10803,7 @@ OrgasmDecided:
 		If StringClean.Contains("@Force") Then
 			StringClean = StringClean.Replace("@Force", "")
 		End If
-		
+
 		If ssh.FileText <> marLastLog Then
 			marScriptLogText += ssh.FileText + vbCrLf
 			marLastLog = ssh.FileText
@@ -10946,12 +10946,12 @@ ExternalAudio:
 			End If
 			StringClean = StringClean.Replace("@StopAudioVoiceDom", "")
 		End If
-		
+
 		If StringClean.Contains("@BeatMeterStop") Then
 			BeatmeterPlayerStop()
 			StringClean = StringClean.Replace("@BeatMeterStop", "")
 		End If
-		
+
 		If StringClean.Contains("@BeatMeter(") Then
 			Dim BeatFlag = GetParentheses(StringClean, "@BeatMeter(")
 			Dim BeatVal As Integer = Convert.ToInt32(BeatFlag)
@@ -10959,23 +10959,23 @@ ExternalAudio:
 			TimerMarBeatmeterStart.Start()
 			StringClean = StringClean.Replace("@BeatMeter", "")
 		End If
-		
+
 		If StringClean.Contains("@DisplayVideoTaunts(") Then
 			Dim TauntFlag = GetParentheses(StringClean, "@DisplayVideoTaunts(")
 			Dim TauntArray As String() = TauntFlag.Split(",")
-			
+
 			Dim TauntMin As Integer = Convert.ToInt32(TauntArray(0))
 			If TauntMin < 1 Then TauntMin = 1
-			
+
 			Dim TauntMax As Integer = Convert.ToInt32(TauntArray(1)) + 1
 			If TauntMax <= TauntMin Then TauntMin += 1
-			
+
 			Dim TauntRandom = ssh.randomizer.Next(TauntMin, TauntMax)
 			marDisplayVTmin = TauntMin
 			marDisplayVTmax = TauntMax
 			TimerMarVidTaunts.Interval = TauntRandom * 1000
 			TimerMarVidTaunts.Start()
-			
+
 			StringClean = StringClean.Replace("@DisplayVideoTaunts(" & TauntFlag & ")", "")
 		End If
 
@@ -13107,7 +13107,7 @@ VTSkip:
 						If GetLocalImage(GetParentheses(FilterString, "@DommeTagAny("), True, "Any") = String.Empty Then Return False
 					End If
 				End If
-				
+
 				If FilterString.Includes("@DommeTagFirst(") Then
 					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
@@ -13139,7 +13139,7 @@ VTSkip:
 						If GetLocalImage(GetParentheses(FilterString, "@DomTagAny("), True, "Any") = String.Empty Then Return False
 					End If
 				End If
-				
+
 				If FilterString.Includes("@DomTagFirst(") Then
 					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
@@ -13171,7 +13171,7 @@ VTSkip:
 						If GetLocalImage(GetParentheses(FilterString, "@ImageTagAny("),, "Any") = String.Empty Then Return False
 					End If
 				End If
-				
+
 				If FilterString.Contains("@ImageTagFirst(") Then
 					If ssh.LockImage = True Or mainPictureBox.Visible = False Then
 						Return False
@@ -13179,11 +13179,11 @@ VTSkip:
 						If GetLocalImage(GetParentheses(FilterString, "@ImageTagFirst("),, "First") = String.Empty Then Return False
 					End If
 				End If
-				
+
 				If FilterString.Contains("@ShowDomRandomImage") Then
 					If ssh.LockImage = True Or ssh.CustomSlideEnabled = True Or mainPictureBox.Visible = False Then Return False
 				End If
-				
+
 				If FilterString.Contains("@ShowImage") Then
 					If ssh.LockImage = True Or ssh.CustomSlideEnabled = True Or mainPictureBox.Visible = False Then Return False
 				End If
@@ -13264,11 +13264,11 @@ VTSkip:
 				' Disqualifying @Commands - End
 				'▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 			End If
-			
+
 			If FilterString.Contains("@Force") Then
 				If Not ssh.LockImage Then Return False
 			End If
-			
+
 			If Me.ssh.LockImage = True Or Me.ssh.CustomSlideEnabled = True Or mainPictureBox.Visible = False Then
 				If Not FilterString.Contains("@PlayVideoNoWait") AndAlso FilterString.Contains("@PlayVideo") Then
 					Return False
@@ -13277,7 +13277,7 @@ VTSkip:
 					Return False
 				End If
 			End If
-			
+
 			If Not FilterString.Contains("@PlayVideoNoWait") Then
 				If FilterString.Contains("@PlayVideo") Or FilterString.Contains("@PlayRedLightGreenLight") Or FilterString.Contains("@PlayAvoidTheEdge") Then
 					If Not FilterString.Contains("@StopVideo") AndAlso (Me.DomWMP.playState = WMPPlayState.wmppsPlaying Or Me.DomWMP.playState = WMPPlayState.wmppsPaused) Then Return False
@@ -13834,7 +13834,7 @@ VTSkip:
 			CType(sender, TextBox).Text = ssh.ChatHistoryList(ssh.ChatHistoryCount)
 			e.SuppressKeyPress = True
 		End If
-		
+
 		'PORTNOTE: find a better solution
 		'If e.KeyCode = Keys.[Next] Then
 		'	Dim myPicString As String
@@ -13859,7 +13859,7 @@ VTSkip:
 		'	Catch
 		'	End Try
 		'End If
-		
+
 		'Dim showVolumePopup As Boolean
 		'If e.KeyCode = Keys.Subtract Then
 		'	If DomWMP.settings.volume > 0 Then
@@ -13881,7 +13881,7 @@ VTSkip:
 		'	TimerMarVidVolume.Start()
 		'	e.SuppressKeyPress = True
 		'End If
-		
+
 		'showVolumePopup = False
 		'If e.KeyCode = Keys.NumPad3 Then
 		'	If BeatMeterWMP.settings.volume > 0 Then
@@ -15641,7 +15641,7 @@ RestartFunction:
 
 					Debug.Print("Video Length = " & VideoLength)
 					Debug.Print("Video Remaining = " & VideoRemaining)
-					
+
 					If marVideoHasStarted Then
 						If VideoLength > 0 Then
 							Dim VideoSourceHeight As Integer = DomWMP.currentMedia.imageSourceHeight
@@ -15662,52 +15662,52 @@ RestartFunction:
 
 
 
-		If ssh.DomTypeCheck = True Or DomWMP.playState = WMPLib.WMPPlayState.wmppsStopped Or DomWMP.playState = WMPLib.WMPPlayState.wmppsPaused Then Return
+			If ssh.DomTypeCheck = True Or DomWMP.playState = WMPLib.WMPPlayState.wmppsStopped Or DomWMP.playState = WMPLib.WMPPlayState.wmppsPaused Then Return
 
-		'Debug.Print("New movie loaded: " & DomWMP.URL.ToString)
+			'Debug.Print("New movie loaded: " & DomWMP.URL.ToString)
 
-		ssh.VidFile = Path.GetFileName(DomWMP.URL.ToString)
+			ssh.VidFile = Path.GetFileName(DomWMP.URL.ToString)
 
-		Dim VidSplit As String() = ssh.VidFile.Split(".")
-		ssh.VidFile = ""
-		For i As Integer = 0 To VidSplit.Count - 2
-			ssh.VidFile = ssh.VidFile + VidSplit(i)
-		Next
-		'Debug.Print(VidFile)
-		If ssh.VidFile = "" Then Exit Sub
-		If File.Exists(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Video\Scripts\" & ssh.VidFile & ".txt") Then
-			Dim SubCheck As String()
-			Dim PlayPos As Integer
-			Dim WMPPos As Integer = Math.Ceiling(DomWMP.Ctlcontrols.currentPosition)
+			Dim VidSplit As String() = ssh.VidFile.Split(".")
+			ssh.VidFile = ""
+			For i As Integer = 0 To VidSplit.Count - 2
+				ssh.VidFile = ssh.VidFile + VidSplit(i)
+			Next
+			'Debug.Print(VidFile)
+			If ssh.VidFile = "" Then Exit Sub
+			If File.Exists(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Video\Scripts\" & ssh.VidFile & ".txt") Then
+				Dim SubCheck As String()
+				Dim PlayPos As Integer
+				Dim WMPPos As Integer = Math.Ceiling(DomWMP.Ctlcontrols.currentPosition)
 
-			Dim SubList As New List(Of String)
-			SubList = Txt2List(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Video\Scripts\" & ssh.VidFile & ".txt")
+				Dim SubList As New List(Of String)
+				SubList = Txt2List(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Video\Scripts\" & ssh.VidFile & ".txt")
 
-			If Not SubList Is Nothing Then
-				For i As Integer = 0 To SubList.Count - 1
-					SubCheck = SubList(i).Split("]")
-					SubCheck(0) = SubCheck(0).Replace("[", "")
-					Dim SubCheck2 As String() = SubCheck(0).Split(":")
+				If Not SubList Is Nothing Then
+					For i As Integer = 0 To SubList.Count - 1
+						SubCheck = SubList(i).Split("]")
+						SubCheck(0) = SubCheck(0).Replace("[", "")
+						Dim SubCheck2 As String() = SubCheck(0).Split(":")
 
-					PlayPos = SubCheck2(0) * 3600
-					PlayPos += SubCheck2(1) * 60
-					PlayPos += SubCheck2(2)
+						PlayPos = SubCheck2(0) * 3600
+						PlayPos += SubCheck2(1) * 60
+						PlayPos += SubCheck2(2)
 
-					If WMPPos = PlayPos Then
-						If (SubCheck(1).Contains("@Contact1") And ssh.contact1Present = False) Or (SubCheck(1).Contains("@Contact2") And ssh.contact2Present = False) _
+						If WMPPos = PlayPos Then
+							If (SubCheck(1).Contains("@Contact1") And ssh.contact1Present = False) Or (SubCheck(1).Contains("@Contact2") And ssh.contact2Present = False) _
 					   Or (SubCheck(1).Contains("@Contact3") And ssh.contact3Present = False) Then
-							'I'm positive I'm doing this the hard way -.-
-						Else
-							ssh.DomTask = SubCheck(1)
-							TypingDelayGeneric()
-							Debug.Print(SubList(i))
+								'I'm positive I'm doing this the hard way -.-
+							Else
+								ssh.DomTask = SubCheck(1)
+								TypingDelayGeneric()
+								Debug.Print(SubList(i))
+							End If
 						End If
-					End If
-				Next
+					Next
+				End If
 			End If
-		End If
-	Catch
-	End Try
+		Catch
+		End Try
 
 	End Sub
 
@@ -17065,7 +17065,7 @@ restartInstantly:
 			TypingDelayGeneric()
 		End If
 		setStartName()
-		
+
 		myMetro.MetroOff()
 		DomWMP.Ctlcontrols.[stop]()
 		contextWMP.Ctlcontrols.[stop]()
@@ -20844,30 +20844,30 @@ ShowedBlogImage:
 		LBLWritingTaskText.Text = LBLWritingTaskText.Text.Replace("  ", " ")
 		LBLWritingTaskText.Text = LBLWritingTaskText.Text.Trim
 	End Sub
-	
+
 	Private Sub TimerMarVidVolume_Tick(sender As Object, e As EventArgs) Handles TimerMarVidVolume.Tick
 		TimerMarVidVolume.[Stop]()
 		Label1.Visible = False
 	End Sub
-	
+
 	Private Sub DomWMP_Resize(sender As Object, e As EventArgs) Handles DomWMP.Resize
 		BeatmeterPlayerIntoPosition()
 	End Sub
-	
+
 	Private Sub BeatmeterPlayerIntoPosition()
 		BeatMeterWMP.Left = DomWMP.Left + 2
 		BeatMeterWMP.Top = DomWMP.Top + DomWMP.Height - 40
 		BeatMeterWMP.Width = DomWMP.Width - 2
 		BeatMeterWMP.Height = 40
 	End Sub
-	
+
 	Private Sub VidTauntsIntoPosition()
 		Label2.Left = Math.Round(DomWMP.Width / 2 - Label2.Width / 2.0)
 		Label2.Top = DomWMP.Top
 		Label2.Width = DomWMP.Width - 2
 		Label2.Height = 40
 	End Sub
-	
+
 	Private Sub BeatmeterPlayerStop()
 		TimerMarBeatmeterStart.[Stop]()
 		BeatMeterWMP.Ctlcontrols.[stop]()
@@ -20876,7 +20876,7 @@ ShowedBlogImage:
 		TimerMarCHC.[Stop]()
 		SwitchBackToMainPicBox()
 	End Sub
-	
+
 	Private Sub TimerMarBeatmeterStart_Tick(sender As Object, e As EventArgs) Handles TimerMarBeatmeterStart.Tick
 		TimerMarBeatmeterStart.[Stop]()
 		If DomWMP.playState = WMPPlayState.wmppsBuffering Then
@@ -20902,14 +20902,14 @@ ShowedBlogImage:
 			End If
 		End If
 	End Sub
-	
+
 	Private Sub BeatMeterWMP_PlayStateChange(sender As Object, e As _WMPOCXEvents_PlayStateChangeEvent) Handles BeatMeterWMP.PlayStateChange
 		If BeatMeterWMP.playState = WMPPlayState.wmppsMediaEnded Then
 			TimerMarBeatmeterStart.Interval = 2000
 			TimerMarBeatmeterStart.Start()
 		End If
 	End Sub
-	
+
 	Private Sub DomWMP_VisibleChanged(sender As Object, e As EventArgs) Handles DomWMP.VisibleChanged
 		If DomWMP.Visible Then
 			If marBMPlayerRuns And Not marPlayCHCactive Then
@@ -20917,12 +20917,12 @@ ShowedBlogImage:
 			End If
 		End If
 	End Sub
-	
+
 	Private Sub mainPictureBox_VisibleChanged(sender As Object, e As EventArgs) Handles mainPictureBox.VisibleChanged
 		If mainPictureBox.Visible Then
 		End If
 	End Sub
-	
+
 	Private Sub TimerMarCHC_Tick(sender As Object, e As EventArgs) Handles TimerMarCHC.Tick
 		TimerMarCHC.[Stop]()
 		TimerMarCHC.Interval = ssh.randomizer.[Next](7000, 51000)
@@ -20933,7 +20933,7 @@ ShowedBlogImage:
 		RandomVideo()
 		ssh.RandomizerVideo = False
 	End Sub
-	
+
 	Private Sub MarSplitVideoTaunts()
 		Dim splitTaunts As String() = myVideoTauntLine.Split(" ")
 		Dim mySplitIndex As Integer = Math.Round(splitTaunts.Count / 2)
@@ -20963,7 +20963,7 @@ ShowedBlogImage:
 		End If
 		Label2.Text = myVideoTauntLine
 	End Sub
-	
+
 	Private Async Sub TimerMarVidTaunts_Tick(sender As Object, e As EventArgs) Handles TimerMarVidTaunts.Tick
 		TimerMarVidTaunts.[Stop]()
 		If DomWMP.playState = WMPPlayState.wmppsBuffering Then
@@ -21007,7 +21007,7 @@ ShowedBlogImage:
 			End If
 		End If
 	End Sub
-	
+
 	Public Function MarGettingTextFromVocabs() As String
 		Dim marTestVidTaunts As StreamWriter = My.Computer.FileSystem.OpenTextFileWriter("marTestVidTaunts.txt", False)
 		Dim myReturnString As String = ""
@@ -21073,7 +21073,7 @@ ShowedBlogImage:
 		marTestVidTaunts.Close()
 		Return myReturnString
 	End Function
-	
+
 	Private Async Sub SwitchBackToMainPicBox()
 		DomWMP.Visible = False
 		mainPictureBox.Visible = True

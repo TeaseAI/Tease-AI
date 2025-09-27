@@ -77,16 +77,16 @@ Public Class SessionState
 	<Category("Video")> Public Property TempStrokeTauntVal As Integer
 	<Category("Video")> Public Property TempFileText As String
 
-    ''' <summary>Gets or sets the current TauntFile path.</summary>
-    <Category("Taunts")> <Description("Path of current Taunt-file")>
+	''' <summary>Gets or sets the current TauntFile path.</summary>
+	<Category("Taunts")> <Description("Path of current Taunt-file")>
 	Public Property TauntText As String
 
-    ''' <summary>Gets or sets the length of a taunt group.</summary>
-    <Category("Taunts")> <Description("Current line group size.")>
+	''' <summary>Gets or sets the length of a taunt group.</summary>
+	<Category("Taunts")> <Description("Current line group size.")>
 	Public Property StrokeTauntCount As Integer
 
-    ''' <summary>Gets or sets the current taunt lines. </summary>
-    <Category("Taunts")> <Description("Current taunt lines.")>
+	''' <summary>Gets or sets the current taunt lines. </summary>
+	<Category("Taunts")> <Description("Current taunt lines.")>
 	<Editor(EditorGenericStringList, GetType(UITypeEditor))>
 	Public Property TauntLines As New List(Of String)
 
@@ -94,8 +94,8 @@ Public Class SessionState
 	<Description("Indicates if taunt filtering is active")>
 	Public Property StrokeFilter As Boolean
 
-    ''' <summary> Gets or Sets the current taunt line index. </summary>
-    <Category("Taunts")> <Description("The current taunt line index.")>
+	''' <summary> Gets or Sets the current taunt line index. </summary>
+	<Category("Taunts")> <Description("The current taunt line index.")>
 	Public Property TauntTextCount As Integer
 
 
@@ -157,8 +157,8 @@ Public Class SessionState
 	Public Property TempHypno As String
 
 	Public Property StrokeTick As Integer
-    ''' <summary> Gets or sets time until next taunt.</summary>
-    <Category("Taunts")> <Description("Time until next taunt")>
+	''' <summary> Gets or sets time until next taunt.</summary>
+	<Category("Taunts")> <Description("Time until next taunt")>
 	Public Property StrokeTauntTick As Integer
 
 
@@ -180,8 +180,8 @@ Public Class SessionState
 	Public Property YesOrNo As Boolean = False
 	Public Property GotoFlag As Boolean
 
-    ''' <summary>Gets or Sets if a taunt demanded CBT.</summary>
-    <Category("Taunts")> <Description("Indicates if a taunt demanded CBT. CBT-Tasks are taken from ""[Personality Path]\CBT\CBT.txt"". The calling line in Taunt-file is completly replaced.")>
+	''' <summary>Gets or Sets if a taunt demanded CBT.</summary>
+	<Category("Taunts")> <Description("Indicates if a taunt demanded CBT. CBT-Tasks are taken from ""[Personality Path]\CBT\CBT.txt"". The calling line in Taunt-file is completly replaced.")>
 	Public Property CBT As Boolean
 
 	Public Property RunningScript As Boolean
@@ -473,11 +473,11 @@ Public Class SessionState
 
 	Public Property TimeoutTick As Integer
 
-    ''' <summary>
-    ''' This Variable contains the Path of origin of the displayed Image. CheckDommeTag() uses 
-    ''' this string to get the curremt ImageData for the DommeTagApp.
-    ''' </summary>
-    <Category("Images")> Public Property ImageLocation As String = ""
+	''' <summary>
+	''' This Variable contains the Path of origin of the displayed Image. CheckDommeTag() uses 
+	''' this string to get the curremt ImageData for the DommeTagApp.
+	''' </summary>
+	<Category("Images")> Public Property ImageLocation As String = ""
 
 	Public Property ResponseYes As String
 	Public Property ResponseNo As String
@@ -522,15 +522,15 @@ Public Class SessionState
 
 	Public Property checkAnswers As subAnswers
 
-    ''' <summary>
-    ''' Set to true if the sub is on the edge and the domme had decided to not to stop stroking.
-    ''' </summary>
-    ''' <remarks>
-    ''' Uses following vocabulary Files:
-    ''' #SYS_TauntEdging.txt when the taunting begins.
-    ''' #SYS_TauntEdgingAsked.txt if the sub continues to tell he's on the edge.
-    ''' </remarks>
-    <Description("If True stroking continues when sub is on edge.")>
+	''' <summary>
+	''' Set to true if the sub is on the edge and the domme had decided to not to stop stroking.
+	''' </summary>
+	''' <remarks>
+	''' Uses following vocabulary Files:
+	''' #SYS_TauntEdging.txt when the taunting begins.
+	''' #SYS_TauntEdgingAsked.txt if the sub continues to tell he's on the edge.
+	''' </remarks>
+	<Description("If True stroking continues when sub is on edge.")>
 	Public Property TauntEdging As Boolean = False
 
 	Public Property CountDownList As New List(Of String)
@@ -597,10 +597,10 @@ Public Class SessionState
 	Public WaitTimer_enabled As Boolean = False
 	Public WMPTimer_enabled As Boolean = True
 
-    '===============================================================================
-    '							Timer intervals
-    '===============================================================================
-    Public AudibleMetronome_Interval As Integer = 30
+	'===============================================================================
+	'							Timer intervals
+	'===============================================================================
+	Public AudibleMetronome_Interval As Integer = 30
 	Public AvoidTheEdge_Interval As Integer = 1000
 	Public AvoidTheEdgeResume_Interval As Integer = 1000
 	Public AvoidTheEdgeTaunts_Interval As Integer = 1000
@@ -659,11 +659,11 @@ Public Class SessionState
 	Sub New()
 		InitializeComponent()
 	End Sub
-    ''' <summary>
-    ''' Creates a new instance and activates it on the given Form.
-    ''' </summary>
-    ''' <param name="ActivationForm">The Form on which to apply the session.</param>
-    Sub New(ByVal ActivationForm As Form1)
+	''' <summary>
+	''' Creates a new instance and activates it on the given Form.
+	''' </summary>
+	''' <param name="ActivationForm">The Form on which to apply the session.</param>
+	Sub New(ByVal ActivationForm As Form1)
 		InitializeComponent()
 		Activate(ActivationForm)
 	End Sub
@@ -767,21 +767,21 @@ Public Class SessionState
 	Sub FetchFormData(ByVal serializeForm As Form1)
 		If serializeForm IsNot Nothing _
 	AndAlso serializeForm.InvokeRequired Then
-            ' Calling from another Thread -> Invoke on controls UI-Thread
-            Dim Act As Action(Of Form1) = Sub(s1) FetchFormData(s1)
+			' Calling from another Thread -> Invoke on controls UI-Thread
+			Dim Act As Action(Of Form1) = Sub(s1) FetchFormData(s1)
 			serializeForm.Invoke(Act)
 			Exit Sub
 		End If
-        ' Called from Controls UI-Thread -> Execute Code.
+		' Called from Controls UI-Thread -> Execute Code.
 
 
-        With serializeForm
+		With serializeForm
 			DomPersonality = .dompersonalitycombobox.SelectedItem.ToString
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '							Get Timer EnableStates
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            AvoidTheEdge_enabled = .AvoidTheEdge.Enabled
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'							Get Timer EnableStates
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			AvoidTheEdge_enabled = .AvoidTheEdge.Enabled
 			AvoidTheEdgeResume_enabled = .AvoidTheEdgeResume.Enabled
 			AvoidTheEdgeTaunts_enabled = .AvoidTheEdgeTaunts.Enabled
 			CensorshipTimer_enabled = .CensorshipTimer.Enabled
@@ -807,10 +807,10 @@ Public Class SessionState
 			VideoTauntTimer_enabled = .VideoTauntTimer.Enabled
 			WaitTimer_enabled = .WaitTimer.Enabled
 			WMPTimer_enabled = .WMPTimer.Enabled
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '								Get Timer Intervals
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            AvoidTheEdge_Interval = .AvoidTheEdge.Interval
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'								Get Timer Intervals
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			AvoidTheEdge_Interval = .AvoidTheEdge.Interval
 			AvoidTheEdgeResume_Interval = .AvoidTheEdgeResume.Interval
 			AvoidTheEdgeTaunts_Interval = .AvoidTheEdgeTaunts.Interval
 			CensorshipTimer_Interval = .CensorshipTimer.Interval
@@ -837,18 +837,18 @@ Public Class SessionState
 			WaitTimer_Interval = .WaitTimer.Interval
 			WMPTimer_Interval = .WMPTimer.Interval
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '								Get WMP-Data
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            serialized_WMP_Visible = .DomWMP.Visible
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'								Get WMP-Data
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			serialized_WMP_Visible = .DomWMP.Visible
 			serialized_WMP_URL = .DomWMP.URL
 			serialized_WMP_Playstate = .DomWMP.playState
 			serialized_WMP_Position = .DomWMP.Ctlcontrols.currentPosition
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '								Get Flags
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            If serialized_Flags Is Nothing Then _
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'								Get Flags
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			If serialized_Flags Is Nothing Then _
 						serialized_Flags = New List(Of String)
 
 			serialized_Flags.Clear()
@@ -859,8 +859,8 @@ Public Class SessionState
 				Next
 			End If
 
-            ' Get temporary Flags
-            If serialized_FlagsTemp Is Nothing Then _
+			' Get temporary Flags
+			If serialized_FlagsTemp Is Nothing Then _
 						serialized_FlagsTemp = New List(Of String)
 			serialized_FlagsTemp.Clear()
 
@@ -895,16 +895,16 @@ Public Class SessionState
 
 	End Sub
 
-    ''' <summary>
-    ''' Activates the current SessionState.
-    ''' </summary>
-    ''' <param name="activateForm">The Form to start the session on.</param>
-    Friend Sub Activate(ByVal activateForm As Form1)
-        ' Check if InvokeIsRequired
-        If activateForm IsNot Nothing _
+	''' <summary>
+	''' Activates the current SessionState.
+	''' </summary>
+	''' <param name="activateForm">The Form to start the session on.</param>
+	Friend Sub Activate(ByVal activateForm As Form1)
+		' Check if InvokeIsRequired
+		If activateForm IsNot Nothing _
 	AndAlso activateForm.InvokeRequired Then
-            ' Calling from another Thread -> Invoke on controls UI-Thread
-            Dim Act As Action(Of Form1) = Sub(s1) Activate(s1)
+			' Calling from another Thread -> Invoke on controls UI-Thread
+			Dim Act As Action(Of Form1) = Sub(s1) Activate(s1)
 			activateForm.Invoke(Act)
 		End If
 		' Called from Controls UI-Thread -> Execute Code.
@@ -912,10 +912,10 @@ Public Class SessionState
 		ActivationForm = activateForm
 
 		With activateForm
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '							Disable Timers to avoid Exceptions
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            .AvoidTheEdge.Enabled = False
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'							Disable Timers to avoid Exceptions
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			.AvoidTheEdge.Enabled = False
 			.AvoidTheEdgeResume.Enabled = False
 			.AvoidTheEdgeTaunts.Enabled = False
 			.CensorshipTimer.Enabled = False
@@ -945,10 +945,10 @@ Public Class SessionState
 			If .ssh IsNot Nothing Then .ssh.Dispose()
 			.ssh = Me
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '							Set Domme Personality
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            If DomPersonality = String.Empty Then
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'							Set Domme Personality
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			If DomPersonality = String.Empty Then
 				DomPersonality = My.Settings.DomPersonality
 			End If
 
@@ -956,10 +956,10 @@ Public Class SessionState
 				.dompersonalitycombobox.SelectedItem = DomPersonality
 			End If
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '							Restore Variables 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            If serialized_Variables.Count > 0 Then
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'							Restore Variables 
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			If serialized_Variables.Count > 0 Then
 				If Directory.Exists(Folders.Variables) = False Then
 					Directory.CreateDirectory(Folders.Variables)
 				Else
@@ -974,10 +974,10 @@ Public Class SessionState
 				Next
 			End If
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '							Restore flags 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            If serialized_Flags.Count > 0 Then
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'							Restore flags 
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			If serialized_Flags.Count > 0 Then
 				If Directory.Exists(Folders.Flags) = False Then
 					Directory.CreateDirectory(Folders.Flags)
 				Else
@@ -991,10 +991,10 @@ Public Class SessionState
 											FileMode.Create) : End Using
 				Next
 			End If
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '						Restore temporary flags 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            If Directory.Exists(Folders.TempFlags) = False Then
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'						Restore temporary flags 
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			If Directory.Exists(Folders.TempFlags) = False Then
 				Directory.CreateDirectory(Folders.TempFlags)
 			Else
 				For Each fn As String In Directory.GetFiles(Folders.TempFlags)
@@ -1008,19 +1008,19 @@ Public Class SessionState
 											FileMode.Create) : End Using
 				Next
 			End If
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '								Set Slideshows
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            If SlideshowMain Is Nothing Then SlideshowMain = New ContactData(ContactType.Domme)
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'								Set Slideshows
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			If SlideshowMain Is Nothing Then SlideshowMain = New ContactData(ContactType.Domme)
 			If SlideshowContact1 Is Nothing Then SlideshowContact1 = New ContactData(ContactType.Contact1)
 			If SlideshowContact2 Is Nothing Then SlideshowContact2 = New ContactData(ContactType.Contact2)
 			If SlideshowContact3 Is Nothing Then SlideshowContact3 = New ContactData(ContactType.Contact3)
 			If currentlyPresentContacts.Count = 0 Then currentlyPresentContacts.Add(SlideshowMain.TypeName)
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '							Set Picturebox & WMP
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            If isURL(ImageLocation) Then
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'							Set Picturebox & WMP
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			If isURL(ImageLocation) Then
 				.ShowImage(ImageLocation, True)
 			ElseIf File.Exists(ImageLocation) Then
 				.ShowImage(ImageLocation, True)
@@ -1050,8 +1050,8 @@ Public Class SessionState
 				.DomWMP.Ctlcontrols.play()
 			End If
 
-            ' Hide Cencorshipbar , if no game is running 
-            If CensorshipGame = True Or CensorshipTimer_enabled = False Then .CensorshipBar.Visible = False
+			' Hide Cencorshipbar , if no game is running 
+			If CensorshipGame = True Or CensorshipTimer_enabled = False Then .CensorshipBar.Visible = False
 
 			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 			'							Set Chat and StrokePace
@@ -1063,10 +1063,10 @@ Public Class SessionState
 			' Only needs to be done on activation
 			.StrokePace = StrokePace
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '								Set Timer Intervals
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            .AvoidTheEdge.Interval = AvoidTheEdge_Interval
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'								Set Timer Intervals
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			.AvoidTheEdge.Interval = AvoidTheEdge_Interval
 			.AvoidTheEdgeResume.Interval = AvoidTheEdgeResume_Interval
 			.AvoidTheEdgeTaunts.Interval = AvoidTheEdgeTaunts_Interval
 			.CensorshipTimer.Interval = CensorshipTimer_Interval
@@ -1093,10 +1093,10 @@ Public Class SessionState
 			.WaitTimer.Interval = WaitTimer_Interval
 			.WMPTimer.Interval = WMPTimer_Interval
 
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            '							Set Timer EnableStates
-            '▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-            .AvoidTheEdge.Enabled = AvoidTheEdge_enabled
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			'							Set Timer EnableStates
+			'▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+			.AvoidTheEdge.Enabled = AvoidTheEdge_enabled
 			.AvoidTheEdgeResume.Enabled = AvoidTheEdgeResume_enabled
 			.AvoidTheEdgeTaunts.Enabled = AvoidTheEdgeTaunts_enabled
 			.CensorshipTimer.Enabled = CensorshipTimer_enabled
@@ -1139,18 +1139,18 @@ Public Class SessionState
 	''' <remarks>This function is invoked on the <see cref="ActivationForm"/>'s UI-Thread.</remarks>
 	Friend Sub Load(ByVal filepath As String, ByVal setActive As Boolean)
 		Try
-            ' Check if InvokeIsRequired
-            If setActive = True _
+			' Check if InvokeIsRequired
+			If setActive = True _
 		AndAlso ActivationForm IsNot Nothing _
 		AndAlso ActivationForm.InvokeRequired Then
-                ' Calling from another Thread -> Invoke on controls UI-Thread
-                Dim Act As Action(Of String, Boolean) = Sub(s1, s2) Load(s1, s2)
+				' Calling from another Thread -> Invoke on controls UI-Thread
+				Dim Act As Action(Of String, Boolean) = Sub(s1, s2) Load(s1, s2)
 				ActivationForm.Invoke(Act)
 				Exit Sub
 			End If
-            ' Called from Controls UI-Thread -> Execute Code.
+			' Called from Controls UI-Thread -> Execute Code.
 
-            If setActive AndAlso ActivationForm Is Nothing Then _
+			If setActive AndAlso ActivationForm Is Nothing Then _
 		Throw New InvalidOperationException("It is impossible to reactivate a not activated session.")
 
 
@@ -1171,11 +1171,11 @@ Public Class SessionState
 		End Try
 	End Sub
 
-    ''' <summary>
-    ''' Stores the SessionState to disk.
-    ''' </summary>
-    ''' <param name="filePath">The filepath to store the object to.</param>
-    Friend Sub Save(ByVal filePath As String)
+	''' <summary>
+	''' Stores the SessionState to disk.
+	''' </summary>
+	''' <param name="filePath">The filepath to store the object to.</param>
+	Friend Sub Save(ByVal filePath As String)
 		Try
 			If ActivationForm IsNot Nothing Then FetchFormData(ActivationForm)
 
@@ -1185,24 +1185,24 @@ Public Class SessionState
 		End Try
 	End Sub
 
-    ''' <summary>
-    ''' Resets the current session. Basically it disposes the current <see cref="SessionState"/>-instance
-    ''' and applies a new <see cref="SessionState"/>-instance to <see cref="Form1.ssh"/>.
-    ''' <para></para>
-    ''' After calling this method you have to update your object references.
-    ''' </summary>
-    ''' <returns>True if the sesstion state has been activated.</returns>
-    ''' <remarks>
-    ''' If the current session is activated, the function is invoked on <see cref="ActivationForm"/>'s 
-    ''' UI-Thread.</remarks>
-    Public Function Reset() As Boolean
-        ' Check if InvokeIsRequired
-        If ActivationForm IsNot Nothing _
+	''' <summary>
+	''' Resets the current session. Basically it disposes the current <see cref="SessionState"/>-instance
+	''' and applies a new <see cref="SessionState"/>-instance to <see cref="Form1.ssh"/>.
+	''' <para></para>
+	''' After calling this method you have to update your object references.
+	''' </summary>
+	''' <returns>True if the sesstion state has been activated.</returns>
+	''' <remarks>
+	''' If the current session is activated, the function is invoked on <see cref="ActivationForm"/>'s 
+	''' UI-Thread.</remarks>
+	Public Function Reset() As Boolean
+		' Check if InvokeIsRequired
+		If ActivationForm IsNot Nothing _
 	AndAlso ActivationForm.InvokeRequired Then
-            ' Calling from another Thread -> Invoke on controls UI-Thread
-            Return CType(ActivationForm.UIThread(AddressOf Reset), Boolean)
+			' Calling from another Thread -> Invoke on controls UI-Thread
+			Return CType(ActivationForm.UIThread(AddressOf Reset), Boolean)
 		End If
-        ' Called from Controls UI-Thread -> Execute Code.
+		' Called from Controls UI-Thread -> Execute Code.
 
 		FrmSettings.TBHonorific.Text = My.Settings.SubHonorific
 
@@ -1227,8 +1227,8 @@ Public Class SessionState
 			Splits(0) = Splits(0).Replace("'", "")
 		Loop Until Not Splits(0).Contains("  ") And Not Splits(0).Contains(", ") And Not Splits(0).Contains(" ,") And Not Splits(0).Contains("'")
 		If isChat Then
-            'che(32) is the code for empty space
-            Return Splits(0).Split(New Char() {Chr(32), ","c})
+			'che(32) is the code for empty space
+			Return Splits(0).Split(New Char() {Chr(32), ","c})
 		Else
 			Return Splits(0).Split(New Char() {","c})
 		End If
