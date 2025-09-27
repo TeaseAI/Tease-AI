@@ -182,7 +182,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Improved gif rendering. (swift69)
 	* Improved video commands. (swift69)
 	* @Contact() can now contain multiple Contacts that will be randomly chosen to speak the line. (swift69)
-	* Simplify delay calculation when @RT()/@RenadomText() is used. (swift69)
+	* Simplify delay calculation when @RT()/@RandomText() is used. (swift69)
 	* Typo logic is now skipped when if the option is disabled. (swift69)
 	* Images will try to display up to 5 times in case of error. (swift69)
 	* Added "very slow" @Slideshow() speed option. (swift69)
