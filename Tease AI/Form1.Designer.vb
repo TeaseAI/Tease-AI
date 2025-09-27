@@ -542,7 +542,7 @@ Partial Class Form1
 		'
 		'SplitContainer1.Panel1
 		'
-		Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Transparent
+		Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Black
 		Me.SplitContainer1.Panel1.Controls.Add(Me.Label2)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.BeatMeterWMP)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
