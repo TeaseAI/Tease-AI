@@ -14029,11 +14029,7 @@ VTSkip:
 
 			End If
 
-			Dim ioFile As New StreamReader(AvoidTheEdgeVideo)
-			Dim lines As New List(Of String)
-			While ioFile.Peek <> -1
-				lines.Add(ioFile.ReadLine())
-			End While
+			Dim lines = File.ReadLines(AvoidTheEdgeVideo).ToList
 
 			Dim AvoidTheEdgeLine As Integer
 
