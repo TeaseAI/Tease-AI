@@ -4459,183 +4459,183 @@ DommeSlideshowFallback:
 						ttsPhrase = ttsPhrase.Replace("<img id=""ChatPic"" src=""" + ImageDir + """/>", "")
 					End If
 
-
-
 					synth.Speak(ttsPhrase)
-
-					If ssh.CorrectedTypo = True Then
-						ssh.CorrectedTypo = False
-						'DomTask = "*" & CorrectedWord
-						ssh.DomTask = LineSpeaker & "*" & ssh.CorrectedWord
-						TypingDelayGeneric()
-						Return
-					End If
-
-					StrokeSpeedCheck()
-
-					If ssh.SubStroking = False Then
-						StrokePace = 0
-						If FrmSettings.TBWebStop.Text <> "" Then
-							Try
-								FrmSettings.WebToy.Navigate(FrmSettings.TBWebStop.Text)
-							Catch
-							End Try
-						End If
-					End If
-
-					If ssh.RLGLGame = True And ssh.RedLight = False Then
-						If (DomWMP.playState = WMPLib.WMPPlayState.wmppsPaused) Then
-							DomWMP.Ctlcontrols.play()
-
-
-							ssh.AskedToSpeedUp = False
-							ssh.AskedToSlowDown = False
-							ssh.SubStroking = True
-							ssh.SubEdging = False
-							ssh.SubHoldingEdge = False
-							StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
-							StrokePace = 50 * Math.Round(StrokePace / 50)
-							ssh.RLGLTauntTick = ssh.randomizer.Next(20, 31)
-							' VideoTauntTick = randomizer.Next(20, 31)
-							RLGLTauntTimer.Start()
-
-						End If
-					End If
 				End If
 
-				If ssh.RLGLGame = True And ssh.RedLight = True Then
-					If (DomWMP.playState = WMPLib.WMPPlayState.wmppsPlaying) Then
-						DomWMP.Ctlcontrols.pause()
-						ssh.SubStroking = False
-						StrokePace = 0
-						'VideoTauntTimer.Stop()
-					End If
-				End If
-
-
-
-				ssh.NullResponse = False
-
-				If ssh.FollowUp <> "" Then
-					If GetFilter(ssh.FollowUp) Then
-						ssh.DomTask = ssh.FollowUp
-					Else
-						ssh.DomTask = "@NullResponse"
-					End If
-					Debug.Print("FollowUp DomTask = " & ssh.DomTask)
-					ssh.FollowUp = ""
+				If ssh.CorrectedTypo = True Then
+					ssh.CorrectedTypo = False
+					'DomTask = "*" & CorrectedWord
+					ssh.DomTask = LineSpeaker & "*" & ssh.CorrectedWord
 					TypingDelayGeneric()
-					Exit Sub
+					Return
 				End If
 
-				ssh.DomTypeCheck = False
-				ssh.DomTyping = False
-				'StringLength = 20
-				ssh.StringLength = ssh.randomizer.Next(8, 16)
+				StrokeSpeedCheck()
 
-				If ssh.SubHoldingEdge = True Then
+				If ssh.SubStroking = False Then
 					StrokePace = 0
-				End If
-				'Debug.Print("End of DomTask #######################################################################################################################")
-				'JustShowedBlogImage = False
-
-				If ssh.TempScriptCount = 0 Then
-					ssh.JustShowedBlogImage = False
-					ssh.JustShowedSlideshowImage = False
-				End If
-
-
-				If ssh.CBTCockActive = True Then
-					ssh.CBTCockActive = False
-					CBTCock()
-				End If
-
-				If ssh.CBTBallsActive = True Then
-					ssh.CBTBallsActive = False
-					CBTBalls()
-				End If
-
-				If ssh.CBTBothActive = True Then
-					ssh.CBTBothActive = False
-					CBTBoth()
-				End If
-
-				If ssh.CustomTaskActive = True Then
-					ssh.CustomTaskActive = False
-					RunCustomTask()
-				End If
-
-				If ssh.YesOrNo = False Then
-					If ssh.RapidCode = True Then
-						If Not WaitTimer.Enabled Then RunFileText()
-					Else
-						ssh.ScriptTick = ssh.randomizer.Next(4, 7)
-						If ssh.RapidFire = True Then ssh.ScriptTick = 1
-						If ssh.RiskyDeal = True Then ssh.ScriptTick = 2
-						ScriptTimer.Start()
+					If FrmSettings.TBWebStop.Text <> "" Then
+						Try
+							FrmSettings.WebToy.Navigate(FrmSettings.TBWebStop.Text)
+						Catch
+						End Try
 					End If
 				End If
 
-				If ssh.YesOrNo = True And ssh.RiskyDeal = True Then
-					FrmCardList.BTNPickIt.Visible = True
-					FrmCardList.BTNRiskIt.Visible = True
-					FrmCardList.HighlightCaseLabelsOffer()
+				If ssh.RLGLGame = True And ssh.RedLight = False Then
+					If (DomWMP.playState = WMPLib.WMPPlayState.wmppsPaused) Then
+						DomWMP.Ctlcontrols.play()
 
+
+						ssh.AskedToSpeedUp = False
+						ssh.AskedToSlowDown = False
+						ssh.SubStroking = True
+						ssh.SubEdging = False
+						ssh.SubHoldingEdge = False
+						StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
+						StrokePace = 50 * Math.Round(StrokePace / 50)
+						ssh.RLGLTauntTick = ssh.randomizer.Next(20, 31)
+						' VideoTauntTick = randomizer.Next(20, 31)
+						RLGLTauntTimer.Start()
+
+					End If
+				End If
+			End If
+
+			If ssh.RLGLGame = True And ssh.RedLight = True Then
+				If (DomWMP.playState = WMPLib.WMPPlayState.wmppsPlaying) Then
+					DomWMP.Ctlcontrols.pause()
+					ssh.SubStroking = False
+					StrokePace = 0
+					'VideoTauntTimer.Stop()
+				End If
+			End If
+
+			ssh.NullResponse = False
+
+			If ssh.FollowUp <> "" Then
+				If GetFilter(ssh.FollowUp) Then
+					ssh.DomTask = ssh.FollowUp
+				Else
+					ssh.DomTask = "@NullResponse"
+				End If
+				Debug.Print("FollowUp DomTask = " & ssh.DomTask)
+				ssh.FollowUp = ""
+				TypingDelayGeneric()
+				Exit Sub
+			End If
+
+			ssh.DomTypeCheck = False
+			ssh.DomTyping = False
+			'StringLength = 20
+			ssh.StringLength = ssh.randomizer.Next(8, 16)
+
+			If ssh.SubHoldingEdge = True Then
+				StrokePace = 0
+			End If
+			'Debug.Print("End of DomTask #######################################################################################################################")
+			'JustShowedBlogImage = False
+
+			If ssh.TempScriptCount = 0 Then
+				ssh.JustShowedBlogImage = False
+				ssh.JustShowedSlideshowImage = False
+			End If
+
+
+			If ssh.CBTCockActive = True Then
+				ssh.CBTCockActive = False
+				CBTCock()
+			End If
+
+			If ssh.CBTBallsActive = True Then
+				ssh.CBTBallsActive = False
+				CBTBalls()
+			End If
+
+			If ssh.CBTBothActive = True Then
+				ssh.CBTBothActive = False
+				CBTBoth()
+			End If
+
+			If ssh.CustomTaskActive = True Then
+				ssh.CustomTaskActive = False
+				RunCustomTask()
+			End If
+
+			If ssh.YesOrNo = False Then
+				If ssh.RapidCode = True Then
+					If Not WaitTimer.Enabled Then RunFileText()
+				Else
+					ssh.ScriptTick = ssh.randomizer.Next(4, 7)
+					If ssh.RapidFire = True Then ssh.ScriptTick = 1
+					If ssh.RiskyDeal = True Then ssh.ScriptTick = 2
+					ScriptTimer.Start()
+				End If
+			End If
+
+			If ssh.YesOrNo = True And ssh.RiskyDeal = True Then
+				FrmCardList.BTNPickIt.Visible = True
+				FrmCardList.BTNRiskIt.Visible = True
+				FrmCardList.HighlightCaseLabelsOffer()
+
+			End If
+
+			ssh.GotoFlag = False
+
+			If ssh.EndSession = True Then
+				ssh.EndSession = False
+				myMetro.MetroOff()
+				DomWMP.Ctlcontrols.[stop]()
+				contextWMP.Ctlcontrols.[stop]()
+				voiceDomWMP.Ctlcontrols.[stop]()
+				SaveChatLog(False)
+				ssh.Reset()
+				FrmSettings.LockOrgasmChances(False)
+				mainPictureBox.Image = Nothing
+			End If
+
+			If ssh.SubGaveUp = True Then
+				If ssh.YesOrNo And ssh.giveUpReturn Then
+					ssh.DomChat = "#SYS_ReturnAnswer"
+					TypingDelay()
 				End If
 
-				ssh.GotoFlag = False
+				ssh.SubGaveUp = False
 
-				If ssh.EndSession = True Then
-					ssh.EndSession = False
-					SaveChatLog(False)
-					ssh.Reset()
-					FrmSettings.LockOrgasmChances(False)
-					mainPictureBox.Image = Nothing
-				End If
+				ssh.AskedToGiveUpSection = False
+				If TnASlides.Enabled = True Then TnASlides.Stop()
 
-				If ssh.SubGaveUp = True Then
-					If ssh.YesOrNo And ssh.giveUpReturn Then
-						ssh.DomChat = "#SYS_ReturnAnswer"
-						TypingDelay()
-					End If
+				Dim WasStroking As Boolean = ssh.SubStroking
+				Dim WasEdging As Boolean = ssh.SubEdging
+				Dim WasHolding As Boolean = ssh.SubHoldingEdge
 
-					ssh.SubGaveUp = False
+				StopEverything()
+				ssh.ModuleEnd = False
+				ssh.ShowModule = False
 
-					ssh.AskedToGiveUpSection = False
-					If TnASlides.Enabled = True Then TnASlides.Stop()
-
-					Dim WasStroking As Boolean = ssh.SubStroking
-					Dim WasEdging As Boolean = ssh.SubEdging
-					Dim WasHolding As Boolean = ssh.SubHoldingEdge
-
-					StopEverything()
-					ssh.ModuleEnd = False
-					ssh.ShowModule = False
-
-					If ssh.CallReturns.Count() > 0 Then
-						'if giveupreturn is on, we continue with the script after the give up
-						If ssh.giveUpReturn Then
-							ssh.ShowModule = True
-							ssh.AskedToGiveUpSection = False
-							ScriptTimer.Start()
-							Return
-							'else we reset all the callreturns and move to a link/end/module as expected from the give up
-						Else
-							ssh.CallReturns.Clear()
-						End If
-					End If
-
+				If ssh.CallReturns.Count() > 0 Then
+					'if giveupreturn is on, we continue with the script after the give up
 					If ssh.giveUpReturn Then
 						ssh.ShowModule = True
 						ssh.AskedToGiveUpSection = False
 						ScriptTimer.Start()
-					ElseIf ssh.TeaseTick < 1 And ssh.Playlist = False Then
-						RunLastScript()
-					ElseIf WasStroking And Not WasEdging And Not WasHolding Then
-						RunModuleScript(False)
+						Return
+						'else we reset all the callreturns and move to a link/end/module as expected from the give up
 					Else
-						RunLinkScript()
+						ssh.CallReturns.Clear()
 					End If
+				End If
+
+				If ssh.giveUpReturn Then
+					ssh.ShowModule = True
+					ssh.AskedToGiveUpSection = False
+					ScriptTimer.Start()
+				ElseIf ssh.TeaseTick < 1 And ssh.Playlist = False Then
+					RunLastScript()
+				ElseIf WasStroking And Not WasEdging And Not WasHolding Then
+					RunModuleScript(False)
+				Else
+					RunLinkScript()
 				End If
 			End If
 		End If
