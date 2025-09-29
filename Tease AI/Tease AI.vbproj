@@ -122,6 +122,7 @@
     <Compile Include="Classes\MarMetronome.vb" />
     <Compile Include="Classes\MarNewRandom.vb" />
     <Compile Include="Classes\MarWebcam.vb" />
+    <Compile Include="Classes\SessionState.Common.vb" />
     <Compile Include="Classes\SessionState.ScriptPosition.vb" />
     <Compile Include="Classes\SessionState.StackedCallReturn.vb" />
     <Compile Include="Classes\Common.vb" />

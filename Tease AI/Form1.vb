@@ -746,6 +746,13 @@ retryStart:
 			If FrmSettings.SliderSTF.Value = 4 Then FrmSettings.LBLStf.Text = "Talkative"
 			If FrmSettings.SliderSTF.Value = 5 Then FrmSettings.LBLStf.Text = "Verbose"
 
+			FrmSettings.SliderETF.Value = My.Settings.TimerETF
+			If FrmSettings.SliderETF.Value = 1 Then FrmSettings.LBLEtf.Text = "Preoccupied"
+			If FrmSettings.SliderETF.Value = 2 Then FrmSettings.LBLEtf.Text = "Distracted"
+			If FrmSettings.SliderETF.Value = 3 Then FrmSettings.LBLEtf.Text = "Normal"
+			If FrmSettings.SliderETF.Value = 4 Then FrmSettings.LBLEtf.Text = "Talkative"
+			If FrmSettings.SliderETF.Value = 5 Then FrmSettings.LBLEtf.Text = "Verbose"
+
 			FrmSettings.TauntSlider.Value = My.Settings.TimerVTF
 			If FrmSettings.TauntSlider.Value = 1 Then FrmSettings.LBLVtf.Text = "Preoccupied"
 			If FrmSettings.TauntSlider.Value = 2 Or FrmSettings.TauntSlider.Value = 3 Then FrmSettings.LBLVtf.Text = "Distracted"
@@ -2635,11 +2642,7 @@ FoundResponse:
 
 		If StrokeTauntTimer.Enabled = True Then
 			ssh.TempScriptCount = 0
-			If FrmSettings.SliderSTF.Value = 1 Then ssh.StrokeTauntTick = ssh.randomizer.Next(120, 241)
-			If FrmSettings.SliderSTF.Value = 2 Then ssh.StrokeTauntTick = ssh.randomizer.Next(75, 121)
-			If FrmSettings.SliderSTF.Value = 3 Then ssh.StrokeTauntTick = ssh.randomizer.Next(45, 76)
-			If FrmSettings.SliderSTF.Value = 4 Then ssh.StrokeTauntTick = ssh.randomizer.Next(25, 46)
-			If FrmSettings.SliderSTF.Value = 5 Then ssh.StrokeTauntTick = ssh.randomizer.Next(15, 26)
+			ssh.UpdateStrokeTaunts(False)
 		End If
 
 		ssh.DomChat = ResponseClean(ssh.DomChat)
@@ -5763,18 +5766,8 @@ Retry:
 
 
 		If ssh.TempScriptCount = 0 Then
-			If FrmSettings.SliderSTF.Value = 1 Then ssh.StrokeTauntTick = ssh.randomizer.Next(120, 241)
-			If FrmSettings.SliderSTF.Value = 2 Then ssh.StrokeTauntTick = ssh.randomizer.Next(75, 121)
-			If FrmSettings.SliderSTF.Value = 3 Then ssh.StrokeTauntTick = ssh.randomizer.Next(45, 76)
-			If FrmSettings.SliderSTF.Value = 4 Then ssh.StrokeTauntTick = ssh.randomizer.Next(19, 46)
-			If FrmSettings.SliderSTF.Value = 5 Then ssh.StrokeTauntTick = ssh.randomizer.Next(12, 20)
-		Else
-			ssh.StrokeTauntTick = ssh.randomizer.Next(5, 9)
+			ssh.UpdateStrokeTaunts(False)
 		End If
-
-
-
-
 
 	End Sub
 
@@ -10312,7 +10305,7 @@ OrgasmDecided:
 			'Application.DoEvents()
 			'Loop Until ssh.DomTypeCheck = False
 
-			ssh.EdgeTauntInt = ssh.randomizer.[Next](5, 12)
+			ssh.UpdateEdgeTaunts(True)
 
 			StringClean = StringClean.Replace("@EdgingHold", "")
 		End If
@@ -14630,7 +14623,7 @@ NoPlaylistEndFile:
 
 			TypingDelayGeneric()
 
-			ssh.EdgeTauntInt = ssh.randomizer.Next(6, 21)
+			ssh.UpdateEdgeTaunts(False)
 
 		End If
 
@@ -15008,7 +15001,7 @@ NoRepeatOFiles:
 
 			TypingDelayGeneric()
 
-			ssh.EdgeTauntInt = ssh.randomizer.Next(13, 18)
+			ssh.UpdateEdgeTaunts(False)
 
 
 		End If
@@ -19994,7 +19987,7 @@ playLoop:
 
 		If ssh.MultipleEdgesTick < 1 Then
 
-			ssh.EdgeTauntInt = ssh.randomizer.Next(6, 21)
+			ssh.UpdateEdgeTaunts(False)
 
 			MultipleEdgesTimer.Stop()
 
@@ -20171,7 +20164,7 @@ playLoop:
 		ssh.EdgeCountTick = 0
 		EdgeCountTimer.Start()
 		ssh.SubEdging = True
-		ssh.EdgeTauntInt = ssh.randomizer.Next(3, 10)
+		ssh.UpdateEdgeTaunts(True)
 		EdgeTauntTimer.Start()
 		If ssh.OrgasmAllowed = True Or ssh.OrgasmDenied = True Or ssh.OrgasmRuined = True Then ssh.OrgasmYesNo = True
 		EdgePace()

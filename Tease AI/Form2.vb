@@ -5551,6 +5551,15 @@ checkFolder:
 
 	End Sub
 
+	Private Sub SliderETF_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SliderETF.Scroll
+		If SliderETF.Value = 1 Then LBLEtf.Text = "Preoccupied"
+		If SliderETF.Value = 2 Then LBLEtf.Text = "Distracted"
+		If SliderETF.Value = 3 Then LBLEtf.Text = "Normal"
+		If SliderETF.Value = 4 Then LBLEtf.Text = "Talkative"
+		If SliderETF.Value = 5 Then LBLEtf.Text = "Verbose"
+
+	End Sub
+
 	Private Sub TauntSlider_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TauntSlider.Scroll
 		If TauntSlider.Value = 1 Then LBLVtf.Text = "Preoccupied"
 		If TauntSlider.Value = 2 Or TauntSlider.Value = 3 Then LBLVtf.Text = "Distracted"
@@ -5569,6 +5578,11 @@ checkFolder:
 
 	Private Sub SliderSTF_LostFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SliderSTF.LostFocus
 		My.Settings.TimerSTF = SliderSTF.Value
+
+	End Sub
+
+	Private Sub SliderETF_LostFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SliderETF.LostFocus
+		My.Settings.TimerETF = SliderETF.Value
 
 	End Sub
 
@@ -8428,6 +8442,11 @@ checkFolder:
 	Private Sub SliderSTF_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles SliderSTF.MouseEnter
 		LBLRangeSettingsDescription.Text = "This allows you to set the frequency of the domme's Stroke Taunts." & Environment.NewLine & Environment.NewLine &
 		 "A middle value tries to emulate an online experience as closely as possible. Use a higher value to increase the frequency of Taunts to something you would expect in a webtease. Use a lower value to simulate the domme being preoccupied or not that interested in engaging you."
+	End Sub
+
+	Private Sub SliderETF_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles SliderETF.MouseEnter
+		LBLRangeSettingsDescription.Text = "This allows you to set the frequency of the domme's Edge Taunts." & Environment.NewLine & Environment.NewLine &
+		 "A high value matches previous Tease AI Edge Taunts. Use a higher value to increase the frequency of Taunts to something you would expect in a webtease. Use a lower value to simulate the domme being preoccupied or not that interested in engaging you."
 	End Sub
 
 	Private Sub TauntSlider_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles TauntSlider.MouseEnter

@@ -147,6 +147,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @RapidText no longer uses a delay. (swift69)
 	* Responses to edging (stop, hold, etc.) no longer use the normal delay. (swift69)
 	* The main picture box being hidden will now cause image-related filters to "fail", instead of just @LockImages being active. (swift69)
+	* Added a minimum value when starting edge taunts to hopefully prevent lag when the first taunt appears too quickly. (pepsifreak)
 
 * System Keywords/Vocabulary
 	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.
@@ -186,6 +187,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Typo logic is now skipped when if the option is disabled. (swift69)
 	* Images will try to display up to 5 times in case of error. (swift69)
 	* Added "very slow" @Slideshow() speed option. (swift69)
+	* Added Edge Taunt Frequency option. (pepsifreak)
 
 
 # Changelog - Patch 56.0.0

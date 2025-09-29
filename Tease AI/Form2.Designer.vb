@@ -1153,6 +1153,9 @@ Partial Class FrmSettings
 		Me.TxbImgUrlHardcore = New System.Windows.Forms.TextBox()
 		Me.TextBox2 = New System.Windows.Forms.TextBox()
 		Me.BWURLFiles = New Tease_AI.URL_Files.URL_File_BGW()
+		Me.Label172 = New System.Windows.Forms.Label()
+		Me.SliderETF = New System.Windows.Forms.TrackBar()
+		Me.LBLEtf = New System.Windows.Forms.Label()
 		Me.SettingsPanel.SuspendLayout
 		Me.SettingsTabs.SuspendLayout
 		Me.TabPage1.SuspendLayout
@@ -1420,6 +1423,7 @@ Partial Class FrmSettings
 		Me.GroupBox65.SuspendLayout
 		CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit
 		CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit
+		CType(Me.SliderETF, System.ComponentModel.ISupportInitialize).BeginInit
 		Me.SuspendLayout
 		'
 		'SettingsPanel
@@ -12486,7 +12490,9 @@ Partial Class FrmSettings
 		Me.GroupBox57.Controls.Add(Me.Label139)
 		Me.GroupBox57.Controls.Add(Me.NBTauntEdging)
 		Me.GroupBox57.Controls.Add(Me.LBLVtf)
+		Me.GroupBox57.Controls.Add(Me.LBLEtf)
 		Me.GroupBox57.Controls.Add(Me.LBLStf)
+		Me.GroupBox57.Controls.Add(Me.SliderETF)
 		Me.GroupBox57.Controls.Add(Me.SliderSTF)
 		Me.GroupBox57.Controls.Add(Me.TauntSlider)
 		Me.GroupBox57.Controls.Add(Me.Label106)
@@ -12503,12 +12509,13 @@ Partial Class FrmSettings
 		Me.GroupBox57.Controls.Add(Me.Label99)
 		Me.GroupBox57.Controls.Add(Me.Label96)
 		Me.GroupBox57.Controls.Add(Me.NBTeaseLengthMin)
+		Me.GroupBox57.Controls.Add(Me.Label172)
 		Me.GroupBox57.Controls.Add(Me.Label95)
 		Me.GroupBox57.Controls.Add(Me.Label49)
 		Me.GroupBox57.Controls.Add(Me.Label141)
 		Me.GroupBox57.Location = New System.Drawing.Point(7, 30)
 		Me.GroupBox57.Name = "GroupBox57"
-		Me.GroupBox57.Size = New System.Drawing.Size(223, 308)
+		Me.GroupBox57.Size = New System.Drawing.Size(223, 394)
 		Me.GroupBox57.TabIndex = 169
 		Me.GroupBox57.TabStop = False
 		Me.GroupBox57.Text = "Tease"
@@ -12538,7 +12545,7 @@ Partial Class FrmSettings
 		Me.LBLVtf.BackColor = System.Drawing.Color.Transparent
 		Me.LBLVtf.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.LBLVtf.ForeColor = System.Drawing.Color.Black
-		Me.LBLVtf.Location = New System.Drawing.Point(128, 261)
+		Me.LBLVtf.Location = New System.Drawing.Point(128, 309)
 		Me.LBLVtf.Name = "LBLVtf"
 		Me.LBLVtf.Size = New System.Drawing.Size(87, 17)
 		Me.LBLVtf.TabIndex = 187
@@ -12573,7 +12580,7 @@ Partial Class FrmSettings
 		'
 		Me.TauntSlider.AutoSize = False
 		Me.TauntSlider.LargeChange = 1
-		Me.TauntSlider.Location = New System.Drawing.Point(130, 240)
+		Me.TauntSlider.Location = New System.Drawing.Point(130, 288)
 		Me.TauntSlider.Maximum = 9
 		Me.TauntSlider.Minimum = 1
 		Me.TauntSlider.Name = "TauntSlider"
@@ -12586,7 +12593,7 @@ Partial Class FrmSettings
 		Me.Label106.BackColor = System.Drawing.Color.Transparent
 		Me.Label106.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label106.ForeColor = System.Drawing.Color.Black
-		Me.Label106.Location = New System.Drawing.Point(6, 243)
+		Me.Label106.Location = New System.Drawing.Point(6, 291)
 		Me.Label106.Name = "Label106"
 		Me.Label106.Size = New System.Drawing.Size(123, 17)
 		Me.Label106.TabIndex = 186
@@ -15353,6 +15360,42 @@ Partial Class FrmSettings
 		Me.BWURLFiles.WorkerReportsProgress = True
 		Me.BWURLFiles.WorkerSupportsCancellation = True
 		'
+		'Label172
+		'
+		Me.Label172.BackColor = System.Drawing.Color.Transparent
+		Me.Label172.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label172.ForeColor = System.Drawing.Color.Black
+		Me.Label172.Location = New System.Drawing.Point(6, 248)
+		Me.Label172.Name = "Label172"
+		Me.Label172.Size = New System.Drawing.Size(132, 17)
+		Me.Label172.TabIndex = 164
+		Me.Label172.Text = "Edge Taunt Frequency:"
+		Me.Label172.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+		'
+		'SliderETF
+		'
+		Me.SliderETF.AutoSize = False
+		Me.SliderETF.LargeChange = 1
+		Me.SliderETF.Location = New System.Drawing.Point(130, 240)
+		Me.SliderETF.Maximum = 5
+		Me.SliderETF.Minimum = 1
+		Me.SliderETF.Name = "SliderETF"
+		Me.SliderETF.Size = New System.Drawing.Size(87, 25)
+		Me.SliderETF.TabIndex = 163
+		Me.SliderETF.Value = 3
+		'
+		'LBLEtf
+		'
+		Me.LBLEtf.BackColor = System.Drawing.Color.Transparent
+		Me.LBLEtf.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLEtf.ForeColor = System.Drawing.Color.Black
+		Me.LBLEtf.Location = New System.Drawing.Point(130, 261)
+		Me.LBLEtf.Name = "LBLEtf"
+		Me.LBLEtf.Size = New System.Drawing.Size(87, 17)
+		Me.LBLEtf.TabIndex = 165
+		Me.LBLEtf.Text = "Normal"
+		Me.LBLEtf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
 		'FrmSettings
 		'
 		Me.AllowDrop = True
@@ -15715,6 +15758,7 @@ Partial Class FrmSettings
 		Me.GroupBox65.PerformLayout
 		CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit
 		CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit
+		CType(Me.SliderETF, System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -16847,4 +16891,7 @@ Partial Class FrmSettings
 	Friend WithEvents Button8 As Button
 	Friend WithEvents LBLWebcamState As Label
 	Friend WithEvents Label171 As Label
+	Friend WithEvents LBLEtf As Label
+	Friend WithEvents SliderETF As TrackBar
+	Friend WithEvents Label172 As Label
 End Class
