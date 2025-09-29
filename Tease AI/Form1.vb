@@ -6510,103 +6510,54 @@ CensorConstant:
 			StringClean = StringClean.Replace("#OrgasmLockDate", "later")
 		End If
 
-		If StringClean.Contains("#RandomRound100(") Then
-
-			Dim RandomFlag As String = GetParentheses(StringClean, "#RandomRound100(")
-			Dim OriginalFlag As String = RandomFlag
-			RandomFlag = FixCommas(RandomFlag)
-			Dim RandInt As Integer
-			Dim FlagArray() As String = RandomFlag.Split(",")
-
-			If FlagArray(1) >= FlagArray(0) Then
-				RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(0))), Math.Round(Val(FlagArray(1)) + 1))
+		If StringClean.Contains("#Random") Then
+			Dim round As Integer
+			Dim filter As String
+			If StringClean.Contains("#RandomRound100(") Then
+				round = 100
+				filter = "#RandomRound100("
+			ElseIf StringClean.Contains("#RandomRound50(") Then
+				round = 50
+				filter = "#RandomRound50("
+			ElseIf StringClean.Contains("#RandomRound10(") Then
+				round = 10
+				filter = "#RandomRound10("
+			ElseIf StringClean.Contains("#RandomRound5(") Then
+				round = 5
+				filter = "#RandomRound5("
+			ElseIf StringClean.Contains("#Random(") Then
+				round = 1
+				filter = "#Random("
 			Else
-				RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(1))), Math.Round(Val(FlagArray(0)) + 1))
+				round = 0
+				filter = ""
 			End If
-			If RandInt >= 100 Then RandInt = 100 * Math.Round(RandInt / 100)
-			StringClean = StringClean.Replace("#RandomRound100(" & OriginalFlag & ")", RandInt)
 
-		End If
+			If round <> 0 Then
+				Dim RandomFlag As String = GetParentheses(StringClean, filter)
+				Dim OriginalFlag As String = RandomFlag
+				RandomFlag = FixCommas(RandomFlag)
+				Dim RandInt As Integer
+				Dim FlagArray() As String = RandomFlag.Split(",")
+				Dim min As Integer = Val(FlagArray(0))
+				Dim max As Integer = Val(FlagArray(1))
 
-		If StringClean.Contains("#RandomRound50(") Then
-
-			Dim RandomFlag As String = GetParentheses(StringClean, "#RandomRound50(")
-			Dim OriginalFlag As String = RandomFlag
-			RandomFlag = FixCommas(RandomFlag)
-			Dim RandInt As Integer
-			Dim FlagArray() As String = RandomFlag.Split(",")
-
-			If FlagArray(1) >= FlagArray(0) Then
-				RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(0))), Math.Round(Val(FlagArray(1)) + 1))
-			Else
-				RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(1))), Math.Round(Val(FlagArray(0)) + 1))
-			End If
-			If RandInt >= 50 Then RandInt = 50 * Math.Round(RandInt / 50)
-			StringClean = StringClean.Replace("#RandomRound50(" & OriginalFlag & ")", RandInt)
-
-		End If
-
-		If StringClean.Contains("#RandomRound10(") Then
-
-
-			Dim RandomFlag As String = GetParentheses(StringClean, "#RandomRound10(")
-			Dim OriginalFlag As String = RandomFlag
-			RandomFlag = FixCommas(RandomFlag)
-			Dim RandInt As Integer
-			Dim FlagArray() As String = RandomFlag.Split(",")
-
-			If FlagArray(1) >= FlagArray(0) Then
-				RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(0))), Math.Round(Val(FlagArray(1)) + 1))
-			Else
-				RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(1))), Math.Round(Val(FlagArray(0)) + 1))
-			End If
-			If RandInt >= 10 Then RandInt = 10 * Math.Round(RandInt / 10)
-			StringClean = StringClean.Replace("#RandomRound10(" & OriginalFlag & ")", RandInt)
-
-		End If
-
-
-		If StringClean.Contains("#RandomRound5(") Then
-
-
-			Dim RandomFlag As String = GetParentheses(StringClean, "#RandomRound5(")
-			Dim OriginalFlag As String = RandomFlag
-			RandomFlag = FixCommas(RandomFlag)
-			Dim RandInt As Integer
-			Dim FlagArray() As String = RandomFlag.Split(",")
-
-			If FlagArray(1) >= FlagArray(0) Then
-				RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(0))), Math.Round(Val(FlagArray(1)) + 1))
-			Else
-				RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(1))), Math.Round(Val(FlagArray(0)) + 1))
-			End If
-			If RandInt >= 5 Then RandInt = 5 * Math.Round(RandInt / 5)
-			StringClean = StringClean.Replace("#RandomRound5(" & OriginalFlag & ")", RandInt)
-
-		End If
-
-		If StringClean.Contains("#Random(") Then
-			Dim randomArray As String() = StringClean.Split(")")
-
-			For i As Integer = 0 To randomArray.Count - 1
-
-				If randomArray(i).Contains("Random(") Then
-
-					randomArray(i) = randomArray(i) & ")"
-					Dim RandomFlag As String = GetParentheses(StringClean, "#Random(")
-					Dim OriginalFlag As String = RandomFlag
-					RandomFlag = FixCommas(RandomFlag)
-					Dim RandInt As Integer
-					Dim FlagArray() As String = RandomFlag.Split(",")
-
-					If FlagArray(1) >= FlagArray(0) Then
-						RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(0))), Math.Round(Val(FlagArray(1)) + 1))
-					Else
-						RandInt = ssh.randomizer.Next(Math.Round(Val(FlagArray(1))), Math.Round(Val(FlagArray(0)) + 1))
-					End If
-					StringClean = StringClean.Replace("#Random(" & OriginalFlag & ")", RandInt)
+				If max >= min Then
+					RandInt = ssh.randomizer.Next(min, max)
+				Else
+					RandInt = ssh.randomizer.Next(max, min)
 				End If
-			Next
+
+				If round > 1 Then
+					If RandInt < round Then
+						RandInt = round
+					Else
+						RandInt = round * Math.Round(RandInt / round)
+					End If
+				End If
+
+				StringClean = StringClean.Replace(filter & OriginalFlag & ")", RandInt)
+			End If
 		End If
 
 		If StringClean.Contains("#DateDifference(") Then
