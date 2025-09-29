@@ -165,20 +165,15 @@ Public Class Common
 #End If
 				If File.Exists(filepath) Then
 
-					Using TextReader As New StreamReader(filepath)
+					TextList = File.ReadAllLines(filepath).ToList
 
-						While TextReader.Peek <> -1
-							TextList.Add(TextReader.ReadLine())
-						End While
+					' Remove all empty Lines from list.
+					TextList.RemoveAll(Function(x) x = "")
 
-						' Remove all empty Lines from list.
-						TextList.RemoveAll(Function(x) x = "")
+					TxtCache.Add(filepath.ToLower, TextList.ToList)
 
-						TxtCache.Add(filepath.ToLower, TextList.ToList)
-
-						createFileSystemWatcher(filepath)
-						Return TextList
-					End Using
+					createFileSystemWatcher(filepath)
+					Return TextList
 				Else
 					Throw New FileNotFoundException("Can't locate the file: """ & filepath & """")
 				End If

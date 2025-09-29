@@ -2065,14 +2065,8 @@ SkipDeserializing:
 	Public Sub GetScriptStatus()
 		'BUG: This Function is not checking all Commands and their contditions
 		Try
-			Dim ScriptReader As New StreamReader(ScriptFile)
-			ScriptList.Clear()
-			While ScriptReader.Peek <> -1
-				ScriptList.Add(ScriptReader.ReadLine())
-			End While
+			ScriptList = File.ReadAllLines(ScriptFile).ToList
 
-			ScriptReader.Close()
-			ScriptReader.Dispose()
 			RTBScriptDesc.Text = ""
 			RTBScriptReq.Text = ""
 			Dim ScriptReqFailed As Boolean = False
@@ -2280,15 +2274,10 @@ SkipDeserializing:
 					Dim TagDesc As String = "* Images in LocalImageTags.txt tagged with: "
 
 					Dim LocalTagImageList As New List(Of String)
-					LocalTagImageList.Clear()
 
 					If File.Exists(Application.StartupPath & "\Images\System\LocalImageTags.txt") Then
-						Dim LocalReader As New StreamReader(Application.StartupPath & "\Images\System\LocalImageTags.txt")
-						While LocalReader.Peek <> -1
-							LocalTagImageList.Add(LocalReader.ReadLine())
-						End While
-						LocalReader.Close()
-						LocalReader.Dispose()
+						LocalTagImageList = File.ReadAllLines(Application.StartupPath & "\Images\System\LocalImageTags.txt").ToList
+
 						For k As Integer = LocalTagImageList.Count - 1 To 0 Step -1
 							If LocalTagImageList(k) = "" Or LocalTagImageList(k) Is Nothing Then LocalTagImageList.RemoveAt(k)
 						Next
@@ -2679,15 +2668,10 @@ SkipDeserializing:
 				If AvailList(j).Contains("@ShowTaggedImage") And AvailList(j).Contains("@Tag") Then
 
 					Dim LocalTagImageList As New List(Of String)
-					LocalTagImageList.Clear()
 
 					If File.Exists(Application.StartupPath & "\Images\System\LocalImageTags.txt") Then
-						Dim LocalReader As New StreamReader(Application.StartupPath & "\Images\System\LocalImageTags.txt")
-						While LocalReader.Peek <> -1
-							LocalTagImageList.Add(LocalReader.ReadLine())
-						End While
-						LocalReader.Close()
-						LocalReader.Dispose()
+						LocalTagImageList = File.ReadAllLines(Application.StartupPath & "\Images\System\LocalImageTags.txt").ToList
+
 						For k As Integer = LocalTagImageList.Count - 1 To 0 Step -1
 							If LocalTagImageList(k) = "" Or LocalTagImageList(k) Is Nothing Then LocalTagImageList.RemoveAt(k)
 						Next
@@ -3064,22 +3048,11 @@ SkipDeserializing:
 
 		If OpenSettingsDialog.ShowDialog() = DialogResult.OK Then
 
-			Dim SettingsList As New List(Of String)
+			If Not File.Exists(OpenSettingsDialog.FileName) Then Return
+
+			Dim SettingsList = File.ReadAllLines(OpenSettingsDialog.FileName).ToList
 
 			Try
-				Dim SettingsReader As New StreamReader(OpenSettingsDialog.FileName)
-				While SettingsReader.Peek <> -1
-					SettingsList.Add(SettingsReader.ReadLine())
-				End While
-				SettingsReader.Close()
-				SettingsReader.Dispose()
-			Catch ex As Exception
-				MessageBox.Show(Me, "This file could not be opened!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-				Return
-			End Try
-
-			Try
-
 				Dim CheckState As String = SettingsList(0).Replace("Glitter Feed: ", "")
 				If CheckState = "On" Then My.Settings.CBGlitterFeed = True
 				If CheckState = "Scripts" Then My.Settings.CBGlitterFeedScripts = True
@@ -5286,15 +5259,7 @@ checkFolder:
 		Form1.ssh.VTPath = CensorText
 
 		Try
-			Dim VidReader As New StreamReader(CensorText)
-			Dim VidList As New List(Of String)
-
-			While VidReader.Peek <> -1
-				VidList.Add(VidReader.ReadLine())
-			End While
-
-			VidReader.Close()
-			VidReader.Dispose()
+			Dim VidList = File.ReadAllLines(CensorText).ToList
 
 			Dim VidString As String = ""
 
@@ -5424,39 +5389,19 @@ checkFolder:
 		RTBGlitModDommePost.Text = ""
 		RTBGlitModResponses.Text = ""
 
-
-
-		Dim ioFile As New StreamReader(GlitPath)
-		Dim lines As New List(Of String)
-
-		Dim GlitCount As Integer
-		Dim GlitEnd As Integer
-
-		GlitCount = -1
-
-		While ioFile.Peek <> -1
-			GlitCount += 1
-			lines.Add(ioFile.ReadLine())
-		End While
-
-
-		GlitEnd = GlitCount
-		GlitCount = 1
+		Dim lines = File.ReadAllLines(GlitPath).ToList
+		Dim GlitCount = 1
+		Dim GlitEnd = lines.Count - 1
 
 		RTBGlitModDommePost.Text = lines(0)
-
 
 		Do
 			RTBGlitModResponses.Text = RTBGlitModResponses.Text & lines(GlitCount) & Environment.NewLine
 			GlitCount += 1
 		Loop Until GlitCount = GlitEnd + 1
 
-		ioFile.Close()
-		ioFile.Dispose()
 
 		Debug.Print(RTBGlitModResponses.Lines.Count)
-
-
 	End Sub
 
 	Private Sub Button29_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button29.Click
@@ -6013,33 +5958,14 @@ checkFolder:
 
 		RTBKeyWords.Text = ""
 
-
-		Dim ioFile As New StreamReader(KeyWordPath)
-		Dim lines As New List(Of String)
-
-		Dim KeyWordCount As Integer
-		Dim KeyWordEnd As Integer
-
-		KeyWordCount = -1
-
-		While ioFile.Peek <> -1
-			KeyWordCount += 1
-			lines.Add(ioFile.ReadLine())
-		End While
-
-
-		KeyWordEnd = KeyWordCount
-		KeyWordCount = 0
-
-
+		Dim lines = File.ReadAllLines(KeyWordPath).ToList
+		Dim KeyWordCount As Integer = 0
+		Dim KeyWordEnd As Integer = lines.Count - 1
 
 		Do
 			RTBKeyWords.Text = RTBKeyWords.Text & lines(KeyWordCount) & Environment.NewLine
 			KeyWordCount += 1
 		Loop Until KeyWordCount = KeyWordEnd + 1
-
-		ioFile.Close()
-		ioFile.Dispose()
 
 		Debug.Print(RTBKeyWords.Lines.Count)
 
@@ -6576,14 +6502,8 @@ checkFolder:
 	Public Sub CheckLocalTagList()
 
 		If File.Exists(Application.StartupPath & "\Images\System\LocalImageTags.txt") Then
-			Dim TagReader As New StreamReader(Application.StartupPath & "\Images\System\LocalImageTags.txt")
-			Dim TagCheckList As New List(Of String)
-			While TagReader.Peek <> -1
-				TagCheckList.Add(TagReader.ReadLine())
-			End While
 
-			TagReader.Close()
-			TagReader.Dispose()
+			Dim TagCheckList = File.ReadAllLines(Application.StartupPath & "\Images\System\LocalImageTags.txt").ToList
 
 			For i As Integer = 0 To TagCheckList.Count - 1
 				If TagCheckList(i).Contains(CurrentLocalImageTagImage) Then
@@ -7152,14 +7072,7 @@ checkFolder:
 
 		If File.Exists(Application.StartupPath & "\Images\System\LocalImageTags.txt") Then
 
-			Dim TagReader As New StreamReader(Application.StartupPath & "\Images\System\LocalImageTags.txt")
-			Dim TagCheckList As New List(Of String)
-			While TagReader.Peek <> -1
-				TagCheckList.Add(TagReader.ReadLine())
-			End While
-
-			TagReader.Close()
-			TagReader.Dispose()
+			Dim TagCheckList = File.ReadAllLines(Application.StartupPath & "\Images\System\LocalImageTags.txt").ToList
 
 			Dim LineExists As Boolean
 			LineExists = False
@@ -7411,12 +7324,8 @@ checkFolder:
 			Dim SettingsList As New List(Of String)
 
 			Try
-				Dim SettingsReader As New StreamReader(OpenSettingsDialog.FileName)
-				While SettingsReader.Peek <> -1
-					SettingsList.Add(SettingsReader.ReadLine())
-				End While
-				SettingsReader.Close()
-				SettingsReader.Dispose()
+
+				SettingsList = File.ReadAllLines(OpenSettingsDialog.FileName).ToList
 			Catch ex As Exception
 				MessageBox.Show(Me, "This file could not be opened!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
 				Return
@@ -7807,21 +7716,12 @@ checkFolder:
 		RTBResponses.Text = ""
 
 
-		Dim ioFile As New StreamReader(ResponsePath)
-		Dim lines As New List(Of String)
+		Dim lines = File.ReadAllLines(ResponsePath).ToList
 
 		' Dim ResponseCount As Integer
 		'Dim ResponseEnd As Integer
 
 		'ResponseCount = -1
-
-		While ioFile.Peek <> -1
-			'   ResponseCount += 1
-			lines.Add(ioFile.ReadLine())
-		End While
-
-		ioFile.Close()
-		ioFile.Dispose()
 
 
 		'ResponseEnd = ResponseCount
@@ -7925,15 +7825,7 @@ checkFolder:
 
 		If File.Exists(TemplateDir) Then
 
-			Dim TempReader As New StreamReader(TemplateDir)
-			Dim TempList As New List(Of String)
-
-			While TempReader.Peek <> -1
-				TempList.Add(TempReader.ReadLine())
-			End While
-
-			TempReader.Close()
-			TempReader.Dispose()
+			Dim TempList = File.ReadAllLines(TemplateDir).ToList
 
 			For i As Integer = 0 To TempList.Count - 1
 				RTBResponses.Text = RTBResponses.Text & TempList(i) & Environment.NewLine
@@ -9061,14 +8953,8 @@ checkFolder:
 
 	Private Function Txt2List(ByVal GetText As String) As List(Of String)
 		If File.Exists(GetText) Then
-			Dim TextReader As New StreamReader(GetText)
-			Dim TextList As New List(Of String)
-			TextList.Clear()
-			While TextReader.Peek <> -1
-				TextList.Add(TextReader.ReadLine())
-			End While
-			TextReader.Close()
-			TextReader.Dispose()
+
+			Dim TextList = File.ReadAllLines(GetText).ToList
 			Return TextList
 		End If
 
@@ -9591,12 +9477,8 @@ checkFolder:
 			Dim SettingsList As New List(Of String)
 
 			Try
-				Dim SettingsReader As New StreamReader(OpenScriptDialog.FileName)
-				While SettingsReader.Peek <> -1
-					SettingsList.Add(SettingsReader.ReadLine())
-				End While
-				SettingsReader.Close()
-				SettingsReader.Dispose()
+
+				SettingsList = File.ReadAllLines(OpenScriptDialog.FileName).ToList
 			Catch ex As Exception
 				MessageBox.Show(Me, "This file could not be opened!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
 				Return

@@ -226,15 +226,8 @@ Public Class FrmCardList
 				If FrmSettings.URLFileList.GetItemCheckState(i) = CheckState.Checked Then
 
 					Dim URLString As String = Application.StartupPath & "\Images\System\URL Files\" & FrmSettings.URLFileList.Items(i) & ".txt"
-					Dim CardReader As New System.IO.StreamReader(URLString)
 
-					While CardReader.Peek <> -1
-						MatchList.Add(CardReader.ReadLine())
-					End While
-
-
-					CardReader.Close()
-					CardReader.Dispose()
+					MatchList = File.ReadAllLines(URLString).ToList
 
 				End If
 
@@ -456,15 +449,9 @@ Public Class FrmCardList
 				If FrmSettings.URLFileList.GetItemCheckState(i) = CheckState.Checked Then
 
 					Dim URLString As String = Application.StartupPath & "\Images\System\URL Files\" & FrmSettings.URLFileList.Items(i) & ".txt"
-					Dim CardReader As New System.IO.StreamReader(URLString)
-
-					While CardReader.Peek <> -1
-						MatchList.Add(CardReader.ReadLine())
-					End While
 
 
-					CardReader.Close()
-					CardReader.Dispose()
+					MatchList = File.ReadAllLines(URLString).ToList
 
 				End If
 
