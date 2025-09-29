@@ -29,7 +29,7 @@ Imports System.Runtime.Serialization
 ''' For more inforations take a look at: https://msdn.microsoft.com/en-us/library/ms733734(v=vs.110).aspx
 ''' </remarks>
 <Serializable>
-Public Class SessionState
+Partial Public Class SessionState
 	Implements IDisposable
 
 #Region "------------------------------------------- Data -----------------------------------------------"
@@ -222,7 +222,7 @@ Public Class SessionState
 	<Category("Video")> Public Property JumpVideo As Boolean
 	<Category("Video")> Public Property JumpVideoUp As Boolean
 	<Category("Video")> Public Property JumpVideoDown As Boolean
-	<Category("Video")> Public Property JumpPercent As Boolean
+	<Category("Video")> Public Property JumpPercent As Integer
 	<Category("Video")> Public Property NoSpecialVideo As Boolean
 	<Category("Video")> Public Property RandomizerVideo As Boolean
 	<Category("Video")> Public Property RandomizerVideoTease As Boolean

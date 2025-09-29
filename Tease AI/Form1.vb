@@ -6022,7 +6022,6 @@ GetAnotherRandomVideo:
 		End If
 
 JumpEnd:
-		ssh.JumpVideo = False
 	End Sub
 
 
@@ -6098,6 +6097,51 @@ JumpEnd:
 
 	End Sub
 
+	Friend Sub JumpVideo()
+		If DomWMP.currentPlaylist.count > 0 Then
+			Try
+				Dim VideoLength As Integer = DomWMP.currentMedia.duration
+				Dim VidPoint As Integer = 0
+				If ssh.JumpPercent = 0 Then
+					Dim VidLow As Integer = VideoLength * 0.4
+					Dim VidHigh As Integer = VideoLength * 0.9
+					VidPoint = ssh.randomizer.Next(VidLow, VidHigh)
+
+					Debug.Print("VidLow = " & VidLow)
+					Debug.Print("VidHigh = " & VidHigh)
+					Debug.Print("VidPoint = " & VidPoint)
+				Else
+					If ssh.JumpVideoUp Then
+						VidPoint = Math.Round(-VideoLength - DomWMP.Ctlcontrols.currentPosition) * ssh.JumpPercent / 100
+						DomWMP.Ctlcontrols.currentPosition = DomWMP.Ctlcontrols.currentPosition - VidPoint
+					End If
+					If ssh.JumpVideoDown Then
+						VidPoint = Math.Round(VideoLength - DomWMP.Ctlcontrols.currentPosition) * ssh.JumpPercent / 100
+						DomWMP.Ctlcontrols.currentPosition = DomWMP.Ctlcontrols.currentPosition - VidPoint
+					End If
+					If ssh.JumpVideo Then
+						VidPoint = Math.Round(VideoLength * (1 - ssh.JumpPercent) - VidPoint)
+						DomWMP.Ctlcontrols.currentPosition = VideoLength - VidPoint
+					End If
+				End If
+
+				If VidPoint > 0 Then
+					If ssh.JumpVideoUp OrElse ssh.JumpVideoDown Then
+						DomWMP.Ctlcontrols.currentPosition = DomWMP.Ctlcontrols.currentPosition - VidPoint
+					Else
+						DomWMP.Ctlcontrols.currentPosition = VideoLength - VidPoint
+					End If
+					DomWMP.Ctlcontrols.play()
+				End If
+			Catch
+			End Try
+		End If
+
+		ssh.JumpPercent = 0
+		ssh.JumpVideo = False
+		ssh.JumpVideoDown = False
+		ssh.JumpVideoUp = False
+	End Sub
 #End Region
 
 
@@ -10367,20 +10411,22 @@ OrgasmDecided:
 			VideoToPlay = True
 			If StringClean.Contains("@PlayCensorshipSucks[") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayCensorshipSucks[")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayCensorshipSucks[" & videoFlag & "]", "")
+				StringClean = StringClean.Replace("@PlayCensorshipSucks[" & OriginalFlag & "]", "")
 			ElseIf StringClean.Contains("@PlayCensorshipSucks(") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayCensorshipSucks(")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayCensorshipSucks(" & videoFlag & ")", "")
+				StringClean = StringClean.Replace("@PlayCensorshipSucks(" & OriginalFlag & ")", "")
 			Else
 				ssh.VideoGenre = "ALL"
 				ssh.RandomizerVideo = True
@@ -10404,20 +10450,22 @@ OrgasmDecided:
 
 			If StringClean.Contains("@PlayAvoidTheEdge[") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayAvoidTheEdge[")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayAvoidTheEdge[" & videoFlag & "]", "")
+				StringClean = StringClean.Replace("@PlayAvoidTheEdge[" & OriginalFlag & "]", "")
 			ElseIf StringClean.Contains("@PlayAvoidTheEdge(") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayAvoidTheEdge(")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayAvoidTheEdge[" & videoFlag & ")", "")
+				StringClean = StringClean.Replace("@PlayAvoidTheEdge[" & OriginalFlag & ")", "")
 			Else
 				ssh.VideoGenre = "ALL"
 				ssh.RandomizerVideo = True
@@ -10463,20 +10511,22 @@ OrgasmDecided:
 
 			If StringClean.Contains("@PlayRedLightGreenLight[") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayRedLightGreenLight[")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayRedLightGreenLight[" & videoFlag & "]", "")
+				StringClean = StringClean.Replace("@PlayRedLightGreenLight[" & OriginalFlag & "]", "")
 			ElseIf StringClean.Contains("@PlayRedLightGreenLight(") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayRedLightGreenLight(")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayRedLightGreenLight(" & videoFlag & ")", "")
+				StringClean = StringClean.Replace("@PlayRedLightGreenLight(" & OriginalFlag & ")", "")
 			Else
 				ssh.VideoGenre = "ALL"
 				ssh.RandomizerVideo = True
@@ -10507,20 +10557,22 @@ OrgasmDecided:
 
 			If StringClean.Contains("@PlayCHC[") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayCHC[")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayCHC[" & videoFlag & "]", "")
+				StringClean = StringClean.Replace("@PlayCHC[" & OriginalFlag & "]", "")
 			ElseIf StringClean.Contains("@PlayCHC(") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayCHC(")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayCHC(" & videoFlag & ")", "")
+				StringClean = StringClean.Replace("@PlayCHC(" & OriginalFlag & ")", "")
 			Else
 				ssh.VideoGenre = "ALL"
 				ssh.RandomizerVideo = True
@@ -10535,20 +10587,22 @@ OrgasmDecided:
 
 			If StringClean.Contains("@PlayVideoNoWait[") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayVideoNoWait[")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayVideoNoWait[" & videoFlag & "]", "")
+				StringClean = StringClean.Replace("@PlayVideoNoWait[" & OriginalFlag & "]", "")
 			ElseIf StringClean.Contains("@PlayVideoNoWait(") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayVideoNoWait(")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayVideoNoWait(" & videoFlag & ")", "")
+				StringClean = StringClean.Replace("@PlayVideoNoWait(" & OriginalFlag & ")", "")
 			Else
 				ssh.VideoGenre = "ALL"
 				ssh.RandomizerVideo = True
@@ -10562,21 +10616,23 @@ OrgasmDecided:
 
 			If StringClean.Contains("@PlayVideo[") Then
 				Dim videoFlag As String = GetParentheses(StringClean, "@PlayVideo[")
+				Dim OriginalFlag = videoFlag
 				If videoFlag.Contains(",") Then
 					videoFlag = FixCommas(videoFlag)
 				End If
 				VideoFlagArray = videoFlag.Split(",")
 				VideoSelectInput = VideoFlagArray(0)
-				StringClean = StringClean.Replace("@PlayVideo[" & videoFlag & "]", "")
+				StringClean = StringClean.Replace("@PlayVideo[" & OriginalFlag & "]", "")
 			Else
 				If StringClean.Contains("@PlayVideo(") Then
 					ssh.VideoGenre = "ALL"
 					Dim videoFlag As String = GetParentheses(StringClean, "@PlayVideo(")
+					Dim OriginalFlag = videoFlag
 					If videoFlag.Contains(",") Then
 						videoFlag = FixCommas(videoFlag)
 					End If
 					VideoFlagArray = videoFlag.Split(",")
-					StringClean = StringClean.Replace("@PlayVideo(" & videoFlag & ")", "")
+					StringClean = StringClean.Replace("@PlayVideo(" & OriginalFlag & ")", "")
 				Else
 					StringClean = StringClean.Replace("@PlayVideo", "")
 				End If
@@ -10585,12 +10641,12 @@ OrgasmDecided:
 		End If
 
 		If StringClean.Contains("@JumpVideoUp") Then
-			ssh.JumpVideo = True
+			ssh.JumpVideoUp = True
 			If StringClean.Contains("@JumpVideoUp(") Then
 				Dim jumpFlag As String = GetParentheses(StringClean, "@JumpVideoUp(")
 				Dim OriginalFlag As String = jumpFlag
 				If jumpFlag <> "" Then
-					ssh.JumpPercent = Math.Round(Val(jumpFlag))
+					ssh.JumpPercent = Val(jumpFlag)
 				Else
 					ssh.JumpPercent = ssh.randomizer.[Next](20, 71)
 				End If
@@ -10600,18 +10656,16 @@ OrgasmDecided:
 				StringClean = StringClean.Replace("@JumpVideoUp", "")
 			End If
 
-			If DomWMP.currentPlaylist.count > 0 And Not VideoToPlay Then
-				VideoJump2Random(Nothing, Nothing, True, False)
-			End If
 		End If
 
 		If StringClean.Contains("@JumpVideoDown") Then
 			ssh.JumpVideo = True
+			ssh.JumpVideoDown = True
 			If StringClean.Contains("@JumpVideoDown(") Then
 				Dim jumpFlag As String = GetParentheses(StringClean, "@JumpVideoDown(")
 				Dim OriginalFlag As String = jumpFlag
 				If jumpFlag <> "" Then
-					ssh.JumpPercent = Math.Round(Val(jumpFlag))
+					ssh.JumpPercent = Val(jumpFlag)
 				Else
 					ssh.JumpPercent = ssh.randomizer.[Next](20, 71)
 				End If
@@ -10621,9 +10675,6 @@ OrgasmDecided:
 				StringClean = StringClean.Replace("@JumpVideoDown", "")
 			End If
 
-			If DomWMP.currentPlaylist.count > 0 And Not VideoToPlay Then
-				VideoJump2Random(Nothing, Nothing, False, True)
-			End If
 		End If
 
 		If StringClean.Contains("@JumpVideo") Then
@@ -10632,7 +10683,7 @@ OrgasmDecided:
 				Dim jumpFlag As String = GetParentheses(StringClean, "@JumpVideo(")
 				Dim OriginalFlag As String = jumpFlag
 				If jumpFlag <> "" Then
-					ssh.JumpPercent = Math.Round(Val(jumpFlag))
+					ssh.JumpPercent = Val(jumpFlag)
 				Else
 					ssh.JumpPercent = 0
 				End If
@@ -10642,9 +10693,6 @@ OrgasmDecided:
 				StringClean = StringClean.Replace("@JumpVideo", "")
 			End If
 
-			If DomWMP.currentPlaylist.count > 0 And Not VideoToPlay Then
-				VideoJump2Random(Nothing, Nothing, False, False)
-			End If
 		End If
 
 		If StringClean.Contains("@CheckPlayVideo") AndAlso (DomWMP.playState <> WMPPlayState.wmppsPlaying Or DomWMP.playState = WMPPlayState.wmppsPaused) Then
@@ -10742,6 +10790,8 @@ OrgasmDecided:
 				End If
 			End If
 			ssh.RandomizerVideo = False
+
+			JumpVideo()
 		End If
 
 		If StringClean.Contains("@Force") Then
@@ -19311,52 +19361,18 @@ ReRoll:
 	''' </summary>
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
-	''' <ramarks>There is no need for parameter Sender and e. 
-	''' Only for Designer Compatiblity with Butten Clicks.</ramarks>
 	''' <exception cref="exception">Rethrows all exceptions to catcher, as long sender is nothing.</exception>
-	Private Sub VideoJump2Random(ByVal sender As System.Object, ByVal e As System.EventArgs, Optional Up As Boolean = False, Optional Down As Boolean = False) Handles Button12.Click
+	Private Sub VideoJump2Random(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button12.Click
 		Try
-			If DomWMP.currentPlaylist.count = 0 Then Throw New Exception("No Video playing - can't jump.")
-
-			Dim VideoLength As Integer = DomWMP.currentMedia.duration
-			Dim VidPoint As Integer = 0
-			If ssh.JumpPercent = 0 Then
-				Dim VidLow As Integer = VideoLength * 0.4
-				Dim VidHigh As Integer = VideoLength * 0.9
-				VidPoint = ssh.randomizer.Next(VidLow, VidHigh)
-
-				Debug.Print("VidLow = " & VidLow)
-				Debug.Print("VidHigh = " & VidHigh)
-				Debug.Print("VidPoint = " & VidPoint)
-			Else
-				If Up Then
-					VidPoint = Math.Round(-VideoLength - DomWMP.Ctlcontrols.currentPosition) * ssh.JumpPercent / 100
-				End If
-				If Down Then
-					VidPoint = Math.Round(VideoLength - DomWMP.Ctlcontrols.currentPosition) * ssh.JumpPercent / 100
-				End If
-				If Up = False And Down = False Then
-					VidPoint = Math.Round(VideoLength * (1 - ssh.JumpPercent) - VidPoint)
-				End If
-			End If
-
 			ssh.JumpPercent = 0
-			If Up OrElse Down Then
-				DomWMP.Ctlcontrols.currentPosition = DomWMP.Ctlcontrols.currentPosition - VidPoint
-			Else
-				DomWMP.Ctlcontrols.currentPosition = VideoLength - VidPoint
-			End If
+			JumpVideo()
 
 		Catch ex As Exception
 			'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
 			'                                            All Errors
 			'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-			If sender IsNot Nothing Then
-				MsgBox("Error on jumping to Random Position in Video!" & vbCrLf & ex.Message,
+			MsgBox("Error on jumping to Random Position in Video!" & vbCrLf & ex.Message,
 				  vbExclamation, "Jump to random Position")
-			Else
-				Throw
-			End If
 		End Try
 	End Sub
 
@@ -20512,27 +20528,11 @@ playLoop:
 				DomWMP.Visible = True
 				mainPictureBox.Visible = False
 
-				If ssh.JumpVideo = True Then
+				Do
+					Application.DoEvents()
+				Loop Until (DomWMP.playState <> WMPLib.WMPPlayState.wmppsTransitioning)
 
-					Do
-						Application.DoEvents()
-					Loop Until (DomWMP.playState = WMPLib.WMPPlayState.wmppsPlaying)
-
-					Dim VideoLength As Integer = DomWMP.currentMedia.duration
-					Dim VidPoint As Integer
-					If ssh.JumpPercent = 0 Then
-						Dim VidLow As Integer = VideoLength * 0.4
-						Dim VidHigh As Integer = VideoLength * 0.9
-						VidPoint = ssh.randomizer.Next(VidLow, VidHigh)
-					Else
-						VidPoint = Math.Round(VideoLength * ssh.JumpPercent / 100)
-					End If
-
-					DomWMP.Ctlcontrols.currentPosition = VideoLength - VidPoint
-
-				End If
-
-				ssh.JumpVideo = False
+				DomWMP.Ctlcontrols.play()
 			Else
 				MessageBox.Show(Me, "No videos matching " & Path.GetFileName(VideoClean) & " were found in " & Path.GetDirectoryName(VideoClean) & "!" & Environment.NewLine & Environment.NewLine &
 				 "Please make sure that valid files exist and that the wildcards are applied correctly in the script.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
@@ -20546,28 +20546,11 @@ playLoop:
 				DomWMP.Visible = True
 				mainPictureBox.Visible = False
 
-				If ssh.JumpVideo = True Then
+				Do
+					Application.DoEvents()
+				Loop Until (DomWMP.playState <> WMPLib.WMPPlayState.wmppsTransitioning)
 
-					Do
-						Application.DoEvents()
-					Loop Until (DomWMP.playState = WMPLib.WMPPlayState.wmppsPlaying)
-
-					Dim VideoLength As Integer = DomWMP.currentMedia.duration
-
-					Dim VidPoint As Integer
-					If ssh.JumpPercent = 0 Then
-						Dim VidLow As Integer = VideoLength * 0.4
-						Dim VidHigh As Integer = VideoLength * 0.9
-						VidPoint = ssh.randomizer.Next(VidLow, VidHigh)
-					Else
-						VidPoint = Math.Round(VideoLength * ssh.JumpPercent / 100)
-					End If
-
-					DomWMP.Ctlcontrols.currentPosition = VideoLength - VidPoint
-
-				End If
-
-				ssh.JumpVideo = False
+				DomWMP.Ctlcontrols.play()
 
 			Else
 				MessageBox.Show(Me, Path.GetFileName(VideoClean) & " was not found in " & Application.StartupPath & "\Video!" & Environment.NewLine & Environment.NewLine &

@@ -148,6 +148,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Responses to edging (stop, hold, etc.) no longer use the normal delay. (swift69)
 	* The main picture box being hidden will now cause image-related filters to "fail", instead of just @LockImages being active. (swift69)
 	* Added a minimum value when starting edge taunts to hopefully prevent lag when the first taunt appears too quickly. (pepsifreak)
+	* Playing videos should no longer sometimes require you to manually press play. (pepsifreak)
 
 * System Keywords/Vocabulary
 	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.
