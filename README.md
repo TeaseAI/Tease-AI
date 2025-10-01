@@ -11,7 +11,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
     * Changes from the newest available "Unofficial" update (55.7.2b) have been copied via decompiling.
     * Changes from the newest available "Sweet" update (56.22) have been copied via decompiling.
 	
-* Commands: 
+* Commands (ported): 
 	* @DommeTagFirst(): Will show the first domme image in the current slideshow tagged with one or more tags. examples: (swift69)
 		* @DommeTagFirst(Ass) - Will display the first domme image tagged with "Ass".
 		* @DommeTagFirst(Ass,Naked) - Will display the first domme image tagged with "Ass" and "Naked".
@@ -72,7 +72,6 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @OpenDirectory[]: Opens an file explorer window to a specific folder relative to Tease AI. (1885)
 	* @SubMessage(): Sends a message as the user. @SubMessage(Hello) will send "Hello" as you. (1885)
 	* @ScenarioOn / ScenarioOff: Does nothing. (1885)
-	* @CheckWebcam: If the user has webcam features disabled in settings, will goto the label "Webcam Disabled". (pepsifreak)
 	* @WebcamVideo: Opens a window displaying the current webcam. Intended to "set up" for other webcam commands. (markus)
 		*Webcam is not connected to the internet in any way. It is only local.
 		*Do not use with @CamSnap commands
@@ -108,8 +107,11 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 			*#SYS_TauntVideoLesbian.txt
 			*#SYS_TauntVideoPlayCHC.txt
 			*#SYS_TauntVideoSoftcore.txt
+			
+* Commands: 
+	* @CheckWebcam: If the user has webcam features disabled in settings, will goto the label "Webcam Disabled". (pepsifreak)
 
-* Command Filters:
+* Command Filters (ported):
 	* @ShowImage: True if an image could be showed. So not locked, not playing a slideshow, and not showing a video. (1885)
 	* @CheckDommeTag(): True if the current domme image is tagged with one or more certain tags. (1885)
 		* @CheckDommeTag(Ass) - True if the domme image is tagged with "Ass".
@@ -122,17 +124,13 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @PlayVideo/@PlayVideoNoWait: True if images are locked, in a slideshow, or the picture box is hidden. (swift69)
 	* @PlayRedLightGreenLight/@PlayAvoidTheEdge: True if images are locked, in a slideshow, or the picture box is hidden. (swift69)
 
-* Bugfixes:	
+* Bugfixes (ported):	
 	* Holidays now get filtered correctly. (1885)
 		* @ValentinesDay
 		* @ChristmasEve
 		* @ChristmasDay
 		* @NewYearsEve
 		* @NewYearsDay
-	* Fixes some #TagXXX keywords (pepsifreak)
-		* #TagTatoo > #TagTattoo and the underlying code looking for the tag.
-		* #TagSexToy and #TagFurniture now default to "toy" and "furniture" instead of "tatoo".
-	* @MetronomeLimit() will now stop the metronome properly without requiring an extra @MetronomeOff. (pepsifreak)
 	* Fixed issue with questions and key phrases. (markus)
 	* Video player should no longer get stuck sometimes after a video ends. (markus)
 	* Maximiize Media Window setting now supports the side chat option. (markus)
@@ -147,10 +145,16 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @RapidText no longer uses a delay. (swift69)
 	* Responses to edging (stop, hold, etc.) no longer use the normal delay. (swift69)
 	* The main picture box being hidden will now cause image-related filters to "fail", instead of just @LockImages being active. (swift69)
+	
+* Bugfixes:	
+	* Fixes some #TagXXX keywords (pepsifreak)
+		* #TagTatoo > #TagTattoo and the underlying code looking for the tag.
+		* #TagSexToy and #TagFurniture now default to "toy" and "furniture" instead of "tatoo".
+	* @MetronomeLimit() will now stop the metronome properly without requiring an extra @MetronomeOff. (pepsifreak)
 	* Added a minimum value when starting edge taunts to hopefully prevent lag when the first taunt appears too quickly. (pepsifreak)
 	* Playing videos should no longer sometimes require you to manually press play. (pepsifreak)
 
-* System Keywords/Vocabulary
+* System Keywords/Vocabulary (ported):
 	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.
 	* #SYS_Safeword which displays your current safeword value.
 	* #CurrentDateOnly which displays the current day number. (ie: 15) (markus)
@@ -166,11 +170,9 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 		* #TagSexToy defaults to "toy"
 		* #TagFurniture defaults to "furniture"
 	
-* Miscellaneous:
+* Miscellaneous (ported):
 	* Adds a Refresh button in the Settings window under Images>URL Files to reload the list of URL Files for any changes. (1885)
 	* Adds setting under Misc tab to load Gif images using Windows Media Player. (markus)
-	* Various timeouts and speeds have been set to a middle ground between previous source and Fury's larger values (pepsifreak)
-	* Metronome used by @MetronomeXXX commands now built in rather than a separate metro.dll file by markus, also uses the same wav file as taunt sections. (pepsifreak)
 	* Pressing up or down will scroll through chat history outside of writing tasks. (1885)
 	* "Two dommes in one picture" (markus)
 		*If you are using a picture set with 2 people at once, you can include a file named "tai2dommesAtOnce.txt".
@@ -188,6 +190,10 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Typo logic is now skipped when if the option is disabled. (swift69)
 	* Images will try to display up to 5 times in case of error. (swift69)
 	* Added "very slow" @Slideshow() speed option. (swift69)
+	
+* Miscellaneous:
+	* Various timeouts and speeds have been set to a middle ground between previous source and Fury's larger values (pepsifreak)
+	* Metronome used by @MetronomeXXX commands now built in rather than a separate metro.dll file by markus, also uses the same wav file as taunt sections. (pepsifreak)
 	* Added Edge Taunt Frequency option. (pepsifreak)
 
 
