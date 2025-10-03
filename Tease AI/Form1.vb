@@ -9118,6 +9118,7 @@ TaskCleanSet:
 
 		If StringClean.Contains("@MetronomeRandom(") Then
 			Dim myValues As String = GetParentheses(StringClean, "@MetronomeRandom(")
+			Dim OriginalFlag As String = myValues
 			myValues = FixCommas(myValues)
 			Dim myValuesArray As String() = myValues.Split(",")
 			Dim myMinInt As Integer = Convert.ToInt32(myValuesArray(0))
@@ -9131,7 +9132,7 @@ TaskCleanSet:
 			Dim myRandomInt As Integer = ssh.randomizer.[Next](myMinInt, myMaxInt)
 			Dim myBPMint = myRandomInt
 			If Not StrokeTimer.Enabled Then myMetro.MetroOn(myBPMint)
-			StringClean = StringClean.Replace("@MetronomeRandom(" & myValues & ")", "")
+			StringClean = StringClean.Replace("@MetronomeRandom(" & OriginalFlag & ")", "")
 		End If
 
 		If StringClean.Contains("@StartStroking") Or StringClean.Contains("@ResumeStroking") Then
