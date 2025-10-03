@@ -469,6 +469,7 @@ Partial Public Class SessionState
 
 	Public Property StrokePace As Integer = 0
 
+	<Obsolete("Use GetGeneralTime() instead when needed.")>
 	Public Property GeneralTime As String
 
 	Public Property TimeoutTick As Integer

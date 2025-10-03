@@ -26,4 +26,15 @@
 
 		If initial And EdgeTauntInt < 15 Then EdgeTauntInt = 15
 	End Sub
+
+	Public Function GetGeneralTime() As String
+		If Now.Hour > 3 And Now.Hour < 12 Then
+			Return "Morning"
+		ElseIf Now.Hour > 11 And Now.Hour < 18 Then
+			Return "Afternoon"
+		Else
+			Return "Night"
+		End If
+	End Function
+
 End Class

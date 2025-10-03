@@ -28,13 +28,14 @@ Partial Public Class Form1
 	End Sub
 
 	Public Function GetVariable(ByVal varName As String) As String
+		If varName = "SYS_WakeUp" Then Return My.Settings.WakeUp
+		If varName = "RP_Edges" Then Return FrmCardList.EdgesOwed
 
 		If VariableExists(varName) Then
 			Return TxtReadLine(Path.Combine(VariableFolder, varName))
 		Else
 			Return 0
 		End If
-
 	End Function
 
 	Public Sub DeleteVariable(ByVal varName As String)

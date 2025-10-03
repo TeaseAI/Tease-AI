@@ -153,6 +153,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* @MetronomeLimit() will now stop the metronome properly without requiring an extra @MetronomeOff. (pepsifreak)
 	* Added a minimum value when starting edge taunts to hopefully prevent lag when the first taunt appears too quickly. (pepsifreak)
 	* Playing videos should no longer sometimes require you to manually press play. (pepsifreak)
+	* The clock will no longer read the variable SYS_WakeUp from disk every tick. (pepsifreak)
 
 * System Keywords/Vocabulary (ported):
 	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.
@@ -195,6 +196,8 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Various timeouts and speeds have been set to a middle ground between previous source and Fury's larger values (pepsifreak)
 	* Metronome used by @MetronomeXXX commands now built in rather than a separate metro.dll file by markus, also uses the same wav file as taunt sections. (pepsifreak)
 	* Added Edge Taunt Frequency option. (pepsifreak)
+	* SYS_WakeUp and RP_Edges variables are no longer written to disk, instead having special cases to return their internal values. (pepsifreak)
+	* Code handling the "general time" strings have been simplified and no longer use the wakeup time. (pepsifreak)
 
 
 # Changelog - Patch 56.0.0

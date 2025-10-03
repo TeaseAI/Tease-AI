@@ -11677,7 +11677,7 @@ VTSkip:
 			End If
 			ssh.BronzeTokens += FrmCardList.TokensPaid
 			FrmCardList.LBLRiskTokens.Text = ssh.BronzeTokens
-			SetVariable("RP_Edges", FrmCardList.EdgesOwed)
+			'SetVariable("RP_Edges", FrmCardList.EdgesOwed)
 			StringClean = StringClean.Replace("@RiskyPayout", "")
 		End If
 
@@ -13719,9 +13719,9 @@ VTSkip:
 				If ssh.SubHoldingEdge = True Then Return False
 			End If
 
-			If FilterString.Contains("@Morning") And ssh.GeneralTime <> "Morning" Then Return False
-			If FilterString.Contains("@Afternoon") And ssh.GeneralTime <> "Afternoon" Then Return False
-			If FilterString.Contains("@Night") And ssh.GeneralTime <> "Night" Then Return False
+			If FilterString.Contains("@Morning") AndAlso ssh.GetGeneralTime <> "Morning" Then Return False
+			If FilterString.Contains("@Afternoon") AndAlso ssh.GetGeneralTime <> "Afternoon" Then Return False
+			If FilterString.Contains("@Night") AndAlso ssh.GetGeneralTime <> "Night" Then Return False
 
 			If FilterString.Contains("@OrgasmRestricted") And ssh.OrgasmRestricted = False Then Return False
 			If FilterString.Contains("@OrgasmNotRestricted") And ssh.OrgasmRestricted = True Then Return False
@@ -15017,8 +15017,8 @@ NoRepeatOFiles:
 		TaskEntry = CleanTaskLines(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Tasks\Intro.txt")
 		ssh.TaskText = ssh.TaskText & TaskEntry & " " & Environment.NewLine & Environment.NewLine
 
-		If ssh.GeneralTime = "Afternoon" Then GoTo Afternoon
-		If ssh.GeneralTime = "Night" Then GoTo Night
+		If ssh.GetGeneralTime = "Afternoon" Then GoTo Afternoon
+		If ssh.GetGeneralTime = "Night" Then GoTo Night
 
 		TaskEntry = CleanTaskLines(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Tasks\Task_1.txt")
 		ssh.TaskText = ssh.TaskText & TaskEntry & " " & Environment.NewLine & Environment.NewLine
@@ -15070,7 +15070,7 @@ Night:
 		StupidTimer.Start()
 
 		Debug.Print("<><><><><><><><><><><><><><><><><><><><><>")
-		Debug.Print("Created " & ssh.GeneralTime & " Task Letter")
+		Debug.Print("Created " & ssh.GetGeneralTime & " Task Letter")
 		Debug.Print("<><><><><><><><><><><><><><><><><><><><><>")
 
 	End Sub
@@ -17799,32 +17799,14 @@ restartInstantly:
 			LBLAMPM.Text = ""
 		End If
 
-
-
-
-		If VariableExists("SYS_WakeUp") Then
-
-			Dim DateFromFile As String = FormatDateTime(Now, DateFormat.ShortDate) & " " & GetDate("SYS_WakeUp").ToLongTimeString
-
-			Dim DDiff As Integer
-			DDiff = DateDiff(DateInterval.Hour, Date.Parse(DateFromFile), Now)
-
-			ssh.GeneralTime = "Night"
-			If DDiff < -20 Then ssh.GeneralTime = "Morning"
-			If DDiff > -2 And DDiff < 5 Then ssh.GeneralTime = "Morning"
-			If DDiff > 4 And DDiff < 12 Then ssh.GeneralTime = "Afternoon"
-			If DDiff > -21 And DDiff < -11 Then ssh.GeneralTime = "Afternoon"
-
-		Else
-
-			Dim SetDate As Date = FormatDateTime(FrmSettings.TimeBoxWakeUp.Value, DateFormat.LongTime)
-			SetVariable("SYS_WakeUp", FormatDateTime(SetDate, DateFormat.LongTime))
-			My.Settings.WakeUp = FormatDateTime(Now, DateFormat.ShortDate) & " " & GetDate("SYS_WakeUp").ToLongTimeString
-
-			Debug.Assert(SetDate.ToLongTimeString = My.Settings.WakeUp.ToLongTimeString,
-						 "Value for SYS_WakeUp is different after loading.")
-
-		End If
+		'leaving this here but seems overkill for what generaltime gets used for
+		'Dim DDiff = DateDiff(DateInterval.Hour, My.Settings.WakeUp, Now)
+		'
+		'ssh.GeneralTime = "Night"
+		'If DDiff < -20 Then ssh.GeneralTime = "Morning"
+		'If DDiff > -2 And DDiff < 5 Then ssh.GeneralTime = "Morning"
+		'If DDiff > 4 And DDiff < 12 Then ssh.GeneralTime = "Afternoon"
+		'If DDiff > -21 And DDiff < -11 Then ssh.GeneralTime = "Afternoon"
 
 		If ssh.CountUpList.Count > 0 Then
 			For i As Integer = 0 To ssh.CountUpList.Count - 1
