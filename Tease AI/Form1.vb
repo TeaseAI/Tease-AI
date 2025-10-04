@@ -17387,6 +17387,7 @@ restartInstantly:
 
 	Private Sub VolumesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolumesToolStripMenuItem.Click
 		CloseApp(PNLVolumes)
+	End Sub
 #End Region  ' APPs
 
 #Region "-------------------------------------------------------- Games -------------------------------------------------------"
