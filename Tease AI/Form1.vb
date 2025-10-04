@@ -10804,9 +10804,21 @@ OrgasmDecided:
 			marLastLog = ssh.FileText
 		End If
 
-		If StringClean.Contains("@PlayAudio[") Then
-			Dim AudioFlag As String = GetParentheses(StringClean, "@PlayAudio[")
-			' Github Patch Dim AudioClean As String = Application.StartupPath & "\Video\" & AudioFlag
+		If StringClean.Contains("@PlayAudio") Then
+			Dim filter As String = ""
+			Dim playerControl As AxWindowsMediaPlayer = DomWMP
+			If StringClean.Contains("@PlayAudio[") Then
+				playerControl = contextWMP
+				filter = "@PlayAudio["
+			ElseIf StringClean.Contains("@PlayAudioNoWait[") Then
+				playerControl = contextWMP
+				filter = "@PlayAudioNoWait["
+			ElseIf StringClean.Contains("@PlayAudioNoWaitVoiceDom[") Then
+				playerControl = voiceDomWMP
+				filter = "@PlayAudioNoWaitVoiceDom["
+			End If
+
+			Dim AudioFlag As String = GetParentheses(StringClean, filter)
 			Dim AudioClean As String
 
 			If AudioFlag.Contains(":\") Then
@@ -10825,101 +10837,23 @@ OrgasmDecided:
 				Next
 
 				If AudioList.Count > 0 Then
-					DomWMP.URL = AudioList(ssh.randomizer.Next(0, AudioList.Count))
-					DomWMP.Ctlcontrols.play()
+					playerControl.URL = AudioList(ssh.randomizer.Next(0, AudioList.Count))
+					playerControl.Ctlcontrols.play()
 				Else
 					MessageBox.Show(Me, "No audio files matching " & Path.GetFileName(AudioClean) & " were found in " & Path.GetDirectoryName(AudioClean) & "!" & Environment.NewLine & Environment.NewLine &
 					  "Please make sure that valid files exist and that the wildcards are applied correctly in the script.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
 				End If
 			Else
 				If File.Exists(AudioClean) Then
-					DomWMP.URL = AudioClean
-					DomWMP.Ctlcontrols.play()
+					playerControl.URL = AudioClean
+					playerControl.Ctlcontrols.play()
 				Else
 					MessageBox.Show(Me, Path.GetFileName(AudioClean) & " was not found in " & Application.StartupPath & "\Audio!" & Environment.NewLine & Environment.NewLine &
 					 "Please make sure the file exists and that it is spelled correctly in the script.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
 				End If
 			End If
-ExternalAudio:
+
 			StringClean = StringClean.Replace("@PlayAudio[" & AudioFlag & "]", "")
-		End If
-
-		If StringClean.Contains("@PlayAudioNoWait[") Then
-			Dim AudioFlag As String = GetParentheses(StringClean, "@PlayAudioNoWait[")
-			' Github Patch Dim AudioClean As String = Application.StartupPath & "\Video\" & AudioFlag
-			Dim AudioClean As String
-
-			If AudioFlag.Contains(":\") Then
-				AudioClean = AudioFlag
-			Else
-				AudioClean = Application.StartupPath & "\Audio\" & AudioFlag
-				AudioClean = AudioClean.Replace("\\", "\")
-			End If
-
-			If AudioClean.Contains("*") Then
-
-				Dim AudioList As New List(Of String)
-
-				For Each foundFile As String In My.Computer.FileSystem.GetFiles(Path.GetDirectoryName(AudioClean), FileIO.SearchOption.SearchTopLevelOnly, Path.GetFileName(AudioClean))
-					AudioList.Add(foundFile)
-				Next
-
-				If AudioList.Count > 0 Then
-					contextWMP.URL = AudioList(ssh.randomizer.Next(0, AudioList.Count))
-					contextWMP.Ctlcontrols.play()
-				Else
-					MessageBox.Show(Me, "No audio files matching " & Path.GetFileName(AudioClean) & " were found in " & Path.GetDirectoryName(AudioClean) & "!" & Environment.NewLine & Environment.NewLine &
-					  "Please make sure that valid files exist and that the wildcards are applied correctly in the script.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-				End If
-			Else
-				If File.Exists(AudioClean) Then
-					contextWMP.URL = AudioClean
-					contextWMP.Ctlcontrols.play()
-				Else
-					MessageBox.Show(Me, Path.GetFileName(AudioClean) & " was not found in " & Application.StartupPath & "\Audio!" & Environment.NewLine & Environment.NewLine &
-					 "Please make sure the file exists and that it is spelled correctly in the script.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-				End If
-			End If
-			StringClean = StringClean.Replace("@PlayAudioNoWait[" & AudioFlag & "]", "")
-		End If
-
-		If StringClean.Contains("@PlayAudioNoWaitVoiceDom[") Then
-			Dim AudioFlag As String = GetParentheses(StringClean, "@PlayAudioNoWaitVoiceDom[")
-			' Github Patch Dim AudioClean As String = Application.StartupPath & "\Video\" & AudioFlag
-			Dim AudioClean As String
-
-			If AudioFlag.Contains(":\") Then
-				AudioClean = AudioFlag
-			Else
-				AudioClean = Application.StartupPath & "\Audio\" & AudioFlag
-				AudioClean = AudioClean.Replace("\\", "\")
-			End If
-
-			If AudioClean.Contains("*") Then
-
-				Dim AudioList As New List(Of String)
-
-				For Each foundFile As String In My.Computer.FileSystem.GetFiles(Path.GetDirectoryName(AudioClean), FileIO.SearchOption.SearchTopLevelOnly, Path.GetFileName(AudioClean))
-					AudioList.Add(foundFile)
-				Next
-
-				If AudioList.Count > 0 Then
-					voiceDomWMP.URL = AudioList(ssh.randomizer.Next(0, AudioList.Count))
-					voiceDomWMP.Ctlcontrols.play()
-				Else
-					MessageBox.Show(Me, "No audio files matching " & Path.GetFileName(AudioClean) & " were found in " & Path.GetDirectoryName(AudioClean) & "!" & Environment.NewLine & Environment.NewLine &
-					  "Please make sure that valid files exist and that the wildcards are applied correctly in the script.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-				End If
-			Else
-				If File.Exists(AudioClean) Then
-					voiceDomWMP.URL = AudioClean
-					voiceDomWMP.Ctlcontrols.play()
-				Else
-					MessageBox.Show(Me, Path.GetFileName(AudioClean) & " was not found in " & Application.StartupPath & "\Audio!" & Environment.NewLine & Environment.NewLine &
-					 "Please make sure the file exists and that it is spelled correctly in the script.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-				End If
-			End If
-			StringClean = StringClean.Replace("@PlayAudioNoWaitVoiceDom[" & AudioFlag & "]", "")
 		End If
 
 		If StringClean.Contains("@StopAudio") Then
