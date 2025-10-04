@@ -296,6 +296,15 @@ retryStart:
 
 			FormLoading = True
 
+			If Not File.Exists(pathLikeList) Then
+				File.WriteAllText(pathLikeList, "")
+			End If
+			If Not File.Exists(pathDislikeList) Then
+				File.WriteAllText(pathDislikeList, "")
+			End If
+			If Not File.Exists(pathImageTagList) Then
+				File.WriteAllText(pathImageTagList, "")
+			End If
 
 			FrmSplash.UpdateText("Checking orgasm limit...")
 
