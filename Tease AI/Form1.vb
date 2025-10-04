@@ -7214,6 +7214,10 @@ CensorConstant:
 
 	Public Function CommandClean(ByVal StringClean As String, Optional ByVal TaskClean As Boolean = False) As String
 
+		If Not StringClean.Contains("@") And Not StringClean.Contains("#") Then
+			Return StringClean
+		End If
+
 		Debug.Print("Stringclean Intro = " & StringClean)
 
 
