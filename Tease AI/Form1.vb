@@ -5175,6 +5175,11 @@ DommeSlideshowFallback:
 				ssh.Responding = False
 
 				If ssh.EndSession = True Then
+					myMetro.MetroOff()
+					DomWMP.Ctlcontrols.stop()
+					contextWMP.Ctlcontrols.stop()
+					voiceDomWMP.Ctlcontrols.stop()
+					BeatMeterWMP.Ctlcontrols.stop()
 					ssh.EndSession = False
 					SaveChatLog(False)
 					ssh.Reset()
