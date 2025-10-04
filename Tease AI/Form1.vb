@@ -7844,7 +7844,7 @@ RinseLatherRepeat:
 		' @TnASlowSlides starts a slideshow with boobs and butts. the Speed is fixed at 1 image per 5 seconds.
 
 		If StringClean.Contains("@TnAFastSlides") Or StringClean.Contains("@TnASlowSlides") Or StringClean.Contains("@TnASlides") Then
-			If StringClean.Contains("@TnAFastSlides") Then TnASlides.Interval = 800
+			If StringClean.Contains("@TnAFastSlides") Then TnASlides.Interval = 2000
 			If StringClean.Contains("@TnASlides") Then TnASlides.Interval = 4000
 			If StringClean.Contains("@TnASlowSlides") Then TnASlides.Interval = 8000
 
@@ -7959,10 +7959,10 @@ RinseLatherRepeat:
 			End If
 
 
-			CustomSlideshowTimer.Interval = 2000
-			If LCase(SlideFlag).Contains("slow") Then CustomSlideshowTimer.Interval = 5000
-			If LCase(SlideFlag).Contains("very slow") Then CustomSlideshowTimer.Interval = 9000
-			If LCase(SlideFlag).Contains("fast") Then CustomSlideshowTimer.Interval = 1000
+			CustomSlideshowTimer.Interval = 4000
+			If LCase(SlideFlag).Contains("fast") Then CustomSlideshowTimer.Interval = 2000
+			If LCase(SlideFlag).Contains("slow") Then CustomSlideshowTimer.Interval = 8000
+			If LCase(SlideFlag).Contains("very slow") Then CustomSlideshowTimer.Interval = 12000
 
 
 			StringClean = StringClean.Replace("@Slideshow(" & SlideFlag & ")", "")
