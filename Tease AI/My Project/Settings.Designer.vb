@@ -5713,8 +5713,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("<?xml version=""1.0"" encoding=""utf-16""?>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"<ArrayOfString xmlns:xsi=""http://www.w3."& _ 
-            "org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" />")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("<?xml version=""1.0"" encoding=""utf-16""?>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"<ArrayOfString xmlns:xsd=""http://www.w3."& _ 
+            "org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" />")>  _
         Public Property RecentSlideshows() As Global.System.Collections.Specialized.StringCollection
             Get
                 Return CType(Me("RecentSlideshows"),Global.System.Collections.Specialized.StringCollection)
@@ -5985,6 +5985,54 @@ Namespace My
             End Get
             Set
                 Me("TimerETF") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("40")>  _
+        Public Property VideoVolume() As Integer
+            Get
+                Return CType(Me("VideoVolume"),Integer)
+            End Get
+            Set
+                Me("VideoVolume") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("40")>  _
+        Public Property AudioVolume() As Integer
+            Get
+                Return CType(Me("AudioVolume"),Integer)
+            End Get
+            Set
+                Me("AudioVolume") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("40")>  _
+        Public Property VoiceAudioVolume() As Integer
+            Get
+                Return CType(Me("VoiceAudioVolume"),Integer)
+            End Get
+            Set
+                Me("VoiceAudioVolume") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("50")>  _
+        Public Property BeatMeterVolume() As Integer
+            Get
+                Return CType(Me("BeatMeterVolume"),Integer)
+            End Get
+            Set
+                Me("BeatMeterVolume") = value
             End Set
         End Property
     End Class

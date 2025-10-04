@@ -272,9 +272,7 @@ Public Class Form1
 		Label1.Left = DomWMP.Left
 		Label1.BackColor = Color.Black
 		Label1.ForeColor = Color.White
-		DomWMP.settings.volume = 40
 		Label1.Text = DomWMP.settings.volume.ToString()
-		BeatMeterWMP.settings.volume = 50
 		LBLWritingTask.Width = 245
 		LBLWritingTask.Height = 26
 		LBLWritingTaskText.Width = 226
@@ -1056,6 +1054,21 @@ retryStart:
 
 
 
+			DomWMP.settings.volume = My.Settings.VideoVolume
+			sliderVolumeDomWMP.Value = My.Settings.VideoVolume
+			LBLVolumeDomWMP.Text = sliderVolumeDomWMP.Value
+
+			contextWMP.settings.volume = My.Settings.AudioVolume
+			sliderVolumecontextWMP.Value = My.Settings.AudioVolume
+			LBLVolumecontextWMP.Text = sliderVolumecontextWMP.Value
+
+			voiceDomWMP.settings.volume = My.Settings.VoiceAudioVolume
+			sliderVolumevoiceDomWMP.Value = My.Settings.VoiceAudioVolume
+			LBLVolumevoiceDomWMP.Text = sliderVolumevoiceDomWMP.Value
+
+			BeatMeterWMP.settings.volume = My.Settings.BeatMeterVolume
+			sliderVolumeBeatmeter.Value = My.Settings.BeatMeterVolume
+			LBLVolumeBeatmeter.Text = sliderVolumeBeatmeter.Value
 
 
 			'ImageThread.Start()
@@ -17372,6 +17385,8 @@ restartInstantly:
 
 	End Sub
 
+	Private Sub VolumesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolumesToolStripMenuItem.Click
+		CloseApp(PNLVolumes)
 #End Region  ' APPs
 
 #Region "-------------------------------------------------------- Games -------------------------------------------------------"
@@ -20960,6 +20975,38 @@ ShowedBlogImage:
 
 	Private Sub TeaseAIPatreonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TeaseAIPatreonToolStripMenuItem.Click
 		Process.Start("https://www.patreon.com/TeaseAI")
+	End Sub
+
+	Private Sub sliderVolumeDomWMP_Scroll(sender As Object, e As EventArgs) Handles sliderVolumeDomWMP.Scroll
+		If FormLoading = False Then
+			My.Settings.VideoVolume = sliderVolumeDomWMP.Value
+			DomWMP.settings.volume = My.Settings.VideoVolume
+		End If
+		LBLVolumeDomWMP.Text = sliderVolumeDomWMP.Value
+	End Sub
+
+	Private Sub sliderVolumecontextWMP_Scroll(sender As Object, e As EventArgs) Handles sliderVolumecontextWMP.Scroll
+		If FormLoading = False Then
+			My.Settings.AudioVolume = sliderVolumecontextWMP.Value
+			contextWMP.settings.volume = My.Settings.AudioVolume
+		End If
+		LBLVolumecontextWMP.Text = sliderVolumecontextWMP.Value
+	End Sub
+
+	Private Sub sliderVolumevoiceDomWMP_Scroll(sender As Object, e As EventArgs) Handles sliderVolumevoiceDomWMP.Scroll
+		If FormLoading = False Then
+			My.Settings.VoiceAudioVolume = sliderVolumevoiceDomWMP.Value
+			voiceDomWMP.settings.volume = My.Settings.VoiceAudioVolume
+		End If
+		LBLVolumevoiceDomWMP.Text = sliderVolumevoiceDomWMP.Value
+	End Sub
+
+	Private Sub sliderVolumeBeatmeter_Scroll(sender As Object, e As EventArgs) Handles sliderVolumeBeatmeter.Scroll
+		If FormLoading = False Then
+			My.Settings.BeatMeterVolume = sliderVolumeBeatmeter.Value
+			BeatMeterWMP.settings.volume = My.Settings.BeatMeterVolume
+		End If
+		LBLVolumeBeatmeter.Text = sliderVolumeBeatmeter.Value
 	End Sub
 End Class
 

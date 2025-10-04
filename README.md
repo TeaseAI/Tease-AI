@@ -199,6 +199,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* SYS_WakeUp and RP_Edges variables are no longer written to disk, instead having special cases to return their internal values. (pepsifreak)
 	* Code handling the "general time" strings have been simplified and no longer use the wakeup time. (pepsifreak)
 	* PlayAudio plays on the secondary player, matching the unofficial patch unstead of sweet/fury, making PlayAudioNoWait a duplicate. (markus)
+	* Added a new app/settings to change volumes of the various players. (pepsifreak)
 
 
 # Changelog - Patch 56.0.0

@@ -24,78 +24,12 @@ Partial Class Form1
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-		Me.domName = New System.Windows.Forms.TextBox()
-		Me.chatBox = New System.Windows.Forms.TextBox()
-		Me.mainPictureBox = New System.Windows.Forms.PictureBox()
-		Me.domAvatar = New System.Windows.Forms.PictureBox()
-		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-		Me.Label2 = New System.Windows.Forms.Label()
-		Me.BeatMeterWMP = New AxWMPLib.AxWindowsMediaPlayer()
-		Me.Label1 = New System.Windows.Forms.Label()
-		Me.DomWMP = New AxWMPLib.AxWindowsMediaPlayer()
-		Me.ProgressBar_BGW_Images = New System.Windows.Forms.ProgressBar()
-		Me.CensorshipBar = New System.Windows.Forms.Panel()
-		Me.LBLImageInfo = New System.Windows.Forms.Label()
-		Me.PnlChatTextLayout = New System.Windows.Forms.Panel()
-		Me.ChatText = New System.Windows.Forms.WebBrowser()
-		Me.PNLMediaBar = New System.Windows.Forms.Panel()
-		Me.ImageFolderComboBox = New System.Windows.Forms.ComboBox()
-		Me.BTNLoadVideo = New System.Windows.Forms.Button()
-		Me.previousButton = New System.Windows.Forms.Button()
-		Me.browsefolderButton = New System.Windows.Forms.Button()
-		Me.nextButton = New System.Windows.Forms.Button()
-		Me.BTNVideoControls = New System.Windows.Forms.Button()
-		Me.PnlChatBoxLayout = New System.Windows.Forms.Panel()
-		Me.BtnToggleSettings = New System.Windows.Forms.Button()
-		Me.BtnToggleMediaPanel = New System.Windows.Forms.Button()
-		Me.BtnToggleImageVideo = New System.Windows.Forms.Button()
-		Me.PNLDomTagBTN = New System.Windows.Forms.Panel()
-		Me.DommeTagBtnNextImage = New System.Windows.Forms.Button()
-		Me.DommeTagBtnLastImage = New System.Windows.Forms.Button()
-		Me.TBFurniture = New System.Windows.Forms.TextBox()
-		Me.Masturbating = New System.Windows.Forms.Button()
-		Me.Feet = New System.Windows.Forms.Button()
-		Me.TBSexToy = New System.Windows.Forms.TextBox()
-		Me.Legs = New System.Windows.Forms.Button()
-		Me.Sucking = New System.Windows.Forms.Button()
-		Me.TBTattoo = New System.Windows.Forms.TextBox()
-		Me.Face = New System.Windows.Forms.Button()
-		Me.TBUnderwear = New System.Windows.Forms.TextBox()
-		Me.Smiling = New System.Windows.Forms.Button()
-		Me.Pussy = New System.Windows.Forms.Button()
-		Me.Glaring = New System.Windows.Forms.Button()
-		Me.TBGarment = New System.Windows.Forms.TextBox()
-		Me.Boobs = New System.Windows.Forms.Button()
-		Me.FullyDressed = New System.Windows.Forms.Button()
-		Me.Furniture = New System.Windows.Forms.Button()
-		Me.Ass = New System.Windows.Forms.Button()
-		Me.HalfDressed = New System.Windows.Forms.Button()
-		Me.SexToy = New System.Windows.Forms.Button()
-		Me.GarmentCovering = New System.Windows.Forms.Button()
-		Me.Tattoo = New System.Windows.Forms.Button()
-		Me.HandsCovering = New System.Windows.Forms.Button()
-		Me.Naked = New System.Windows.Forms.Button()
-		Me.Underwear = New System.Windows.Forms.Button()
-		Me.SideView = New System.Windows.Forms.Button()
-		Me.CloseUp = New System.Windows.Forms.Button()
-		Me.Garment = New System.Windows.Forms.Button()
-		Me.SeeThrough = New System.Windows.Forms.Button()
-		Me.AllFours = New System.Windows.Forms.Button()
-		Me.Piercing = New System.Windows.Forms.Button()
-		Me.subName = New System.Windows.Forms.TextBox()
 		Me.OpenScriptDialog = New System.Windows.Forms.OpenFileDialog()
 		Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
 		Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
 		Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.GetColor = New System.Windows.Forms.ColorDialog()
-		Me.sendButton = New System.Windows.Forms.Button()
 		Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-		Me.PNLFileTransfer = New System.Windows.Forms.Panel()
-		Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-		Me.BTNFileTransferOpen = New System.Windows.Forms.Button()
-		Me.BTNFIleTransferDismiss = New System.Windows.Forms.Button()
-		Me.LBLFileTransfer = New System.Windows.Forms.Label()
-		Me.PBFileTransfer = New System.Windows.Forms.ProgressBar()
 		Me.PictureStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.PicStripTSMIcopyImageLocation = New System.Windows.Forms.ToolStripMenuItem()
 		Me.PicStripTmsiDisableAnimation = New System.Windows.Forms.ToolStripMenuItem()
@@ -125,7 +59,6 @@ Partial Class Form1
 		Me.PicStripTSMIdommeSlideshowGoToLast = New System.Windows.Forms.ToolStripMenuItem()
 		Me.PicStripTSMIdommeSlideshowTSS1 = New System.Windows.Forms.ToolStripSeparator()
 		Me.PicStripTSMIdommeSlideshowLoadNewSlideshow = New System.Windows.Forms.ToolStripMenuItem()
-		Me.StatusUpdates = New System.Windows.Forms.WebBrowser()
 		Me.TeaseAINotify = New System.Windows.Forms.NotifyIcon(Me.components)
 		Me.TeaseAIMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.GamesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -141,9 +74,6 @@ Partial Class Form1
 		Me.AllAndEverythingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.LBLTime = New System.Windows.Forms.Label()
-		Me.LBLDate = New System.Windows.Forms.Label()
-		Me.LBLAMPM = New System.Windows.Forms.Label()
 		Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
 		Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.PersonalityToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -184,6 +114,7 @@ Partial Class Form1
 		Me.WishlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.HypnoticGuideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.VitalSubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.VolumesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.GamesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.SlotsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.MatchGameToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -226,10 +157,46 @@ Partial Class Form1
 		Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.PatreonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.TeaseAIPatreonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.PNLDate = New System.Windows.Forms.Panel()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
 		Me.LBLGeneralSettings = New System.Windows.Forms.Label()
+		Me.voiceDomWMP = New AxWMPLib.AxWindowsMediaPlayer()
+		Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+		Me.PnlLayoutForm = New System.Windows.Forms.Panel()
+		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+		Me.Label2 = New System.Windows.Forms.Label()
+		Me.BeatMeterWMP = New AxWMPLib.AxWindowsMediaPlayer()
+		Me.Label1 = New System.Windows.Forms.Label()
+		Me.DomWMP = New AxWMPLib.AxWindowsMediaPlayer()
+		Me.ProgressBar_BGW_Images = New System.Windows.Forms.ProgressBar()
+		Me.CensorshipBar = New System.Windows.Forms.Panel()
+		Me.LBLImageInfo = New System.Windows.Forms.Label()
+		Me.mainPictureBox = New System.Windows.Forms.PictureBox()
+		Me.PnlChatTextLayout = New System.Windows.Forms.Panel()
+		Me.ChatText = New System.Windows.Forms.WebBrowser()
+		Me.PNLMediaBar = New System.Windows.Forms.Panel()
+		Me.ImageFolderComboBox = New System.Windows.Forms.ComboBox()
+		Me.BTNLoadVideo = New System.Windows.Forms.Button()
+		Me.previousButton = New System.Windows.Forms.Button()
+		Me.browsefolderButton = New System.Windows.Forms.Button()
+		Me.nextButton = New System.Windows.Forms.Button()
+		Me.BTNVideoControls = New System.Windows.Forms.Button()
+		Me.PnlChatBoxLayout = New System.Windows.Forms.Panel()
+		Me.chatBox = New System.Windows.Forms.TextBox()
+		Me.BtnToggleSettings = New System.Windows.Forms.Button()
+		Me.BtnToggleMediaPanel = New System.Windows.Forms.Button()
+		Me.BtnToggleImageVideo = New System.Windows.Forms.Button()
+		Me.PnlSidepanelLayout = New System.Windows.Forms.Panel()
+		Me.PnlTabsLayout = New System.Windows.Forms.Panel()
 		Me.PNLTabs = New System.Windows.Forms.Panel()
+		Me.PNLVolumes = New System.Windows.Forms.Panel()
+		Me.Label6 = New System.Windows.Forms.Label()
+		Me.Label5 = New System.Windows.Forms.Label()
+		Me.sliderVolumeBeatmeter = New System.Windows.Forms.TrackBar()
+		Me.Label4 = New System.Windows.Forms.Label()
+		Me.sliderVolumevoiceDomWMP = New System.Windows.Forms.TrackBar()
+		Me.Label3 = New System.Windows.Forms.Label()
+		Me.sliderVolumecontextWMP = New System.Windows.Forms.TrackBar()
+		Me.sliderVolumeDomWMP = New System.Windows.Forms.TrackBar()
 		Me.PNLWishList = New System.Windows.Forms.Panel()
 		Me.WishlistCostSilver = New System.Windows.Forms.PictureBox()
 		Me.LBLWishlistDate = New System.Windows.Forms.Label()
@@ -328,6 +295,7 @@ Partial Class Form1
 		Me.BTNLS4 = New System.Windows.Forms.Button()
 		Me.BTNLS5 = New System.Windows.Forms.Button()
 		Me.PnlGlitter = New System.Windows.Forms.Panel()
+		Me.StatusUpdates = New System.Windows.Forms.WebBrowser()
 		Me.PnlSidechat = New System.Windows.Forms.Panel()
 		Me.ChatText2 = New System.Windows.Forms.WebBrowser()
 		Me.PNLChatBox2 = New System.Windows.Forms.Panel()
@@ -359,17 +327,62 @@ Partial Class Form1
 		Me.BTNRandomJOI = New System.Windows.Forms.Button()
 		Me.BTNRandomVideo = New System.Windows.Forms.Button()
 		Me.BTNRandomBlog = New System.Windows.Forms.Button()
+		Me.PNLDomTagBTN = New System.Windows.Forms.Panel()
+		Me.DommeTagBtnNextImage = New System.Windows.Forms.Button()
+		Me.DommeTagBtnLastImage = New System.Windows.Forms.Button()
+		Me.TBFurniture = New System.Windows.Forms.TextBox()
+		Me.Masturbating = New System.Windows.Forms.Button()
+		Me.Feet = New System.Windows.Forms.Button()
+		Me.TBSexToy = New System.Windows.Forms.TextBox()
+		Me.Legs = New System.Windows.Forms.Button()
+		Me.Sucking = New System.Windows.Forms.Button()
+		Me.TBTattoo = New System.Windows.Forms.TextBox()
+		Me.Face = New System.Windows.Forms.Button()
+		Me.TBUnderwear = New System.Windows.Forms.TextBox()
+		Me.Smiling = New System.Windows.Forms.Button()
+		Me.Pussy = New System.Windows.Forms.Button()
+		Me.Glaring = New System.Windows.Forms.Button()
+		Me.TBGarment = New System.Windows.Forms.TextBox()
+		Me.Boobs = New System.Windows.Forms.Button()
+		Me.FullyDressed = New System.Windows.Forms.Button()
+		Me.Furniture = New System.Windows.Forms.Button()
+		Me.Ass = New System.Windows.Forms.Button()
+		Me.HalfDressed = New System.Windows.Forms.Button()
+		Me.SexToy = New System.Windows.Forms.Button()
+		Me.GarmentCovering = New System.Windows.Forms.Button()
+		Me.Tattoo = New System.Windows.Forms.Button()
+		Me.HandsCovering = New System.Windows.Forms.Button()
+		Me.Naked = New System.Windows.Forms.Button()
+		Me.Underwear = New System.Windows.Forms.Button()
+		Me.SideView = New System.Windows.Forms.Button()
+		Me.CloseUp = New System.Windows.Forms.Button()
+		Me.Garment = New System.Windows.Forms.Button()
+		Me.SeeThrough = New System.Windows.Forms.Button()
+		Me.AllFours = New System.Windows.Forms.Button()
+		Me.Piercing = New System.Windows.Forms.Button()
 		Me.PNLLazySub2 = New System.Windows.Forms.Panel()
 		Me.PNLPlaylist = New System.Windows.Forms.Panel()
 		Me.LBPlaylist = New System.Windows.Forms.ListBox()
 		Me.BTNPlaylist = New System.Windows.Forms.Button()
-		Me.voiceDomWMP = New AxWMPLib.AxWindowsMediaPlayer()
+		Me.PNLDate = New System.Windows.Forms.Panel()
+		Me.LBLDate = New System.Windows.Forms.Label()
+		Me.LBLTime = New System.Windows.Forms.Label()
+		Me.LBLAMPM = New System.Windows.Forms.Label()
 		Me.PNLAvatar = New System.Windows.Forms.Panel()
 		Me.PnlAvatarBackground = New System.Windows.Forms.Panel()
 		Me.PnlAvatarInner = New System.Windows.Forms.Panel()
 		Me.Panel7 = New System.Windows.Forms.Panel()
+		Me.domAvatar = New System.Windows.Forms.PictureBox()
 		Me.Panel4 = New System.Windows.Forms.Panel()
+		Me.domName = New System.Windows.Forms.TextBox()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.subName = New System.Windows.Forms.TextBox()
+		Me.PNLFileTransfer = New System.Windows.Forms.Panel()
+		Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+		Me.BTNFileTransferOpen = New System.Windows.Forms.Button()
+		Me.BTNFIleTransferDismiss = New System.Windows.Forms.Button()
+		Me.LBLFileTransfer = New System.Windows.Forms.Label()
+		Me.PBFileTransfer = New System.Windows.Forms.ProgressBar()
 		Me.PNLLazySubAV = New System.Windows.Forms.Panel()
 		Me.Button10 = New System.Windows.Forms.Button()
 		Me.Button11 = New System.Windows.Forms.Button()
@@ -381,11 +394,12 @@ Partial Class Form1
 		Me.Button2 = New System.Windows.Forms.Button()
 		Me.Button3 = New System.Windows.Forms.Button()
 		Me.Button4 = New System.Windows.Forms.Button()
-		Me.PnlSidepanelLayout = New System.Windows.Forms.Panel()
-		Me.PnlTabsLayout = New System.Windows.Forms.Panel()
 		Me.contextWMP = New AxWMPLib.AxWindowsMediaPlayer()
-		Me.PnlLayoutForm = New System.Windows.Forms.Panel()
-		Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+		Me.sendButton = New System.Windows.Forms.Button()
+		Me.LBLVolumeDomWMP = New System.Windows.Forms.Label()
+		Me.LBLVolumecontextWMP = New System.Windows.Forms.Label()
+		Me.LBLVolumevoiceDomWMP = New System.Windows.Forms.Label()
+		Me.LBLVolumeBeatmeter = New System.Windows.Forms.Label()
 		Me.TimerMarVidVolume = New Tease_AI.teaseAI_Timer()
 		Me.TimerMarBeatmeterStart = New Tease_AI.teaseAI_Timer()
 		Me.TimerMarCHC = New Tease_AI.teaseAI_Timer()
@@ -421,25 +435,29 @@ Partial Class Form1
 		Me.TimeoutTimer = New Tease_AI.teaseAI_Timer()
 		Me.VideoTimer = New Tease_AI.teaseAI_Timer()
 		Me.MultipleEdgesTimer = New Tease_AI.teaseAI_Timer()
-		CType(Me.mainPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.domAvatar, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.PictureStrip.SuspendLayout()
+		Me.TeaseAIMenu.SuspendLayout()
+		Me.MenuStrip2.SuspendLayout()
+		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.PnlLayoutForm.SuspendLayout()
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SplitContainer1.Panel1.SuspendLayout()
 		Me.SplitContainer1.Panel2.SuspendLayout()
 		Me.SplitContainer1.SuspendLayout()
 		CType(Me.BeatMeterWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.DomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.mainPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PnlChatTextLayout.SuspendLayout()
 		Me.PNLMediaBar.SuspendLayout()
 		Me.PnlChatBoxLayout.SuspendLayout()
-		Me.PNLDomTagBTN.SuspendLayout()
-		Me.PNLFileTransfer.SuspendLayout()
-		CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.PictureStrip.SuspendLayout()
-		Me.TeaseAIMenu.SuspendLayout()
-		Me.MenuStrip2.SuspendLayout()
-		Me.PNLDate.SuspendLayout()
+		Me.PnlSidepanelLayout.SuspendLayout()
+		Me.PnlTabsLayout.SuspendLayout()
 		Me.PNLTabs.SuspendLayout()
+		Me.PNLVolumes.SuspendLayout()
+		CType(Me.sliderVolumeBeatmeter, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.sliderVolumevoiceDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.sliderVolumecontextWMP, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.sliderVolumeDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PNLWishList.SuspendLayout()
 		CType(Me.WishlistCostSilver, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.WishlistCostGold, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -462,916 +480,21 @@ Partial Class Form1
 		Me.PNLChatBox2.SuspendLayout()
 		Me.PNLWritingTask.SuspendLayout()
 		Me.PNLAppRandomizer.SuspendLayout()
+		Me.PNLDomTagBTN.SuspendLayout()
 		Me.PNLPlaylist.SuspendLayout()
-		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.PNLDate.SuspendLayout()
 		Me.PNLAvatar.SuspendLayout()
 		Me.PnlAvatarBackground.SuspendLayout()
 		Me.PnlAvatarInner.SuspendLayout()
 		Me.Panel7.SuspendLayout()
+		CType(Me.domAvatar, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel4.SuspendLayout()
 		Me.Panel3.SuspendLayout()
+		Me.PNLFileTransfer.SuspendLayout()
+		CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PNLLazySubAV.SuspendLayout()
-		Me.PnlSidepanelLayout.SuspendLayout()
-		Me.PnlTabsLayout.SuspendLayout()
 		CType(Me.contextWMP, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.PnlLayoutForm.SuspendLayout()
 		Me.SuspendLayout()
-		'
-		'domName
-		'
-		Me.domName.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
-		Me.domName.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.domName.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "BackgroundColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.domName.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.domName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.domName.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.domName.Location = New System.Drawing.Point(1, 4)
-		Me.domName.Margin = New System.Windows.Forms.Padding(1)
-		Me.domName.Name = "domName"
-		Me.domName.Size = New System.Drawing.Size(243, 16)
-		Me.domName.TabIndex = 2
-		Me.domName.Text = "Domme Name"
-		Me.domName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-		'
-		'chatBox
-		'
-		Me.chatBox.AllowDrop = True
-		Me.chatBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-			Or System.Windows.Forms.AnchorStyles.Left) _
-			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.chatBox.Location = New System.Drawing.Point(5, 4)
-		Me.chatBox.Name = "chatBox"
-		Me.chatBox.Size = New System.Drawing.Size(1076, 20)
-		Me.chatBox.TabIndex = 1
-		'
-		'mainPictureBox
-		'
-		Me.mainPictureBox.BackColor = System.Drawing.Color.Black
-		Me.mainPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.mainPictureBox.Image = CType(resources.GetObject("mainPictureBox.Image"), System.Drawing.Image)
-		Me.mainPictureBox.Location = New System.Drawing.Point(0, 0)
-		Me.mainPictureBox.Name = "mainPictureBox"
-		Me.mainPictureBox.Size = New System.Drawing.Size(1398, 488)
-		Me.mainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.mainPictureBox.TabIndex = 3
-		Me.mainPictureBox.TabStop = False
-		'
-		'domAvatar
-		'
-		Me.domAvatar.BackColor = System.Drawing.Color.Black
-		Me.domAvatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.domAvatar.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.domAvatar.Image = CType(resources.GetObject("domAvatar.Image"), System.Drawing.Image)
-		Me.domAvatar.Location = New System.Drawing.Point(0, 3)
-		Me.domAvatar.Name = "domAvatar"
-		Me.domAvatar.Size = New System.Drawing.Size(230, 173)
-		Me.domAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.domAvatar.TabIndex = 117
-		Me.domAvatar.TabStop = False
-		'
-		'SplitContainer1
-		'
-		Me.SplitContainer1.BackColor = System.Drawing.Color.Transparent
-		Me.SplitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.SplitContainer1.DataBindings.Add(New System.Windows.Forms.Binding("SplitterDistance", Global.Tease_AI.My.MySettings.Default, "SplitterPosition", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
-		Me.SplitContainer1.Location = New System.Drawing.Point(265, 12)
-		Me.SplitContainer1.Name = "SplitContainer1"
-		Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
-		'
-		'SplitContainer1.Panel1
-		'
-		Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Black
-		Me.SplitContainer1.Panel1.Controls.Add(Me.Label2)
-		Me.SplitContainer1.Panel1.Controls.Add(Me.BeatMeterWMP)
-		Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
-		Me.SplitContainer1.Panel1.Controls.Add(Me.DomWMP)
-		Me.SplitContainer1.Panel1.Controls.Add(Me.ProgressBar_BGW_Images)
-		Me.SplitContainer1.Panel1.Controls.Add(Me.CensorshipBar)
-		Me.SplitContainer1.Panel1.Controls.Add(Me.LBLImageInfo)
-		Me.SplitContainer1.Panel1.Controls.Add(Me.mainPictureBox)
-		Me.SplitContainer1.Panel1MinSize = 180
-		'
-		'SplitContainer1.Panel2
-		'
-		Me.SplitContainer1.Panel2.BackColor = System.Drawing.Color.Transparent
-		Me.SplitContainer1.Panel2.Controls.Add(Me.PnlChatTextLayout)
-		Me.SplitContainer1.Panel2.Controls.Add(Me.PNLMediaBar)
-		Me.SplitContainer1.Panel2MinSize = 0
-		Me.SplitContainer1.Size = New System.Drawing.Size(1402, 947)
-		Me.SplitContainer1.SplitterDistance = Global.Tease_AI.My.MySettings.Default.SplitterPosition
-		Me.SplitContainer1.SplitterWidth = 10
-		Me.SplitContainer1.TabIndex = 136
-		'
-		'Label2
-		'
-		Me.Label2.AutoSize = True
-		Me.Label2.BackColor = System.Drawing.Color.Black
-		Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.Label2.Font = New System.Drawing.Font("Segoe Print", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.ForeColor = System.Drawing.Color.GhostWhite
-		Me.Label2.Location = New System.Drawing.Point(680, 223)
-		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(88, 39)
-		Me.Label2.TabIndex = 100
-		Me.Label2.Text = "Label2"
-		'
-		'BeatMeterWMP
-		'
-		Me.BeatMeterWMP.Anchor = System.Windows.Forms.AnchorStyles.None
-		Me.BeatMeterWMP.Enabled = True
-		Me.BeatMeterWMP.Location = New System.Drawing.Point(608, 239)
-		Me.BeatMeterWMP.Name = "BeatMeterWMP"
-		Me.BeatMeterWMP.OcxState = CType(resources.GetObject("BeatMeterWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.BeatMeterWMP.Size = New System.Drawing.Size(790, 183)
-		Me.BeatMeterWMP.TabIndex = 98
-		Me.BeatMeterWMP.Visible = False
-		'
-		'Label1
-		'
-		Me.Label1.AutoSize = True
-		Me.Label1.Location = New System.Drawing.Point(939, 73)
-		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(39, 13)
-		Me.Label1.TabIndex = 98
-		Me.Label1.Text = "Label1"
-		'
-		'DomWMP
-		'
-		Me.DomWMP.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.DomWMP.Enabled = True
-		Me.DomWMP.Location = New System.Drawing.Point(0, 0)
-		Me.DomWMP.Name = "DomWMP"
-		Me.DomWMP.OcxState = CType(resources.GetObject("DomWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.DomWMP.Size = New System.Drawing.Size(1398, 482)
-		Me.DomWMP.TabIndex = 96
-		Me.DomWMP.Visible = False
-		'
-		'ProgressBar_BGW_Images
-		'
-		Me.ProgressBar_BGW_Images.Dock = System.Windows.Forms.DockStyle.Bottom
-		Me.ProgressBar_BGW_Images.Location = New System.Drawing.Point(0, 482)
-		Me.ProgressBar_BGW_Images.MarqueeAnimationSpeed = 10000
-		Me.ProgressBar_BGW_Images.Name = "ProgressBar_BGW_Images"
-		Me.ProgressBar_BGW_Images.Size = New System.Drawing.Size(1398, 6)
-		Me.ProgressBar_BGW_Images.Style = System.Windows.Forms.ProgressBarStyle.Continuous
-		Me.ProgressBar_BGW_Images.TabIndex = 97
-		Me.ProgressBar_BGW_Images.Visible = False
-		'
-		'CensorshipBar
-		'
-		Me.CensorshipBar.BackColor = System.Drawing.Color.Black
-		Me.CensorshipBar.BackgroundImage = CType(resources.GetObject("CensorshipBar.BackgroundImage"), System.Drawing.Image)
-		Me.CensorshipBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		Me.CensorshipBar.Location = New System.Drawing.Point(32, 405)
-		Me.CensorshipBar.Name = "CensorshipBar"
-		Me.CensorshipBar.Size = New System.Drawing.Size(637, 244)
-		Me.CensorshipBar.TabIndex = 94
-		Me.CensorshipBar.Visible = False
-		'
-		'LBLImageInfo
-		'
-		Me.LBLImageInfo.AutoSize = True
-		Me.LBLImageInfo.BackColor = System.Drawing.Color.Black
-		Me.LBLImageInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.LBLImageInfo.ForeColor = System.Drawing.Color.White
-		Me.LBLImageInfo.Location = New System.Drawing.Point(0, 0)
-		Me.LBLImageInfo.Name = "LBLImageInfo"
-		Me.LBLImageInfo.Size = New System.Drawing.Size(0, 17)
-		Me.LBLImageInfo.TabIndex = 95
-		Me.LBLImageInfo.Visible = False
-		'
-		'PnlChatTextLayout
-		'
-		Me.PnlChatTextLayout.BackColor = System.Drawing.Color.Black
-		Me.PnlChatTextLayout.Controls.Add(Me.ChatText)
-		Me.PnlChatTextLayout.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.PnlChatTextLayout.Location = New System.Drawing.Point(0, 32)
-		Me.PnlChatTextLayout.Name = "PnlChatTextLayout"
-		Me.PnlChatTextLayout.Padding = New System.Windows.Forms.Padding(1)
-		Me.PnlChatTextLayout.Size = New System.Drawing.Size(1398, 409)
-		Me.PnlChatTextLayout.TabIndex = 783
-		'
-		'ChatText
-		'
-		Me.ChatText.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.ChatText.Location = New System.Drawing.Point(1, 1)
-		Me.ChatText.MinimumSize = New System.Drawing.Size(2, 20)
-		Me.ChatText.Name = "ChatText"
-		Me.ChatText.Size = New System.Drawing.Size(1396, 407)
-		Me.ChatText.TabIndex = 1
-		'
-		'PNLMediaBar
-		'
-		Me.PNLMediaBar.BackColor = System.Drawing.Color.Transparent
-		Me.PNLMediaBar.Controls.Add(Me.ImageFolderComboBox)
-		Me.PNLMediaBar.Controls.Add(Me.BTNLoadVideo)
-		Me.PNLMediaBar.Controls.Add(Me.previousButton)
-		Me.PNLMediaBar.Controls.Add(Me.browsefolderButton)
-		Me.PNLMediaBar.Controls.Add(Me.nextButton)
-		Me.PNLMediaBar.Controls.Add(Me.BTNVideoControls)
-		Me.PNLMediaBar.Dock = System.Windows.Forms.DockStyle.Top
-		Me.PNLMediaBar.Location = New System.Drawing.Point(0, 0)
-		Me.PNLMediaBar.Name = "PNLMediaBar"
-		Me.PNLMediaBar.Padding = New System.Windows.Forms.Padding(1, 1, 1, 10)
-		Me.PNLMediaBar.Size = New System.Drawing.Size(1398, 32)
-		Me.PNLMediaBar.TabIndex = 97
-		Me.PNLMediaBar.Visible = False
-		'
-		'ImageFolderComboBox
-		'
-		Me.ImageFolderComboBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-			Or System.Windows.Forms.AnchorStyles.Left) _
-			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.ImageFolderComboBox.BackColor = System.Drawing.Color.White
-		Me.ImageFolderComboBox.ForeColor = System.Drawing.Color.Black
-		Me.ImageFolderComboBox.FormattingEnabled = True
-		Me.ImageFolderComboBox.Location = New System.Drawing.Point(54, 5)
-		Me.ImageFolderComboBox.Name = "ImageFolderComboBox"
-		Me.ImageFolderComboBox.Size = New System.Drawing.Size(1031, 21)
-		Me.ImageFolderComboBox.TabIndex = 8
-		Me.ImageFolderComboBox.Text = "Enter Image Directory"
-		'
-		'BTNLoadVideo
-		'
-		Me.BTNLoadVideo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.BTNLoadVideo.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
-		Me.BTNLoadVideo.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BTNLoadVideo.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BTNLoadVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.BTNLoadVideo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.BTNLoadVideo.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.BTNLoadVideo.Location = New System.Drawing.Point(1202, 1)
-		Me.BTNLoadVideo.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
-		Me.BTNLoadVideo.Name = "BTNLoadVideo"
-		Me.BTNLoadVideo.Size = New System.Drawing.Size(74, 30)
-		Me.BTNLoadVideo.TabIndex = 11
-		Me.BTNLoadVideo.Text = "Load Video"
-		Me.BTNLoadVideo.UseVisualStyleBackColor = False
-		'
-		'previousButton
-		'
-		Me.previousButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.previousButton.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
-		Me.previousButton.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.previousButton.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.previousButton.Enabled = False
-		Me.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.previousButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.previousButton.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.previousButton.Location = New System.Drawing.Point(1092, 1)
-		Me.previousButton.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
-		Me.previousButton.Name = "previousButton"
-		Me.previousButton.Size = New System.Drawing.Size(53, 30)
-		Me.previousButton.TabIndex = 6
-		Me.previousButton.Text = "<<"
-		Me.previousButton.UseVisualStyleBackColor = False
-		'
-		'browsefolderButton
-		'
-		Me.browsefolderButton.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
-		Me.browsefolderButton.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.browsefolderButton.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.browsefolderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.browsefolderButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.browsefolderButton.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.browsefolderButton.Location = New System.Drawing.Point(1, 1)
-		Me.browsefolderButton.Name = "browsefolderButton"
-		Me.browsefolderButton.Size = New System.Drawing.Size(47, 30)
-		Me.browsefolderButton.TabIndex = 3
-		Me.browsefolderButton.Text = "Open"
-		Me.browsefolderButton.UseVisualStyleBackColor = False
-		'
-		'nextButton
-		'
-		Me.nextButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.nextButton.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
-		Me.nextButton.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.nextButton.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.nextButton.Enabled = False
-		Me.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.nextButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.nextButton.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.nextButton.Location = New System.Drawing.Point(1146, 1)
-		Me.nextButton.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
-		Me.nextButton.Name = "nextButton"
-		Me.nextButton.Size = New System.Drawing.Size(55, 30)
-		Me.nextButton.TabIndex = 7
-		Me.nextButton.Text = ">>"
-		Me.nextButton.UseVisualStyleBackColor = False
-		'
-		'BTNVideoControls
-		'
-		Me.BTNVideoControls.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.BTNVideoControls.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
-		Me.BTNVideoControls.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BTNVideoControls.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BTNVideoControls.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.BTNVideoControls.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.BTNVideoControls.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.BTNVideoControls.Location = New System.Drawing.Point(1277, 1)
-		Me.BTNVideoControls.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
-		Me.BTNVideoControls.Name = "BTNVideoControls"
-		Me.BTNVideoControls.Size = New System.Drawing.Size(120, 30)
-		Me.BTNVideoControls.TabIndex = 15
-		Me.BTNVideoControls.Text = "Show Video Controls"
-		Me.BTNVideoControls.UseVisualStyleBackColor = False
-		'
-		'PnlChatBoxLayout
-		'
-		Me.PnlChatBoxLayout.BackColor = System.Drawing.Color.Transparent
-		Me.PnlChatBoxLayout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.PnlChatBoxLayout.Controls.Add(Me.chatBox)
-		Me.PnlChatBoxLayout.Controls.Add(Me.BtnToggleSettings)
-		Me.PnlChatBoxLayout.Controls.Add(Me.BtnToggleMediaPanel)
-		Me.PnlChatBoxLayout.Controls.Add(Me.BtnToggleImageVideo)
-		Me.PnlChatBoxLayout.Dock = System.Windows.Forms.DockStyle.Bottom
-		Me.PnlChatBoxLayout.Location = New System.Drawing.Point(265, 959)
-		Me.PnlChatBoxLayout.Name = "PnlChatBoxLayout"
-		Me.PnlChatBoxLayout.Padding = New System.Windows.Forms.Padding(2)
-		Me.PnlChatBoxLayout.Size = New System.Drawing.Size(1402, 32)
-		Me.PnlChatBoxLayout.TabIndex = 782
-		'
-		'BtnToggleSettings
-		'
-		Me.BtnToggleSettings.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.BtnToggleSettings.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
-		Me.BtnToggleSettings.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BtnToggleSettings.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BtnToggleSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.BtnToggleSettings.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.BtnToggleSettings.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.BtnToggleSettings.Location = New System.Drawing.Point(1274, 2)
-		Me.BtnToggleSettings.Name = "BtnToggleSettings"
-		Me.BtnToggleSettings.Size = New System.Drawing.Size(123, 24)
-		Me.BtnToggleSettings.TabIndex = 19
-		Me.BtnToggleSettings.Text = "Open Settings Menu"
-		Me.BtnToggleSettings.UseVisualStyleBackColor = False
-		'
-		'BtnToggleMediaPanel
-		'
-		Me.BtnToggleMediaPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.BtnToggleMediaPanel.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
-		Me.BtnToggleMediaPanel.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BtnToggleMediaPanel.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BtnToggleMediaPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.BtnToggleMediaPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.BtnToggleMediaPanel.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.BtnToggleMediaPanel.Location = New System.Drawing.Point(1087, 2)
-		Me.BtnToggleMediaPanel.Name = "BtnToggleMediaPanel"
-		Me.BtnToggleMediaPanel.Size = New System.Drawing.Size(111, 24)
-		Me.BtnToggleMediaPanel.TabIndex = 147
-		Me.BtnToggleMediaPanel.Text = "Show Media Panel"
-		Me.BtnToggleMediaPanel.UseVisualStyleBackColor = False
-		'
-		'BtnToggleImageVideo
-		'
-		Me.BtnToggleImageVideo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.BtnToggleImageVideo.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
-		Me.BtnToggleImageVideo.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BtnToggleImageVideo.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.BtnToggleImageVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.BtnToggleImageVideo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.BtnToggleImageVideo.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.BtnToggleImageVideo.Location = New System.Drawing.Point(1199, 2)
-		Me.BtnToggleImageVideo.Name = "BtnToggleImageVideo"
-		Me.BtnToggleImageVideo.Size = New System.Drawing.Size(74, 24)
-		Me.BtnToggleImageVideo.TabIndex = 149
-		Me.BtnToggleImageVideo.Text = "Img <-> Vid"
-		Me.BtnToggleImageVideo.UseVisualStyleBackColor = False
-		'
-		'PNLDomTagBTN
-		'
-		Me.PNLDomTagBTN.BackColor = System.Drawing.Color.Transparent
-		Me.PNLDomTagBTN.Controls.Add(Me.DommeTagBtnNextImage)
-		Me.PNLDomTagBTN.Controls.Add(Me.DommeTagBtnLastImage)
-		Me.PNLDomTagBTN.Controls.Add(Me.TBFurniture)
-		Me.PNLDomTagBTN.Controls.Add(Me.Masturbating)
-		Me.PNLDomTagBTN.Controls.Add(Me.Feet)
-		Me.PNLDomTagBTN.Controls.Add(Me.TBSexToy)
-		Me.PNLDomTagBTN.Controls.Add(Me.Legs)
-		Me.PNLDomTagBTN.Controls.Add(Me.Sucking)
-		Me.PNLDomTagBTN.Controls.Add(Me.TBTattoo)
-		Me.PNLDomTagBTN.Controls.Add(Me.Face)
-		Me.PNLDomTagBTN.Controls.Add(Me.TBUnderwear)
-		Me.PNLDomTagBTN.Controls.Add(Me.Smiling)
-		Me.PNLDomTagBTN.Controls.Add(Me.Pussy)
-		Me.PNLDomTagBTN.Controls.Add(Me.Glaring)
-		Me.PNLDomTagBTN.Controls.Add(Me.TBGarment)
-		Me.PNLDomTagBTN.Controls.Add(Me.Boobs)
-		Me.PNLDomTagBTN.Controls.Add(Me.FullyDressed)
-		Me.PNLDomTagBTN.Controls.Add(Me.Furniture)
-		Me.PNLDomTagBTN.Controls.Add(Me.Ass)
-		Me.PNLDomTagBTN.Controls.Add(Me.HalfDressed)
-		Me.PNLDomTagBTN.Controls.Add(Me.SexToy)
-		Me.PNLDomTagBTN.Controls.Add(Me.GarmentCovering)
-		Me.PNLDomTagBTN.Controls.Add(Me.Tattoo)
-		Me.PNLDomTagBTN.Controls.Add(Me.HandsCovering)
-		Me.PNLDomTagBTN.Controls.Add(Me.Naked)
-		Me.PNLDomTagBTN.Controls.Add(Me.Underwear)
-		Me.PNLDomTagBTN.Controls.Add(Me.SideView)
-		Me.PNLDomTagBTN.Controls.Add(Me.CloseUp)
-		Me.PNLDomTagBTN.Controls.Add(Me.Garment)
-		Me.PNLDomTagBTN.Controls.Add(Me.SeeThrough)
-		Me.PNLDomTagBTN.Controls.Add(Me.AllFours)
-		Me.PNLDomTagBTN.Controls.Add(Me.Piercing)
-		Me.PNLDomTagBTN.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.PNLDomTagBTN.Location = New System.Drawing.Point(0, 0)
-		Me.PNLDomTagBTN.Name = "PNLDomTagBTN"
-		Me.PNLDomTagBTN.Size = New System.Drawing.Size(240, 619)
-		Me.PNLDomTagBTN.TabIndex = 0
-		'
-		'DommeTagBtnNextImage
-		'
-		Me.DommeTagBtnNextImage.BackColor = System.Drawing.Color.White
-		Me.DommeTagBtnNextImage.FlatAppearance.BorderSize = 2
-		Me.DommeTagBtnNextImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.DommeTagBtnNextImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.DommeTagBtnNextImage.ForeColor = System.Drawing.Color.Black
-		Me.DommeTagBtnNextImage.Location = New System.Drawing.Point(123, 465)
-		Me.DommeTagBtnNextImage.Name = "DommeTagBtnNextImage"
-		Me.DommeTagBtnNextImage.Size = New System.Drawing.Size(55, 31)
-		Me.DommeTagBtnNextImage.TabIndex = 66
-		Me.DommeTagBtnNextImage.Text = ">>"
-		Me.DommeTagBtnNextImage.UseVisualStyleBackColor = False
-		'
-		'DommeTagBtnLastImage
-		'
-		Me.DommeTagBtnLastImage.BackColor = System.Drawing.Color.White
-		Me.DommeTagBtnLastImage.FlatAppearance.BorderSize = 2
-		Me.DommeTagBtnLastImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.DommeTagBtnLastImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.DommeTagBtnLastImage.ForeColor = System.Drawing.Color.Black
-		Me.DommeTagBtnLastImage.Location = New System.Drawing.Point(66, 465)
-		Me.DommeTagBtnLastImage.Name = "DommeTagBtnLastImage"
-		Me.DommeTagBtnLastImage.Size = New System.Drawing.Size(55, 31)
-		Me.DommeTagBtnLastImage.TabIndex = 65
-		Me.DommeTagBtnLastImage.Text = "<<"
-		Me.DommeTagBtnLastImage.UseVisualStyleBackColor = False
-		'
-		'TBFurniture
-		'
-		Me.TBFurniture.BackColor = System.Drawing.Color.LightGray
-		Me.TBFurniture.ForeColor = System.Drawing.Color.Black
-		Me.TBFurniture.Location = New System.Drawing.Point(130, 434)
-		Me.TBFurniture.Name = "TBFurniture"
-		Me.TBFurniture.Size = New System.Drawing.Size(104, 20)
-		Me.TBFurniture.TabIndex = 64
-		'
-		'Masturbating
-		'
-		Me.Masturbating.AllowDrop = True
-		Me.Masturbating.BackColor = System.Drawing.Color.White
-		Me.Masturbating.FlatAppearance.BorderSize = 2
-		Me.Masturbating.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Masturbating.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Masturbating.ForeColor = System.Drawing.Color.Black
-		Me.Masturbating.Location = New System.Drawing.Point(11, 191)
-		Me.Masturbating.Name = "Masturbating"
-		Me.Masturbating.Size = New System.Drawing.Size(104, 24)
-		Me.Masturbating.TabIndex = 41
-		Me.Masturbating.Text = "Masturbating"
-		Me.Masturbating.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Masturbating.UseVisualStyleBackColor = False
-		'
-		'Feet
-		'
-		Me.Feet.AllowDrop = True
-		Me.Feet.BackColor = System.Drawing.Color.White
-		Me.Feet.FlatAppearance.BorderSize = 2
-		Me.Feet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Feet.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Feet.ForeColor = System.Drawing.Color.Black
-		Me.Feet.Location = New System.Drawing.Point(11, 161)
-		Me.Feet.Name = "Feet"
-		Me.Feet.Size = New System.Drawing.Size(104, 24)
-		Me.Feet.TabIndex = 40
-		Me.Feet.Text = "Feet"
-		Me.Feet.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Feet.UseVisualStyleBackColor = False
-		'
-		'TBSexToy
-		'
-		Me.TBSexToy.BackColor = System.Drawing.Color.LightGray
-		Me.TBSexToy.ForeColor = System.Drawing.Color.Black
-		Me.TBSexToy.Location = New System.Drawing.Point(130, 404)
-		Me.TBSexToy.Name = "TBSexToy"
-		Me.TBSexToy.Size = New System.Drawing.Size(104, 20)
-		Me.TBSexToy.TabIndex = 63
-		'
-		'Legs
-		'
-		Me.Legs.AllowDrop = True
-		Me.Legs.BackColor = System.Drawing.Color.White
-		Me.Legs.FlatAppearance.BorderSize = 2
-		Me.Legs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Legs.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Legs.ForeColor = System.Drawing.Color.Black
-		Me.Legs.Location = New System.Drawing.Point(11, 131)
-		Me.Legs.Name = "Legs"
-		Me.Legs.Size = New System.Drawing.Size(104, 24)
-		Me.Legs.TabIndex = 39
-		Me.Legs.Text = "Legs"
-		Me.Legs.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Legs.UseVisualStyleBackColor = False
-		'
-		'Sucking
-		'
-		Me.Sucking.AllowDrop = True
-		Me.Sucking.BackColor = System.Drawing.Color.White
-		Me.Sucking.FlatAppearance.BorderSize = 2
-		Me.Sucking.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Sucking.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Sucking.ForeColor = System.Drawing.Color.Black
-		Me.Sucking.Location = New System.Drawing.Point(11, 221)
-		Me.Sucking.Name = "Sucking"
-		Me.Sucking.Size = New System.Drawing.Size(104, 24)
-		Me.Sucking.TabIndex = 42
-		Me.Sucking.Text = "Sucking"
-		Me.Sucking.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Sucking.UseVisualStyleBackColor = False
-		'
-		'TBTattoo
-		'
-		Me.TBTattoo.BackColor = System.Drawing.Color.LightGray
-		Me.TBTattoo.ForeColor = System.Drawing.Color.Black
-		Me.TBTattoo.Location = New System.Drawing.Point(130, 374)
-		Me.TBTattoo.Name = "TBTattoo"
-		Me.TBTattoo.Size = New System.Drawing.Size(104, 20)
-		Me.TBTattoo.TabIndex = 62
-		'
-		'Face
-		'
-		Me.Face.AllowDrop = True
-		Me.Face.BackColor = System.Drawing.Color.White
-		Me.Face.FlatAppearance.BorderSize = 2
-		Me.Face.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Face.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Face.ForeColor = System.Drawing.Color.Black
-		Me.Face.Location = New System.Drawing.Point(11, 11)
-		Me.Face.Name = "Face"
-		Me.Face.Size = New System.Drawing.Size(104, 24)
-		Me.Face.TabIndex = 38
-		Me.Face.Text = "Face"
-		Me.Face.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Face.UseVisualStyleBackColor = False
-		'
-		'TBUnderwear
-		'
-		Me.TBUnderwear.BackColor = System.Drawing.Color.LightGray
-		Me.TBUnderwear.ForeColor = System.Drawing.Color.Black
-		Me.TBUnderwear.Location = New System.Drawing.Point(130, 344)
-		Me.TBUnderwear.Name = "TBUnderwear"
-		Me.TBUnderwear.Size = New System.Drawing.Size(104, 20)
-		Me.TBUnderwear.TabIndex = 61
-		'
-		'Smiling
-		'
-		Me.Smiling.AllowDrop = True
-		Me.Smiling.BackColor = System.Drawing.Color.White
-		Me.Smiling.FlatAppearance.BorderSize = 2
-		Me.Smiling.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Smiling.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Smiling.ForeColor = System.Drawing.Color.Black
-		Me.Smiling.Location = New System.Drawing.Point(11, 251)
-		Me.Smiling.Name = "Smiling"
-		Me.Smiling.Size = New System.Drawing.Size(104, 24)
-		Me.Smiling.TabIndex = 43
-		Me.Smiling.Text = "Smiling"
-		Me.Smiling.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Smiling.UseVisualStyleBackColor = False
-		'
-		'Pussy
-		'
-		Me.Pussy.AllowDrop = True
-		Me.Pussy.BackColor = System.Drawing.Color.White
-		Me.Pussy.FlatAppearance.BorderSize = 2
-		Me.Pussy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Pussy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Pussy.ForeColor = System.Drawing.Color.Black
-		Me.Pussy.Location = New System.Drawing.Point(11, 71)
-		Me.Pussy.Name = "Pussy"
-		Me.Pussy.Size = New System.Drawing.Size(104, 24)
-		Me.Pussy.TabIndex = 37
-		Me.Pussy.Text = "Pussy"
-		Me.Pussy.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Pussy.UseVisualStyleBackColor = False
-		'
-		'Glaring
-		'
-		Me.Glaring.AllowDrop = True
-		Me.Glaring.BackColor = System.Drawing.Color.White
-		Me.Glaring.FlatAppearance.BorderSize = 2
-		Me.Glaring.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Glaring.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Glaring.ForeColor = System.Drawing.Color.Black
-		Me.Glaring.Location = New System.Drawing.Point(11, 281)
-		Me.Glaring.Name = "Glaring"
-		Me.Glaring.Size = New System.Drawing.Size(104, 24)
-		Me.Glaring.TabIndex = 44
-		Me.Glaring.Text = "Glaring"
-		Me.Glaring.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Glaring.UseVisualStyleBackColor = False
-		'
-		'TBGarment
-		'
-		Me.TBGarment.BackColor = System.Drawing.Color.LightGray
-		Me.TBGarment.ForeColor = System.Drawing.Color.Black
-		Me.TBGarment.Location = New System.Drawing.Point(130, 314)
-		Me.TBGarment.Name = "TBGarment"
-		Me.TBGarment.Size = New System.Drawing.Size(104, 20)
-		Me.TBGarment.TabIndex = 60
-		'
-		'Boobs
-		'
-		Me.Boobs.AllowDrop = True
-		Me.Boobs.BackColor = System.Drawing.Color.White
-		Me.Boobs.FlatAppearance.BorderSize = 2
-		Me.Boobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Boobs.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Boobs.ForeColor = System.Drawing.Color.Black
-		Me.Boobs.Location = New System.Drawing.Point(11, 41)
-		Me.Boobs.Name = "Boobs"
-		Me.Boobs.Size = New System.Drawing.Size(104, 24)
-		Me.Boobs.TabIndex = 36
-		Me.Boobs.Text = "Boobs"
-		Me.Boobs.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Boobs.UseVisualStyleBackColor = False
-		'
-		'FullyDressed
-		'
-		Me.FullyDressed.AllowDrop = True
-		Me.FullyDressed.BackColor = System.Drawing.Color.White
-		Me.FullyDressed.FlatAppearance.BorderSize = 2
-		Me.FullyDressed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.FullyDressed.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.FullyDressed.ForeColor = System.Drawing.Color.Black
-		Me.FullyDressed.Location = New System.Drawing.Point(130, 11)
-		Me.FullyDressed.Name = "FullyDressed"
-		Me.FullyDressed.Size = New System.Drawing.Size(104, 24)
-		Me.FullyDressed.TabIndex = 45
-		Me.FullyDressed.Text = "Fully Dressed"
-		Me.FullyDressed.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.FullyDressed.UseVisualStyleBackColor = False
-		'
-		'Furniture
-		'
-		Me.Furniture.AllowDrop = True
-		Me.Furniture.BackColor = System.Drawing.Color.White
-		Me.Furniture.FlatAppearance.BorderSize = 2
-		Me.Furniture.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Furniture.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Furniture.ForeColor = System.Drawing.Color.Black
-		Me.Furniture.Location = New System.Drawing.Point(11, 431)
-		Me.Furniture.Name = "Furniture"
-		Me.Furniture.Size = New System.Drawing.Size(104, 24)
-		Me.Furniture.TabIndex = 59
-		Me.Furniture.Text = "Furniture"
-		Me.Furniture.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Furniture.UseVisualStyleBackColor = False
-		'
-		'Ass
-		'
-		Me.Ass.AllowDrop = True
-		Me.Ass.BackColor = System.Drawing.Color.White
-		Me.Ass.FlatAppearance.BorderSize = 2
-		Me.Ass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Ass.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Ass.ForeColor = System.Drawing.Color.Black
-		Me.Ass.Location = New System.Drawing.Point(11, 101)
-		Me.Ass.Name = "Ass"
-		Me.Ass.Size = New System.Drawing.Size(104, 24)
-		Me.Ass.TabIndex = 35
-		Me.Ass.Text = "Ass"
-		Me.Ass.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Ass.UseVisualStyleBackColor = False
-		'
-		'HalfDressed
-		'
-		Me.HalfDressed.AllowDrop = True
-		Me.HalfDressed.BackColor = System.Drawing.Color.White
-		Me.HalfDressed.FlatAppearance.BorderSize = 2
-		Me.HalfDressed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.HalfDressed.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.HalfDressed.ForeColor = System.Drawing.Color.Black
-		Me.HalfDressed.Location = New System.Drawing.Point(130, 41)
-		Me.HalfDressed.Name = "HalfDressed"
-		Me.HalfDressed.Size = New System.Drawing.Size(104, 24)
-		Me.HalfDressed.TabIndex = 46
-		Me.HalfDressed.Text = "Half Dressed"
-		Me.HalfDressed.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.HalfDressed.UseVisualStyleBackColor = False
-		'
-		'SexToy
-		'
-		Me.SexToy.AllowDrop = True
-		Me.SexToy.BackColor = System.Drawing.Color.White
-		Me.SexToy.FlatAppearance.BorderSize = 2
-		Me.SexToy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.SexToy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.SexToy.ForeColor = System.Drawing.Color.Black
-		Me.SexToy.Location = New System.Drawing.Point(11, 401)
-		Me.SexToy.Name = "SexToy"
-		Me.SexToy.Size = New System.Drawing.Size(104, 24)
-		Me.SexToy.TabIndex = 58
-		Me.SexToy.Text = "Sex Toy"
-		Me.SexToy.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.SexToy.UseVisualStyleBackColor = False
-		'
-		'GarmentCovering
-		'
-		Me.GarmentCovering.AllowDrop = True
-		Me.GarmentCovering.BackColor = System.Drawing.Color.White
-		Me.GarmentCovering.FlatAppearance.BorderSize = 2
-		Me.GarmentCovering.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.GarmentCovering.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.GarmentCovering.ForeColor = System.Drawing.Color.Black
-		Me.GarmentCovering.Location = New System.Drawing.Point(130, 71)
-		Me.GarmentCovering.Name = "GarmentCovering"
-		Me.GarmentCovering.Size = New System.Drawing.Size(104, 24)
-		Me.GarmentCovering.TabIndex = 47
-		Me.GarmentCovering.Text = "Garment Covering"
-		Me.GarmentCovering.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.GarmentCovering.UseVisualStyleBackColor = False
-		'
-		'Tattoo
-		'
-		Me.Tattoo.AllowDrop = True
-		Me.Tattoo.BackColor = System.Drawing.Color.White
-		Me.Tattoo.FlatAppearance.BorderSize = 2
-		Me.Tattoo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Tattoo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Tattoo.ForeColor = System.Drawing.Color.Black
-		Me.Tattoo.Location = New System.Drawing.Point(11, 371)
-		Me.Tattoo.Name = "Tattoo"
-		Me.Tattoo.Size = New System.Drawing.Size(104, 24)
-		Me.Tattoo.TabIndex = 57
-		Me.Tattoo.Text = "Tattoo"
-		Me.Tattoo.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Tattoo.UseVisualStyleBackColor = False
-		'
-		'HandsCovering
-		'
-		Me.HandsCovering.AllowDrop = True
-		Me.HandsCovering.BackColor = System.Drawing.Color.White
-		Me.HandsCovering.FlatAppearance.BorderSize = 2
-		Me.HandsCovering.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.HandsCovering.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.HandsCovering.ForeColor = System.Drawing.Color.Black
-		Me.HandsCovering.Location = New System.Drawing.Point(130, 101)
-		Me.HandsCovering.Name = "HandsCovering"
-		Me.HandsCovering.Size = New System.Drawing.Size(104, 24)
-		Me.HandsCovering.TabIndex = 48
-		Me.HandsCovering.Text = "Hands Covering"
-		Me.HandsCovering.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.HandsCovering.UseVisualStyleBackColor = False
-		'
-		'Naked
-		'
-		Me.Naked.AllowDrop = True
-		Me.Naked.BackColor = System.Drawing.Color.White
-		Me.Naked.FlatAppearance.BorderSize = 2
-		Me.Naked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Naked.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Naked.ForeColor = System.Drawing.Color.Black
-		Me.Naked.Location = New System.Drawing.Point(130, 161)
-		Me.Naked.Name = "Naked"
-		Me.Naked.Size = New System.Drawing.Size(104, 24)
-		Me.Naked.TabIndex = 49
-		Me.Naked.Text = "Naked"
-		Me.Naked.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Naked.UseVisualStyleBackColor = False
-		'
-		'Underwear
-		'
-		Me.Underwear.AllowDrop = True
-		Me.Underwear.BackColor = System.Drawing.Color.White
-		Me.Underwear.FlatAppearance.BorderSize = 2
-		Me.Underwear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Underwear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Underwear.ForeColor = System.Drawing.Color.Black
-		Me.Underwear.Location = New System.Drawing.Point(11, 341)
-		Me.Underwear.Name = "Underwear"
-		Me.Underwear.Size = New System.Drawing.Size(104, 24)
-		Me.Underwear.TabIndex = 56
-		Me.Underwear.Text = "Underwear"
-		Me.Underwear.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Underwear.UseVisualStyleBackColor = False
-		'
-		'SideView
-		'
-		Me.SideView.AllowDrop = True
-		Me.SideView.BackColor = System.Drawing.Color.White
-		Me.SideView.FlatAppearance.BorderSize = 2
-		Me.SideView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.SideView.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.SideView.ForeColor = System.Drawing.Color.Black
-		Me.SideView.Location = New System.Drawing.Point(130, 191)
-		Me.SideView.Name = "SideView"
-		Me.SideView.Size = New System.Drawing.Size(104, 24)
-		Me.SideView.TabIndex = 50
-		Me.SideView.Text = "Side View"
-		Me.SideView.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.SideView.UseVisualStyleBackColor = False
-		'
-		'CloseUp
-		'
-		Me.CloseUp.AllowDrop = True
-		Me.CloseUp.BackColor = System.Drawing.Color.White
-		Me.CloseUp.FlatAppearance.BorderSize = 2
-		Me.CloseUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.CloseUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.CloseUp.ForeColor = System.Drawing.Color.Black
-		Me.CloseUp.Location = New System.Drawing.Point(130, 221)
-		Me.CloseUp.Name = "CloseUp"
-		Me.CloseUp.Size = New System.Drawing.Size(104, 24)
-		Me.CloseUp.TabIndex = 51
-		Me.CloseUp.Text = "Close Up"
-		Me.CloseUp.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.CloseUp.UseVisualStyleBackColor = False
-		'
-		'Garment
-		'
-		Me.Garment.AllowDrop = True
-		Me.Garment.BackColor = System.Drawing.Color.White
-		Me.Garment.FlatAppearance.BorderSize = 2
-		Me.Garment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Garment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Garment.ForeColor = System.Drawing.Color.Black
-		Me.Garment.Location = New System.Drawing.Point(11, 311)
-		Me.Garment.Name = "Garment"
-		Me.Garment.Size = New System.Drawing.Size(104, 24)
-		Me.Garment.TabIndex = 55
-		Me.Garment.Text = "Garment"
-		Me.Garment.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Garment.UseVisualStyleBackColor = False
-		'
-		'SeeThrough
-		'
-		Me.SeeThrough.AllowDrop = True
-		Me.SeeThrough.BackColor = System.Drawing.Color.White
-		Me.SeeThrough.FlatAppearance.BorderSize = 2
-		Me.SeeThrough.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.SeeThrough.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.SeeThrough.ForeColor = System.Drawing.Color.Black
-		Me.SeeThrough.Location = New System.Drawing.Point(130, 131)
-		Me.SeeThrough.Name = "SeeThrough"
-		Me.SeeThrough.Size = New System.Drawing.Size(104, 24)
-		Me.SeeThrough.TabIndex = 52
-		Me.SeeThrough.Text = "See Through"
-		Me.SeeThrough.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.SeeThrough.UseVisualStyleBackColor = False
-		'
-		'AllFours
-		'
-		Me.AllFours.AllowDrop = True
-		Me.AllFours.BackColor = System.Drawing.Color.White
-		Me.AllFours.FlatAppearance.BorderSize = 2
-		Me.AllFours.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.AllFours.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.AllFours.ForeColor = System.Drawing.Color.Black
-		Me.AllFours.Location = New System.Drawing.Point(130, 251)
-		Me.AllFours.Name = "AllFours"
-		Me.AllFours.Size = New System.Drawing.Size(104, 24)
-		Me.AllFours.TabIndex = 53
-		Me.AllFours.Text = "All Fours"
-		Me.AllFours.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.AllFours.UseVisualStyleBackColor = False
-		'
-		'Piercing
-		'
-		Me.Piercing.AllowDrop = True
-		Me.Piercing.BackColor = System.Drawing.Color.White
-		Me.Piercing.FlatAppearance.BorderSize = 2
-		Me.Piercing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Piercing.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Piercing.ForeColor = System.Drawing.Color.Black
-		Me.Piercing.Location = New System.Drawing.Point(130, 281)
-		Me.Piercing.Name = "Piercing"
-		Me.Piercing.Size = New System.Drawing.Size(104, 24)
-		Me.Piercing.TabIndex = 54
-		Me.Piercing.Text = "Piercing"
-		Me.Piercing.TextAlign = System.Drawing.ContentAlignment.TopCenter
-		Me.Piercing.UseVisualStyleBackColor = False
-		'
-		'subName
-		'
-		Me.subName.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
-		Me.subName.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.subName.Cursor = System.Windows.Forms.Cursors.IBeam
-		Me.subName.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "BackgroundColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.subName.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.subName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.subName.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.subName.Location = New System.Drawing.Point(1, 4)
-		Me.subName.Margin = New System.Windows.Forms.Padding(1)
-		Me.subName.Name = "subName"
-		Me.subName.ShortcutsEnabled = False
-		Me.subName.Size = New System.Drawing.Size(242, 16)
-		Me.subName.TabIndex = 3
-		Me.subName.Text = "Your Name"
-		Me.subName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		'
 		'OpenScriptDialog
 		'
@@ -1394,89 +517,6 @@ Partial Class Form1
 		'GetColor
 		'
 		Me.GetColor.Color = System.Drawing.Color.SteelBlue
-		'
-		'sendButton
-		'
-		Me.sendButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.sendButton.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
-		Me.sendButton.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "BackgroundColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.sendButton.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.sendButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.sendButton.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
-		Me.sendButton.Location = New System.Drawing.Point(829, 97)
-		Me.sendButton.Name = "sendButton"
-		Me.sendButton.Size = New System.Drawing.Size(50, 24)
-		Me.sendButton.TabIndex = 147
-		Me.sendButton.Text = "SEND"
-		Me.sendButton.UseVisualStyleBackColor = False
-		'
-		'PNLFileTransfer
-		'
-		Me.PNLFileTransfer.BackColor = System.Drawing.Color.White
-		Me.PNLFileTransfer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-		Me.PNLFileTransfer.Controls.Add(Me.PictureBox11)
-		Me.PNLFileTransfer.Controls.Add(Me.BTNFileTransferOpen)
-		Me.PNLFileTransfer.Controls.Add(Me.BTNFIleTransferDismiss)
-		Me.PNLFileTransfer.Controls.Add(Me.LBLFileTransfer)
-		Me.PNLFileTransfer.Controls.Add(Me.PBFileTransfer)
-		Me.PNLFileTransfer.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.PNLFileTransfer.Location = New System.Drawing.Point(2, 2)
-		Me.PNLFileTransfer.Name = "PNLFileTransfer"
-		Me.PNLFileTransfer.Padding = New System.Windows.Forms.Padding(5)
-		Me.PNLFileTransfer.Size = New System.Drawing.Size(234, 237)
-		Me.PNLFileTransfer.TabIndex = 157
-		'
-		'PictureBox11
-		'
-		Me.PictureBox11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-			Or System.Windows.Forms.AnchorStyles.Left) _
-			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.PictureBox11.ErrorImage = Nothing
-		Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-		Me.PictureBox11.Location = New System.Drawing.Point(22, 29)
-		Me.PictureBox11.Name = "PictureBox11"
-		Me.PictureBox11.Size = New System.Drawing.Size(182, 149)
-		Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-		Me.PictureBox11.TabIndex = 128
-		Me.PictureBox11.TabStop = False
-		'
-		'BTNFileTransferOpen
-		'
-		Me.BTNFileTransferOpen.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.BTNFileTransferOpen.Location = New System.Drawing.Point(22, 206)
-		Me.BTNFileTransferOpen.Name = "BTNFileTransferOpen"
-		Me.BTNFileTransferOpen.Size = New System.Drawing.Size(95, 23)
-		Me.BTNFileTransferOpen.TabIndex = 127
-		Me.BTNFileTransferOpen.Text = "Open File"
-		Me.BTNFileTransferOpen.UseVisualStyleBackColor = True
-		'
-		'BTNFIleTransferDismiss
-		'
-		Me.BTNFIleTransferDismiss.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.BTNFIleTransferDismiss.Location = New System.Drawing.Point(128, 206)
-		Me.BTNFIleTransferDismiss.Name = "BTNFIleTransferDismiss"
-		Me.BTNFIleTransferDismiss.Size = New System.Drawing.Size(95, 23)
-		Me.BTNFIleTransferDismiss.TabIndex = 126
-		Me.BTNFIleTransferDismiss.Text = "Dismiss"
-		Me.BTNFIleTransferDismiss.UseVisualStyleBackColor = True
-		'
-		'LBLFileTransfer
-		'
-		Me.LBLFileTransfer.Location = New System.Drawing.Point(9, 2)
-		Me.LBLFileTransfer.Name = "LBLFileTransfer"
-		Me.LBLFileTransfer.Size = New System.Drawing.Size(227, 24)
-		Me.LBLFileTransfer.TabIndex = 125
-		Me.LBLFileTransfer.Text = "Mistress Name is sending you a file!"
-		Me.LBLFileTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
-		'PBFileTransfer
-		'
-		Me.PBFileTransfer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.PBFileTransfer.Location = New System.Drawing.Point(22, 184)
-		Me.PBFileTransfer.Maximum = 10
-		Me.PBFileTransfer.Name = "PBFileTransfer"
-		Me.PBFileTransfer.Size = New System.Drawing.Size(200, 13)
-		Me.PBFileTransfer.TabIndex = 0
 		'
 		'PictureStrip
 		'
@@ -1652,15 +692,6 @@ Partial Class Form1
 		Me.PicStripTSMIdommeSlideshowLoadNewSlideshow.Size = New System.Drawing.Size(165, 22)
 		Me.PicStripTSMIdommeSlideshowLoadNewSlideshow.Text = "New Slideshow"
 		'
-		'StatusUpdates
-		'
-		Me.StatusUpdates.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.StatusUpdates.Location = New System.Drawing.Point(0, 0)
-		Me.StatusUpdates.MinimumSize = New System.Drawing.Size(20, 20)
-		Me.StatusUpdates.Name = "StatusUpdates"
-		Me.StatusUpdates.Size = New System.Drawing.Size(240, 619)
-		Me.StatusUpdates.TabIndex = 770
-		'
 		'TeaseAINotify
 		'
 		Me.TeaseAINotify.BalloonTipTitle = "Tease AI"
@@ -1755,44 +786,6 @@ Partial Class Form1
 		Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
 		Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
 		Me.ExitToolStripMenuItem.Text = "Exit"
-		'
-		'LBLTime
-		'
-		Me.LBLTime.BackColor = System.Drawing.Color.Transparent
-		Me.LBLTime.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "DateTextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.LBLTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.LBLTime.ForeColor = Global.Tease_AI.My.MySettings.Default.DateTextColor
-		Me.LBLTime.Location = New System.Drawing.Point(0, 11)
-		Me.LBLTime.Name = "LBLTime"
-		Me.LBLTime.Size = New System.Drawing.Size(247, 36)
-		Me.LBLTime.TabIndex = 771
-		Me.LBLTime.Text = "--:--"
-		Me.LBLTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
-		'LBLDate
-		'
-		Me.LBLDate.BackColor = System.Drawing.Color.Transparent
-		Me.LBLDate.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "DateTextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.LBLDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.LBLDate.ForeColor = Global.Tease_AI.My.MySettings.Default.DateTextColor
-		Me.LBLDate.Location = New System.Drawing.Point(0, 48)
-		Me.LBLDate.Name = "LBLDate"
-		Me.LBLDate.Size = New System.Drawing.Size(247, 21)
-		Me.LBLDate.TabIndex = 772
-		Me.LBLDate.Text = "Initializing Date..."
-		Me.LBLDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-		'
-		'LBLAMPM
-		'
-		Me.LBLAMPM.BackColor = System.Drawing.Color.Transparent
-		Me.LBLAMPM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.LBLAMPM.ForeColor = System.Drawing.Color.White
-		Me.LBLAMPM.Location = New System.Drawing.Point(176, 16)
-		Me.LBLAMPM.Name = "LBLAMPM"
-		Me.LBLAMPM.Size = New System.Drawing.Size(40, 24)
-		Me.LBLAMPM.TabIndex = 773
-		Me.LBLAMPM.Text = "PM"
-		Me.LBLAMPM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'MenuStrip2
 		'
@@ -1958,7 +951,7 @@ Partial Class Form1
 		'
 		'AppsToolStripMenuItem
 		'
-		Me.AppsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseAppPanelToolStripMenuItem, Me.ToolStripSeparator4, Me.MetronomeToolStripMenuItem, Me.GlitterToolStripMenuItem, Me.DommeTagsToolStripMenuItem2, Me.LazySubToolStripMenuItem, Me.RandomizerToolStripMenuItem, Me.PlaylistToolStripMenuItem, Me.WritingTasksToolStripMenuItem, Me.WishlistToolStripMenuItem, Me.HypnoticGuideToolStripMenuItem, Me.VitalSubToolStripMenuItem})
+		Me.AppsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseAppPanelToolStripMenuItem, Me.ToolStripSeparator4, Me.MetronomeToolStripMenuItem, Me.GlitterToolStripMenuItem, Me.DommeTagsToolStripMenuItem2, Me.LazySubToolStripMenuItem, Me.RandomizerToolStripMenuItem, Me.PlaylistToolStripMenuItem, Me.WritingTasksToolStripMenuItem, Me.WishlistToolStripMenuItem, Me.HypnoticGuideToolStripMenuItem, Me.VitalSubToolStripMenuItem, Me.VolumesToolStripMenuItem})
 		Me.AppsToolStripMenuItem.Name = "AppsToolStripMenuItem"
 		Me.AppsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
 		Me.AppsToolStripMenuItem.Text = "Apps"
@@ -2033,6 +1026,12 @@ Partial Class Form1
 		Me.VitalSubToolStripMenuItem.Name = "VitalSubToolStripMenuItem"
 		Me.VitalSubToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
 		Me.VitalSubToolStripMenuItem.Text = "VitalSub"
+		'
+		'VolumesToolStripMenuItem
+		'
+		Me.VolumesToolStripMenuItem.Name = "VolumesToolStripMenuItem"
+		Me.VolumesToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+		Me.VolumesToolStripMenuItem.Text = "Volumes"
 		'
 		'GamesToolStripMenuItem1
 		'
@@ -2295,23 +1294,6 @@ Partial Class Form1
 		Me.TeaseAIPatreonToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
 		Me.TeaseAIPatreonToolStripMenuItem.Text = "Tease AI Patreon (Defunct)"
 		'
-		'PNLDate
-		'
-		Me.PNLDate.BackColor = Global.Tease_AI.My.MySettings.Default.DateBackColor
-		Me.PNLDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.PNLDate.Controls.Add(Me.LBLDate)
-		Me.PNLDate.Controls.Add(Me.LBLTime)
-		Me.PNLDate.Controls.Add(Me.LBLAMPM)
-		Me.PNLDate.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "DateBackColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.PNLDate.Dock = System.Windows.Forms.DockStyle.Top
-		Me.PNLDate.ForeColor = System.Drawing.Color.Transparent
-		Me.PNLDate.Location = New System.Drawing.Point(9, 0)
-		Me.PNLDate.Margin = New System.Windows.Forms.Padding(10)
-		Me.PNLDate.Name = "PNLDate"
-		Me.PNLDate.Padding = New System.Windows.Forms.Padding(10)
-		Me.PNLDate.Size = New System.Drawing.Size(244, 89)
-		Me.PNLDate.TabIndex = 777
-		'
 		'GroupBox1
 		'
 		Me.GroupBox1.Location = New System.Drawing.Point(0, 41)
@@ -2331,11 +1313,394 @@ Partial Class Form1
 		Me.LBLGeneralSettings.TabIndex = 53
 		Me.LBLGeneralSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
+		'voiceDomWMP
+		'
+		Me.voiceDomWMP.Enabled = True
+		Me.voiceDomWMP.Location = New System.Drawing.Point(3, 352)
+		Me.voiceDomWMP.Name = "voiceDomWMP"
+		Me.voiceDomWMP.OcxState = CType(resources.GetObject("voiceDomWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.voiceDomWMP.Size = New System.Drawing.Size(104, 63)
+		Me.voiceDomWMP.TabIndex = 113
+		Me.voiceDomWMP.Visible = False
+		'
+		'PnlLayoutForm
+		'
+		Me.PnlLayoutForm.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
+		Me.PnlLayoutForm.Controls.Add(Me.SplitContainer1)
+		Me.PnlLayoutForm.Controls.Add(Me.PnlChatBoxLayout)
+		Me.PnlLayoutForm.Controls.Add(Me.PnlSidepanelLayout)
+		Me.PnlLayoutForm.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "BackgroundColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.PnlLayoutForm.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.PnlLayoutForm.Location = New System.Drawing.Point(0, 24)
+		Me.PnlLayoutForm.Name = "PnlLayoutForm"
+		Me.PnlLayoutForm.Padding = New System.Windows.Forms.Padding(0, 12, 9, 8)
+		Me.PnlLayoutForm.Size = New System.Drawing.Size(1676, 999)
+		Me.PnlLayoutForm.TabIndex = 16
+		'
+		'SplitContainer1
+		'
+		Me.SplitContainer1.BackColor = System.Drawing.Color.Transparent
+		Me.SplitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.SplitContainer1.DataBindings.Add(New System.Windows.Forms.Binding("SplitterDistance", Global.Tease_AI.My.MySettings.Default, "SplitterPosition", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
+		Me.SplitContainer1.Location = New System.Drawing.Point(265, 12)
+		Me.SplitContainer1.Name = "SplitContainer1"
+		Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
+		'
+		'SplitContainer1.Panel1
+		'
+		Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Black
+		Me.SplitContainer1.Panel1.Controls.Add(Me.Label2)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.BeatMeterWMP)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.DomWMP)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.ProgressBar_BGW_Images)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.CensorshipBar)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.LBLImageInfo)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.mainPictureBox)
+		Me.SplitContainer1.Panel1MinSize = 180
+		'
+		'SplitContainer1.Panel2
+		'
+		Me.SplitContainer1.Panel2.BackColor = System.Drawing.Color.Transparent
+		Me.SplitContainer1.Panel2.Controls.Add(Me.PnlChatTextLayout)
+		Me.SplitContainer1.Panel2.Controls.Add(Me.PNLMediaBar)
+		Me.SplitContainer1.Panel2MinSize = 0
+		Me.SplitContainer1.Size = New System.Drawing.Size(1402, 947)
+		Me.SplitContainer1.SplitterDistance = Global.Tease_AI.My.MySettings.Default.SplitterPosition
+		Me.SplitContainer1.SplitterWidth = 10
+		Me.SplitContainer1.TabIndex = 136
+		'
+		'Label2
+		'
+		Me.Label2.AutoSize = True
+		Me.Label2.BackColor = System.Drawing.Color.Black
+		Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.Label2.Font = New System.Drawing.Font("Segoe Print", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label2.ForeColor = System.Drawing.Color.GhostWhite
+		Me.Label2.Location = New System.Drawing.Point(680, 223)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(88, 39)
+		Me.Label2.TabIndex = 100
+		Me.Label2.Text = "Label2"
+		'
+		'BeatMeterWMP
+		'
+		Me.BeatMeterWMP.Anchor = System.Windows.Forms.AnchorStyles.None
+		Me.BeatMeterWMP.Enabled = True
+		Me.BeatMeterWMP.Location = New System.Drawing.Point(608, 206)
+		Me.BeatMeterWMP.Name = "BeatMeterWMP"
+		Me.BeatMeterWMP.OcxState = CType(resources.GetObject("BeatMeterWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.BeatMeterWMP.Size = New System.Drawing.Size(790, 183)
+		Me.BeatMeterWMP.TabIndex = 98
+		Me.BeatMeterWMP.Visible = False
+		'
+		'Label1
+		'
+		Me.Label1.AutoSize = True
+		Me.Label1.Location = New System.Drawing.Point(939, 73)
+		Me.Label1.Name = "Label1"
+		Me.Label1.Size = New System.Drawing.Size(39, 13)
+		Me.Label1.TabIndex = 98
+		Me.Label1.Text = "Label1"
+		'
+		'DomWMP
+		'
+		Me.DomWMP.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.DomWMP.Enabled = True
+		Me.DomWMP.Location = New System.Drawing.Point(0, 0)
+		Me.DomWMP.Name = "DomWMP"
+		Me.DomWMP.OcxState = CType(resources.GetObject("DomWMP.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.DomWMP.Size = New System.Drawing.Size(1398, 452)
+		Me.DomWMP.TabIndex = 96
+		Me.DomWMP.Visible = False
+		'
+		'ProgressBar_BGW_Images
+		'
+		Me.ProgressBar_BGW_Images.Dock = System.Windows.Forms.DockStyle.Bottom
+		Me.ProgressBar_BGW_Images.Location = New System.Drawing.Point(0, 452)
+		Me.ProgressBar_BGW_Images.MarqueeAnimationSpeed = 10000
+		Me.ProgressBar_BGW_Images.Name = "ProgressBar_BGW_Images"
+		Me.ProgressBar_BGW_Images.Size = New System.Drawing.Size(1398, 6)
+		Me.ProgressBar_BGW_Images.Style = System.Windows.Forms.ProgressBarStyle.Continuous
+		Me.ProgressBar_BGW_Images.TabIndex = 97
+		Me.ProgressBar_BGW_Images.Visible = False
+		'
+		'CensorshipBar
+		'
+		Me.CensorshipBar.BackColor = System.Drawing.Color.Black
+		Me.CensorshipBar.BackgroundImage = CType(resources.GetObject("CensorshipBar.BackgroundImage"), System.Drawing.Image)
+		Me.CensorshipBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+		Me.CensorshipBar.Location = New System.Drawing.Point(32, 405)
+		Me.CensorshipBar.Name = "CensorshipBar"
+		Me.CensorshipBar.Size = New System.Drawing.Size(637, 244)
+		Me.CensorshipBar.TabIndex = 94
+		Me.CensorshipBar.Visible = False
+		'
+		'LBLImageInfo
+		'
+		Me.LBLImageInfo.AutoSize = True
+		Me.LBLImageInfo.BackColor = System.Drawing.Color.Black
+		Me.LBLImageInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLImageInfo.ForeColor = System.Drawing.Color.White
+		Me.LBLImageInfo.Location = New System.Drawing.Point(0, 0)
+		Me.LBLImageInfo.Name = "LBLImageInfo"
+		Me.LBLImageInfo.Size = New System.Drawing.Size(0, 17)
+		Me.LBLImageInfo.TabIndex = 95
+		Me.LBLImageInfo.Visible = False
+		'
+		'mainPictureBox
+		'
+		Me.mainPictureBox.BackColor = System.Drawing.Color.Black
+		Me.mainPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.mainPictureBox.Image = CType(resources.GetObject("mainPictureBox.Image"), System.Drawing.Image)
+		Me.mainPictureBox.Location = New System.Drawing.Point(0, 0)
+		Me.mainPictureBox.Name = "mainPictureBox"
+		Me.mainPictureBox.Size = New System.Drawing.Size(1398, 458)
+		Me.mainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.mainPictureBox.TabIndex = 3
+		Me.mainPictureBox.TabStop = False
+		'
+		'PnlChatTextLayout
+		'
+		Me.PnlChatTextLayout.BackColor = System.Drawing.Color.Black
+		Me.PnlChatTextLayout.Controls.Add(Me.ChatText)
+		Me.PnlChatTextLayout.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.PnlChatTextLayout.Location = New System.Drawing.Point(0, 32)
+		Me.PnlChatTextLayout.Name = "PnlChatTextLayout"
+		Me.PnlChatTextLayout.Padding = New System.Windows.Forms.Padding(1)
+		Me.PnlChatTextLayout.Size = New System.Drawing.Size(1398, 439)
+		Me.PnlChatTextLayout.TabIndex = 783
+		'
+		'ChatText
+		'
+		Me.ChatText.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.ChatText.Location = New System.Drawing.Point(1, 1)
+		Me.ChatText.MinimumSize = New System.Drawing.Size(2, 20)
+		Me.ChatText.Name = "ChatText"
+		Me.ChatText.Size = New System.Drawing.Size(1396, 437)
+		Me.ChatText.TabIndex = 1
+		'
+		'PNLMediaBar
+		'
+		Me.PNLMediaBar.BackColor = System.Drawing.Color.Transparent
+		Me.PNLMediaBar.Controls.Add(Me.ImageFolderComboBox)
+		Me.PNLMediaBar.Controls.Add(Me.BTNLoadVideo)
+		Me.PNLMediaBar.Controls.Add(Me.previousButton)
+		Me.PNLMediaBar.Controls.Add(Me.browsefolderButton)
+		Me.PNLMediaBar.Controls.Add(Me.nextButton)
+		Me.PNLMediaBar.Controls.Add(Me.BTNVideoControls)
+		Me.PNLMediaBar.Dock = System.Windows.Forms.DockStyle.Top
+		Me.PNLMediaBar.Location = New System.Drawing.Point(0, 0)
+		Me.PNLMediaBar.Name = "PNLMediaBar"
+		Me.PNLMediaBar.Padding = New System.Windows.Forms.Padding(1, 1, 1, 10)
+		Me.PNLMediaBar.Size = New System.Drawing.Size(1398, 32)
+		Me.PNLMediaBar.TabIndex = 97
+		Me.PNLMediaBar.Visible = False
+		'
+		'ImageFolderComboBox
+		'
+		Me.ImageFolderComboBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+			Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.ImageFolderComboBox.BackColor = System.Drawing.Color.White
+		Me.ImageFolderComboBox.ForeColor = System.Drawing.Color.Black
+		Me.ImageFolderComboBox.FormattingEnabled = True
+		Me.ImageFolderComboBox.Location = New System.Drawing.Point(54, 5)
+		Me.ImageFolderComboBox.Name = "ImageFolderComboBox"
+		Me.ImageFolderComboBox.Size = New System.Drawing.Size(1031, 21)
+		Me.ImageFolderComboBox.TabIndex = 8
+		Me.ImageFolderComboBox.Text = "Enter Image Directory"
+		'
+		'BTNLoadVideo
+		'
+		Me.BTNLoadVideo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.BTNLoadVideo.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
+		Me.BTNLoadVideo.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BTNLoadVideo.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BTNLoadVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.BTNLoadVideo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.BTNLoadVideo.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.BTNLoadVideo.Location = New System.Drawing.Point(1202, 1)
+		Me.BTNLoadVideo.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
+		Me.BTNLoadVideo.Name = "BTNLoadVideo"
+		Me.BTNLoadVideo.Size = New System.Drawing.Size(74, 30)
+		Me.BTNLoadVideo.TabIndex = 11
+		Me.BTNLoadVideo.Text = "Load Video"
+		Me.BTNLoadVideo.UseVisualStyleBackColor = False
+		'
+		'previousButton
+		'
+		Me.previousButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.previousButton.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
+		Me.previousButton.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.previousButton.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.previousButton.Enabled = False
+		Me.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.previousButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.previousButton.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.previousButton.Location = New System.Drawing.Point(1092, 1)
+		Me.previousButton.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
+		Me.previousButton.Name = "previousButton"
+		Me.previousButton.Size = New System.Drawing.Size(53, 30)
+		Me.previousButton.TabIndex = 6
+		Me.previousButton.Text = "<<"
+		Me.previousButton.UseVisualStyleBackColor = False
+		'
+		'browsefolderButton
+		'
+		Me.browsefolderButton.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
+		Me.browsefolderButton.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.browsefolderButton.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.browsefolderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.browsefolderButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.browsefolderButton.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.browsefolderButton.Location = New System.Drawing.Point(1, 1)
+		Me.browsefolderButton.Name = "browsefolderButton"
+		Me.browsefolderButton.Size = New System.Drawing.Size(47, 30)
+		Me.browsefolderButton.TabIndex = 3
+		Me.browsefolderButton.Text = "Open"
+		Me.browsefolderButton.UseVisualStyleBackColor = False
+		'
+		'nextButton
+		'
+		Me.nextButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.nextButton.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
+		Me.nextButton.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.nextButton.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.nextButton.Enabled = False
+		Me.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.nextButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.nextButton.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.nextButton.Location = New System.Drawing.Point(1146, 1)
+		Me.nextButton.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
+		Me.nextButton.Name = "nextButton"
+		Me.nextButton.Size = New System.Drawing.Size(55, 30)
+		Me.nextButton.TabIndex = 7
+		Me.nextButton.Text = ">>"
+		Me.nextButton.UseVisualStyleBackColor = False
+		'
+		'BTNVideoControls
+		'
+		Me.BTNVideoControls.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.BTNVideoControls.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
+		Me.BTNVideoControls.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BTNVideoControls.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BTNVideoControls.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.BTNVideoControls.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.BTNVideoControls.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.BTNVideoControls.Location = New System.Drawing.Point(1277, 1)
+		Me.BTNVideoControls.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
+		Me.BTNVideoControls.Name = "BTNVideoControls"
+		Me.BTNVideoControls.Size = New System.Drawing.Size(120, 30)
+		Me.BTNVideoControls.TabIndex = 15
+		Me.BTNVideoControls.Text = "Show Video Controls"
+		Me.BTNVideoControls.UseVisualStyleBackColor = False
+		'
+		'PnlChatBoxLayout
+		'
+		Me.PnlChatBoxLayout.BackColor = System.Drawing.Color.Transparent
+		Me.PnlChatBoxLayout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.PnlChatBoxLayout.Controls.Add(Me.chatBox)
+		Me.PnlChatBoxLayout.Controls.Add(Me.BtnToggleSettings)
+		Me.PnlChatBoxLayout.Controls.Add(Me.BtnToggleMediaPanel)
+		Me.PnlChatBoxLayout.Controls.Add(Me.BtnToggleImageVideo)
+		Me.PnlChatBoxLayout.Dock = System.Windows.Forms.DockStyle.Bottom
+		Me.PnlChatBoxLayout.Location = New System.Drawing.Point(265, 959)
+		Me.PnlChatBoxLayout.Name = "PnlChatBoxLayout"
+		Me.PnlChatBoxLayout.Padding = New System.Windows.Forms.Padding(2)
+		Me.PnlChatBoxLayout.Size = New System.Drawing.Size(1402, 32)
+		Me.PnlChatBoxLayout.TabIndex = 782
+		'
+		'chatBox
+		'
+		Me.chatBox.AllowDrop = True
+		Me.chatBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+			Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.chatBox.Location = New System.Drawing.Point(5, 4)
+		Me.chatBox.Name = "chatBox"
+		Me.chatBox.Size = New System.Drawing.Size(1076, 20)
+		Me.chatBox.TabIndex = 1
+		'
+		'BtnToggleSettings
+		'
+		Me.BtnToggleSettings.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.BtnToggleSettings.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
+		Me.BtnToggleSettings.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BtnToggleSettings.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BtnToggleSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.BtnToggleSettings.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.BtnToggleSettings.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.BtnToggleSettings.Location = New System.Drawing.Point(1274, 2)
+		Me.BtnToggleSettings.Name = "BtnToggleSettings"
+		Me.BtnToggleSettings.Size = New System.Drawing.Size(123, 24)
+		Me.BtnToggleSettings.TabIndex = 19
+		Me.BtnToggleSettings.Text = "Open Settings Menu"
+		Me.BtnToggleSettings.UseVisualStyleBackColor = False
+		'
+		'BtnToggleMediaPanel
+		'
+		Me.BtnToggleMediaPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.BtnToggleMediaPanel.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
+		Me.BtnToggleMediaPanel.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BtnToggleMediaPanel.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BtnToggleMediaPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.BtnToggleMediaPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.BtnToggleMediaPanel.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.BtnToggleMediaPanel.Location = New System.Drawing.Point(1087, 2)
+		Me.BtnToggleMediaPanel.Name = "BtnToggleMediaPanel"
+		Me.BtnToggleMediaPanel.Size = New System.Drawing.Size(111, 24)
+		Me.BtnToggleMediaPanel.TabIndex = 147
+		Me.BtnToggleMediaPanel.Text = "Show Media Panel"
+		Me.BtnToggleMediaPanel.UseVisualStyleBackColor = False
+		'
+		'BtnToggleImageVideo
+		'
+		Me.BtnToggleImageVideo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.BtnToggleImageVideo.BackColor = Global.Tease_AI.My.MySettings.Default.ButtonColor
+		Me.BtnToggleImageVideo.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "ButtonColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BtnToggleImageVideo.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.BtnToggleImageVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.BtnToggleImageVideo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.BtnToggleImageVideo.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.BtnToggleImageVideo.Location = New System.Drawing.Point(1199, 2)
+		Me.BtnToggleImageVideo.Name = "BtnToggleImageVideo"
+		Me.BtnToggleImageVideo.Size = New System.Drawing.Size(74, 24)
+		Me.BtnToggleImageVideo.TabIndex = 149
+		Me.BtnToggleImageVideo.Text = "Img <-> Vid"
+		Me.BtnToggleImageVideo.UseVisualStyleBackColor = False
+		'
+		'PnlSidepanelLayout
+		'
+		Me.PnlSidepanelLayout.BackColor = System.Drawing.Color.Transparent
+		Me.PnlSidepanelLayout.Controls.Add(Me.PnlTabsLayout)
+		Me.PnlSidepanelLayout.Controls.Add(Me.PNLDate)
+		Me.PnlSidepanelLayout.Controls.Add(Me.PNLAvatar)
+		Me.PnlSidepanelLayout.Dock = System.Windows.Forms.DockStyle.Left
+		Me.PnlSidepanelLayout.Location = New System.Drawing.Point(0, 12)
+		Me.PnlSidepanelLayout.Name = "PnlSidepanelLayout"
+		Me.PnlSidepanelLayout.Padding = New System.Windows.Forms.Padding(9, 0, 12, 0)
+		Me.PnlSidepanelLayout.Size = New System.Drawing.Size(265, 979)
+		Me.PnlSidepanelLayout.TabIndex = 779
+		'
+		'PnlTabsLayout
+		'
+		Me.PnlTabsLayout.Controls.Add(Me.PNLTabs)
+		Me.PnlTabsLayout.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.PnlTabsLayout.Location = New System.Drawing.Point(9, 89)
+		Me.PnlTabsLayout.Name = "PnlTabsLayout"
+		Me.PnlTabsLayout.Padding = New System.Windows.Forms.Padding(0, 10, 0, 10)
+		Me.PnlTabsLayout.Size = New System.Drawing.Size(244, 643)
+		Me.PnlTabsLayout.TabIndex = 779
+		'
 		'PNLTabs
 		'
 		Me.PNLTabs.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
 		Me.PNLTabs.BackColor = System.Drawing.Color.Transparent
 		Me.PNLTabs.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.PNLTabs.Controls.Add(Me.PNLVolumes)
 		Me.PNLTabs.Controls.Add(Me.PNLWishList)
 		Me.PNLTabs.Controls.Add(Me.PNLHypnoGen)
 		Me.PNLTabs.Controls.Add(Me.AppPanelVitalSub)
@@ -2354,6 +1719,102 @@ Partial Class Form1
 		Me.PNLTabs.Name = "PNLTabs"
 		Me.PNLTabs.Size = New System.Drawing.Size(244, 623)
 		Me.PNLTabs.TabIndex = 778
+		'
+		'PNLVolumes
+		'
+		Me.PNLVolumes.BackColor = System.Drawing.SystemColors.Control
+		Me.PNLVolumes.Controls.Add(Me.LBLVolumeBeatmeter)
+		Me.PNLVolumes.Controls.Add(Me.LBLVolumevoiceDomWMP)
+		Me.PNLVolumes.Controls.Add(Me.LBLVolumecontextWMP)
+		Me.PNLVolumes.Controls.Add(Me.LBLVolumeDomWMP)
+		Me.PNLVolumes.Controls.Add(Me.Label6)
+		Me.PNLVolumes.Controls.Add(Me.Label5)
+		Me.PNLVolumes.Controls.Add(Me.contextWMP)
+		Me.PNLVolumes.Controls.Add(Me.sliderVolumeBeatmeter)
+		Me.PNLVolumes.Controls.Add(Me.voiceDomWMP)
+		Me.PNLVolumes.Controls.Add(Me.Label4)
+		Me.PNLVolumes.Controls.Add(Me.sliderVolumevoiceDomWMP)
+		Me.PNLVolumes.Controls.Add(Me.Label3)
+		Me.PNLVolumes.Controls.Add(Me.sliderVolumecontextWMP)
+		Me.PNLVolumes.Controls.Add(Me.sliderVolumeDomWMP)
+		Me.PNLVolumes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.PNLVolumes.Location = New System.Drawing.Point(0, 0)
+		Me.PNLVolumes.Name = "PNLVolumes"
+		Me.PNLVolumes.Size = New System.Drawing.Size(245, 444)
+		Me.PNLVolumes.TabIndex = 784
+		Me.PNLVolumes.Visible = False
+		'
+		'Label6
+		'
+		Me.Label6.AutoSize = True
+		Me.Label6.Location = New System.Drawing.Point(18, 209)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(98, 20)
+		Me.Label6.TabIndex = 1
+		Me.Label6.Text = "Beat Meter"
+		'
+		'Label5
+		'
+		Me.Label5.AutoSize = True
+		Me.Label5.Location = New System.Drawing.Point(18, 147)
+		Me.Label5.Name = "Label5"
+		Me.Label5.Size = New System.Drawing.Size(105, 20)
+		Me.Label5.TabIndex = 1
+		Me.Label5.Text = "Voice Audio"
+		'
+		'sliderVolumeBeatmeter
+		'
+		Me.sliderVolumeBeatmeter.BackColor = System.Drawing.SystemColors.Control
+		Me.sliderVolumeBeatmeter.Location = New System.Drawing.Point(1, 232)
+		Me.sliderVolumeBeatmeter.Maximum = 100
+		Me.sliderVolumeBeatmeter.Name = "sliderVolumeBeatmeter"
+		Me.sliderVolumeBeatmeter.Size = New System.Drawing.Size(241, 45)
+		Me.sliderVolumeBeatmeter.TabIndex = 0
+		'
+		'Label4
+		'
+		Me.Label4.AutoSize = True
+		Me.Label4.Location = New System.Drawing.Point(18, 83)
+		Me.Label4.Name = "Label4"
+		Me.Label4.Size = New System.Drawing.Size(55, 20)
+		Me.Label4.TabIndex = 1
+		Me.Label4.Text = "Audio"
+		'
+		'sliderVolumevoiceDomWMP
+		'
+		Me.sliderVolumevoiceDomWMP.BackColor = System.Drawing.SystemColors.Control
+		Me.sliderVolumevoiceDomWMP.Location = New System.Drawing.Point(2, 170)
+		Me.sliderVolumevoiceDomWMP.Maximum = 100
+		Me.sliderVolumevoiceDomWMP.Name = "sliderVolumevoiceDomWMP"
+		Me.sliderVolumevoiceDomWMP.Size = New System.Drawing.Size(240, 45)
+		Me.sliderVolumevoiceDomWMP.TabIndex = 0
+		'
+		'Label3
+		'
+		Me.Label3.AutoSize = True
+		Me.Label3.Location = New System.Drawing.Point(18, 17)
+		Me.Label3.Name = "Label3"
+		Me.Label3.Size = New System.Drawing.Size(64, 20)
+		Me.Label3.TabIndex = 1
+		Me.Label3.Text = "Videos"
+		'
+		'sliderVolumecontextWMP
+		'
+		Me.sliderVolumecontextWMP.BackColor = System.Drawing.SystemColors.Control
+		Me.sliderVolumecontextWMP.Location = New System.Drawing.Point(2, 106)
+		Me.sliderVolumecontextWMP.Maximum = 100
+		Me.sliderVolumecontextWMP.Name = "sliderVolumecontextWMP"
+		Me.sliderVolumecontextWMP.Size = New System.Drawing.Size(240, 45)
+		Me.sliderVolumecontextWMP.TabIndex = 0
+		'
+		'sliderVolumeDomWMP
+		'
+		Me.sliderVolumeDomWMP.BackColor = System.Drawing.SystemColors.Control
+		Me.sliderVolumeDomWMP.Location = New System.Drawing.Point(1, 40)
+		Me.sliderVolumeDomWMP.Maximum = 100
+		Me.sliderVolumeDomWMP.Name = "sliderVolumeDomWMP"
+		Me.sliderVolumeDomWMP.Size = New System.Drawing.Size(241, 45)
+		Me.sliderVolumeDomWMP.TabIndex = 0
 		'
 		'PNLWishList
 		'
@@ -3607,6 +3068,15 @@ Partial Class Form1
 		Me.PnlGlitter.Size = New System.Drawing.Size(240, 619)
 		Me.PnlGlitter.TabIndex = 783
 		'
+		'StatusUpdates
+		'
+		Me.StatusUpdates.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.StatusUpdates.Location = New System.Drawing.Point(0, 0)
+		Me.StatusUpdates.MinimumSize = New System.Drawing.Size(20, 20)
+		Me.StatusUpdates.Name = "StatusUpdates"
+		Me.StatusUpdates.Size = New System.Drawing.Size(240, 619)
+		Me.StatusUpdates.TabIndex = 770
+		'
 		'PnlSidechat
 		'
 		Me.PnlSidechat.Controls.Add(Me.ChatText2)
@@ -3997,6 +3467,520 @@ Partial Class Form1
 		Me.BTNRandomBlog.Text = "Blog Image"
 		Me.BTNRandomBlog.UseVisualStyleBackColor = False
 		'
+		'PNLDomTagBTN
+		'
+		Me.PNLDomTagBTN.BackColor = System.Drawing.Color.Transparent
+		Me.PNLDomTagBTN.Controls.Add(Me.DommeTagBtnNextImage)
+		Me.PNLDomTagBTN.Controls.Add(Me.DommeTagBtnLastImage)
+		Me.PNLDomTagBTN.Controls.Add(Me.TBFurniture)
+		Me.PNLDomTagBTN.Controls.Add(Me.Masturbating)
+		Me.PNLDomTagBTN.Controls.Add(Me.Feet)
+		Me.PNLDomTagBTN.Controls.Add(Me.TBSexToy)
+		Me.PNLDomTagBTN.Controls.Add(Me.Legs)
+		Me.PNLDomTagBTN.Controls.Add(Me.Sucking)
+		Me.PNLDomTagBTN.Controls.Add(Me.TBTattoo)
+		Me.PNLDomTagBTN.Controls.Add(Me.Face)
+		Me.PNLDomTagBTN.Controls.Add(Me.TBUnderwear)
+		Me.PNLDomTagBTN.Controls.Add(Me.Smiling)
+		Me.PNLDomTagBTN.Controls.Add(Me.Pussy)
+		Me.PNLDomTagBTN.Controls.Add(Me.Glaring)
+		Me.PNLDomTagBTN.Controls.Add(Me.TBGarment)
+		Me.PNLDomTagBTN.Controls.Add(Me.Boobs)
+		Me.PNLDomTagBTN.Controls.Add(Me.FullyDressed)
+		Me.PNLDomTagBTN.Controls.Add(Me.Furniture)
+		Me.PNLDomTagBTN.Controls.Add(Me.Ass)
+		Me.PNLDomTagBTN.Controls.Add(Me.HalfDressed)
+		Me.PNLDomTagBTN.Controls.Add(Me.SexToy)
+		Me.PNLDomTagBTN.Controls.Add(Me.GarmentCovering)
+		Me.PNLDomTagBTN.Controls.Add(Me.Tattoo)
+		Me.PNLDomTagBTN.Controls.Add(Me.HandsCovering)
+		Me.PNLDomTagBTN.Controls.Add(Me.Naked)
+		Me.PNLDomTagBTN.Controls.Add(Me.Underwear)
+		Me.PNLDomTagBTN.Controls.Add(Me.SideView)
+		Me.PNLDomTagBTN.Controls.Add(Me.CloseUp)
+		Me.PNLDomTagBTN.Controls.Add(Me.Garment)
+		Me.PNLDomTagBTN.Controls.Add(Me.SeeThrough)
+		Me.PNLDomTagBTN.Controls.Add(Me.AllFours)
+		Me.PNLDomTagBTN.Controls.Add(Me.Piercing)
+		Me.PNLDomTagBTN.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.PNLDomTagBTN.Location = New System.Drawing.Point(0, 0)
+		Me.PNLDomTagBTN.Name = "PNLDomTagBTN"
+		Me.PNLDomTagBTN.Size = New System.Drawing.Size(240, 619)
+		Me.PNLDomTagBTN.TabIndex = 0
+		'
+		'DommeTagBtnNextImage
+		'
+		Me.DommeTagBtnNextImage.BackColor = System.Drawing.Color.White
+		Me.DommeTagBtnNextImage.FlatAppearance.BorderSize = 2
+		Me.DommeTagBtnNextImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.DommeTagBtnNextImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.DommeTagBtnNextImage.ForeColor = System.Drawing.Color.Black
+		Me.DommeTagBtnNextImage.Location = New System.Drawing.Point(123, 465)
+		Me.DommeTagBtnNextImage.Name = "DommeTagBtnNextImage"
+		Me.DommeTagBtnNextImage.Size = New System.Drawing.Size(55, 31)
+		Me.DommeTagBtnNextImage.TabIndex = 66
+		Me.DommeTagBtnNextImage.Text = ">>"
+		Me.DommeTagBtnNextImage.UseVisualStyleBackColor = False
+		'
+		'DommeTagBtnLastImage
+		'
+		Me.DommeTagBtnLastImage.BackColor = System.Drawing.Color.White
+		Me.DommeTagBtnLastImage.FlatAppearance.BorderSize = 2
+		Me.DommeTagBtnLastImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.DommeTagBtnLastImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.DommeTagBtnLastImage.ForeColor = System.Drawing.Color.Black
+		Me.DommeTagBtnLastImage.Location = New System.Drawing.Point(66, 465)
+		Me.DommeTagBtnLastImage.Name = "DommeTagBtnLastImage"
+		Me.DommeTagBtnLastImage.Size = New System.Drawing.Size(55, 31)
+		Me.DommeTagBtnLastImage.TabIndex = 65
+		Me.DommeTagBtnLastImage.Text = "<<"
+		Me.DommeTagBtnLastImage.UseVisualStyleBackColor = False
+		'
+		'TBFurniture
+		'
+		Me.TBFurniture.BackColor = System.Drawing.Color.LightGray
+		Me.TBFurniture.ForeColor = System.Drawing.Color.Black
+		Me.TBFurniture.Location = New System.Drawing.Point(130, 434)
+		Me.TBFurniture.Name = "TBFurniture"
+		Me.TBFurniture.Size = New System.Drawing.Size(104, 20)
+		Me.TBFurniture.TabIndex = 64
+		'
+		'Masturbating
+		'
+		Me.Masturbating.AllowDrop = True
+		Me.Masturbating.BackColor = System.Drawing.Color.White
+		Me.Masturbating.FlatAppearance.BorderSize = 2
+		Me.Masturbating.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Masturbating.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Masturbating.ForeColor = System.Drawing.Color.Black
+		Me.Masturbating.Location = New System.Drawing.Point(11, 191)
+		Me.Masturbating.Name = "Masturbating"
+		Me.Masturbating.Size = New System.Drawing.Size(104, 24)
+		Me.Masturbating.TabIndex = 41
+		Me.Masturbating.Text = "Masturbating"
+		Me.Masturbating.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Masturbating.UseVisualStyleBackColor = False
+		'
+		'Feet
+		'
+		Me.Feet.AllowDrop = True
+		Me.Feet.BackColor = System.Drawing.Color.White
+		Me.Feet.FlatAppearance.BorderSize = 2
+		Me.Feet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Feet.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Feet.ForeColor = System.Drawing.Color.Black
+		Me.Feet.Location = New System.Drawing.Point(11, 161)
+		Me.Feet.Name = "Feet"
+		Me.Feet.Size = New System.Drawing.Size(104, 24)
+		Me.Feet.TabIndex = 40
+		Me.Feet.Text = "Feet"
+		Me.Feet.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Feet.UseVisualStyleBackColor = False
+		'
+		'TBSexToy
+		'
+		Me.TBSexToy.BackColor = System.Drawing.Color.LightGray
+		Me.TBSexToy.ForeColor = System.Drawing.Color.Black
+		Me.TBSexToy.Location = New System.Drawing.Point(130, 404)
+		Me.TBSexToy.Name = "TBSexToy"
+		Me.TBSexToy.Size = New System.Drawing.Size(104, 20)
+		Me.TBSexToy.TabIndex = 63
+		'
+		'Legs
+		'
+		Me.Legs.AllowDrop = True
+		Me.Legs.BackColor = System.Drawing.Color.White
+		Me.Legs.FlatAppearance.BorderSize = 2
+		Me.Legs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Legs.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Legs.ForeColor = System.Drawing.Color.Black
+		Me.Legs.Location = New System.Drawing.Point(11, 131)
+		Me.Legs.Name = "Legs"
+		Me.Legs.Size = New System.Drawing.Size(104, 24)
+		Me.Legs.TabIndex = 39
+		Me.Legs.Text = "Legs"
+		Me.Legs.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Legs.UseVisualStyleBackColor = False
+		'
+		'Sucking
+		'
+		Me.Sucking.AllowDrop = True
+		Me.Sucking.BackColor = System.Drawing.Color.White
+		Me.Sucking.FlatAppearance.BorderSize = 2
+		Me.Sucking.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Sucking.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Sucking.ForeColor = System.Drawing.Color.Black
+		Me.Sucking.Location = New System.Drawing.Point(11, 221)
+		Me.Sucking.Name = "Sucking"
+		Me.Sucking.Size = New System.Drawing.Size(104, 24)
+		Me.Sucking.TabIndex = 42
+		Me.Sucking.Text = "Sucking"
+		Me.Sucking.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Sucking.UseVisualStyleBackColor = False
+		'
+		'TBTattoo
+		'
+		Me.TBTattoo.BackColor = System.Drawing.Color.LightGray
+		Me.TBTattoo.ForeColor = System.Drawing.Color.Black
+		Me.TBTattoo.Location = New System.Drawing.Point(130, 374)
+		Me.TBTattoo.Name = "TBTattoo"
+		Me.TBTattoo.Size = New System.Drawing.Size(104, 20)
+		Me.TBTattoo.TabIndex = 62
+		'
+		'Face
+		'
+		Me.Face.AllowDrop = True
+		Me.Face.BackColor = System.Drawing.Color.White
+		Me.Face.FlatAppearance.BorderSize = 2
+		Me.Face.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Face.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Face.ForeColor = System.Drawing.Color.Black
+		Me.Face.Location = New System.Drawing.Point(11, 11)
+		Me.Face.Name = "Face"
+		Me.Face.Size = New System.Drawing.Size(104, 24)
+		Me.Face.TabIndex = 38
+		Me.Face.Text = "Face"
+		Me.Face.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Face.UseVisualStyleBackColor = False
+		'
+		'TBUnderwear
+		'
+		Me.TBUnderwear.BackColor = System.Drawing.Color.LightGray
+		Me.TBUnderwear.ForeColor = System.Drawing.Color.Black
+		Me.TBUnderwear.Location = New System.Drawing.Point(130, 344)
+		Me.TBUnderwear.Name = "TBUnderwear"
+		Me.TBUnderwear.Size = New System.Drawing.Size(104, 20)
+		Me.TBUnderwear.TabIndex = 61
+		'
+		'Smiling
+		'
+		Me.Smiling.AllowDrop = True
+		Me.Smiling.BackColor = System.Drawing.Color.White
+		Me.Smiling.FlatAppearance.BorderSize = 2
+		Me.Smiling.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Smiling.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Smiling.ForeColor = System.Drawing.Color.Black
+		Me.Smiling.Location = New System.Drawing.Point(11, 251)
+		Me.Smiling.Name = "Smiling"
+		Me.Smiling.Size = New System.Drawing.Size(104, 24)
+		Me.Smiling.TabIndex = 43
+		Me.Smiling.Text = "Smiling"
+		Me.Smiling.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Smiling.UseVisualStyleBackColor = False
+		'
+		'Pussy
+		'
+		Me.Pussy.AllowDrop = True
+		Me.Pussy.BackColor = System.Drawing.Color.White
+		Me.Pussy.FlatAppearance.BorderSize = 2
+		Me.Pussy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Pussy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Pussy.ForeColor = System.Drawing.Color.Black
+		Me.Pussy.Location = New System.Drawing.Point(11, 71)
+		Me.Pussy.Name = "Pussy"
+		Me.Pussy.Size = New System.Drawing.Size(104, 24)
+		Me.Pussy.TabIndex = 37
+		Me.Pussy.Text = "Pussy"
+		Me.Pussy.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Pussy.UseVisualStyleBackColor = False
+		'
+		'Glaring
+		'
+		Me.Glaring.AllowDrop = True
+		Me.Glaring.BackColor = System.Drawing.Color.White
+		Me.Glaring.FlatAppearance.BorderSize = 2
+		Me.Glaring.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Glaring.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Glaring.ForeColor = System.Drawing.Color.Black
+		Me.Glaring.Location = New System.Drawing.Point(11, 281)
+		Me.Glaring.Name = "Glaring"
+		Me.Glaring.Size = New System.Drawing.Size(104, 24)
+		Me.Glaring.TabIndex = 44
+		Me.Glaring.Text = "Glaring"
+		Me.Glaring.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Glaring.UseVisualStyleBackColor = False
+		'
+		'TBGarment
+		'
+		Me.TBGarment.BackColor = System.Drawing.Color.LightGray
+		Me.TBGarment.ForeColor = System.Drawing.Color.Black
+		Me.TBGarment.Location = New System.Drawing.Point(130, 314)
+		Me.TBGarment.Name = "TBGarment"
+		Me.TBGarment.Size = New System.Drawing.Size(104, 20)
+		Me.TBGarment.TabIndex = 60
+		'
+		'Boobs
+		'
+		Me.Boobs.AllowDrop = True
+		Me.Boobs.BackColor = System.Drawing.Color.White
+		Me.Boobs.FlatAppearance.BorderSize = 2
+		Me.Boobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Boobs.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Boobs.ForeColor = System.Drawing.Color.Black
+		Me.Boobs.Location = New System.Drawing.Point(11, 41)
+		Me.Boobs.Name = "Boobs"
+		Me.Boobs.Size = New System.Drawing.Size(104, 24)
+		Me.Boobs.TabIndex = 36
+		Me.Boobs.Text = "Boobs"
+		Me.Boobs.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Boobs.UseVisualStyleBackColor = False
+		'
+		'FullyDressed
+		'
+		Me.FullyDressed.AllowDrop = True
+		Me.FullyDressed.BackColor = System.Drawing.Color.White
+		Me.FullyDressed.FlatAppearance.BorderSize = 2
+		Me.FullyDressed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.FullyDressed.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.FullyDressed.ForeColor = System.Drawing.Color.Black
+		Me.FullyDressed.Location = New System.Drawing.Point(130, 11)
+		Me.FullyDressed.Name = "FullyDressed"
+		Me.FullyDressed.Size = New System.Drawing.Size(104, 24)
+		Me.FullyDressed.TabIndex = 45
+		Me.FullyDressed.Text = "Fully Dressed"
+		Me.FullyDressed.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.FullyDressed.UseVisualStyleBackColor = False
+		'
+		'Furniture
+		'
+		Me.Furniture.AllowDrop = True
+		Me.Furniture.BackColor = System.Drawing.Color.White
+		Me.Furniture.FlatAppearance.BorderSize = 2
+		Me.Furniture.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Furniture.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Furniture.ForeColor = System.Drawing.Color.Black
+		Me.Furniture.Location = New System.Drawing.Point(11, 431)
+		Me.Furniture.Name = "Furniture"
+		Me.Furniture.Size = New System.Drawing.Size(104, 24)
+		Me.Furniture.TabIndex = 59
+		Me.Furniture.Text = "Furniture"
+		Me.Furniture.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Furniture.UseVisualStyleBackColor = False
+		'
+		'Ass
+		'
+		Me.Ass.AllowDrop = True
+		Me.Ass.BackColor = System.Drawing.Color.White
+		Me.Ass.FlatAppearance.BorderSize = 2
+		Me.Ass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Ass.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Ass.ForeColor = System.Drawing.Color.Black
+		Me.Ass.Location = New System.Drawing.Point(11, 101)
+		Me.Ass.Name = "Ass"
+		Me.Ass.Size = New System.Drawing.Size(104, 24)
+		Me.Ass.TabIndex = 35
+		Me.Ass.Text = "Ass"
+		Me.Ass.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Ass.UseVisualStyleBackColor = False
+		'
+		'HalfDressed
+		'
+		Me.HalfDressed.AllowDrop = True
+		Me.HalfDressed.BackColor = System.Drawing.Color.White
+		Me.HalfDressed.FlatAppearance.BorderSize = 2
+		Me.HalfDressed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.HalfDressed.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.HalfDressed.ForeColor = System.Drawing.Color.Black
+		Me.HalfDressed.Location = New System.Drawing.Point(130, 41)
+		Me.HalfDressed.Name = "HalfDressed"
+		Me.HalfDressed.Size = New System.Drawing.Size(104, 24)
+		Me.HalfDressed.TabIndex = 46
+		Me.HalfDressed.Text = "Half Dressed"
+		Me.HalfDressed.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.HalfDressed.UseVisualStyleBackColor = False
+		'
+		'SexToy
+		'
+		Me.SexToy.AllowDrop = True
+		Me.SexToy.BackColor = System.Drawing.Color.White
+		Me.SexToy.FlatAppearance.BorderSize = 2
+		Me.SexToy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.SexToy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.SexToy.ForeColor = System.Drawing.Color.Black
+		Me.SexToy.Location = New System.Drawing.Point(11, 401)
+		Me.SexToy.Name = "SexToy"
+		Me.SexToy.Size = New System.Drawing.Size(104, 24)
+		Me.SexToy.TabIndex = 58
+		Me.SexToy.Text = "Sex Toy"
+		Me.SexToy.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.SexToy.UseVisualStyleBackColor = False
+		'
+		'GarmentCovering
+		'
+		Me.GarmentCovering.AllowDrop = True
+		Me.GarmentCovering.BackColor = System.Drawing.Color.White
+		Me.GarmentCovering.FlatAppearance.BorderSize = 2
+		Me.GarmentCovering.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.GarmentCovering.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.GarmentCovering.ForeColor = System.Drawing.Color.Black
+		Me.GarmentCovering.Location = New System.Drawing.Point(130, 71)
+		Me.GarmentCovering.Name = "GarmentCovering"
+		Me.GarmentCovering.Size = New System.Drawing.Size(104, 24)
+		Me.GarmentCovering.TabIndex = 47
+		Me.GarmentCovering.Text = "Garment Covering"
+		Me.GarmentCovering.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.GarmentCovering.UseVisualStyleBackColor = False
+		'
+		'Tattoo
+		'
+		Me.Tattoo.AllowDrop = True
+		Me.Tattoo.BackColor = System.Drawing.Color.White
+		Me.Tattoo.FlatAppearance.BorderSize = 2
+		Me.Tattoo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Tattoo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Tattoo.ForeColor = System.Drawing.Color.Black
+		Me.Tattoo.Location = New System.Drawing.Point(11, 371)
+		Me.Tattoo.Name = "Tattoo"
+		Me.Tattoo.Size = New System.Drawing.Size(104, 24)
+		Me.Tattoo.TabIndex = 57
+		Me.Tattoo.Text = "Tattoo"
+		Me.Tattoo.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Tattoo.UseVisualStyleBackColor = False
+		'
+		'HandsCovering
+		'
+		Me.HandsCovering.AllowDrop = True
+		Me.HandsCovering.BackColor = System.Drawing.Color.White
+		Me.HandsCovering.FlatAppearance.BorderSize = 2
+		Me.HandsCovering.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.HandsCovering.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.HandsCovering.ForeColor = System.Drawing.Color.Black
+		Me.HandsCovering.Location = New System.Drawing.Point(130, 101)
+		Me.HandsCovering.Name = "HandsCovering"
+		Me.HandsCovering.Size = New System.Drawing.Size(104, 24)
+		Me.HandsCovering.TabIndex = 48
+		Me.HandsCovering.Text = "Hands Covering"
+		Me.HandsCovering.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.HandsCovering.UseVisualStyleBackColor = False
+		'
+		'Naked
+		'
+		Me.Naked.AllowDrop = True
+		Me.Naked.BackColor = System.Drawing.Color.White
+		Me.Naked.FlatAppearance.BorderSize = 2
+		Me.Naked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Naked.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Naked.ForeColor = System.Drawing.Color.Black
+		Me.Naked.Location = New System.Drawing.Point(130, 161)
+		Me.Naked.Name = "Naked"
+		Me.Naked.Size = New System.Drawing.Size(104, 24)
+		Me.Naked.TabIndex = 49
+		Me.Naked.Text = "Naked"
+		Me.Naked.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Naked.UseVisualStyleBackColor = False
+		'
+		'Underwear
+		'
+		Me.Underwear.AllowDrop = True
+		Me.Underwear.BackColor = System.Drawing.Color.White
+		Me.Underwear.FlatAppearance.BorderSize = 2
+		Me.Underwear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Underwear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Underwear.ForeColor = System.Drawing.Color.Black
+		Me.Underwear.Location = New System.Drawing.Point(11, 341)
+		Me.Underwear.Name = "Underwear"
+		Me.Underwear.Size = New System.Drawing.Size(104, 24)
+		Me.Underwear.TabIndex = 56
+		Me.Underwear.Text = "Underwear"
+		Me.Underwear.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Underwear.UseVisualStyleBackColor = False
+		'
+		'SideView
+		'
+		Me.SideView.AllowDrop = True
+		Me.SideView.BackColor = System.Drawing.Color.White
+		Me.SideView.FlatAppearance.BorderSize = 2
+		Me.SideView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.SideView.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.SideView.ForeColor = System.Drawing.Color.Black
+		Me.SideView.Location = New System.Drawing.Point(130, 191)
+		Me.SideView.Name = "SideView"
+		Me.SideView.Size = New System.Drawing.Size(104, 24)
+		Me.SideView.TabIndex = 50
+		Me.SideView.Text = "Side View"
+		Me.SideView.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.SideView.UseVisualStyleBackColor = False
+		'
+		'CloseUp
+		'
+		Me.CloseUp.AllowDrop = True
+		Me.CloseUp.BackColor = System.Drawing.Color.White
+		Me.CloseUp.FlatAppearance.BorderSize = 2
+		Me.CloseUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.CloseUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.CloseUp.ForeColor = System.Drawing.Color.Black
+		Me.CloseUp.Location = New System.Drawing.Point(130, 221)
+		Me.CloseUp.Name = "CloseUp"
+		Me.CloseUp.Size = New System.Drawing.Size(104, 24)
+		Me.CloseUp.TabIndex = 51
+		Me.CloseUp.Text = "Close Up"
+		Me.CloseUp.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.CloseUp.UseVisualStyleBackColor = False
+		'
+		'Garment
+		'
+		Me.Garment.AllowDrop = True
+		Me.Garment.BackColor = System.Drawing.Color.White
+		Me.Garment.FlatAppearance.BorderSize = 2
+		Me.Garment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Garment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Garment.ForeColor = System.Drawing.Color.Black
+		Me.Garment.Location = New System.Drawing.Point(11, 311)
+		Me.Garment.Name = "Garment"
+		Me.Garment.Size = New System.Drawing.Size(104, 24)
+		Me.Garment.TabIndex = 55
+		Me.Garment.Text = "Garment"
+		Me.Garment.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Garment.UseVisualStyleBackColor = False
+		'
+		'SeeThrough
+		'
+		Me.SeeThrough.AllowDrop = True
+		Me.SeeThrough.BackColor = System.Drawing.Color.White
+		Me.SeeThrough.FlatAppearance.BorderSize = 2
+		Me.SeeThrough.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.SeeThrough.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.SeeThrough.ForeColor = System.Drawing.Color.Black
+		Me.SeeThrough.Location = New System.Drawing.Point(130, 131)
+		Me.SeeThrough.Name = "SeeThrough"
+		Me.SeeThrough.Size = New System.Drawing.Size(104, 24)
+		Me.SeeThrough.TabIndex = 52
+		Me.SeeThrough.Text = "See Through"
+		Me.SeeThrough.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.SeeThrough.UseVisualStyleBackColor = False
+		'
+		'AllFours
+		'
+		Me.AllFours.AllowDrop = True
+		Me.AllFours.BackColor = System.Drawing.Color.White
+		Me.AllFours.FlatAppearance.BorderSize = 2
+		Me.AllFours.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.AllFours.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.AllFours.ForeColor = System.Drawing.Color.Black
+		Me.AllFours.Location = New System.Drawing.Point(130, 251)
+		Me.AllFours.Name = "AllFours"
+		Me.AllFours.Size = New System.Drawing.Size(104, 24)
+		Me.AllFours.TabIndex = 53
+		Me.AllFours.Text = "All Fours"
+		Me.AllFours.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.AllFours.UseVisualStyleBackColor = False
+		'
+		'Piercing
+		'
+		Me.Piercing.AllowDrop = True
+		Me.Piercing.BackColor = System.Drawing.Color.White
+		Me.Piercing.FlatAppearance.BorderSize = 2
+		Me.Piercing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.Piercing.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Piercing.ForeColor = System.Drawing.Color.Black
+		Me.Piercing.Location = New System.Drawing.Point(130, 281)
+		Me.Piercing.Name = "Piercing"
+		Me.Piercing.Size = New System.Drawing.Size(104, 24)
+		Me.Piercing.TabIndex = 54
+		Me.Piercing.Text = "Piercing"
+		Me.Piercing.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.Piercing.UseVisualStyleBackColor = False
+		'
 		'PNLLazySub2
 		'
 		Me.PNLLazySub2.BackColor = System.Drawing.Color.Transparent
@@ -4040,15 +4024,60 @@ Partial Class Form1
 		Me.BTNPlaylist.Text = "Begin Selected Playlist"
 		Me.BTNPlaylist.UseVisualStyleBackColor = False
 		'
-		'voiceDomWMP
+		'PNLDate
 		'
-		Me.voiceDomWMP.Enabled = True
-		Me.voiceDomWMP.Location = New System.Drawing.Point(117, 155)
-		Me.voiceDomWMP.Name = "voiceDomWMP"
-		Me.voiceDomWMP.OcxState = CType(resources.GetObject("voiceDomWMP.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.voiceDomWMP.Size = New System.Drawing.Size(104, 63)
-		Me.voiceDomWMP.TabIndex = 113
-		Me.voiceDomWMP.Visible = False
+		Me.PNLDate.BackColor = Global.Tease_AI.My.MySettings.Default.DateBackColor
+		Me.PNLDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.PNLDate.Controls.Add(Me.LBLDate)
+		Me.PNLDate.Controls.Add(Me.LBLTime)
+		Me.PNLDate.Controls.Add(Me.LBLAMPM)
+		Me.PNLDate.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "DateBackColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.PNLDate.Dock = System.Windows.Forms.DockStyle.Top
+		Me.PNLDate.ForeColor = System.Drawing.Color.Transparent
+		Me.PNLDate.Location = New System.Drawing.Point(9, 0)
+		Me.PNLDate.Margin = New System.Windows.Forms.Padding(10)
+		Me.PNLDate.Name = "PNLDate"
+		Me.PNLDate.Padding = New System.Windows.Forms.Padding(10)
+		Me.PNLDate.Size = New System.Drawing.Size(244, 89)
+		Me.PNLDate.TabIndex = 777
+		'
+		'LBLDate
+		'
+		Me.LBLDate.BackColor = System.Drawing.Color.Transparent
+		Me.LBLDate.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "DateTextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.LBLDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLDate.ForeColor = Global.Tease_AI.My.MySettings.Default.DateTextColor
+		Me.LBLDate.Location = New System.Drawing.Point(0, 48)
+		Me.LBLDate.Name = "LBLDate"
+		Me.LBLDate.Size = New System.Drawing.Size(247, 21)
+		Me.LBLDate.TabIndex = 772
+		Me.LBLDate.Text = "Initializing Date..."
+		Me.LBLDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'LBLTime
+		'
+		Me.LBLTime.BackColor = System.Drawing.Color.Transparent
+		Me.LBLTime.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "DateTextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.LBLTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLTime.ForeColor = Global.Tease_AI.My.MySettings.Default.DateTextColor
+		Me.LBLTime.Location = New System.Drawing.Point(0, 11)
+		Me.LBLTime.Name = "LBLTime"
+		Me.LBLTime.Size = New System.Drawing.Size(247, 36)
+		Me.LBLTime.TabIndex = 771
+		Me.LBLTime.Text = "--:--"
+		Me.LBLTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'LBLAMPM
+		'
+		Me.LBLAMPM.BackColor = System.Drawing.Color.Transparent
+		Me.LBLAMPM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLAMPM.ForeColor = System.Drawing.Color.White
+		Me.LBLAMPM.Location = New System.Drawing.Point(176, 16)
+		Me.LBLAMPM.Name = "LBLAMPM"
+		Me.LBLAMPM.Size = New System.Drawing.Size(40, 24)
+		Me.LBLAMPM.TabIndex = 773
+		Me.LBLAMPM.Text = "PM"
+		Me.LBLAMPM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'PNLAvatar
 		'
@@ -4101,6 +4130,19 @@ Partial Class Form1
 		Me.Panel7.Size = New System.Drawing.Size(230, 179)
 		Me.Panel7.TabIndex = 780
 		'
+		'domAvatar
+		'
+		Me.domAvatar.BackColor = System.Drawing.Color.Black
+		Me.domAvatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.domAvatar.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.domAvatar.Image = CType(resources.GetObject("domAvatar.Image"), System.Drawing.Image)
+		Me.domAvatar.Location = New System.Drawing.Point(0, 3)
+		Me.domAvatar.Name = "domAvatar"
+		Me.domAvatar.Size = New System.Drawing.Size(230, 173)
+		Me.domAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+		Me.domAvatar.TabIndex = 117
+		Me.domAvatar.TabStop = False
+		'
 		'Panel4
 		'
 		Me.Panel4.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
@@ -4114,6 +4156,22 @@ Partial Class Form1
 		Me.Panel4.Size = New System.Drawing.Size(230, 27)
 		Me.Panel4.TabIndex = 779
 		'
+		'domName
+		'
+		Me.domName.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
+		Me.domName.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.domName.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "BackgroundColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.domName.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.domName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.domName.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.domName.Location = New System.Drawing.Point(1, 4)
+		Me.domName.Margin = New System.Windows.Forms.Padding(1)
+		Me.domName.Name = "domName"
+		Me.domName.Size = New System.Drawing.Size(243, 16)
+		Me.domName.TabIndex = 2
+		Me.domName.Text = "Domme Name"
+		Me.domName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		'
 		'Panel3
 		'
 		Me.Panel3.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
@@ -4125,6 +4183,92 @@ Partial Class Form1
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(230, 27)
 		Me.Panel3.TabIndex = 158
+		'
+		'subName
+		'
+		Me.subName.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
+		Me.subName.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.subName.Cursor = System.Windows.Forms.Cursors.IBeam
+		Me.subName.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "BackgroundColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.subName.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.subName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.subName.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.subName.Location = New System.Drawing.Point(1, 4)
+		Me.subName.Margin = New System.Windows.Forms.Padding(1)
+		Me.subName.Name = "subName"
+		Me.subName.ShortcutsEnabled = False
+		Me.subName.Size = New System.Drawing.Size(242, 16)
+		Me.subName.TabIndex = 3
+		Me.subName.Text = "Your Name"
+		Me.subName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		'
+		'PNLFileTransfer
+		'
+		Me.PNLFileTransfer.BackColor = System.Drawing.Color.White
+		Me.PNLFileTransfer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+		Me.PNLFileTransfer.Controls.Add(Me.PictureBox11)
+		Me.PNLFileTransfer.Controls.Add(Me.BTNFileTransferOpen)
+		Me.PNLFileTransfer.Controls.Add(Me.BTNFIleTransferDismiss)
+		Me.PNLFileTransfer.Controls.Add(Me.LBLFileTransfer)
+		Me.PNLFileTransfer.Controls.Add(Me.PBFileTransfer)
+		Me.PNLFileTransfer.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.PNLFileTransfer.Location = New System.Drawing.Point(2, 2)
+		Me.PNLFileTransfer.Name = "PNLFileTransfer"
+		Me.PNLFileTransfer.Padding = New System.Windows.Forms.Padding(5)
+		Me.PNLFileTransfer.Size = New System.Drawing.Size(234, 237)
+		Me.PNLFileTransfer.TabIndex = 157
+		'
+		'PictureBox11
+		'
+		Me.PictureBox11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+			Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.PictureBox11.ErrorImage = Nothing
+		Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+		Me.PictureBox11.Location = New System.Drawing.Point(22, 29)
+		Me.PictureBox11.Name = "PictureBox11"
+		Me.PictureBox11.Size = New System.Drawing.Size(182, 149)
+		Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+		Me.PictureBox11.TabIndex = 128
+		Me.PictureBox11.TabStop = False
+		'
+		'BTNFileTransferOpen
+		'
+		Me.BTNFileTransferOpen.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+		Me.BTNFileTransferOpen.Location = New System.Drawing.Point(22, 206)
+		Me.BTNFileTransferOpen.Name = "BTNFileTransferOpen"
+		Me.BTNFileTransferOpen.Size = New System.Drawing.Size(95, 23)
+		Me.BTNFileTransferOpen.TabIndex = 127
+		Me.BTNFileTransferOpen.Text = "Open File"
+		Me.BTNFileTransferOpen.UseVisualStyleBackColor = True
+		'
+		'BTNFIleTransferDismiss
+		'
+		Me.BTNFIleTransferDismiss.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+		Me.BTNFIleTransferDismiss.Location = New System.Drawing.Point(128, 206)
+		Me.BTNFIleTransferDismiss.Name = "BTNFIleTransferDismiss"
+		Me.BTNFIleTransferDismiss.Size = New System.Drawing.Size(95, 23)
+		Me.BTNFIleTransferDismiss.TabIndex = 126
+		Me.BTNFIleTransferDismiss.Text = "Dismiss"
+		Me.BTNFIleTransferDismiss.UseVisualStyleBackColor = True
+		'
+		'LBLFileTransfer
+		'
+		Me.LBLFileTransfer.Location = New System.Drawing.Point(9, 2)
+		Me.LBLFileTransfer.Name = "LBLFileTransfer"
+		Me.LBLFileTransfer.Size = New System.Drawing.Size(227, 24)
+		Me.LBLFileTransfer.TabIndex = 125
+		Me.LBLFileTransfer.Text = "Mistress Name is sending you a file!"
+		Me.LBLFileTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'PBFileTransfer
+		'
+		Me.PBFileTransfer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+		Me.PBFileTransfer.Location = New System.Drawing.Point(22, 184)
+		Me.PBFileTransfer.Maximum = 10
+		Me.PBFileTransfer.Name = "PBFileTransfer"
+		Me.PBFileTransfer.Size = New System.Drawing.Size(200, 13)
+		Me.PBFileTransfer.TabIndex = 0
 		'
 		'PNLLazySubAV
 		'
@@ -4297,53 +4441,74 @@ Partial Class Form1
 		Me.Button4.Text = "On the edge!"
 		Me.Button4.UseVisualStyleBackColor = False
 		'
-		'PnlSidepanelLayout
-		'
-		Me.PnlSidepanelLayout.BackColor = System.Drawing.Color.Transparent
-		Me.PnlSidepanelLayout.Controls.Add(Me.PnlTabsLayout)
-		Me.PnlSidepanelLayout.Controls.Add(Me.PNLDate)
-		Me.PnlSidepanelLayout.Controls.Add(Me.PNLAvatar)
-		Me.PnlSidepanelLayout.Dock = System.Windows.Forms.DockStyle.Left
-		Me.PnlSidepanelLayout.Location = New System.Drawing.Point(0, 12)
-		Me.PnlSidepanelLayout.Name = "PnlSidepanelLayout"
-		Me.PnlSidepanelLayout.Padding = New System.Windows.Forms.Padding(9, 0, 12, 0)
-		Me.PnlSidepanelLayout.Size = New System.Drawing.Size(265, 979)
-		Me.PnlSidepanelLayout.TabIndex = 779
-		'
-		'PnlTabsLayout
-		'
-		Me.PnlTabsLayout.Controls.Add(Me.PNLTabs)
-		Me.PnlTabsLayout.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.PnlTabsLayout.Location = New System.Drawing.Point(9, 89)
-		Me.PnlTabsLayout.Name = "PnlTabsLayout"
-		Me.PnlTabsLayout.Padding = New System.Windows.Forms.Padding(0, 10, 0, 10)
-		Me.PnlTabsLayout.Size = New System.Drawing.Size(244, 643)
-		Me.PnlTabsLayout.TabIndex = 779
-		'
 		'contextWMP
 		'
 		Me.contextWMP.Enabled = True
-		Me.contextWMP.Location = New System.Drawing.Point(128, 205)
+		Me.contextWMP.Location = New System.Drawing.Point(133, 350)
 		Me.contextWMP.Name = "contextWMP"
 		Me.contextWMP.OcxState = CType(resources.GetObject("contextWMP.OcxState"), System.Windows.Forms.AxHost.State)
 		Me.contextWMP.Size = New System.Drawing.Size(104, 63)
 		Me.contextWMP.TabIndex = 112
 		Me.contextWMP.Visible = False
 		'
-		'PnlLayoutForm
+		'sendButton
 		'
-		Me.PnlLayoutForm.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
-		Me.PnlLayoutForm.Controls.Add(Me.contextWMP)
-		Me.PnlLayoutForm.Controls.Add(Me.SplitContainer1)
-		Me.PnlLayoutForm.Controls.Add(Me.PnlChatBoxLayout)
-		Me.PnlLayoutForm.Controls.Add(Me.PnlSidepanelLayout)
-		Me.PnlLayoutForm.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "BackgroundColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.PnlLayoutForm.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.PnlLayoutForm.Location = New System.Drawing.Point(0, 24)
-		Me.PnlLayoutForm.Name = "PnlLayoutForm"
-		Me.PnlLayoutForm.Padding = New System.Windows.Forms.Padding(0, 12, 9, 8)
-		Me.PnlLayoutForm.Size = New System.Drawing.Size(1676, 999)
-		Me.PnlLayoutForm.TabIndex = 16
+		Me.sendButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.sendButton.BackColor = Global.Tease_AI.My.MySettings.Default.BackgroundColor
+		Me.sendButton.DataBindings.Add(New System.Windows.Forms.Binding("BackColor", Global.Tease_AI.My.MySettings.Default, "BackgroundColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.sendButton.DataBindings.Add(New System.Windows.Forms.Binding("ForeColor", Global.Tease_AI.My.MySettings.Default, "TextColor", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.sendButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.sendButton.ForeColor = Global.Tease_AI.My.MySettings.Default.TextColor
+		Me.sendButton.Location = New System.Drawing.Point(829, 97)
+		Me.sendButton.Name = "sendButton"
+		Me.sendButton.Size = New System.Drawing.Size(50, 24)
+		Me.sendButton.TabIndex = 147
+		Me.sendButton.Text = "SEND"
+		Me.sendButton.UseVisualStyleBackColor = False
+		'
+		'LBLVolumeDomWMP
+		'
+		Me.LBLVolumeDomWMP.AutoSize = True
+		Me.LBLVolumeDomWMP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLVolumeDomWMP.Location = New System.Drawing.Point(210, 18)
+		Me.LBLVolumeDomWMP.Name = "LBLVolumeDomWMP"
+		Me.LBLVolumeDomWMP.Size = New System.Drawing.Size(18, 20)
+		Me.LBLVolumeDomWMP.TabIndex = 114
+		Me.LBLVolumeDomWMP.Text = "0"
+		Me.LBLVolumeDomWMP.TextAlign = System.Drawing.ContentAlignment.TopRight
+		'
+		'LBLVolumecontextWMP
+		'
+		Me.LBLVolumecontextWMP.AutoSize = True
+		Me.LBLVolumecontextWMP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLVolumecontextWMP.Location = New System.Drawing.Point(209, 85)
+		Me.LBLVolumecontextWMP.Name = "LBLVolumecontextWMP"
+		Me.LBLVolumecontextWMP.Size = New System.Drawing.Size(18, 20)
+		Me.LBLVolumecontextWMP.TabIndex = 114
+		Me.LBLVolumecontextWMP.Text = "0"
+		Me.LBLVolumecontextWMP.TextAlign = System.Drawing.ContentAlignment.TopRight
+		'
+		'LBLVolumevoiceDomWMP
+		'
+		Me.LBLVolumevoiceDomWMP.AutoSize = True
+		Me.LBLVolumevoiceDomWMP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLVolumevoiceDomWMP.Location = New System.Drawing.Point(209, 145)
+		Me.LBLVolumevoiceDomWMP.Name = "LBLVolumevoiceDomWMP"
+		Me.LBLVolumevoiceDomWMP.Size = New System.Drawing.Size(18, 20)
+		Me.LBLVolumevoiceDomWMP.TabIndex = 114
+		Me.LBLVolumevoiceDomWMP.Text = "0"
+		Me.LBLVolumevoiceDomWMP.TextAlign = System.Drawing.ContentAlignment.TopRight
+		'
+		'LBLVolumeBeatmeter
+		'
+		Me.LBLVolumeBeatmeter.AutoSize = True
+		Me.LBLVolumeBeatmeter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.LBLVolumeBeatmeter.Location = New System.Drawing.Point(209, 212)
+		Me.LBLVolumeBeatmeter.Name = "LBLVolumeBeatmeter"
+		Me.LBLVolumeBeatmeter.Size = New System.Drawing.Size(18, 20)
+		Me.LBLVolumeBeatmeter.TabIndex = 114
+		Me.LBLVolumeBeatmeter.Text = "0"
+		Me.LBLVolumeBeatmeter.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'TimerMarVidVolume
 		'
@@ -4487,7 +4652,6 @@ Partial Class Form1
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
 		Me.ClientSize = New System.Drawing.Size(1676, 1023)
-		Me.Controls.Add(Me.voiceDomWMP)
 		Me.Controls.Add(Me.PnlLayoutForm)
 		Me.Controls.Add(Me.MenuStrip2)
 		Me.Controls.Add(Me.sendButton)
@@ -4500,8 +4664,12 @@ Partial Class Form1
 		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Tease A.I. Community - PATCH ##.#"
-		CType(Me.mainPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.domAvatar, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.PictureStrip.ResumeLayout(False)
+		Me.TeaseAIMenu.ResumeLayout(False)
+		Me.MenuStrip2.ResumeLayout(False)
+		Me.MenuStrip2.PerformLayout()
+		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.PnlLayoutForm.ResumeLayout(False)
 		Me.SplitContainer1.Panel1.ResumeLayout(False)
 		Me.SplitContainer1.Panel1.PerformLayout()
 		Me.SplitContainer1.Panel2.ResumeLayout(False)
@@ -4509,20 +4677,20 @@ Partial Class Form1
 		Me.SplitContainer1.ResumeLayout(False)
 		CType(Me.BeatMeterWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.DomWMP, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.mainPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PnlChatTextLayout.ResumeLayout(False)
 		Me.PNLMediaBar.ResumeLayout(False)
 		Me.PnlChatBoxLayout.ResumeLayout(False)
 		Me.PnlChatBoxLayout.PerformLayout()
-		Me.PNLDomTagBTN.ResumeLayout(False)
-		Me.PNLDomTagBTN.PerformLayout()
-		Me.PNLFileTransfer.ResumeLayout(False)
-		CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.PictureStrip.ResumeLayout(False)
-		Me.TeaseAIMenu.ResumeLayout(False)
-		Me.MenuStrip2.ResumeLayout(False)
-		Me.MenuStrip2.PerformLayout()
-		Me.PNLDate.ResumeLayout(False)
+		Me.PnlSidepanelLayout.ResumeLayout(False)
+		Me.PnlTabsLayout.ResumeLayout(False)
 		Me.PNLTabs.ResumeLayout(False)
+		Me.PNLVolumes.ResumeLayout(False)
+		Me.PNLVolumes.PerformLayout()
+		CType(Me.sliderVolumeBeatmeter, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.sliderVolumevoiceDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.sliderVolumecontextWMP, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.sliderVolumeDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PNLWishList.ResumeLayout(False)
 		CType(Me.WishlistCostSilver, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.WishlistCostGold, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4552,21 +4720,23 @@ Partial Class Form1
 		Me.PNLWritingTask.ResumeLayout(False)
 		Me.PNLWritingTask.PerformLayout()
 		Me.PNLAppRandomizer.ResumeLayout(False)
+		Me.PNLDomTagBTN.ResumeLayout(False)
+		Me.PNLDomTagBTN.PerformLayout()
 		Me.PNLPlaylist.ResumeLayout(False)
-		CType(Me.voiceDomWMP, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.PNLDate.ResumeLayout(False)
 		Me.PNLAvatar.ResumeLayout(False)
 		Me.PnlAvatarBackground.ResumeLayout(False)
 		Me.PnlAvatarInner.ResumeLayout(False)
 		Me.Panel7.ResumeLayout(False)
+		CType(Me.domAvatar, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
+		Me.PNLFileTransfer.ResumeLayout(False)
+		CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PNLLazySubAV.ResumeLayout(False)
-		Me.PnlSidepanelLayout.ResumeLayout(False)
-		Me.PnlTabsLayout.ResumeLayout(False)
 		CType(Me.contextWMP, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.PnlLayoutForm.ResumeLayout(False)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -4968,4 +5138,18 @@ Partial Class Form1
 	Friend WithEvents RandomContactToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Friend WithEvents GenerateDommeAVToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+	Friend WithEvents PNLVolumes As Panel
+	Friend WithEvents Label4 As Label
+	Friend WithEvents Label3 As Label
+	Friend WithEvents sliderVolumecontextWMP As TrackBar
+	Friend WithEvents sliderVolumeDomWMP As TrackBar
+	Friend WithEvents Label5 As Label
+	Friend WithEvents sliderVolumevoiceDomWMP As TrackBar
+	Friend WithEvents VolumesToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents Label6 As Label
+	Friend WithEvents sliderVolumeBeatmeter As TrackBar
+	Friend WithEvents LBLVolumeBeatmeter As Label
+	Friend WithEvents LBLVolumevoiceDomWMP As Label
+	Friend WithEvents LBLVolumecontextWMP As Label
+	Friend WithEvents LBLVolumeDomWMP As Label
 End Class
