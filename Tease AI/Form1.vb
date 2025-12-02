@@ -17131,9 +17131,14 @@ restartInstantly:
 		If PNLPlaylist.Visible = False Then
 			CloseApp(PNLPlaylist)
 			LBPlaylist.Items.Clear()
-			For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Playlist\", FileIO.SearchOption.SearchTopLevelOnly, "*.txt")
-				LBPlaylist.Items.Add(Path.GetFileName(foundFile).Replace(".txt", ""))
-			Next
+			If Directory.Exists(ssh.Folders.Playlist) Then
+				For Each foundFile As String In My.Computer.FileSystem.GetFiles(ssh.Folders.Playlist, FileIO.SearchOption.SearchTopLevelOnly, "*.txt")
+					LBPlaylist.Items.Add(Path.GetFileName(foundFile).Replace(".txt", ""))
+				Next
+			Else
+				Directory.CreateDirectory(ssh.Folders.Playlist)
+			End If
+
 		End If
 	End Sub
 
@@ -17144,7 +17149,7 @@ restartInstantly:
 	Private Sub WishlistToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WishlistToolStripMenuItem.Click
 		If PNLWishList.Visible = False Then
 
-
+			CloseApp(PNLWishList)
 
 			If My.Settings.ClearWishlist = True Then
 
@@ -17165,9 +17170,14 @@ restartInstantly:
 				Dim WishList As New List(Of String)
 				WishList.Clear()
 
-				For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Apps\Wishlist\Items\", FileIO.SearchOption.SearchTopLevelOnly, "*.txt")
-					WishList.Add(foundFile)
-				Next
+				If Directory.Exists(ssh.Folders.WishlistItems) Then
+					For Each foundFile As String In My.Computer.FileSystem.GetFiles(ssh.Folders.WishlistItems, FileIO.SearchOption.SearchTopLevelOnly, "*.txt")
+						WishList.Add(foundFile)
+					Next
+				Else
+					Directory.CreateDirectory(ssh.Folders.WishlistItems)
+				End If
+
 
 				If WishList.Count < 1 Then
 					MessageBox.Show(Me, "No Wishlist items found!" & Environment.NewLine & Environment.NewLine &
@@ -17339,46 +17349,55 @@ restartInstantly:
 	End Sub
 
 	Private Sub HypnoticGuideToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HypnoticGuideToolStripMenuItem.Click
-		CloseApp(PNLHypnoGen)
 		If PNLHypnoGen.Visible = False Then
 
-
+			CloseApp(PNLHypnoGen)
 
 			LBHypnoGenInduction.Items.Clear()
 
-			For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Apps\Hypnotic Guide\Inductions\", FileIO.SearchOption.SearchTopLevelOnly, "*.txt")
+			If Directory.Exists(ssh.Folders.HypnoticGuideInductions) Then
+				For Each foundFile As String In My.Computer.FileSystem.GetFiles(ssh.Folders.HypnoticGuideInductions, FileIO.SearchOption.SearchTopLevelOnly, "*.txt")
+					Dim TempUrl As String = foundFile
+					TempUrl = TempUrl.Replace(".txt", "")
+					Do Until Not TempUrl.Contains("\")
+						TempUrl = TempUrl.Remove(0, 1)
+					Loop
+					LBHypnoGenInduction.Items.Add(TempUrl)
+				Next
+			Else
+				Directory.CreateDirectory(ssh.Folders.HypnoticGuideInductions)
+			End If
 
-				Dim TempUrl As String = foundFile
-				TempUrl = TempUrl.Replace(".txt", "")
-				Do Until Not TempUrl.Contains("\")
-					TempUrl = TempUrl.Remove(0, 1)
-				Loop
-				LBHypnoGenInduction.Items.Add(TempUrl)
+			If Directory.Exists(ssh.Folders.HypnoticGuide) Then
+				For Each foundFile As String In My.Computer.FileSystem.GetFiles(ssh.Folders.HypnoticGuide, FileIO.SearchOption.SearchTopLevelOnly, "*.mp3")
+					Dim TempUrl As String = foundFile
+					Do Until Not TempUrl.Contains("\")
+						TempUrl = TempUrl.Remove(0, 1)
+					Loop
+					ComboBoxHypnoGenTrack.Items.Add(TempUrl)
+				Next
+			Else
+				Directory.CreateDirectory(ssh.Folders.HypnoticGuide)
+			End If
 
-			Next
-
-			For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Apps\Hypnotic Guide\", FileIO.SearchOption.SearchTopLevelOnly, "*.mp3")
-				Dim TempUrl As String = foundFile
-				Do Until Not TempUrl.Contains("\")
-					TempUrl = TempUrl.Remove(0, 1)
-				Loop
-				ComboBoxHypnoGenTrack.Items.Add(TempUrl)
-			Next
 
 
 
 			LBHypnoGen.Items.Clear()
 
-			For Each foundFile As String In My.Computer.FileSystem.GetFiles(Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Apps\Hypnotic Guide\Hypno Files\", FileIO.SearchOption.SearchTopLevelOnly, "*.txt")
+			If Directory.Exists(ssh.Folders.HypnoticGuideFiles) Then
+				For Each foundFile As String In My.Computer.FileSystem.GetFiles(ssh.Folders.HypnoticGuideFiles, FileIO.SearchOption.SearchTopLevelOnly, "*.txt")
+					Dim TempUrl As String = foundFile
+					TempUrl = TempUrl.Replace(".txt", "")
+					Do Until Not TempUrl.Contains("\")
+						TempUrl = TempUrl.Remove(0, 1)
+					Loop
+					LBHypnoGen.Items.Add(TempUrl)
+				Next
+			Else
+				Directory.CreateDirectory(ssh.Folders.HypnoticGuideFiles)
+			End If
 
-				Dim TempUrl As String = foundFile
-				TempUrl = TempUrl.Replace(".txt", "")
-				Do Until Not TempUrl.Contains("\")
-					TempUrl = TempUrl.Remove(0, 1)
-				Loop
-				LBHypnoGen.Items.Add(TempUrl)
-
-			Next
 
 
 
@@ -17388,8 +17407,9 @@ restartInstantly:
 	End Sub
 
 	Private Sub VitalSubToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VitalSubToolStripMenuItem.Click
-		CloseApp(AppPanelVitalSub)
 		If AppPanelVitalSub.Visible = False Then
+
+			CloseApp(AppPanelVitalSub)
 
 			If File.Exists(Application.StartupPath & "\System\VitalSub\CalorieList.txt") And ComboBoxCalorie.Items.Count = 0 Then
 				Debug.Print("called itttttttt")

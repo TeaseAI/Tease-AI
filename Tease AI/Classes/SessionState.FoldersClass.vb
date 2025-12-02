@@ -79,6 +79,53 @@ Partial Class SessionState
 			End Get
 		End Property
 
+		Friend ReadOnly Property Vocabulary As String
+			Get
+				Return String.Format("{0}Vocabulary\", Personality)
+			End Get
+		End Property
+
+		Friend ReadOnly Property Responses As String
+			Get
+				Return String.Format("{0}Responses\", Vocabulary)
+			End Get
+		End Property
+
+		Friend ReadOnly Property Playlist As String
+			Get
+				Return String.Format("{0}Playlist\", Personality)
+			End Get
+		End Property
+
+		Friend ReadOnly Property Apps As String
+			Get
+				Return String.Format("{0}Apps\", Personality)
+			End Get
+		End Property
+
+		Friend ReadOnly Property WishlistItems As String
+			Get
+				Return String.Format("{0}Wishlist\Items\", Apps)
+			End Get
+		End Property
+
+		Friend ReadOnly Property HypnoticGuide As String
+			Get
+				Return String.Format("{0}Hypnotic Guide\", Apps)
+			End Get
+		End Property
+
+		Friend ReadOnly Property HypnoticGuideInductions As String
+			Get
+				Return String.Format("{0}Inductions\", HypnoticGuide)
+			End Get
+		End Property
+
+		Friend ReadOnly Property HypnoticGuideFiles As String
+			Get
+				Return String.Format("{0}Hypno Files\", HypnoticGuide)
+			End Get
+		End Property
 
 	End Class
 
