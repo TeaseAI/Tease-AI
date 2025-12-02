@@ -10,7 +10,7 @@
 		If My.Settings.TimerSTF = 4 Then StrokeTauntTick = randomizer.Next(25, 46)
 		If My.Settings.TimerSTF = 5 Then StrokeTauntTick = randomizer.Next(15, 26)
 
-		If initial And StrokeTauntTick < 20 Then EdgeTauntInt = 20
+		If initial And StrokeTauntTick < 20 Then StrokeTauntTick = 20
 	End Sub
 
 	''' <summary>
