@@ -5794,6 +5794,8 @@ Retry:
 
 		If ssh.TempScriptCount = 0 Then
 			ssh.UpdateStrokeTaunts(False)
+		Else
+			ssh.StrokeTauntTick = ssh.randomizer.Next(5, 12)
 		End If
 
 	End Sub
@@ -9252,7 +9254,7 @@ TaskCleanSet:
 			StrokePace = ssh.randomizer.Next(NBMaxPace.Value, NBMinPace.Value)
 			StrokePace = 50 * Math.Round(StrokePace / 50)
 
-			ssh.StrokeTauntTick = ssh.randomizer.Next(11, 21)
+			ssh.UpdateStrokeTaunts(True)
 			'StrokeThread = New Thread(AddressOf StrokeLoop)
 			'StrokeThread.IsBackground = True
 			'StrokeThread.SetApartmentState(ApartmentState.STA)
@@ -9292,7 +9294,7 @@ TaskCleanSet:
 			Else
 				ssh.StrokeTick = ssh.randomizer.Next(FrmSettings.NBTauntCycleMin.Value * 60, FrmSettings.NBTauntCycleMax.Value * 60)
 			End If
-			ssh.StrokeTauntTick = ssh.randomizer.Next(11, 21)
+			ssh.UpdateStrokeTaunts(True)
 			StrokeTimer.Start()
 			StrokeTauntTimer.Start()
 			StringClean = StringClean.Replace("@StartTaunts", "")
