@@ -6448,6 +6448,82 @@ CensorConstant:
 			Next
 		End If
 
+		If StringClean.Contains("#Random") Then
+			Dim round As Integer
+			Dim filter As String
+			If StringClean.Contains("#RandomRound100(") Then
+				round = 100
+				filter = "#RandomRound100("
+			ElseIf StringClean.Contains("#RandomRound50(") Then
+				round = 50
+				filter = "#RandomRound50("
+			ElseIf StringClean.Contains("#RandomRound10(") Then
+				round = 10
+				filter = "#RandomRound10("
+			ElseIf StringClean.Contains("#RandomRound5(") Then
+				round = 5
+				filter = "#RandomRound5("
+			ElseIf StringClean.Contains("#Random(") Then
+				round = 1
+				filter = "#Random("
+			Else
+				round = 0
+				filter = ""
+			End If
+
+			If round <> 0 Then
+				Dim RandomFlag As String = GetParentheses(StringClean, filter)
+				Dim OriginalFlag As String = RandomFlag
+				RandomFlag = FixCommas(RandomFlag)
+				Dim RandInt As Integer
+				Dim FlagArray() As String = RandomFlag.Split(",")
+				Dim min As Integer = Val(FlagArray(0))
+				Dim max As Integer = Val(FlagArray(1))
+
+				If max >= min Then
+					RandInt = ssh.randomizer.Next(min, max)
+				Else
+					RandInt = ssh.randomizer.Next(max, min)
+				End If
+
+				If round > 1 Then
+					If RandInt < round Then
+						RandInt = round
+					Else
+						RandInt = round * Math.Round(RandInt / round)
+					End If
+				End If
+
+				StringClean = StringClean.Replace(filter & OriginalFlag & ")", RandInt)
+			End If
+		End If
+
+		If StringClean.Contains("#DateDifference(") Then
+			Dim myArray As String() = StringClean.Split("#")
+
+			For i As Integer = 0 To myArray.Count - 1
+
+				If myArray(i).Contains("DateDifference") Then
+					Dim DateFlag As String = GetParentheses(StringClean, "DateDifference(")
+					Dim OriginalFlag As String = DateFlag
+					DateFlag = FixCommas(DateFlag)
+					Dim DateArray() As String = DateFlag.Split(",")
+
+					Dim DDiff As Integer
+
+					If UCase(DateArray(1)).Contains("SECOND") Then DDiff = DateDiff(DateInterval.Second, GetDate(DateArray(0)), Now)
+					If UCase(DateArray(1)).Contains("MINUTE") Then DDiff = DateDiff(DateInterval.Minute, GetDate(DateArray(0)), Now)
+					If UCase(DateArray(1)).Contains("HOUR") Then DDiff = DateDiff(DateInterval.Hour, GetDate(DateArray(0)), Now)
+					If UCase(DateArray(1)).Contains("DAY") Then DDiff = DateDiff(DateInterval.Day, GetDate(DateArray(0)), Now)
+					If UCase(DateArray(1)).Contains("WEEK") Then DDiff = DateDiff(DateInterval.Day, GetDate(DateArray(0)), Now) / 7
+					If UCase(DateArray(1)).Contains("MONTH") Then DDiff = DateDiff(DateInterval.Month, GetDate(DateArray(0)), Now)
+					If UCase(DateArray(1)).Contains("YEAR") Then DDiff = DateDiff(DateInterval.Year, GetDate(DateArray(0)), Now)
+
+					StringClean = StringClean.Replace("#DateDifference(" & OriginalFlag & ")", DDiff)
+				End If
+			Next
+		End If
+
 		If StringClean.Contains("@RT(") Or StringClean.Contains("@RandomText(") Then
 			Dim replace As String() = {"@RT(", "@RandomText("}
 			Dim RandArray As String() = StringClean.Split("@")
@@ -6581,82 +6657,6 @@ CensorConstant:
 			StringClean = StringClean.Replace("#OrgasmLockDate", My.Settings.OrgasmLockDate.Date.ToString())
 		Else
 			StringClean = StringClean.Replace("#OrgasmLockDate", "later")
-		End If
-
-		If StringClean.Contains("#Random") Then
-			Dim round As Integer
-			Dim filter As String
-			If StringClean.Contains("#RandomRound100(") Then
-				round = 100
-				filter = "#RandomRound100("
-			ElseIf StringClean.Contains("#RandomRound50(") Then
-				round = 50
-				filter = "#RandomRound50("
-			ElseIf StringClean.Contains("#RandomRound10(") Then
-				round = 10
-				filter = "#RandomRound10("
-			ElseIf StringClean.Contains("#RandomRound5(") Then
-				round = 5
-				filter = "#RandomRound5("
-			ElseIf StringClean.Contains("#Random(") Then
-				round = 1
-				filter = "#Random("
-			Else
-				round = 0
-				filter = ""
-			End If
-
-			If round <> 0 Then
-				Dim RandomFlag As String = GetParentheses(StringClean, filter)
-				Dim OriginalFlag As String = RandomFlag
-				RandomFlag = FixCommas(RandomFlag)
-				Dim RandInt As Integer
-				Dim FlagArray() As String = RandomFlag.Split(",")
-				Dim min As Integer = Val(FlagArray(0))
-				Dim max As Integer = Val(FlagArray(1))
-
-				If max >= min Then
-					RandInt = ssh.randomizer.Next(min, max)
-				Else
-					RandInt = ssh.randomizer.Next(max, min)
-				End If
-
-				If round > 1 Then
-					If RandInt < round Then
-						RandInt = round
-					Else
-						RandInt = round * Math.Round(RandInt / round)
-					End If
-				End If
-
-				StringClean = StringClean.Replace(filter & OriginalFlag & ")", RandInt)
-			End If
-		End If
-
-		If StringClean.Contains("#DateDifference(") Then
-			Dim myArray As String() = StringClean.Split("#")
-
-			For i As Integer = 0 To myArray.Count - 1
-
-				If myArray(i).Contains("DateDifference") Then
-					Dim DateFlag As String = GetParentheses(StringClean, "DateDifference(")
-					Dim OriginalFlag As String = DateFlag
-					DateFlag = FixCommas(DateFlag)
-					Dim DateArray() As String = DateFlag.Split(",")
-
-					Dim DDiff As Integer
-
-					If UCase(DateArray(1)).Contains("SECOND") Then DDiff = DateDiff(DateInterval.Second, GetDate(DateArray(0)), Now)
-					If UCase(DateArray(1)).Contains("MINUTE") Then DDiff = DateDiff(DateInterval.Minute, GetDate(DateArray(0)), Now)
-					If UCase(DateArray(1)).Contains("HOUR") Then DDiff = DateDiff(DateInterval.Hour, GetDate(DateArray(0)), Now)
-					If UCase(DateArray(1)).Contains("DAY") Then DDiff = DateDiff(DateInterval.Day, GetDate(DateArray(0)), Now)
-					If UCase(DateArray(1)).Contains("WEEK") Then DDiff = DateDiff(DateInterval.Day, GetDate(DateArray(0)), Now) / 7
-					If UCase(DateArray(1)).Contains("MONTH") Then DDiff = DateDiff(DateInterval.Month, GetDate(DateArray(0)), Now)
-					If UCase(DateArray(1)).Contains("YEAR") Then DDiff = DateDiff(DateInterval.Year, GetDate(DateArray(0)), Now)
-
-					StringClean = StringClean.Replace("#DateDifference(" & OriginalFlag & ")", DDiff)
-				End If
-			Next
 		End If
 
 		StringClean = StringClean.Replace("#SYS_Safeword", FrmSettings.TBSafeword.Text)
