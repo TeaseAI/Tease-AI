@@ -6525,24 +6525,21 @@ CensorConstant:
 		End If
 
 		If StringClean.Contains("@RT(") Or StringClean.Contains("@RandomText(") Then
-			Dim replace As String() = {"@RT(", "@RandomText("}
+			StringClean = StringClean.Replace("@RT", "@RandomText")
 			Dim RandArray As String() = StringClean.Split("@")
-			For a = 0 To replace.Length() - 1
-				For i As Integer = 0 To RandArray.Count - 1
-					RandArray(i) = "@" & RandArray(i)
-					If RandArray(i).Contains(replace(a)) Then
-						Dim tempString = GetParentheses(RandArray(i), replace(a), RandArray(i).Split(")").Length - 1)
-						Dim startString = tempString
-						tempString = tempString.Replace(",,", "###INSERT-COMMA###")
-						tempString = FixCommas(tempString)
-						Dim selectArray As String() = tempString.Split(",")
-						For n As Integer = 0 To selectArray.Count - 1
-							selectArray(n) = selectArray(n).Replace("###INSERT-COMMA###", ",")
-						Next
-						tempString = selectArray(ssh.randomizer.Next(0, selectArray.Count()))
-						StringClean = StringClean.Replace(replace(a) & startString & ")", tempString)
-					End If
-				Next
+			For i As Integer = 0 To RandArray.Count - 1
+				If RandArray(i).Contains("RandomText") Then
+					Dim tempString = GetParentheses(RandArray(i), "RandomText(", RandArray(i).Split(")").Length - 1)
+					Dim startString = tempString
+					tempString = tempString.Replace(",,", "###INSERT-COMMA###")
+					tempString = FixCommas(tempString)
+					Dim selectArray As String() = tempString.Split(",")
+					For n As Integer = 0 To selectArray.Count - 1
+						selectArray(n) = selectArray(n).Replace("###INSERT-COMMA###", ",")
+					Next
+					tempString = selectArray(ssh.randomizer.Next(0, selectArray.Count()))
+					StringClean = StringClean.Replace("@RandomText(" & startString & ")", tempString)
+				End If
 			Next
 		End If
 
