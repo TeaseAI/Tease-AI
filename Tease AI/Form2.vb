@@ -6378,6 +6378,9 @@ checkFolder:
 		BTNLocalTagPrevious.Enabled = True
 
 		SetLocalImageTags()
+		If Not CBApplyPrevTags.Checked Then
+			ClearLocalTagList()
+		End If
 
 		LocalImageTagCount += 1
 		Form1.mainPictureBox.LoadAsync(LocalImageTagDir(LocalImageTagCount))
@@ -7071,6 +7074,8 @@ checkFolder:
 		If CBTagMahouShoujo.Checked = True Then TempImageDir = TempImageDir & " " & "TagMahouShoujo"
 		If CBTagMonsterGirl.Checked = True Then TempImageDir = TempImageDir & " " & "TagMonsterGirl"
 
+		If TempImageDir = CurrentLocalImageTagImage Then Return
+
 		If File.Exists(Application.StartupPath & "\Images\System\LocalImageTags.txt") Then
 
 			Dim TagCheckList = File.ReadAllLines(Application.StartupPath & "\Images\System\LocalImageTags.txt").ToList
@@ -7523,6 +7528,9 @@ checkFolder:
 		BTNLocalTagNext.Enabled = True
 
 		SetLocalImageTags()
+		If Not CBApplyPrevTags.Checked Then
+			ClearLocalTagList()
+		End If
 
 		LocalImageTagCount -= 1
 		Form1.mainPictureBox.LoadAsync(LocalImageTagDir(LocalImageTagCount))
