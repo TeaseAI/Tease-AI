@@ -5535,6 +5535,12 @@ Retry:
 
 #Region " VLC "
 
+	Private Sub SetDomWMPURL(url As String)
+		'Sub so that the info box can get updated too
+		DomWMP.URL = url
+		LBLImageInfo.Text = url
+	End Sub
+
 	Private Sub BTNLoadVideo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNLoadVideo.Click
 
 		If FrmSettings.CBSettingsPause.Checked = True And FrmSettings.SettingsPanel.Visible = True Then
@@ -5573,7 +5579,7 @@ Retry:
 			'If FrmSettings.VLC1610Radio.Checked = True Then domVLC.video.crop = "16:10"
 			' If FrmSettings.VLC169Radio.Checked = True Then domVLC.video.crop = "16:9"
 
-			DomWMP.URL = OpenFileDialog2.FileName
+			SetDomWMPURL(OpenFileDialog2.FileName)
 
 		End If
 	End Sub
@@ -6027,7 +6033,7 @@ GetAnotherRandomVideo:
 		'If FrmSettings.VLC1610Radio.Checked = True Then domVLC.video.crop = "16:10"
 		'If FrmSettings.VLC169Radio.Checked = True Then domVLC.video.crop = "16:9"
 
-		DomWMP.URL = __domVideo
+		SetDomWMPURL(__domVideo)
 
 		Do
 			Application.DoEvents()
@@ -6087,7 +6093,7 @@ JumpEnd:
 
 		mainPictureBox.Visible = False
 
-		DomWMP.URL = JOIVideos(JOIVideoLine)
+		SetDomWMPURL(JOIVideos(JOIVideoLine))
 
 
 	End Sub
@@ -6121,7 +6127,7 @@ JumpEnd:
 
 		mainPictureBox.Visible = False
 
-		DomWMP.URL = CHVideos(CHVideoLine)
+		SetDomWMPURL(CHVideos(CHVideoLine))
 
 
 	End Sub
@@ -20489,7 +20495,7 @@ playLoop:
 			Next
 
 			If VideoList.Count > 0 Then
-				DomWMP.URL = VideoList(ssh.randomizer.Next(0, VideoList.Count))
+				SetDomWMPURL(VideoList(ssh.randomizer.Next(0, VideoList.Count)))
 				marGIFIsDisplayed = False
 				DomWMP.Visible = True
 				mainPictureBox.Visible = False
@@ -20507,7 +20513,7 @@ playLoop:
 		Else
 
 			If File.Exists(VideoClean) Then
-				DomWMP.URL = VideoClean
+				SetDomWMPURL(VideoClean)
 				marGIFIsDisplayed = False
 				DomWMP.Visible = True
 				mainPictureBox.Visible = False

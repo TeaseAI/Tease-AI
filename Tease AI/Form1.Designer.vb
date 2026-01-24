@@ -1351,13 +1351,13 @@ Partial Class Form1
 		'SplitContainer1.Panel1
 		'
 		Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Black
+		Me.SplitContainer1.Panel1.Controls.Add(Me.LBLImageInfo)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.Label2)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.BeatMeterWMP)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.DomWMP)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.ProgressBar_BGW_Images)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.CensorshipBar)
-		Me.SplitContainer1.Panel1.Controls.Add(Me.LBLImageInfo)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.mainPictureBox)
 		Me.SplitContainer1.Panel1MinSize = 180
 		'
