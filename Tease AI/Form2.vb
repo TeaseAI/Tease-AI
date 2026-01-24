@@ -40,7 +40,7 @@ Public Class FrmSettings
 	Public WebImageLines As New List(Of String)
 	Public WebImageLine As Integer
 	''' <summary>Current opened url filepath. </summary>
-	Public WebImagePath As String
+	Public WebImagePath As String = ""
 	Public ApproveImage As Integer = 0
 
 	Dim CheckImgDir As New List(Of String)
@@ -3328,11 +3328,12 @@ SkipDeserializing:
 	Private Sub BtnWiOpenURL_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNWIOpenURL.Click
 
 		WebImageFileDialog.InitialDirectory = Application.StartupPath & "\Images\System\URL Files"
+		WebImageFileDialog.FileName = Path.GetFileName(WebImagePath)
 
 		If (WebImageFileDialog.ShowDialog = Windows.Forms.DialogResult.OK) Then
 
-			WebImageLines.Clear()
 			WebImageLine = 0
+			WebImageLines.Clear()
 
 			WebImageLines = File.ReadAllLines(WebImageFileDialog.FileName).ToList
 
