@@ -53,7 +53,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 		* "JOI" / "JOI DOMME"
 		* "CH" / "CH DOMME"
 		* "GENERAL" / "GENERAL DOMME"
-	* @Force: Does nothing lol. Here for documentation. (1885)
+	* @Force: Does nothing in the original code. Here for documentation. (1885)
 	* @PlayAudioNoWait[]: @PlayAudio[] but using a separate player to not cancel out videos or audio on the main player. (swift69)
 	* @PlayAudioNoWaitVoiceDom[]: @PlayAudio[] using a third separate player to not cancel out media on the main/nowait player. (swift69)
 	* @StopAudio: Stops any audio playing on the two nowait players. (swift69)
@@ -66,19 +66,19 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 		*@AddContact1Silent / @RemoveContact1Silent
 		*@AddContact2Silent / @RemoveContact2Silent
 		*@AddContact3Silent / @RemoveContact3Silent
-	* @SilentReturn: Does nothing, but meant to be placed on the same line as @CallReturn() (1885)
+	* @SilentReturn: Does nothing in the original code, but meant to be placed on the same line as @CallReturn(). Here for documentation. (1885)
 	* @LockChat / @UnlockChat: Locks or unlocks the chat from user input. (1885)
 	* @BeggingTimerOn / @BeggingTimerOff: Enables or disables systems regarding begging for an orgasm. (1885)
 	* @OpenDirectory[]: Opens an file explorer window to a specific folder relative to Tease AI. (1885)
 	* @SubMessage(): Sends a message as the user. @SubMessage(Hello) will send "Hello" as you. (1885)
-	* @ScenarioOn / ScenarioOff: Does nothing. (1885)
+	* @ScenarioOn / ScenarioOff: Does nothing in the original code. Here for documentation. (1885)
 	* @WebcamVideo: Opens a window displaying the current webcam. Intended to "set up" for other webcam commands. (markus)
 		*Webcam is not connected to the internet in any way. It is only local.
 		*Do not use with @CamSnap commands
 	* @WebcamClose: Close the webcam window. (markus)
-	* @CamSnapFolder[]: After 10 seconds saves the current webcam frame to a certain relative folder with a timestamped filename. ie: @CamSnapFolder[myPersonalityName\camshots\kneeling] will create "myPersonalityName\camshots\kneeling\Webcamshot_2018_01_17___9_10_56.jpg" (markus)
+	* @CamSnapFolder[]: After 10 seconds saves the current webcam frame to a certain relative folder with a timestamped filename. ie: @CamSnapFolder[myPersonalityName\camshots\kneeling] will create "\Images\myPersonalityName\camshots\kneeling\Webcamshot_2018_01_17___9_10_56.jpg" in your Tease AI folder. (markus)
 	* @CamSnapFile[]: Same as CamSnapFolder but uses a specific filename. ie: @CamSnapFile[myPersonalityName\camshots\toys\mytoy01.jpg] (markus)
-		*If an image with the name already exists, it will be overwritten. Perhaps use flags to work around this.
+		*If an image with the name already exists, it will be overwritten. Use flags in your scripts to work around this.
 	* @SetSpecificDate(): Creates a variable with a name and a specific date inside. (markus)
 		*I.e.: @SetSpecificDate(myTestDate1, 12.09.2020 01:00:00)
 	* @PlayCHC(): Plays a random (but not CH or JOI) video, and after 30 seconds starts a random beatmeter from the relative directory "\Video\BeatMeter\" on top of the video. (markus)
@@ -154,6 +154,9 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Added a minimum value when starting edge taunts to hopefully prevent lag when the first taunt appears too quickly. (pepsifreak)
 	* Playing videos should no longer sometimes require you to manually press play. (pepsifreak)
 	* The clock will no longer read the variable SYS_WakeUp from disk every tick. (pepsifreak)
+	* Tease AI should more gracefully handle missing core files like image tags, etc by creating blank files. (pepsifreak)
+	* App panels in the main window should work as intended now. (pepsifreak)
+	* Using #Random or #DateDifference after @RandomText in the same line should no longer eat parenthesis and break them. (pepsifreak)
 
 * System Keywords/Vocabulary (ported):
 	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.
