@@ -19916,6 +19916,8 @@ playLoop:
 			End If
 			TimerMarVidTaunts.[Stop]()
 			Label2.Visible = False
+			DomWMP.currentPlaylist.clear()
+			BeatMeterWMP.currentPlaylist.clear()
 		End If
 
 
