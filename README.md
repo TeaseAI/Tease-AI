@@ -157,6 +157,7 @@ Tease AI is adult-oriented software that aims to create an interactive tease and
 	* Tease AI should more gracefully handle missing core files like image tags, etc by creating blank files. (pepsifreak)
 	* App panels in the main window should work as intended now. (pepsifreak)
 	* Using #Random or #DateDifference after @RandomText in the same line should no longer eat parenthesis and break them. (pepsifreak)
+	* Fixed an odd case where, when the domme asks a question, would show the first response in full (so "[yes,yep] is that so, #SubName?") before waiting for input. (pepsifreak)
 
 * System Keywords/Vocabulary (ported):
 	* #RandomRound50 to compliment #RandomRound5 #RandomRound10, etc.

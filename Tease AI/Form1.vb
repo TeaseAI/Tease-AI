@@ -11719,6 +11719,7 @@ VTSkip:
 					GetSubState()
 					ssh.CallReturns.Push(New SessionState.StackedCallReturn(ssh))
 					ssh.YesOrNo = False
+					ssh.RapidCode = False
 					GotoClear()
 					StrokeTimer.Stop()
 					StrokeTauntTimer.Stop()
