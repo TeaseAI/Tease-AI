@@ -19516,7 +19516,7 @@ ReRoll:
 			ssh.ScriptTick = 1
 			ScriptTimer.Start()
 			Dim HypnoTrack As String = Application.StartupPath & "\Scripts\" & dompersonalitycombobox.Text & "\Apps\Hypnotic Guide\" & ComboBoxHypnoGenTrack.SelectedItem
-			If File.Exists(HypnoTrack) Then DomWMP.URL = HypnoTrack
+			If File.Exists(HypnoTrack) Then contextWMP.URL = HypnoTrack
 			ssh.HypnoGen = True
 			ssh.AFK = True
 			ssh.SaidHello = True
