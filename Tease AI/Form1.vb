@@ -6507,6 +6507,31 @@ CensorConstant:
 			Next
 		End If
 
+		If StringClean.Contains("#RANDNumber") Or StringClean.Contains("#RNDNumber") Then
+			StringClean = StringClean.Replace("#RNDNumber", "#RANDNumber")
+			Dim myArray As String() = StringClean.Split("#")
+			For i As Integer = 0 To myArray.Count - 1
+				Dim filter As String
+				If myArray(i).Contains("RANDNumberLow") Then
+					ssh.TempVal = ssh.randomizer.Next(1, 6)
+					filter = "#RANDNumberLow"
+				ElseIf myArray(i).Contains("RANDNumberHigh") Then
+					ssh.TempVal = ssh.randomizer.Next(5, 21)
+					filter = "#RANDNumberHigh"
+				ElseIf myArray(i).Contains("RANDNumber") Then
+					ssh.TempVal = ssh.randomizer.Next(1, 13)
+					filter = "#RANDNumber"
+				Else
+					Continue For
+				End If
+
+				ssh.TempVal *= FrmSettings.domlevelNumBox.Value
+				If ssh.TempVal > 10 Then ssh.TempVal = 5 * Math.Round(ssh.TempVal / 5)
+				If ssh.TempVal < 3 Then ssh.TempVal = 3
+
+				StringClean = StringClean.Replace(filter, ssh.TempVal)
+			Next
+		End If
 		If StringClean.Contains("#DateDifference(") Then
 			Dim myArray As String() = StringClean.Split("#")
 
@@ -6706,29 +6731,6 @@ CensorConstant:
 		If ssh.AssImage = True Then StringClean = StringClean.Replace("#TnAFastSlidesResult", "#BBnB_Ass")
 		If ssh.BoobImage = True Then StringClean = StringClean.Replace("#TnAFastSlidesResult", "#BBnB_Boobs")
 
-		If StringClean.Contains("#RANDNumberLow") Then
-			' ### Number between 3-5 , 5-25
-			ssh.TempVal = ssh.randomizer.Next(1, 6) * FrmSettings.domlevelNumBox.Value
-			If ssh.TempVal > 10 Then ssh.TempVal = 5 * Math.Round(ssh.TempVal / 5)
-			If ssh.TempVal < 3 Then ssh.TempVal = 3
-			StringClean = StringClean.Replace("#RNDNumberLow", ssh.TempVal)
-		End If
-
-
-		If StringClean.Contains("#RANDNumberHigh") Then
-			' ### Number between 5-25 , 25-100
-			ssh.TempVal = ssh.randomizer.Next(5, 21) * FrmSettings.domlevelNumBox.Value
-			If ssh.TempVal > 10 Then ssh.TempVal = 5 * Math.Round(ssh.TempVal / 5)
-			StringClean = StringClean.Replace("#RNDNumberHigh", ssh.TempVal)
-		End If
-
-
-		If StringClean.Contains("#RANDNumber") Then
-			' ### Number between 3-10 , 5-50
-			ssh.TempVal = ssh.randomizer.Next(1, 11) * FrmSettings.domlevelNumBox.Value
-			If ssh.TempVal > 10 Then ssh.TempVal = 5 * Math.Round(ssh.TempVal / 5)
-			If ssh.TempVal < 3 Then ssh.TempVal = 3
-			StringClean = StringClean.Replace("#RNDNumber", ssh.TempVal)
 		End If
 
 
