@@ -6532,6 +6532,7 @@ CensorConstant:
 				StringClean = StringClean.Replace(filter, ssh.TempVal)
 			Next
 		End If
+
 		If StringClean.Contains("#DateDifference(") Then
 			Dim myArray As String() = StringClean.Split("#")
 
@@ -6731,7 +6732,6 @@ CensorConstant:
 		If ssh.AssImage = True Then StringClean = StringClean.Replace("#TnAFastSlidesResult", "#BBnB_Ass")
 		If ssh.BoobImage = True Then StringClean = StringClean.Replace("#TnAFastSlidesResult", "#BBnB_Boobs")
 
-		End If
 
 
 
