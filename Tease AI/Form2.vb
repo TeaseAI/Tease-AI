@@ -1141,7 +1141,7 @@ Public Class FrmSettings
 			If String.IsNullOrWhiteSpace(.Text) Then
 
 				Dim BlankName As String = "stroker"
-				Dim NameVal As Integer = New Random().Next(1, 6)
+				Dim NameVal As Integer = Ssh.randomizer.Next(1, 6)
 
 				If NameVal = 1 Then BlankName = "stroker"
 				If NameVal = 2 Then BlankName = "loser"

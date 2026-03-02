@@ -5849,7 +5849,6 @@ Retry:
 		ssh.NoVideo = False
 		ssh.DommeVideo = False
 
-		Dim __dom As Random = New Random()
 		Dim __domVideo As String
 		Dim __TotalFiles As New List(Of String)
 
@@ -5950,7 +5949,7 @@ SkipSpecialD:
 
 GetAnotherRandomVideo:
 
-		__domVideo = __TotalFiles(__dom.Next(0, __TotalFiles.Count))
+		__domVideo = __TotalFiles(ssh.randomizer.Next(0, __TotalFiles.Count))
 
 		If __domVideo = "" Then GoTo GetAnotherRandomVideo
 
@@ -7457,9 +7456,8 @@ RinseLatherRepeat:
 		End If
 
 		If StringClean.Contains("@ShowDomRandomImage") Then
-			Dim rnd As Random = New Random()
 			Dim DirDomRandImage As DirectoryInfo = New DirectoryInfo(My.Settings.DomImageDirRand)
-			ShowImage(DirDomRandImage.GetFiles().ElementAt(rnd.[Next](DirDomRandImage.GetFiles().Length)).FullName, False)
+			ShowImage(DirDomRandImage.GetFiles().ElementAt(ssh.randomizer.[Next](DirDomRandImage.GetFiles().Length)).FullName, False)
 			StringClean = StringClean.Replace("@ShowDomRandomImage", "")
 		End If
 
@@ -7802,7 +7800,7 @@ RinseLatherRepeat:
 			Dim tmpImgToShow As String = Application.StartupPath & "\Images\System\NoLocalImagesFound.jpg"
 			' If there are images, overwrite the error image.
 			If tmpImageLocationList.Count > 0 Then
-				tmpImgToShow = tmpImageLocationList(New Random().Next(0, tmpImageLocationList.Count))
+				tmpImgToShow = tmpImageLocationList(ssh.randomizer.Next(0, tmpImageLocationList.Count))
 			Else
 				Trace.WriteLine("failed to execute Command: @ShowLocalImage(" & LocalFlag & ") No images found.")
 			End If
@@ -15391,7 +15389,7 @@ RestartFunction:
 			Dim tmpImageToShow As String = ""
 			Dim tmpLateSet As Boolean
 
-			If New Random().Next(0, 101) < 51 Then
+			If ssh.randomizer.Next(0, 101) < 51 Then
 				tmpImageToShow = ssh.BoobList(ssh.randomizer.Next(0, ssh.BoobList.Count))
 				tmpLateSet = True
 			Else
@@ -17735,7 +17733,7 @@ restartInstantly:
 	End Sub
 
 	Private Sub RefreshRandomizerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshRandomizerToolStripMenuItem.Click
-		ssh.randomizer = New MarNewRandom()
+		ssh.randomizer = New RandomWrapper()
 	End Sub
 
 	Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
@@ -18800,7 +18798,7 @@ TryAgain:
 
 						  If Pool.Count > 0 Then
 							  ' Get random line, and remove it from orignal list, to avoid duplicates.
-							  RtnVal = Pool(New Random().Next(0, Pool.Count))
+							  RtnVal = Pool(ssh.randomizer.Next(0, Pool.Count))
 							  Lines.Remove(RtnVal)
 							  Pool.Remove(RtnVal)
 
@@ -20688,7 +20686,7 @@ playLoop:
 					"Please make sure that valid files exist and the wildcards are applied correctly in the script.")
 					tmpImgLoc = ""
 				Else
-					tmpImgLoc = ImageList(New Random().Next(0, ImageList.Count))
+					tmpImgLoc = ImageList(ssh.randomizer.Next(0, ImageList.Count))
 				End If
 			Else
 				'############################# Single Image ############################

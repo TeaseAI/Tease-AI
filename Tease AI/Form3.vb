@@ -9,7 +9,6 @@ Imports System.Net
 
 Public Class FrmCardList
 
-	Dim randomizer As New Random
 	Dim TempVal As Integer
 
 
@@ -2209,7 +2208,7 @@ Card9:
 
 		SlotTick1 -= 1
 
-		Slot1Val = randomizer.Next(0, 18)
+		Slot1Val = Form1.ssh.randomizer.Next(0, 18)
 		Try
 			Slot1.Image.Dispose()
 		Catch
@@ -2238,7 +2237,7 @@ Card9:
 
 		SlotTick2 -= 1
 
-		Slot2Val = randomizer.Next(0, 18)
+		Slot2Val = Form1.ssh.randomizer.Next(0, 18)
 		Try
 			Slot2.Image.Dispose()
 		Catch
@@ -2263,7 +2262,7 @@ Card9:
 
 		SlotTick3 -= 1
 
-		Slot3Val = randomizer.Next(0, 18)
+		Slot3Val = Form1.ssh.randomizer.Next(0, 18)
 		Try
 			Slot3.Image.Dispose()
 		Catch
@@ -2414,9 +2413,9 @@ Card9:
 
 
 
-		Slot1.Image = Image.FromFile(SlotList(randomizer.Next(0, SlotList.Count)))
-		Slot2.Image = Image.FromFile(SlotList(randomizer.Next(0, SlotList.Count)))
-		Slot3.Image = Image.FromFile(SlotList(randomizer.Next(0, SlotList.Count)))
+		Slot1.Image = Image.FromFile(SlotList(Form1.ssh.randomizer.Next(0, SlotList.Count)))
+		Slot2.Image = Image.FromFile(SlotList(Form1.ssh.randomizer.Next(0, SlotList.Count)))
+		Slot3.Image = Image.FromFile(SlotList(Form1.ssh.randomizer.Next(0, SlotList.Count)))
 
 
 
@@ -3156,12 +3155,12 @@ Card9:
 
 		If BoosterTick = 5 Then
 
-			TempVal = randomizer.Next(1, 101)
+			TempVal = Form1.ssh.randomizer.Next(1, 101)
 
 			If TempVal > 20 Then
 				Booster1Frame.BackColor = Color.Peru
 				Booster1Plate.BackColor = Color.Peru
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster1.Image = Image.FromFile(BoosterListBronze(0))
 					Booster1Name.Text = FrmSettings.BN1.Text
@@ -3197,7 +3196,7 @@ Card9:
 			If TempVal > 5 And TempVal < 21 Then
 				Booster1Frame.BackColor = Color.Silver
 				Booster1Plate.BackColor = Color.Silver
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster1.Image = Image.FromFile(BoosterListSilver(0))
 					Booster1Name.Text = FrmSettings.SN1.Text
@@ -3233,7 +3232,7 @@ Card9:
 			If TempVal < 6 Then
 				Booster1Frame.BackColor = Color.Gold
 				Booster1Plate.BackColor = Color.Gold
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster1.Image = Image.FromFile(BoosterListGold(0))
 					Booster1Name.Text = FrmSettings.GN1.Text
@@ -3271,12 +3270,12 @@ Card9:
 
 		If BoosterTick = 4 Then
 
-			TempVal = randomizer.Next(1, 101)
+			TempVal = Form1.ssh.randomizer.Next(1, 101)
 
 			If TempVal > 20 Then
 				Booster2Frame.BackColor = Color.Peru
 				Booster2Plate.BackColor = Color.Peru
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster2.Image = Image.FromFile(BoosterListBronze(0))
 					Booster2Name.Text = FrmSettings.BN1.Text
@@ -3312,7 +3311,7 @@ Card9:
 			If TempVal > 5 And TempVal < 21 Then
 				Booster2Frame.BackColor = Color.Silver
 				Booster2Plate.BackColor = Color.Silver
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster2.Image = Image.FromFile(BoosterListSilver(0))
 					Booster2Name.Text = FrmSettings.SN1.Text
@@ -3348,7 +3347,7 @@ Card9:
 			If TempVal < 6 Then
 				Booster2Frame.BackColor = Color.Gold
 				Booster2Plate.BackColor = Color.Gold
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster2.Image = Image.FromFile(BoosterListGold(0))
 					Booster2Name.Text = FrmSettings.GN1.Text
@@ -3385,12 +3384,12 @@ Card9:
 
 		If BoosterTick = 3 Then
 
-			TempVal = randomizer.Next(1, 101)
+			TempVal = Form1.ssh.randomizer.Next(1, 101)
 
 			If TempVal > 20 Then
 				Booster3Frame.BackColor = Color.Peru
 				Booster3Plate.BackColor = Color.Peru
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster3.Image = Image.FromFile(BoosterListBronze(0))
 					Booster3Name.Text = FrmSettings.BN1.Text
@@ -3426,7 +3425,7 @@ Card9:
 			If TempVal > 5 And TempVal < 21 Then
 				Booster3Frame.BackColor = Color.Silver
 				Booster3Plate.BackColor = Color.Silver
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster3.Image = Image.FromFile(BoosterListSilver(0))
 					Booster3Name.Text = FrmSettings.SN1.Text
@@ -3462,7 +3461,7 @@ Card9:
 			If TempVal < 6 Then
 				Booster3Frame.BackColor = Color.Gold
 				Booster3Plate.BackColor = Color.Gold
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster3.Image = Image.FromFile(BoosterListGold(0))
 					Booster3Name.Text = FrmSettings.GN1.Text
@@ -3499,12 +3498,12 @@ Card9:
 
 		If BoosterTick = 2 Then
 
-			TempVal = randomizer.Next(1, 101)
+			TempVal = Form1.ssh.randomizer.Next(1, 101)
 
 			If TempVal > 20 Then
 				Booster4Frame.BackColor = Color.Peru
 				Booster4Plate.BackColor = Color.Peru
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster4.Image = Image.FromFile(BoosterListBronze(0))
 					Booster4Name.Text = FrmSettings.BN1.Text
@@ -3540,7 +3539,7 @@ Card9:
 			If TempVal > 5 And TempVal < 21 Then
 				Booster4Frame.BackColor = Color.Silver
 				Booster4Plate.BackColor = Color.Silver
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster4.Image = Image.FromFile(BoosterListSilver(0))
 					Booster4Name.Text = FrmSettings.SN1.Text
@@ -3576,7 +3575,7 @@ Card9:
 			If TempVal < 6 Then
 				Booster4Frame.BackColor = Color.Gold
 				Booster4Plate.BackColor = Color.Gold
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster4.Image = Image.FromFile(BoosterListGold(0))
 					Booster4Name.Text = FrmSettings.GN1.Text
@@ -3613,12 +3612,12 @@ Card9:
 
 		If BoosterTick = 1 Then
 
-			TempVal = randomizer.Next(1, 101)
+			TempVal = Form1.ssh.randomizer.Next(1, 101)
 
 			If TempVal > 20 Then
 				Booster5Frame.BackColor = Color.Peru
 				Booster5Plate.BackColor = Color.Peru
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster5.Image = Image.FromFile(BoosterListBronze(0))
 					Booster5Name.Text = FrmSettings.BN1.Text
@@ -3654,7 +3653,7 @@ Card9:
 			If TempVal > 5 And TempVal < 21 Then
 				Booster5Frame.BackColor = Color.Silver
 				Booster5Plate.BackColor = Color.Silver
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster5.Image = Image.FromFile(BoosterListSilver(0))
 					Booster5Name.Text = FrmSettings.SN1.Text
@@ -3690,7 +3689,7 @@ Card9:
 			If TempVal < 6 Then
 				Booster5Frame.BackColor = Color.Gold
 				Booster5Plate.BackColor = Color.Gold
-				ColorVal = randomizer.Next(1, 7)
+				ColorVal = Form1.ssh.randomizer.Next(1, 7)
 				If ColorVal = 1 Then
 					Booster5.Image = Image.FromFile(BoosterListGold(0))
 					Booster5Name.Text = FrmSettings.GN1.Text
@@ -3836,7 +3835,7 @@ Card9:
 		SilverDraw.Add(My.Settings.SP5)
 		SilverDraw.Add(My.Settings.SP6)
 
-		TempVal = randomizer.Next(1, 7)
+		TempVal = Form1.ssh.randomizer.Next(1, 7)
 
 		If TempVal = 1 Then
 			My.Settings.S1 += 1
@@ -3942,7 +3941,7 @@ Card9:
 		GoldDraw.Add(My.Settings.GP5)
 		GoldDraw.Add(My.Settings.GP6)
 
-		TempVal = randomizer.Next(1, 7)
+		TempVal = Form1.ssh.randomizer.Next(1, 7)
 
 		If TempVal = 1 Then
 			My.Settings.G1 += 1
@@ -4083,7 +4082,7 @@ Card9:
 
 			Form1.ssh.SaidHello = True
 			Form1.ssh.ShowModule = True
-			Form1.ssh.FileText = TokenList(randomizer.Next(0, TokenList.Count))
+			Form1.ssh.FileText = TokenList(Form1.ssh.randomizer.Next(0, TokenList.Count))
 			Form1.ssh.StrokeTauntVal = -1
 			Form1.ssh.ScriptTick = 2
 			Form1.ScriptTimer.Start()
@@ -4226,7 +4225,7 @@ Card9:
 		Dim RiskVal As Integer
 
 		For i As Integer = RiskyDeck.Count - 1 To 0 Step -1
-			RiskVal = randomizer.Next(0, RiskyDeck.Count)
+			RiskVal = Form1.ssh.randomizer.Next(0, RiskyDeck.Count)
 			RiskyShuffled.Add(RiskyDeck(RiskVal))
 			RiskyDeck.Remove(RiskyDeck(RiskVal))
 		Next

@@ -301,7 +301,7 @@ exitEmpty:
 				If tmpList.Count <= 0 Then GoTo NoneFound
 
 				' Pick a Random Image-Path
-				Return tmpList(New Random().Next(0, tmpList.Count))
+				Return tmpList(Form1.ssh.randomizer.Next(0, tmpList.Count))
 			Catch ex As Exception
 				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
 				'						       All Errors
@@ -331,7 +331,7 @@ NoneFound:
 				If tmpList.Count <= 0 Then GoTo NoneFound
 
 				' Pick a Random Image-Path
-				Return tmpList(New Random().Next(0, tmpList.Count))
+				Return tmpList(Form1.ssh.randomizer.Next(0, tmpList.Count))
 			Catch ex As Exception
 				'▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
 				'						       All Errors
@@ -531,7 +531,7 @@ NoneFound:
 		If AllImages.Count = 0 Then Return Application.StartupPath & "\Images\System\NoLocalImagesFound.jpg"
 
 		' get an Random Image from the all available Locations
-		Return AllImages(New Random().Next(0, AllImages.Count)).ToString
+		Return AllImages(ssh.randomizer.Next(0, AllImages.Count)).ToString
 	End Function
 
 	''' <summary>
@@ -567,7 +567,7 @@ NoneFound:
 		If allImages.Count = 0 Then GoTo NoNeFound
 
 		' get an Random Image for the given SourceType
-		Return allImages(New Random().Next(0, allImages.Count)).ToString
+		Return allImages(ssh.randomizer.Next(0, allImages.Count)).ToString
 NoNeFound:
 		' Return an Error-Image FilePath
 		If source = ImageSourceType.Local _

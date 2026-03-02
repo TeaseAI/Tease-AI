@@ -51,7 +51,7 @@ Partial Public Class SessionState
 	Public Property ChatHistoryList As List(Of String) = New List(Of String)
 	Public Property ChatHistoryCount As Integer
 
-	Public Property randomizer As New MarNewRandom
+	Public Property randomizer As RandomWrapper
 
 	Public Property ScriptOperator As String
 
@@ -670,7 +670,7 @@ Partial Public Class SessionState
 	End Sub
 
 	Private Sub InitializeComponent()
-		randomizer = New MarNewRandom()
+		randomizer = New RandomWrapper()
 
 		DomPersonality = My.Settings.DomPersonality
 
